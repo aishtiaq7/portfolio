@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <nav>
+        <div className="name-logo">
+          <h4>AWSHAF ___</h4>
+          <h4 className="ishtiaque">ISHTIAQUE</h4>
+        </div>
+        <div className="menu">
+          <h4>MENU</h4>
+        </div>
+      </nav>
+
+      <section>
+        <div className="landingSection">
+          <h3>
+            strategic design
+            <br />
+            or the brands
+            <br />
+            of tomorrow
+          </h3>
+        </div>
+      </section>
+
+      <section>
+        <div className="second-section">
+          <h3>
+            Aliquip dolor eiusmod sunt laborum minim et sunt laboris eiusmod
+            sit. Laboris reprehenderit deserunt amet non. Aliqua ex pariatur
+            nisi do non culpa ad enim elit enim ullamco ipsum laboris ullamco.
+            Est aliquip velit enim sint exercitation nostrud consequat eiusmod
+            irure nisi ut irure. Eu ea anim amet cupidatat minim ut Lorem
+            pariatur non ullamco.
+          </h3>
+        </div>
+      </section>
+
+      <section>
+        <h3>Beginning of 3rd section</h3>
+      </section>
     </div>
   );
 }

@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+/*    installing a font 
+      https://stackoverflow.com/questions/41676054/how-to-add-fonts-to-create-react-app-based-projects
+*/
+@font-face {
+  font-family: "Elastic";
+  src: local("Elastic"), url(./fonts/Elastic.ttf) format("truetype");
+}
+/*
+
+    GLOBAL styles ends here
+
+*/ 
+
+
+
+
+/*      Styles    */ 
+section {
+  height: 100vh;
+  width: 100vw;
+  /* width: 100vw; */
+  width: 100%;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* ---------- navbar ------------ */
+nav {
+  width: 100vw;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  position: absolute;
+  top: 0%;
+  left: 0;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.name-logo {
+  /* font-family: Elastic, Georgia, 'Times New Roman', Times, serif; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ishtiaque {
+  /* background-color: orange; */
+  letter-spacing: 0.1rem;
+}
+
+.name-logo,
+.menu {
+  /* background-color: blue; */
+  padding: 2rem;
+}
+
+/* ---------- section ------------ */
+.landingSection {
+  width: 100%;
+  height: 100%;
+
+  background-color: black;
+
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  padding: 8rem;
+  color: white;
+  font-size: 32pt;
+}
+
+.second-section {
+  background-color: white;
+  color: black;
+
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
