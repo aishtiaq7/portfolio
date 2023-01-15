@@ -15,13 +15,23 @@ function App() {
 
       <section>
         <div className="landingSection">
-          <h3>
-            strategic design
-            <br />
-            or the brands
-            <br />
-            of tomorrow
-          </h3>
+          <div className="landingTitle">
+            <h3>
+              strategic design
+              <br />
+              or the brands
+              <br />
+              of tomorrow
+            </h3>
+          </div>
+
+          <div className="portraitImg">
+            <img
+              className="selfportrait"
+              src={require("./resources/test_portrait_img.png")}
+              alt="A beautiful image"
+            />
+          </div>
         </div>
       </section>
 
