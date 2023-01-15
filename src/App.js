@@ -13,12 +13,10 @@ function App() {
 
   useEffect( ()=>{
     const mouseMove = e => {
-      // console.log(e.clientX, e.clientY);
       setMousePosition({
         x: e.clientX, 
         y: e.clientY
       });
-      // console.log(mousePosition);
     }
     window.addEventListener("mousemove", mouseMove);
 
@@ -30,7 +28,7 @@ function App() {
   const variants = {
     default: {
       x: mousePosition.x - 25,
-      y: mousePosition.y - 25 // minus 25 cuz radisu of cursor is 50
+      y: mousePosition.y - 25 // minus 25 cuz radius of cursor is 50
     },
 
     text: {
@@ -38,17 +36,13 @@ function App() {
       width: 150, 
 
       x: mousePosition.x - 75,
-      y: mousePosition.y - 75,
-
+      y: mousePosition.y - 75, // 75 cuz radius is 150
       mixBlendMode: "difference",
-
     }
   };
 
   const textEnter = () => setCursorVariant("text");
   const textLeave = () => setCursorVariant("default");
-
-
 
   return (
     <div>
