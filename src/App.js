@@ -37,18 +37,21 @@ function App() {
 
       <section>
         <div className="second-section">
-          <h3>
-            Aliquip dolor eiusmod sunt laborum minim et sunt laboris eiusmod
-            sit. Laboris reprehenderit deserunt amet non. Aliqua ex pariatur
-            nisi do non culpa ad enim elit enim ullamco ipsum laboris ullamco.
-            Est aliquip velit enim sint exercitation nostrud consequat eiusmod
-            irure nisi ut irure. Eu ea anim amet cupidatat minim ut Lorem
-            pariatur non ullamco.
-          </h3>
+          <div className="largeText">
+            <h3>
+              markus is a german designer specialized in strategy-led branding. He helps <br></br>
+              starts-ups and medium-sized brands to stand out by combinig creative strategy and thoughful desing. <br></br>
+
+              <br></br>
+
+              Proident consectetur anim cillum Lorem consectetur irure cupidatat esse.
+              Veniam voluptate culpa duis laboris eiusmod labore eu consequat officia officia.
+            </h3>
+          </div>
         </div>
       </section>
 
-      <section>
+      <section className="dark-section">
         <h3>Beginning of 3rd section</h3>
       </section>
     </div>
