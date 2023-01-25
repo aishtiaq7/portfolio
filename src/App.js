@@ -38,15 +38,30 @@ function App() {
       x: mousePosition.x - 75,
       y: mousePosition.y - 75, // 75 cuz radius is 150
       mixBlendMode: "difference",
+    },
+
+    logo: {
+      height: 45,
+      width: 45, 
+
+      x: mousePosition.x - (45/2),
+      y: mousePosition.y - (45/2), // 75 cuz radius is 150
+      mixBlendMode: "difference",
+      // backgroundColor: "rgb(82, 186, 246)",
+      borderRadius: "10%",
+
     }
   };
 
   const textEnter = () => setCursorVariant("text");
   const textLeave = () => setCursorVariant("default");
+  const textEnterLogo = () => setCursorVariant("logo");
+  const textLeaveLogo = () => setCursorVariant("default");
+
 
   return (
     <div>
-      <nav>
+      <nav onMouseEnter={textEnterLogo} onMouseLeave={textLeaveLogo} >
         <div className="name-logo">
           <h4>AWSHAF ___</h4>
           <h4 className="ishtiaque">ISHTIAQUE</h4>
@@ -66,11 +81,11 @@ function App() {
         <div className="landingSection">
           <div className="landingTitle" >
             <h3 onMouseEnter={textEnter} onMouseLeave={textLeave} >
-              strategic design
+              On the journey 
               <br />
-              or the brands
+              to learn & create
               <br />
-              of tomorrow
+              applications that matter. 
             </h3>
           </div>
 
@@ -85,8 +100,8 @@ function App() {
       </section>
 
       <section>
-        <div className="second-section">
-          <div className="largeText">
+        <div onMouseEnter={textEnter} onMouseLeave={textLeave} className="second-section">
+          <div className="largeText" >
             <h3>
               markus is a german designer specialized in strategy-led branding. He helps <br></br>
               starts-ups and medium-sized brands to stand out by combinig creative strategy and thoughful desing. <br></br>
