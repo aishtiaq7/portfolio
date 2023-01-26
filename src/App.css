@@ -32,22 +32,20 @@ body {
   src: local("HelveticaNowText-Light"),
     url(./fonts/HelveticaNowText-Light.ttf) format("truetype");
 }
-
-/*
-
-    GLOBAL styles ends here
-
+/*   
+      Cursor
 */
-
-/*      Styles    */
-section {
-  height: 100vh;
-  width: 100vw;
-  /* width: 100vw; */
-  width: 100%;
-  overflow: hidden;
+.cursor {
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  pointer-events: none;
+  z-index: 20;
 }
-
 /* ---------- navbar ------------ */
 nav {
   width: 100vw;
@@ -66,19 +64,32 @@ nav {
   color: white;
 }
 
+
+/***************************
+
+    GLOBAL styles ends here
+
+***************************/
+
+section {
+  height: 100vh;
+  width: 100vw;
+  width: 100%;
+  overflow: hidden;
+}
+
+
 .name-logo {
   /* font-family: Elastic, Georgia, 'Times New Roman', Times, serif; */
   font-size: 1.2vw;
 }
 
 .ishtiaque {
-  /* background-color: orange; */
   letter-spacing: 0.1rem;
 }
 
 .name-logo,
 .menu {
-  /* background-color: blue; */
   padding: 2rem;
 }
 
@@ -88,24 +99,30 @@ nav {
   height: 100%;
 
   background-color: black;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   padding: 8rem;
   color: white;
-  font-size: 32pt;
+  
+
 }
 .landingTitle{
   font-size: 5vw;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.landingText {
+  font-size: 4.5vw;
 }
 .portraitImg {
   width: 50%;
   height: auto;
   object-fit: cover;
   height: auto;
+
+  filter: grayscale(10%) brightness(100%);
+  z-index: 0;
 }
 .selfportrait {
   width: 100%;
@@ -116,7 +133,6 @@ nav {
 
 .second-section {
   background-color: var(--main-white-color);
-  /* background-color: green; */
   color: black;
 
   height: 100%;
@@ -136,16 +152,3 @@ nav {
   background-color: black;
 }
 
-/*   
-      Cursor
-*/
-.cursor {
-  background-color: white;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  position: fixed;
-  top: 0%;
-  left: 0;
-  pointer-events: none;
-}

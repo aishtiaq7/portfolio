@@ -80,7 +80,7 @@ function App() {
       <section>
         <div className="landingSection">
           <div className="landingTitle" >
-            <h3 onMouseEnter={textEnter} onMouseLeave={textLeave} >
+            <h3 onMouseEnter={textEnter} onMouseLeave={textLeave} className="landingText" >
               On the journey 
               <br />
               to learn & create
@@ -92,7 +92,7 @@ function App() {
           <div className="portraitImg">
             <img
               className="selfportrait"
-              src={require("./resources/test_portrait_img.png")}
+              src={require("./resources/landingportrait.png")}
               alt="A beautiful image"
             />
           </div>
