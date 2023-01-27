@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.84dc60dc.css",
+    "main.js": "/portfolio/static/js/main.1ec31dda.js",
+    "static/media/Helvitica.ttf": "/portfolio/static/media/Helvitica.a91983721016a77c9998.ttf",
+    "static/media/landingportrait.png": "/portfolio/static/media/landingportrait.01cad33aeda76af95375.png",
+    "static/media/HelveticaNowText-Light.ttf": "/portfolio/static/media/HelveticaNowText-Light.014c0cc08b2cf8d4eb29.ttf",
+    "static/media/Elastic.ttf": "/portfolio/static/media/Elastic.87a3ac85a4c00a55c317.ttf",
+    "index.html": "/portfolio/index.html",
+    "main.84dc60dc.css.map": "/portfolio/static/css/main.84dc60dc.css.map",
+    "main.1ec31dda.js.map": "/portfolio/static/js/main.1ec31dda.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84dc60dc.css",
+    "static/js/main.1ec31dda.js"
+  ]
+}
