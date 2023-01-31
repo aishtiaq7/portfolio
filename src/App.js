@@ -103,9 +103,9 @@ function App() {
         <div onMouseEnter={textEnter} onMouseLeave={textLeave} className="second-section">
           <div className="largeText" >
             <h3>
-              STARTS WITH A CHANGE. <br></br>markus is a german designer specialized in strategy-led branding. He helps <br></br>
-              starts-ups and medium-sized brands to stand out by combinig creative strategy and thoughful desing. <br></br>
-
+              STARTS WITH A CHANGE. 
+              <br></br>
+              <br></br>
               <br></br>
 
               Proident consectetur anim cillum Lorem consectetur irure cupidatat esse.
