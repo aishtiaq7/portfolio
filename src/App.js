@@ -103,7 +103,7 @@ function App() {
         <div onMouseEnter={textEnter} onMouseLeave={textLeave} className="second-section">
           <div className="largeText" >
             <h3>
-              !!NEW!! _ STARTS WITH A CHANGE. 
+              this is "awshaf" branch and should not come up in production.
               <br></br>
               <br></br>
               <br></br>
