@@ -93,7 +93,7 @@ function App() {
             <img
               className="selfportrait"
               src={require("./resources/landingportrait.png")}
-              alt="A beautiful image"
+              alt="souvenir"
             />
           </div>
         </div>
