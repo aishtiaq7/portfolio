@@ -103,29 +103,24 @@ function App() {
         <div onMouseEnter={textEnter} onMouseLeave={textLeave} className="second-section">
           <div className="largeText" >
             <h3>
-              !!NEW!! _ STARTS WITH A CHANGE. 
+              "hello" <br></br> 
+              Its a pleasure to be hosting your visit to my page. <br></br><br></br>
+              As I grow my skills to become a competent Software Developer (alongside being a better person ofcourse), 
               <br></br>
-              <br></br>
-              <br></br>
-
-              Proident consectetur anim cillum Lorem consectetur irure cupidatat esse.
-              Veniam voluptate culpa duis laboris eiusmod labore eu consequat officia officia.
+              I want to use this platform to showcase some of my work, interests and hopefully give you an impression of me. :p
             </h3>
           </div>
         </div>
       </section>
 
       <section className="dark-section">
-        <h3>Beginning of 3rd section</h3>
+        {/* <h3>Beginning of 3rd section</h3> */}
         <div className="largeText" style={{'color':'white'}}>
             <h3>
-              markus is a german designer specialized in strategy-led branding. He helps <br></br>
-              starts-ups and medium-sized brands to stand out by combinig creative strategy and thoughful desing. <br></br>
+              I will continue to actively update this page and hopefully give you a better experience soon. 
 
               <br></br>
-
-              Proident consectetur anim cillum Lorem consectetur irure cupidatat esse.
-              Veniam voluptate culpa duis laboris eiusmod labore eu consequat officia officia.
+              Untill then, take care. 
             </h3>
           </div>
       </section>
