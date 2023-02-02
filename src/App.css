@@ -152,3 +152,11 @@ section {
   background-color: black;
 }
 
+
+@media only screen and (max-width: 600px) {
+  .landingSection {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
