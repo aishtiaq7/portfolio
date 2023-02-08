@@ -3,37 +3,36 @@ import "./App.css";
 import { motion } from "framer-motion";
 
 function App() {
-
   const [mousePosition, setMousePosition] = useState({
     x: 0,
-    y: 0
+    y: 0,
   });
 
   const [cursorVariant, setCursorVariant] = useState("default");
 
-  useEffect( ()=>{
-    const mouseMove = e => {
+  useEffect(() => {
+    const mouseMove = (e) => {
       setMousePosition({
-        x: e.clientX, 
-        y: e.clientY
+        x: e.clientX,
+        y: e.clientY,
       });
-    }
+    };
     window.addEventListener("mousemove", mouseMove);
 
-    return () =>{
+    return () => {
       window.removeEventListener("mousemove", mouseMove);
-    }
-  }, [] );
+    };
+  }, []);
 
   const variants = {
     default: {
       x: mousePosition.x - 25,
-      y: mousePosition.y - 25 // minus 25 cuz radius of cursor is 50
+      y: mousePosition.y - 25, // minus 25 cuz radius of cursor is 50
     },
 
     text: {
       height: 150,
-      width: 150, 
+      width: 150,
 
       x: mousePosition.x - 75,
       y: mousePosition.y - 75, // 75 cuz radius is 150
@@ -42,15 +41,14 @@ function App() {
 
     logo: {
       height: 45,
-      width: 45, 
+      width: 45,
 
-      x: mousePosition.x - (45/2),
-      y: mousePosition.y - (45/2), // 75 cuz radius is 150
+      x: mousePosition.x - 45 / 2,
+      y: mousePosition.y - 45 / 2, // 75 cuz radius is 150
       mixBlendMode: "difference",
       // backgroundColor: "rgb(82, 186, 246)",
       borderRadius: "10%",
-
-    }
+    },
   };
 
   const textEnter = () => setCursorVariant("text");
@@ -58,10 +56,9 @@ function App() {
   const textEnterLogo = () => setCursorVariant("logo");
   const textLeaveLogo = () => setCursorVariant("default");
 
-
   return (
     <div>
-      <nav onMouseEnter={textEnterLogo} onMouseLeave={textLeaveLogo} >
+      <nav onMouseEnter={textEnterLogo} onMouseLeave={textLeaveLogo}>
         <div className="name-logo">
           <h4>AWSHAF ___</h4>
           <h4 className="ishtiaque">ISHTIAQUE</h4>
@@ -71,21 +68,25 @@ function App() {
         </div>
       </nav>
 
-      <motion.div 
-        className="cursor" 
+      <motion.div
+        className="cursor"
         variants={variants}
         animate={cursorVariant}
-        />
+      />
 
       <section>
         <div className="landingSection">
-          <div className="landingTitle" >
-            <h3 onMouseEnter={textEnter} onMouseLeave={textLeave} className="landingText" >
-              On the journey 
+          <div className="landingTitle">
+            <h3
+              onMouseEnter={textEnter}
+              onMouseLeave={textLeave}
+              className="landingText"
+            >
+              On the journey
               <br />
               to learn & create
               <br />
-              applications that matter. 
+              applications that matter.
             </h3>
           </div>
 
@@ -100,34 +101,36 @@ function App() {
       </section>
 
       <section>
-        <div onMouseEnter={textEnter} onMouseLeave={textLeave} className="second-section">
-          <div className="largeText" >
+        <div
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
+          className="second-section"
+        >
+          <div className="largeText">
             <h3>
-              this is "awshaf" branch and should not come up in production.
+              <span className="greetingsTitle">"hi there" </span>
               <br></br>
+              Its a pleasure to have you here on my page. <br></br>
               <br></br>
-              <br></br>
-
-              Proident consectetur anim cillum Lorem consectetur irure cupidatat esse.
-              Veniam voluptate culpa duis laboris eiusmod labore eu consequat officia officia.
+              As I grow my skills to become a competent Software Developer
+              (alongside being a better person ofcourse),
+              <br></br>I want to use this platform to showcase some of my work,
+              interests and hopefully give you an impression of me. :p
             </h3>
           </div>
         </div>
       </section>
 
       <section className="dark-section">
-        <h3>Beginning of 3rd section</h3>
-        <div className="largeText" style={{'color':'white'}}>
-            <h3>
-              markus is a german designer specialized in strategy-led branding. He helps <br></br>
-              starts-ups and medium-sized brands to stand out by combinig creative strategy and thoughful desing. <br></br>
-
-              <br></br>
-
-              Proident consectetur anim cillum Lorem consectetur irure cupidatat esse.
-              Veniam voluptate culpa duis laboris eiusmod labore eu consequat officia officia.
-            </h3>
-          </div>
+        {/* <h3>Beginning of 3rd section</h3> */}
+        <div className="largeText" style={{ color: "white" }}>
+          <h3>
+            I will continue to actively update this page and hopefully give you
+            a better experience soon.
+            <br></br>
+            Untill then, take care.
+          </h3>
+        </div>
       </section>
     </div>
   );
