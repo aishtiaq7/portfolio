@@ -45,7 +45,7 @@ body {
   top: 0%;
   left: 0;
   pointer-events: none;
-  z-index: 20;
+  z-index: 5;
 }
 /* ---------- navbar ------------ */
 nav {
@@ -63,6 +63,12 @@ nav {
   padding-right: 1.6rem;
 
   color: white;
+  z-index: 0;
+}
+
+.nav-dark {
+  /* background-color: black; */
+  color: black;
 }
 
 
@@ -123,7 +129,7 @@ section {
   height: auto;
 
   filter: grayscale(10%) brightness(100%);
-  z-index: 0;
+  z-index: -0;
 }
 .selfportrait {
   width: 100%;

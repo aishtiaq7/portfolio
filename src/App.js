@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
 
 function App() {
+  const [offset, setOffset] = useState(0);
+
+  console.log("offset:", offset);
+
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
@@ -17,10 +21,19 @@ function App() {
         y: e.clientY,
       });
     };
+    const onScroll = () => {
+      setOffset(window.pageYOffset);
+    };
+
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+
     window.addEventListener("mousemove", mouseMove);
+    console.log();
 
     return () => {
       window.removeEventListener("mousemove", mouseMove);
+      window.removeEventListener("scroll", onScroll);
     };
   }, []);
 
@@ -50,7 +63,6 @@ function App() {
       borderRadius: "10%",
     },
   };
-
   const textEnter = () => setCursorVariant("text");
   const textLeave = () => setCursorVariant("default");
   const textEnterLogo = () => setCursorVariant("logo");
@@ -58,8 +70,8 @@ function App() {
 
   return (
     <div>
-      <nav onMouseEnter={textEnterLogo} onMouseLeave={textLeaveLogo}>
-        <div className="name-logo">
+      <nav className={offset > '600' ? "nav-dark": ""} onMouseEnter={textEnterLogo} onMouseLeave={textLeaveLogo}>
+        <div className="name-logo ">
           <h4>AWSHAF ___</h4>
           <h4 className="ishtiaque">ISHTIAQUE</h4>
         </div>
