@@ -33,6 +33,47 @@ body {
   src: local("HelveticaNowText-Light"),
     url(./fonts/HelveticaNowText-Light.ttf) format("truetype");
 }
+
+.closeBtn{ 
+  position:inherit;
+  top: 10;
+  right: 10%;
+
+  padding: 1.3rem;
+  border-radius: 50%;
+  background-color: black;
+}
+.fs-menu{
+  cursor: default;
+
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  z-index: 1;
+  /* display: none; */
+  color: white;
+}
+.fs-menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  height: 100%;
+  list-style-type: none;
+}
+.fs-menu ul li {
+  padding: 2.6rem 4.5rem;
+}
+.fs-menu ul li:hover {
+  background-color: bisque;
+}
+
+.displayNone {
+  display: none;
+}
+
 /*   
       Cursor
 */

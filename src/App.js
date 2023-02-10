@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 function App() {
   const [offset, setOffset] = useState(0); //scrollY
 
+  const [showFullScreenNav, setShowFullScreenNav] = useState(false); // show/Hide Full Scren Nav Bar
+
   const ref = useRef(null);
   const [imageHeight, setImageHeight] = useState(0);
 
@@ -15,7 +17,6 @@ function App() {
     x: 0,
     y: 0,
   });
-
   const [cursorVariant, setCursorVariant] = useState("default");
 
   useEffect(() => {
@@ -28,13 +29,11 @@ function App() {
     const onScroll = () => {
       setOffset(window.pageYOffset);
     };
+    setImageHeight(ref.current.clientHeight);
 
     window.removeEventListener("scroll", onScroll);
     window.addEventListener("scroll", onScroll, { passive: true });
-
     window.addEventListener("mousemove", mouseMove);
-
-    setImageHeight(ref.current.clientHeight);
 
 
     return () => {
@@ -90,15 +89,27 @@ function App() {
 
   return (
     <div>
-      <nav  className={offset > imageHeight ? "nav-dark": ""} onMouseEnter={textEnterLogo} onMouseLeave={textLeaveLogo}>
+      <div className={showFullScreenNav ? "fs-menu" : "displayNone"}>
+        <div className="closeBtn" onClick={()=>{setShowFullScreenNav(false)}}>X</div>
+        <ul>
+          <li><a>Home</a></li>
+          <li><a>About</a></li>
+          <li><a>Resume</a></li>
+          <li><a>Contact me</a></li>
+        </ul>
+
+      </div>
+      <nav className={`${offset > imageHeight ? "nav-dark" : ""} ${showFullScreenNav ? "displayNone" : ""} `} onMouseEnter={textEnterLogo} onMouseLeave={textLeaveLogo}>
         <div className="name-logo ">
           <h4>AWSHAF ___</h4>
           <h4 className="ishtiaque">ISHTIAQUE</h4>
         </div>
         <div className="menu">
-          <h4>MENU</h4>
+          <h4 onClick={()=>{ setShowFullScreenNav(true)} }>MENU</h4>
         </div>
       </nav>
+
+
 
       <motion.div
         className="cursor"
