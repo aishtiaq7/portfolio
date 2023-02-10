@@ -35,7 +35,6 @@ function App() {
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("mousemove", mouseMove);
 
-
     return () => {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("scroll", onScroll);
@@ -71,13 +70,16 @@ function App() {
       height: 90,
       width: 90,
 
-      x: mousePosition.x - (90/2),
-      y: mousePosition.y - (90/2), //
+      x: mousePosition.x - 90 / 2,
+      y: mousePosition.y - 90 / 2, //
       // backgroundColor: "rgb(82, 186, 246)",
-      opacity: "30%"
+      opacity: "30%",
     },
-    
-
+    hideCursor: {
+      display: "none",
+      cursor: 'pointer',
+      
+    }
   };
   const textEnter = () => setCursorVariant("text");
   const textLeave = () => setCursorVariant("default");
@@ -87,29 +89,56 @@ function App() {
   const portraitEnter = () => setCursorVariant("portrait");
   const portraitLeave = () => setCursorVariant("default");
 
+  const footerEnter = () => setCursorVariant("hideCursor");
+  const footerLeave = () => setCursorVariant("default");
+
   return (
     <div>
       <div className={showFullScreenNav ? "fs-menu" : "displayNone"}>
-        <div className="closeBtn" onClick={()=>{setShowFullScreenNav(false)}}>X</div>
+        <div
+          className="closeBtn"
+          onClick={() => {
+            setShowFullScreenNav(false);
+          }}
+        >
+          X
+        </div>
         <ul>
-          <li><a>Home</a></li>
-          <li><a>About</a></li>
-          <li><a>Resume</a></li>
-          <li><a>Contact me</a></li>
+          <li>
+            <a>Home</a>
+          </li>
+          <li>
+            <a>About</a>
+          </li>
+          <li>
+            <a>Resume</a>
+          </li>
+          <li>
+            <a>Contact me</a>
+          </li>
         </ul>
-
       </div>
-      <nav className={`${offset > imageHeight ? "nav-dark" : ""} ${showFullScreenNav ? "displayNone" : ""} `} onMouseEnter={textEnterLogo} onMouseLeave={textLeaveLogo}>
+      <nav
+        className={`${offset > imageHeight ? "nav-dark" : ""} ${
+          showFullScreenNav ? "displayNone" : ""
+        } `}
+        onMouseEnter={textEnterLogo}
+        onMouseLeave={textLeaveLogo}
+      >
         <div className="name-logo ">
           <h4>AWSHAF ___</h4>
           <h4 className="ishtiaque">ISHTIAQUE</h4>
         </div>
         <div className="menu">
-          <h4 onClick={()=>{ setShowFullScreenNav(true)} }>MENU</h4>
+          <h4
+            onClick={() => {
+              setShowFullScreenNav(true);
+            }}
+          >
+            MENU
+          </h4>
         </div>
       </nav>
-
-
 
       <motion.div
         className="cursor"
@@ -167,8 +196,8 @@ function App() {
       </section>
 
       <section className="dark-section">
-        {/* <h3>Beginning of 3rd section</h3> */}
-        <div className="largeText" style={{ color: "white" }}>
+        <div onMouseEnter={textEnter}
+          onMouseLeave={textLeave} className="largeText" style={{ color: "white" }}>
           <h3>
             I will continue to actively update this page and hopefully give you
             a better experience soon.
@@ -177,6 +206,37 @@ function App() {
           </h3>
         </div>
       </section>
+
+      <section>
+        <div
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
+          className="second-section"
+        >
+          <div className="largeText">
+            <h3>
+              <br></br>
+              Minim laborum sit elit anim laboris ea aute cupidatat occaecat. Ut pariatur deserunt nisi eu nulla do mollit laboris. Esse quis officia consequat nulla quis ullamco velit mollit sunt.
+            </h3>
+          </div>
+        </div>
+      </section>
+
+      <footer onMouseEnter={footerEnter}
+          onMouseLeave={footerLeave} > 
+        <div className="contactMe">
+          <h2>Say "hi" to me:</h2>
+            <br></br>
+          <h3>awshaf@gmail.com</h3>
+        </div>
+
+        <div className="horizontalLine"></div>
+        <ul>
+          <li>linkedIn</li>
+          <li>instagram</li>
+          <li>github</li>
+        </ul>
+      </footer>
     </div>
   );
 }
