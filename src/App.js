@@ -3,9 +3,13 @@ import "./App.css";
 import { motion } from "framer-motion";
 
 function App() {
-  const [offset, setOffset] = useState(0);
+  const [offset, setOffset] = useState(0); //scrollY
+
+  const ref = useRef(null);
+  const [imageHeight, setImageHeight] = useState(0);
 
   console.log("offset:", offset);
+  console.log("imageHeight:", imageHeight);
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -29,7 +33,9 @@ function App() {
     window.addEventListener("scroll", onScroll, { passive: true });
 
     window.addEventListener("mousemove", mouseMove);
-    console.log();
+
+    setImageHeight(ref.current.clientHeight);
+
 
     return () => {
       window.removeEventListener("mousemove", mouseMove);
@@ -70,7 +76,7 @@ function App() {
 
   return (
     <div>
-      <nav className={offset > '600' ? "nav-dark": ""} onMouseEnter={textEnterLogo} onMouseLeave={textLeaveLogo}>
+      <nav  className={offset > '412' ? "nav-dark": ""} onMouseEnter={textEnterLogo} onMouseLeave={textLeaveLogo}>
         <div className="name-logo ">
           <h4>AWSHAF ___</h4>
           <h4 className="ishtiaque">ISHTIAQUE</h4>
@@ -86,7 +92,7 @@ function App() {
         animate={cursorVariant}
       />
 
-      <section>
+      <section ref={ref}>
         <div className="landingSection">
           <div className="landingTitle">
             <h3
