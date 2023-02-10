@@ -64,10 +64,11 @@ body {
   list-style-type: none;
 }
 .fs-menu ul li {
-  padding: 2.6rem 4.5rem;
+  padding: 2.6rem 14.5rem;
 }
 .fs-menu ul li:hover {
-  background-color: bisque;
+  background: rgb(38,38,38);
+  background: radial-gradient(circle, rgba(38,38,38,1) 0%, rgba(0,0,0,1) 100%);
 }
 
 .displayNone {
