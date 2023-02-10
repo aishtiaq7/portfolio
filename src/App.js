@@ -9,7 +9,7 @@ function App() {
   const [imageHeight, setImageHeight] = useState(0);
 
   console.log("offset:", offset);
-  console.log("imageHeight:", imageHeight);
+  // console.log("imageHeight:", imageHeight);
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -68,15 +68,29 @@ function App() {
       // backgroundColor: "rgb(82, 186, 246)",
       borderRadius: "10%",
     },
+    portrait: {
+      height: 90,
+      width: 90,
+
+      x: mousePosition.x - (90/2),
+      y: mousePosition.y - (90/2), //
+      // backgroundColor: "rgb(82, 186, 246)",
+      opacity: "30%"
+    },
+    
+
   };
   const textEnter = () => setCursorVariant("text");
   const textLeave = () => setCursorVariant("default");
   const textEnterLogo = () => setCursorVariant("logo");
   const textLeaveLogo = () => setCursorVariant("default");
 
+  const portraitEnter = () => setCursorVariant("portrait");
+  const portraitLeave = () => setCursorVariant("default");
+
   return (
     <div>
-      <nav  className={offset > '412' ? "nav-dark": ""} onMouseEnter={textEnterLogo} onMouseLeave={textLeaveLogo}>
+      <nav  className={offset > imageHeight ? "nav-dark": ""} onMouseEnter={textEnterLogo} onMouseLeave={textLeaveLogo}>
         <div className="name-logo ">
           <h4>AWSHAF ___</h4>
           <h4 className="ishtiaque">ISHTIAQUE</h4>
@@ -110,6 +124,8 @@ function App() {
 
           <div className="portraitImg">
             <img
+              onMouseEnter={portraitEnter}
+              onMouseLeave={portraitLeave}
               className="selfportrait"
               src={require("./resources/landingportrait.png")}
               alt="souvenir"
