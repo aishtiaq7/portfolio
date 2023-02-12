@@ -1,7 +1,5 @@
-export default [
-    {
-      'id': '1',
-      'name': 'section-2',
-      'description': 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr ',
-    }, 
-  ];
+let secondTitle = {
+    description: "hello desc",
+};
+
+export { secondTitle };
