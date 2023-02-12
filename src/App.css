@@ -67,10 +67,10 @@ body {
 }
 
 .crossStyles {
-  /* color: red; */
+
   /* background-color: red; */
-  width: 55%;
-  height: 55%;
+  width: 60%;
+  height: 60%;
   color: var(--main-white-color);
 }
 
@@ -111,7 +111,7 @@ body {
   top: 0%;
   left: 0;
   pointer-events: none;
-  z-index: 5;
+  z-index: 20;
 }
 /* ---------- navbar ------------ */
 nav {
@@ -126,16 +126,19 @@ nav {
   align-items: center;
   justify-content: space-between;
 
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   color: var(--main-white-color);
-  z-index: 0;
+  z-index: 1;
 }
-
 .nav-dark {
-  /* background-color: black; */
   color: black;
+}
+.hambergerMenu{
+  /* background-color: orange; */
+  width: 2.3rem;
+  height: 2.3rem;
 }
 
 /***************************
@@ -147,14 +150,9 @@ nav {
 section {
   height: 100vh;
   width: 100vw;
-  width: 100%;
+
   overflow: hidden;
   cursor: none;
-}
-
-.name-logo {
-  /* font-family: Elastic, Georgia, 'Times New Roman', Times, serif; */
-  font-size: 1.2vw;
 }
 
 .ishtiaque {
@@ -163,6 +161,7 @@ section {
 
 .name-logo,
 .menu {
+  font-size: smaller;
   padding: 2rem;
 }
 
@@ -194,7 +193,7 @@ section {
   height: auto;
 
   filter: grayscale(10%) brightness(100%);
-  z-index: -0;
+  z-index: 0;
 }
 .selfportrait {
   width: 100%;
@@ -235,10 +234,12 @@ section {
   Footer
 -------*/
 footer {
-  min-height: 70vh;
+  min-height: 65vh;
   width: 100vw;
   background-color: black;
   color: white;
+
+  position: relative;
 }
 .contactMe {
   padding: 5.5rem 0;
@@ -270,6 +271,8 @@ footer {
   list-style-type: none;
 
   padding-top: 1rem;
+  /* margin-bottom: 1rem; */
+  
 }
 .links ul li:nth-child(1) {
   padding-left: 0;
@@ -282,7 +285,10 @@ footer {
   color: var(--main-white-color);
 }
 .permissionstext {
-  padding-top: 5rem;
+  position: absolute;
+  left: 4.35%;
+  bottom: 5%;
+  /* padding-top: 5rem; */
 
   display: flex;
   align-items: center;
@@ -299,18 +305,20 @@ footer {
 }
 
 /* MEDIA QUERIES */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 391px) {
   .landingSection {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    padding: 5.5rem;
   }
 
   .landingTitle {
     text-align: center;
   }
   .portraitImg {
-    width: 50%;
+    width: 100%;
   }
 
   .closeBtn {
@@ -318,5 +326,12 @@ footer {
     right: 3%;
     width: 6rem;
     height: 6rem;
+  }
+
+  footer {
+    min-height: 50vh;
+  }
+  .permissionstext{
+    font-size: 3vw;
   }
 }

@@ -1,3 +1,7 @@
+import { HiMenu } from "react-icons/hi";
+import { IconContext } from "react-icons";
+import "../App.css";
+
 const Footer = (props) => {
   return (
     <nav
@@ -17,7 +21,9 @@ const Footer = (props) => {
             props.setShowFullScreenNav(true);
           }}
         >
-          MENU
+          <IconContext.Provider value={{ className: "hambergerMenu" }}>
+            <HiMenu></HiMenu>
+          </IconContext.Provider>
         </h4>
       </div>
     </nav>

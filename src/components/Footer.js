@@ -27,15 +27,15 @@ const Footer = (props) => {
           </li>
         </ul>
 
-        <div className="permissionstext">
+      </div>
+
+      <div className="permissionstext">
           <IconContext.Provider value={{}}>
             <CgCopyright></CgCopyright>
             <h5>AWSHAF ISHTIAQUE.<span style={{paddingLeft: "0.8rem"}}></span>ALL RIGHTS RESERVED.</h5>
           </IconContext.Provider>
           
         </div>
-
-      </div>
     </footer>
   );
 };
