@@ -159,9 +159,7 @@ function App() {
           <div className="largeText">
             <h3>
               <br></br>
-              Minim laborum sit elit anim laboris ea aute cupidatat occaecat. Ut
-              pariatur deserunt nisi eu nulla do mollit laboris. Esse quis
-              officia consequat nulla quis ullamco velit mollit sunt.
+              *This page is under construction
             </h3>
           </div>
         </div>
