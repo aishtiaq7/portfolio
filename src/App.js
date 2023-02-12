@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { RxCross1 } from 'react-icons/rx';
 import { IconContext } from "react-icons";
 
+import Footer from "./components/Footer";
+import FullScreenNav from "./components/FullScreenNav";
+
 function App() {
   const [offset, setOffset] = useState(0); //scrollY
 
@@ -96,6 +99,7 @@ function App() {
 
   return (
     <div>
+      {/* <FullScreenNav></FullScreenNav> */}
       <div className={showFullScreenNav ? "fs-menu" : "displayNone"}>
         <div
           className="closeBtn"
@@ -227,21 +231,8 @@ function App() {
         </div>
       </section>
 
-      <footer onMouseEnter={footerEnter}
-          onMouseLeave={footerLeave} > 
-        <div className="contactMe">
-          <h2>Say "hi" to me:</h2>
-            <br></br>
-          <h3>awshaf@gmail.com</h3>
-        </div>
-
-        <div className="horizontalLine"></div>
-        <ul>
-          <li>linkedIn</li>
-          <li>instagram</li>
-          <li>github</li>
-        </ul>
-      </footer>
+      <Footer footerEnter={footerEnter} footerLeave={footerLeave} ></Footer>
+      
     </div>
   );
 }
