@@ -16,16 +16,16 @@ const FullScreenNav = (props) => {
       </div>
       <ul>
         <li>
-          <a href="#">Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
-          <a href="#">About</a>
+          <a href="/">About</a>
         </li>
         <li>
-          <a href="#">Resume</a>
+          <a href="/">Resume</a>
         </li>
         <li>
-          <a href="#">Contact me</a>
+          <a href="/">Contact me</a>
         </li>
       </ul>
     </div>
