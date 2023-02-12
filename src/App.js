@@ -1,8 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
-import { RxCross1 } from 'react-icons/rx';
-import { IconContext } from "react-icons";
+
 
 import Footer from "./components/Footer";
 import FullScreenNav from "./components/FullScreenNav";
@@ -99,34 +98,8 @@ function App() {
 
   return (
     <div>
-      {/* <FullScreenNav></FullScreenNav> */}
-      <div className={showFullScreenNav ? "fs-menu" : "displayNone"}>
-        <div
-          className="closeBtn"
-          onClick={() => {
-            setShowFullScreenNav(false);
-          }}
-        >
-          <IconContext.Provider value={{ className: "crossStyles" }}>
-          <RxCross1 />
-          </IconContext.Provider>
-          
-        </div>
-        <ul>
-          <li>
-            <a>Home</a>
-          </li>
-          <li>
-            <a>About</a>
-          </li>
-          <li>
-            <a>Resume</a>
-          </li>
-          <li>
-            <a>Contact me</a>
-          </li>
-        </ul>
-      </div>
+      <FullScreenNav showFullScreenNav={showFullScreenNav} setShowFullScreenNav={setShowFullScreenNav}  ></FullScreenNav>
+      
       <nav
         className={`${offset > imageHeight ? "nav-dark" : ""} ${
           showFullScreenNav ? "displayNone" : ""
