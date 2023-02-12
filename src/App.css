@@ -57,7 +57,7 @@ body {
 
   padding: 1.3rem;
   border-radius: 50%;
-  background-color: black;
+  /* background-color: black; */
 
 
   display: flex;
@@ -268,7 +268,15 @@ footer {
     text-align: center;
   }
   .portraitImg {
-    width: 100%;
+    width: 50%;
+  }
+
+  .closeBtn{
+    top: 0%;
+    right: 3%;
+    width: 6rem;
+    height: 6rem;
+    /* background-color: orange; */
   }
   
 }
