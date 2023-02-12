@@ -34,15 +34,6 @@ body {
     url(./fonts/HelveticaNowText-Light.ttf) format("truetype");
 }
 
-.closeBtn{ 
-  position:inherit;
-  top: 10;
-  right: 10%;
-
-  padding: 1.3rem;
-  border-radius: 50%;
-  background-color: black;
-}
 .fs-menu{
   cursor: none;
 
@@ -52,8 +43,36 @@ body {
   background-color: black;
   z-index: 1;
   /* display: none; */
-  color: white;
+  color: var(--main-white-color);
+
+
 }
+
+.closeBtn{ 
+  position:inherit;
+  top: 0%;
+  right: 0%;
+  width: 12rem;
+  height: 12rem;
+
+  padding: 1.3rem;
+  border-radius: 50%;
+  background-color: black;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.crossStyles{
+  /* color: red; */
+  /* background-color: red; */
+  width: 55%;
+  height: 55%;
+  color: var(--main-white-color);
+}
+
 .fs-menu ul {
   display: flex;
   justify-content: center;
@@ -79,7 +98,7 @@ body {
       Cursor
 */
 .cursor {
-  background-color: white;
+  background-color: var(--main-white-color);
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -105,7 +124,7 @@ nav {
   padding-left: 1.6rem;
   padding-right: 1.6rem;
 
-  color: white;
+  color: var(--main-white-color);
   z-index: 0;
 }
 
@@ -155,7 +174,7 @@ section {
   align-items: center;
 
   padding: 8rem;
-  color: white;
+  color: var(--main-white-color);
   
 
 }

@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
+import { RxCross1 } from 'react-icons/rx';
+import { IconContext } from "react-icons";
 
 function App() {
   const [offset, setOffset] = useState(0); //scrollY
@@ -101,7 +103,10 @@ function App() {
             setShowFullScreenNav(false);
           }}
         >
-          X
+          <IconContext.Provider value={{ className: "crossStyles" }}>
+          <RxCross1 />
+          </IconContext.Provider>
+          
         </div>
         <ul>
           <li>
