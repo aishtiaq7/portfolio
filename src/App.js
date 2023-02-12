@@ -7,11 +7,8 @@ import FullScreenNav from "./components/FullScreenNav";
 import Navbar from "./components/Navbar";
 import { Section, DarkSection } from "./components/Subcomponents";
 
-// export data
-import { secondTitle } from './resources/Data';
 
 function App() {
-  // console.log(secondTitle);
   const [offset, setOffset] = useState(0); //scrollY
 
   const [showFullScreenNav, setShowFullScreenNav] = useState(false); // show/Hide Full Scren Nav Bar
