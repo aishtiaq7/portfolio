@@ -22,7 +22,7 @@ const FullScreenNav = (props) => {
           <a href="/">About</a>
         </li>
         <li>
-          <a href="/">Resume</a>
+          <a href="/resume">Resume</a>
         </li>
         <li>
           <a href="/">Contact me</a>
