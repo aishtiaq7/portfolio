@@ -30,7 +30,7 @@ const FullScreenNav = (props) => {
             className="anchor-area"
             href={googleDriveResumeLink}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             Resume
           </a>
