@@ -1,0 +1,13 @@
+li,
+a {
+  cursor: none;
+}
+.anchor-area {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 2em 5.5rem;
+  margin: -2em;
+  /* cursor: none; */
+  /* background-color: rebeccapurple; */
+}

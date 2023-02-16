@@ -1,5 +1,9 @@
 import { RxCross1 } from "react-icons/rx";
 import { IconContext } from "react-icons";
+import "./FullScreenNav.css";
+
+const googleDriveResumeLink =
+  "https://drive.google.com/file/d/1K5BOZeUnCPommSL-S5A2wb1tGRfAqv5Z/view?usp=sharing";
 
 const FullScreenNav = (props) => {
   return (
@@ -22,7 +26,13 @@ const FullScreenNav = (props) => {
           <a href="/">About</a>
         </li>
         <li>
-          <a href="/">Resume</a>
+          <a
+            className="anchor-area"
+            href={googleDriveResumeLink}
+            target="_blank"
+          >
+            Resume
+          </a>
         </li>
         <li>
           <a href="/">Contact me</a>
