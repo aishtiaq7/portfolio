@@ -7,7 +7,6 @@ import FullScreenNav from "./components/FullScreenNav";
 import Navbar from "./components/Navbar";
 import { Section, DarkSection } from "./components/Subcomponents";
 
-
 function App() {
   const [offset, setOffset] = useState(0); //scrollY
 
