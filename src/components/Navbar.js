@@ -1,17 +1,19 @@
 import { HiMenu } from "react-icons/hi";
 import { IconContext } from "react-icons";
 import "../App.css";
+import "./Navbar.css";
 
 const Footer = (props) => {
+  // console.log("offset:", props.offset);
+  // console.log("inView:", props.invertNavColor);
+
   return (
     <nav
-      className={`${props.offset > props.imageHeight ? "nav-dark" : ""} ${
-        props.showFullScreenNav ? "displayNone" : ""
-      } `}
+      className={props.invertNavColor ? "navOnWhite" : ""}
       onMouseEnter={props.textEnterLogo}
       onMouseLeave={props.textLeaveLogo}
     >
-      <div className="name-logo ">
+      <div className="name-logo">
         <h4>AWSHAF ___</h4>
         <h4 className="ishtiaque">ISHTIAQUE</h4>
       </div>

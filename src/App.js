@@ -7,15 +7,17 @@ import FullScreenNav from "./components/FullScreenNav";
 import Navbar from "./components/Navbar";
 import { Section, DarkSection } from "./components/Subcomponents";
 
+import { useInView } from "react-intersection-observer";
+
 function App() {
   const [offset, setOffset] = useState(0); //scrollY
 
   const [showFullScreenNav, setShowFullScreenNav] = useState(false); // show/Hide Full Scren Nav Bar
 
-  const ref = useRef(null);
-  const [imageHeight, setImageHeight] = useState(0);
-
-  // console.log("offset:", offset);
+  // capturing when an 'ref', comes into the viewport
+  const options = { threshold: 0.9 }
+  const { ref, inView, entry } = useInView(options);
+  const inputRef = ref;
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -33,9 +35,7 @@ function App() {
     const onScroll = () => {
       setOffset(window.pageYOffset);
     };
-    setImageHeight(ref.current.clientHeight);
-
-    window.removeEventListener("scroll", onScroll);
+    
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("mousemove", mouseMove);
 
@@ -105,7 +105,8 @@ function App() {
       ></FullScreenNav>
       <Navbar
         offset={offset}
-        imageHeight={imageHeight}
+        // imageHeight={imageHeight}
+        invertNavColor={inView}
         textEnterLogo={textEnterLogo}
         textLeaveLogo={textLeaveLogo}
         setShowFullScreenNav={setShowFullScreenNav}
@@ -118,7 +119,7 @@ function App() {
         animate={cursorVariant}
       />
 
-      <section ref={ref}>
+      <section>
         <div className="landingSection">
           <div className="landingTitle">
             <h3
@@ -146,7 +147,7 @@ function App() {
         </div>
       </section>
 
-      <Section textEnter={textEnter} textLeave={textLeave}></Section>
+      <Section innerRef={inputRef} textEnter={textEnter} textLeave={textLeave}></Section>
       <DarkSection textEnter={textEnter} textLeave={textLeave}></DarkSection>
 
       <section>
