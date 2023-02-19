@@ -14,6 +14,8 @@ body {
 :root {
   --main-white-color: rgb(239, 239, 239);
   --content-font-family: HelveticaNowText-Light;
+  --content-font-size: 1.8vw;
+  --content-font-size-phone-view: 3.4vw;
 }
 @font-face {
   font-family: "Elastic";
@@ -181,7 +183,7 @@ section {
 }
 
 .largeText {
-  font-size: 2.8vw;
+  font-size: var(--content-font-size);
   font-family: var(--content-font-family);
   font-weight: normal;
   padding: 5rem;
@@ -208,6 +210,8 @@ footer {
   color: white;
 
   position: relative;
+  font-size: var(--content-font-size);
+
 }
 .contactMe {
   padding: 5.5rem 0;
@@ -304,4 +308,7 @@ footer {
     font-size: 0.7rem;
   }
 
+  .largeText,footer {
+    font-size: var(--content-font-size-phone-view);
+  }
 }
