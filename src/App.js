@@ -15,9 +15,10 @@ function App() {
   const [showFullScreenNav, setShowFullScreenNav] = useState(false); // show/Hide Full Scren Nav Bar
 
   // capturing when an 'ref', comes into the viewport
-  const options = { threshold: 0.9 }
-  const { ref, inView, entry } = useInView(options);
+  const options = { threshold: 0.6 };
+  const { ref, inView, entry } = useInView(options); // for the 1st white section
   const inputRef = ref;
+  const [ref2, inView2] = useInView(options);     // for the 2nd white section
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -35,7 +36,7 @@ function App() {
     const onScroll = () => {
       setOffset(window.pageYOffset);
     };
-    
+
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("mousemove", mouseMove);
 
@@ -107,6 +108,7 @@ function App() {
         offset={offset}
         // imageHeight={imageHeight}
         invertNavColor={inView}
+        invertNavColor2={inView2}
         textEnterLogo={textEnterLogo}
         textLeaveLogo={textLeaveLogo}
         setShowFullScreenNav={setShowFullScreenNav}
@@ -147,10 +149,14 @@ function App() {
         </div>
       </section>
 
-      <Section innerRef={inputRef} textEnter={textEnter} textLeave={textLeave}></Section>
+      <Section
+        innerRef={inputRef}
+        textEnter={textEnter}
+        textLeave={textLeave}
+      ></Section>
       <DarkSection textEnter={textEnter} textLeave={textLeave}></DarkSection>
 
-      <section>
+      <section ref={ref2}>
         <div
           onMouseEnter={textEnter}
           onMouseLeave={textLeave}

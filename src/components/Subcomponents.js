@@ -1,6 +1,6 @@
 export const Section = (props) => {
   return (
-    <section ref={props.innerRef ? props.innerRef : ''} onMouseEnter={props.textEnter} onMouseLeave={props.textLeave}>
+    <article ref={props.innerRef ? props.innerRef : ''} onMouseEnter={props.textEnter} onMouseLeave={props.textLeave}>
       <div className="second-section">
         <div className="largeText">
           <h3>
@@ -15,7 +15,7 @@ export const Section = (props) => {
           </h3>
         </div>
       </div>
-    </section>
+    </article>
   );
 };
 

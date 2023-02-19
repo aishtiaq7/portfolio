@@ -119,6 +119,10 @@ body {
     GLOBAL styles ends here
 
 ***************************/
+article {
+  min-height: 110vh;
+  background-color: var(--main-white-color);
+}
 
 section {
   height: 100vh;
@@ -262,7 +266,7 @@ footer {
   letter-spacing: 0.1rem;
   font-weight: 500;
   font-family: var(--content-font-family);
-  font-size: 2.4vh;
+  font-size: 1.2vw;
 }
 .permissionstext h5 {
   padding-left: 1rem;

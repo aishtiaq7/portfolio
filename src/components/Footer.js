@@ -7,7 +7,7 @@ const Footer = (props) => {
     <footer onMouseEnter={props.footerEnter} onMouseLeave={props.footerLeave}>
       <div className="links">
         <div className="contactMe">
-          <h2>Say "hi" to me:</h2>
+          <h2>Best way to reach me:</h2>
           <br></br>
           <a href="mailto:awshafishtiaque@gmail.com">
             awshafishtiaque@gmail.com

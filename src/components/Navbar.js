@@ -9,7 +9,9 @@ const Footer = (props) => {
 
   return (
     <nav
-      className={props.invertNavColor ? "navOnWhite" : ""}
+      className={
+        props.invertNavColor || props.invertNavColor2 ? "navOnWhite" : ""
+      }
       onMouseEnter={props.textEnterLogo}
       onMouseLeave={props.textLeaveLogo}
     >

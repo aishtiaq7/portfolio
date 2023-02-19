@@ -33,19 +33,23 @@ nav {
 
   .hambergerMenu{
     /* background-color: orange; */
-    width: 2.3rem;
-    height: 2.3rem;
+    width: 4.1rem;
+    height: 4.1rem;
+    /* padding-right: 5%; */
   }
   .ishtiaque {
     letter-spacing: 0.1rem;
   }
   
-  .name-logo,
-  .menu {
-    font-size: smaller;
-    padding: 1.4rem 2rem;
-
-    /* filter: drop-shadow(0px 0px 45px #DA0000); */
+  .name-logo, menu {
+    box-sizing: border-box;
+    font-size: 1.5vw;
+    padding: 2rem 2.1rem;
+    margin: 1.2rem 1.6rem;
   }
-  
+  .menu {
+    margin-right: 3%;
+  }
+
+
  
