@@ -1,55 +1,46 @@
 /* ---------- navbar ------------ */
 nav {
-    cursor: none;
-    width: 100vw;
-  
-    position: fixed;
-    top: 0%;
-    left: 0%;
-  
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  
-    padding-left: 1rem;
-    padding-right: 1rem;
-  
-    color: var(--main-white-color);
-    z-index: 1;
-    color: var(--main-white-color);
-    background-color: black;
+  cursor: none;
+  width: 100vw;
 
-    transition: all ease 1s;
-  }
-  /* .nav-dark {
-    color: black;
-  } */
-  .navOnWhite {
-    
-    color: black;
-    background-color: var(--main-white-color);
-  }
+  position: fixed;
+  top: 0%;
+  left: 0%;
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  .hambergerMenu{
-    /* background-color: orange; */
-    width: 4.1rem;
-    height: 4.1rem;
-    /* padding-right: 5%; */
-  }
-  .ishtiaque {
-    letter-spacing: 0.1rem;
-  }
-  
-  .name-logo, menu {
-    box-sizing: border-box;
-    font-size: 1.5vw;
-    padding: 2rem 2.1rem;
-    margin: 1.2rem 1.6rem;
-  }
-  .menu {
-    margin-right: 3%;
-  }
+  padding-left: 1rem;
+  padding-right: 1rem;
 
+  font-size: 1vw;
 
- 
+  color: var(--main-white-color);
+  z-index: 1;
+  background-color: black;
+
+  transition: all ease 1s;
+}
+.navOnWhite {
+  color: black;
+  background-color: var(--main-white-color);
+}
+
+.hambergerMenu {
+  width: 4.1rem;
+  height: 4.1rem;
+}
+.ishtiaque {
+  letter-spacing: 0.1rem;
+}
+
+.name-logo,
+menu {
+  box-sizing: border-box;
+  padding: 2rem 2.1rem;
+  margin: 1.2rem 1.6rem;
+}
+.menu {
+  margin-right: 3%;
+}

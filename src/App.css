@@ -266,7 +266,7 @@ footer {
   letter-spacing: 0.1rem;
   font-weight: 500;
   font-family: var(--content-font-family);
-  font-size: 1.2vw;
+  font-size: 0.8vw;
 }
 .permissionstext h5 {
   padding-left: 1rem;
@@ -299,7 +299,9 @@ footer {
   footer {
     min-height: 50vh;
   }
+
   .permissionstext{
-    font-size: 3vw;
+    font-size: 0.7rem;
   }
+
 }

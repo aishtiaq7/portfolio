@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
 
@@ -16,7 +16,7 @@ function App() {
 
   // capturing when an 'ref', comes into the viewport
   const options = { threshold: 0.6 };
-  const { ref, inView, entry } = useInView(options); // for the 1st white section
+  const { ref, inView } = useInView(options); // for the 1st white section
   const inputRef = ref;
   const [ref2, inView2] = useInView(options);     // for the 2nd white section
 
