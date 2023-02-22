@@ -149,6 +149,7 @@ function App() {
         </div>
       </section>
 
+      {/* Second Section  */}
       <Section
         innerRef={inputRef}
         textEnter={textEnter}

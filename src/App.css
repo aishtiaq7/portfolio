@@ -174,15 +174,7 @@ section {
   object-position: center;
 }
 
-.second-section {
-  background-color: var(--main-white-color);
-  color: black;
 
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .largeText {
   font-size: var(--content-font-size);
@@ -190,20 +182,11 @@ section {
   font-weight: normal;
   padding: 5rem;
 }
-@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
 
-.greetingsTitle {
-  font-family: "Oleo Script", cursive;
-  font-weight: 100;
-}
 
 .dark-section {
   background-color: black;
 }
-
-/* .main-article {
-  pointer-events: none;
-} */
 
 /*-------
   Footer

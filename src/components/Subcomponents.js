@@ -1,25 +1,29 @@
 import "../App.css";
+import "../components/Subcomponent.css";
 export const Section = (props) => {
   return (
-    <article
-      className="main-article"
-      ref={props.innerRef ? props.innerRef : ""}
-      
-    >
-      <div className="second-section"
-      onMouseEnter={props.textEnter}
-      onMouseLeave={props.textLeave}>
+    <article ref={props.innerRef ? props.innerRef : ""}>
+      <div
+        className="second-section container"
+        onMouseEnter={props.textEnter}
+        onMouseLeave={props.textLeave}
+      >
         <div className="largeText">
-          <h3>
-            <span className="greetingsTitle">"helloo" </span>
-            <br></br>
-            Its a pleasure to have you here on my page. <br></br>
-            <br></br>
-            As I grow my skills to become a competent Software Developer
-            (alongside being a better person ofcourse),
-            <br></br>I want to use this platform to showcase some of my work,
-            interests and hopefully give you an impression of me. :p
-          </h3>
+          <div className="greetingsTitle">
+            <h3>"helloo"</h3>
+          </div>
+
+          <div className="des">
+            <h3>
+              Its a pleasure to have you here on my page. <br></br>
+              As I grow my skills to become a competent Software Developer
+              (alongside being a better person ofcourse), I want to use this
+              platform to showcase some of my work, interests and hopefully give
+              you an impression of me. :p
+            </h3>
+          </div>
+
+          
         </div>
       </div>
     </article>

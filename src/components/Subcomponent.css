@@ -1,0 +1,29 @@
+.second-section {
+  background-color: var(--main-white-color);
+  color: black;
+
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
+.greetingsTitle {
+  font-family: "Oleo Script", cursive;
+  font-weight: 100;
+  margin: 2rem 2.2rem;
+  background-color: orange;
+  
+}
+
+.container {
+  margin: auto;
+  width: 75%;
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+  text-align: center;
+
+}
