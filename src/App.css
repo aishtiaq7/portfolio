@@ -124,6 +124,8 @@ body {
 article {
   min-height: 110vh;
   background-color: var(--main-white-color);
+  /* pointer-events: none; */
+  cursor: none;
 }
 
 section {
@@ -199,6 +201,9 @@ section {
   background-color: black;
 }
 
+/* .main-article {
+  pointer-events: none;
+} */
 
 /*-------
   Footer

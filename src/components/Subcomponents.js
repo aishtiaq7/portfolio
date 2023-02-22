@@ -1,7 +1,14 @@
+import "../App.css";
 export const Section = (props) => {
   return (
-    <article ref={props.innerRef ? props.innerRef : ''} onMouseEnter={props.textEnter} onMouseLeave={props.textLeave}>
-      <div className="second-section">
+    <article
+      className="main-article"
+      ref={props.innerRef ? props.innerRef : ""}
+      
+    >
+      <div className="second-section"
+      onMouseEnter={props.textEnter}
+      onMouseLeave={props.textLeave}>
         <div className="largeText">
           <h3>
             <span className="greetingsTitle">"helloo" </span>
@@ -19,23 +26,22 @@ export const Section = (props) => {
   );
 };
 
-
 export const DarkSection = (props) => {
   return (
     <section className="dark-section">
-        <div
-          onMouseEnter={props.textEnter}
-          onMouseLeave={props.textLeave}
-          className="largeText"
-          style={{ color: "white" }}
-        >
-          <h3>
-            I will continue to actively update this page and hopefully give you
-            a better experience soon.
-            <br></br>
-            Untill then, take care.
-          </h3>
-        </div>
-      </section>
+      <div
+        onMouseEnter={props.textEnter}
+        onMouseLeave={props.textLeave}
+        className="largeText"
+        style={{ color: "white" }}
+      >
+        <h3>
+          I will continue to actively update this page and hopefully give you a
+          better experience soon.
+          <br></br>
+          Untill then, take care.
+        </h3>
+      </div>
+    </section>
   );
 };

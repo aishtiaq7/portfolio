@@ -1,12 +1,21 @@
 import { RxCross1 } from "react-icons/rx";
 import { IconContext } from "react-icons";
 import "./FullScreenNav.css";
+
+// import { useState } from "react";
 const googleDriveResumeLink =
   "https://drive.google.com/file/d/1K5BOZeUnCPommSL-S5A2wb1tGRfAqv5Z/view";
 
 const FullScreenNav = (props) => {
+  // const [hideMenu, sethideMenu] = useState(false);
+
+  const handleContantClick = (e) => {
+    // e.preventDefault();
+    // console.log('clickeed on Contact me');
+    // sethideMenu(true);
+  }
   return (
-    <div className={props.showFullScreenNav ? "fs-menu" : "displayNone"}>
+    <div className={props.showFullScreenNav  ? "fs-menu" : "displayNone"}>
       <div
         className="closeBtn"
         onClick={() => {
@@ -39,7 +48,7 @@ const FullScreenNav = (props) => {
           </a>
         </li>
         <li>
-          <a className="fs-nav-links" href="/">
+          <a className="fs-nav-links" href="/" onClick={handleContantClick}>
             Contact
           </a>
         </li>

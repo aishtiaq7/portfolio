@@ -18,7 +18,7 @@ function App() {
   const options = { threshold: 0.6 };
   const { ref, inView } = useInView(options); // for the 1st white section
   const inputRef = ref;
-  const [ref2, inView2] = useInView(options);     // for the 2nd white section
+  const [ref2, inView2] = useInView(options); // for the 2nd white section
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -50,6 +50,7 @@ function App() {
     default: {
       x: mousePosition.x - 25,
       y: mousePosition.y - 25, // minus 25 cuz radius of cursor is 50
+      mixBlendMode: "difference",
     },
 
     text: {
@@ -106,7 +107,6 @@ function App() {
       ></FullScreenNav>
       <Navbar
         offset={offset}
-        // imageHeight={imageHeight}
         invertNavColor={inView}
         invertNavColor2={inView2}
         textEnterLogo={textEnterLogo}
@@ -154,7 +154,10 @@ function App() {
         textEnter={textEnter}
         textLeave={textLeave}
       ></Section>
-      <DarkSection textEnter={textEnter} textLeave={textLeave}></DarkSection>
+      <DarkSection 
+        textEnter={textEnter} 
+        textLeave={textLeave}>
+      </DarkSection>
 
       <section ref={ref2}>
         <div
@@ -171,7 +174,11 @@ function App() {
         </div>
       </section>
 
-      <Footer footerEnter={footerEnter} footerLeave={footerLeave}></Footer>
+      <Footer
+        id="footer"
+        footerEnter={footerEnter}
+        footerLeave={footerLeave}
+      ></Footer>
     </div>
   );
 }
