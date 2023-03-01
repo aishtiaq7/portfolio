@@ -149,12 +149,14 @@ function App() {
         </div>
       </section>
 
-      {/* Second Section  */}
+      {/* 2nd Section  */}
       <Section
         innerRef={inputRef}
         textEnter={textEnter}
         textLeave={textLeave}
       ></Section>
+
+
       <DarkSection 
         textEnter={textEnter} 
         textLeave={textLeave}>

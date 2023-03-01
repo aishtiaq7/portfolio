@@ -1,11 +1,22 @@
+:root {
+  --main-white-color: rgb(239, 239, 239);
+  --content-font-family: HelveticaNowText-Light;
+  --large-title: 3.2vw;
+  --content-font-size-phone-view: 3.4vw;
+}
+
 .second-section {
   background-color: var(--main-white-color);
-  color: black;
 
+  color: black;
   height: 100%;
+  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  position: relative;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
@@ -13,17 +24,52 @@
   font-family: "Oleo Script", cursive;
   font-weight: 100;
   margin: 2rem 2.2rem;
-  background-color: orange;
   
 }
 
 .container {
   margin: auto;
   width: 75%;
-  /* display: flex;
-    justify-content: center;
-    align-items: center; */
-
   text-align: center;
+  
+}
+
+.section-banner {
+
+  position: absolute;
+  left: 0%;
+  top: 5%;
+  display: flex;
+  justify-content: space-around;
+
+  padding: 1.5rem;
+}
+
+.about-title {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  font-size: var(--large-title);
+  letter-spacing: 1.1rem;
+}
+
+.vertical-line {
+  width: 0.2vw;
+  height: 55vh;
+  background-color: black;
+  margin-left: 2rem;
+
+  border-radius: 65% ;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
+  /* border-radius: 99px; */
+}
+
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 391px) {
+  .vertical-line {
+      height: 25vh;
+  }
+
 
 }

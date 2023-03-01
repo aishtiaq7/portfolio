@@ -4,26 +4,32 @@ export const Section = (props) => {
   return (
     <article ref={props.innerRef ? props.innerRef : ""}>
       <div
-        className="second-section container"
+        className="second-section"
         onMouseEnter={props.textEnter}
         onMouseLeave={props.textLeave}
       >
-        <div className="largeText">
-          <div className="greetingsTitle">
-            <h3>"helloo"</h3>
-          </div>
+        <div className="section-banner">
+          <h4 className="about-title">About</h4>
+          <div className="vertical-line"></div>
+        </div>
 
-          <div className="des">
-            <h3>
-              Its a pleasure to have you here on my page. <br></br>
-              As I grow my skills to become a competent Software Developer
-              (alongside being a better person ofcourse), I want to use this
-              platform to showcase some of my work, interests and hopefully give
-              you an impression of me. :p
-            </h3>
-          </div>
 
-          
+        <div className="container">
+          <div className="largeText">
+            <div className="greetingsTitle">
+              <h3>"helloo"</h3>
+            </div>
+
+            <div className="des">
+              <h3>
+                Its a pleasure to have you here on my page. <br></br>
+                As I grow my skills to become a competent Software Developer
+                (alongside being a better person ofcourse), I want to use this
+                platform to showcase some of my work, interests and hopefully
+                give you an impression of me. :p
+              </h3>
+            </div>
+          </div>
         </div>
       </div>
     </article>
