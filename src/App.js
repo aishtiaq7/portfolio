@@ -121,8 +121,11 @@ function App() {
         animate={cursorVariant}
       />
 
+      {/* 1st Section */}
       <section>
         <div className="landingSection">
+
+          {/* left component */}
           <div className="landingTitle">
             <h3
               onMouseEnter={textEnter}
@@ -133,10 +136,11 @@ function App() {
               <br />
               to learn & create
               <br />
-              applications that matter.
+              <span style={{textDecoration: "underline"}} >software</span> that matters.
             </h3>
           </div>
 
+          {/* right component */}
           <div className="portraitImg">
             <img
               onMouseEnter={portraitEnter}

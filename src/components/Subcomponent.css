@@ -1,7 +1,7 @@
 :root {
   --main-white-color: rgb(239, 239, 239);
   --content-font-family: HelveticaNowText-Light;
-  --large-title: 3.2vw;
+  --large-title: 2.3vw;
   --content-font-size-phone-view: 3.4vw;
 }
 
@@ -19,57 +19,104 @@
   position: relative;
 }
 
+.dark-section {
+  min-height: 110vh;
+  background-color: black;
+  position: relative;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
 .greetingsTitle {
   font-family: "Oleo Script", cursive;
   font-weight: 100;
   margin: 2rem 2.2rem;
-  
 }
 
 .container {
   margin: auto;
   width: 75%;
   text-align: center;
-  
-}
-
-.section-banner {
-
-  position: absolute;
-  left: 0%;
-  top: 5%;
-  display: flex;
-  justify-content: space-around;
-
-  padding: 1.5rem;
 }
 
 .about-title {
   writing-mode: vertical-lr;
   text-orientation: upright;
   font-size: var(--large-title);
-  letter-spacing: 1.1rem;
+  letter-spacing: 1rem;
 }
 
-.vertical-line {
-  width: 0.2vw;
-  height: 55vh;
-  background-color: black;
-  margin-left: 2rem;
-
-  border-radius: 65% ;
-  border-top-left-radius: 0%;
-  border-top-right-radius: 0%;
-  /* border-radius: 99px; */
+.section-banner {
+  position: absolute;
+  left: 2%;
+  top: 0%;
+  display: flex;
+  justify-content: center;
 }
 
+.ribbon {
+  width: 0px;
+  min-height: 25rem;
+  background-color: transparent;
+
+  border: solid 20px #000000;
+  border-bottom: solid 15px transparent;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  cursor: none;
+  pointer-events: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+.ribbon-light {
+  width: 0px;
+  min-height: 25rem;
+  background-color: transparent;
+
+  border: solid 20px #fcfcfc;
+  border-bottom: solid 15px transparent;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  cursor: none;
+  pointer-events: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: black;
+}
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 391px) {
   .vertical-line {
-      height: 25vh;
+    height: 25vh;
   }
 
+  .ribbon {
+    width: 0px;
+    min-height: 14rem;
+    background-color: transparent;
 
+    border: solid 15px #000000;
+    border-bottom: solid 15px transparent;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .ribbon-light {
+    width: 0px;
+    min-height: 14rem;
+    background-color: transparent;
+
+    border: solid 15px #ffffff;
+    border-bottom: solid 15px transparent;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
 }

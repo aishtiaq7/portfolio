@@ -2,7 +2,9 @@
 
 nav {
   cursor: none;
+  height: 6.5rem;
   width: 100vw;
+  font-size: 1vw;
 
   position: fixed;
   top: 0%;
@@ -15,12 +17,11 @@ nav {
   padding-left: 1rem;
   padding-right: 1rem;
 
-  font-size: 1vw;
 
   color: var(--main-white-color);
-  z-index: 1;
   background-color: black;
-
+  z-index: 1;
+  
   transition: all ease 1s;
 }
 .navOnWhite {

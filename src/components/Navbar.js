@@ -3,7 +3,7 @@ import { IconContext } from "react-icons";
 import "../App.css";
 import "./Navbar.css";
 
-const Footer = (props) => {
+const Navbar = (props) => {
   // console.log("offset:", props.offset);
   // console.log("inView:", props.invertNavColor);
 
@@ -34,4 +34,4 @@ const Footer = (props) => {
   );
 };
 
-export default Footer;
+export default Navbar;
