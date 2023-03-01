@@ -2,6 +2,7 @@
   --main-white-color: rgb(239, 239, 239);
   --content-font-family: HelveticaNowText-Light;
   --large-title: 2.3vw;
+  --content-font-size: 1.8vw;
   --content-font-size-phone-view: 3.4vw;
 }
 
@@ -53,7 +54,13 @@
   justify-content: center;
 }
 
-.ribbon {
+.about-title {
+  font-family: var(--content-font-family);
+  font-size: var(--content-font-size);
+  font-weight: 600;
+}
+
+.ribbon-dark {
   width: 0px;
   min-height: 25rem;
   background-color: transparent;
@@ -70,7 +77,7 @@
   justify-content: center;
   align-items: center;
 
-  color: white;
+  color: var(--main-white-color);
 }
 .ribbon-light {
   width: 0px;
@@ -98,7 +105,7 @@
     height: 25vh;
   }
 
-  .ribbon {
+  .ribbon-dark{
     width: 0px;
     min-height: 14rem;
     background-color: transparent;
@@ -114,7 +121,7 @@
     min-height: 14rem;
     background-color: transparent;
 
-    border: solid 15px #ffffff;
+    border: solid 15px var(--main-white-color);
     border-bottom: solid 15px transparent;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;

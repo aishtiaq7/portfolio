@@ -61,7 +61,7 @@ export const SectionBanner = (props) => {
   const sectionTitle = props.section;
   return (
     <div className={`section-banner `}>
-      <div className={`${isLightTheme ? "ribbon-light" : "ribbon"}`}>
+      <div className={`${isLightTheme ? "ribbon-light" : "ribbon-dark"}`}>
         <h4 className="about-title">{sectionTitle}</h4>
       </div>
     </div>
