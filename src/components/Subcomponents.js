@@ -25,6 +25,11 @@ export const Section = (props) => {
                 platform to showcase some of my work, interests and hopefully
                 give you an impression of me. :p
               </h3>
+
+              <br></br>
+              <h3>
+                Alongside completing my last semester in SFU, i will be spending some time updating my portfolio page and seek software development opportunites 
+              </h3>
             </div>
           </div>
         </div>
@@ -40,15 +45,15 @@ export const DarkSection = (props) => {
   return (
     <section className="dark-section">
       <div
-        onMouseEnter={props.textEnter}
-        onMouseLeave={props.textLeave}
+        // onMouseEnter={props.textEnter}
+        // onMouseLeave={props.textLeave}
         className="largeText"
         
       >
         <SectionBanner section={"Projects"} isLightTheme={true} />
         <div className="container">
            <div>
-            <h1 className="greetingsTitle">Below are some of my projects</h1>
+            <h1 className="greetingsTitle">I will be updating the projects section soon...</h1>
 
             {/* <ul>
               {data.map((item) => (
@@ -59,16 +64,22 @@ export const DarkSection = (props) => {
             {/* Attempt #2 */}
             <div className="cardsContainer">
               <Card
+                mouseEnterEvent={props.textEnter}
+                mouseLeaveEvent={props.textLeave}
                 id="123"
                 projectName="ProjectName add"
                 hyperlink="somelink"
               />
               <Card
+                mouseEnterEvent={props.textEnter}
+                mouseLeaveEvent={props.textLeave}
                 id="123"
                 projectName="ProjectName add"
                 hyperlink="somelink"
               />
               <Card
+                mouseEnterEvent={props.textEnter}
+                mouseLeaveEvent={props.textLeave}
                 id="123"
                 projectName="ProjectName add"
                 hyperlink="somelink"
@@ -83,7 +94,11 @@ export const DarkSection = (props) => {
 
 export const Card = (props) => {
   return (
-    <div className="card">
+    <div className="card"
+     onMouseEnter={props.mouseEnterEvent}
+     onMouseLeave={props.mouseLeaveEvent}
+
+    >
       <p>{props.id}</p>
       <p>{props.projectName}</p>
       <p>{props.hyperlink}</p>
