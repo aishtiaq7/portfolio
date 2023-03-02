@@ -99,6 +99,12 @@ function App() {
   const footerEnter = () => setCursorVariant("hideCursor");
   const footerLeave = () => setCursorVariant("default");
 
+  const items = [
+    { id: 1, name: "Project 1" },
+    { id: 2, name: "Project 2" },
+    { id: 3, name: "Project 3" },
+  ];
+
   return (
     <div>
       <FullScreenNav
@@ -124,7 +130,6 @@ function App() {
       {/* 1st Section */}
       <section>
         <div className="landingSection">
-
           {/* left component */}
           <div className="landingTitle">
             <h3
@@ -136,7 +141,8 @@ function App() {
               <br />
               to learn & create
               <br />
-              <span style={{textDecoration: "underline"}} >software</span> that matters.
+              <span style={{ textDecoration: "underline" }}>software</span> that
+              matters.
             </h3>
           </div>
 
@@ -160,10 +166,17 @@ function App() {
         textLeave={textLeave}
       ></Section>
 
-
-      <DarkSection 
-        textEnter={textEnter} 
-        textLeave={textLeave}>
+      {/* Projects Section */}
+      <DarkSection textEnter={textEnter} textLeave={textLeave} 
+      
+        projectsData={items}
+      >
+        {/* <ul>
+          {items.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul> */}
+        {/* <h3>"projects</h3> */}
       </DarkSection>
 
       <section ref={ref2}>

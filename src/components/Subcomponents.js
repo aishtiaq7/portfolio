@@ -21,7 +21,7 @@ export const Section = (props) => {
               <h3>
                 Its a pleasure to have you here on my page. <br></br> <br></br>
                 As I grow my skills to become a competent Software Developer
-                (alongside being a better person ofcourse), I want to use this
+                (alongside being a better person of course), I want to use this
                 platform to showcase some of my work, interests and hopefully
                 give you an impression of me. :p
               </h3>
@@ -34,6 +34,9 @@ export const Section = (props) => {
 };
 
 export const DarkSection = (props) => {
+  const data = props.projectsData;
+  console.log(data);
+
   return (
     <section className="dark-section">
       <div
@@ -44,12 +47,21 @@ export const DarkSection = (props) => {
       >
         <SectionBanner section={"Projects"} isLightTheme={true} />
         <div className="container">
-          <h3>
+          {/* <h3>
             I will continue to actively update this page and hopefully give you
             a better experience soon.
             <br></br>
             Untill then, take care.
-          </h3>
+          </h3> */}
+
+          <div>
+            <h1>Projects</h1>
+            <ul>
+              {data.map((item) => (
+                <li key={item.id}>{item.name}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
