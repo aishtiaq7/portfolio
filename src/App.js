@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 import Footer from "./components/Footer";
 import FullScreenNav from "./components/FullScreenNav";
 import Navbar from "./components/Navbar";
-import { Section, DarkSection } from "./components/Subcomponents";
+import { Section, DarkSection, InterestSection} from "./components/Subcomponents";
+
 
 import { useInView } from "react-intersection-observer";
 
@@ -127,8 +128,8 @@ function App() {
         animate={cursorVariant}
       />
 
-      {/* 1st Section */}
-      <section>
+      {/* Home Section */}
+      <section className="homepage">
         <div className="landingSection">
           {/* left component */}
           <div className="landingTitle">
@@ -159,7 +160,7 @@ function App() {
         </div>
       </section>
 
-      {/* 2nd Section  */}
+      {/* About Section  */}
       <Section
         innerRef={inputRef}
         textEnter={textEnter}
@@ -167,8 +168,10 @@ function App() {
       ></Section>
 
       {/* Projects Section */}
-      <DarkSection textEnter={textEnter} textLeave={textLeave} 
-      
+      <DarkSection
+        textEnter={textEnter}
+        textLeave={textLeave}
+
         // projectsData={items}
       >
         {/* <ul>
@@ -176,23 +179,15 @@ function App() {
             <li key={item.id}>{item.name}</li>
           ))}
         </ul> */}
-        {/* <h3>"projects</h3> */}
       </DarkSection>
 
-      <section ref={ref2}>
-        <div
-          onMouseEnter={textEnter}
-          onMouseLeave={textLeave}
-          className="second-section"
-        >
-          <div className="largeText">
-            <h3>
-              <br></br>
-              *This page is under construction
-            </h3>
-          </div>
-        </div>
-      </section>
+      {/* Interests Sections */}
+      <InterestSection
+        innerRef = {ref2}
+        onMouseEnter={textEnter}
+        onMouseLeave={textLeave}
+      >
+      </InterestSection>
 
       <Footer
         id="footer"

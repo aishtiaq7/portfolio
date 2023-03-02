@@ -147,7 +147,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  flex-wrap: wrap;
   padding: 8rem;
   color: var(--main-white-color);
 }

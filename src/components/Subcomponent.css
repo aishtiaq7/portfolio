@@ -32,7 +32,7 @@
 .greetingsTitle {
   font-family: "Oleo Script", cursive;
   font-weight: 100;
-  margin: 2rem 2.2rem;
+  /* margin: 2rem 2.2rem; */
 }
 
 .container {
@@ -80,7 +80,13 @@
   align-items: center;
 
   color: var(--main-white-color);
+
+  -webkit-filter: drop-shadow(10px 5px 11px #838383);
+  filter        :  drop-shadow(10px 5px 11px #838383);
+
 }
+
+
 .ribbon-light {
   width: 0px;
   min-height: 25rem;
@@ -99,6 +105,9 @@
   align-items: center;
 
   color: black;
+
+  -webkit-filter: drop-shadow(10px 5px 11px #434343);
+  filter        :  drop-shadow(10px 5px 15px #434343);
 }
 /* ----------
 ---CARDS--
@@ -142,6 +151,17 @@
   transform: scale(1.03) translateY(-8px);
 
   backdrop-filter: blur(65px);
+}
+
+
+/* InterestSection */
+.interestSection {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--main-white-color);
+
+  position: relative;
+  color: black;
 }
 
 /* MEDIA QUERIES */

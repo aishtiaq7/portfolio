@@ -28,7 +28,9 @@ export const Section = (props) => {
 
               <br></br>
               <h3>
-                Alongside completing my last semester in SFU, i will be spending some time updating my portfolio page and seek software development opportunites 
+                Alongside completing my last semester in SFU, i will be spending
+                some time updating my portfolio page and seek software
+                development opportunites
               </h3>
             </div>
           </div>
@@ -44,24 +46,14 @@ export const DarkSection = (props) => {
 
   return (
     <section className="dark-section">
-      <div
-        // onMouseEnter={props.textEnter}
-        // onMouseLeave={props.textLeave}
-        className="largeText"
-        
-      >
+      <div className="largeText">
         <SectionBanner section={"Projects"} isLightTheme={true} />
         <div className="container">
-           <div>
-            <h1 className="greetingsTitle">I will be updating the projects section soon...</h1>
+          <div>
+            <h1 className="greetingsTitle">
+              I will be updating this projects section soon...
+            </h1>
 
-            {/* <ul>
-              {data.map((item) => (
-                <li key={item.id}>{item.name}</li>
-              ))}
-            </ul> */}
-
-            {/* Attempt #2 */}
             <div className="cardsContainer">
               <Card
                 mouseEnterEvent={props.textEnter}
@@ -94,10 +86,10 @@ export const DarkSection = (props) => {
 
 export const Card = (props) => {
   return (
-    <div className="card"
-     onMouseEnter={props.mouseEnterEvent}
-     onMouseLeave={props.mouseLeaveEvent}
-
+    <div
+      className="card"
+      onMouseEnter={props.mouseEnterEvent}
+      onMouseLeave={props.mouseLeaveEvent}
     >
       <p>{props.id}</p>
       <p>{props.projectName}</p>
@@ -126,5 +118,28 @@ export const SectionBanner = (props) => {
         <h4 className="about-title">{sectionTitle}</h4>
       </div>
     </div>
+  );
+};
+
+export const InterestSection = (props) => {
+  return (
+    <section ref={props.innerRef}>
+      <div className="interestSection">
+        <SectionBanner section={"Interests"} isLightTheme={false} />
+        <div className="largeText">
+          <div
+            className="container"
+            onMouseEnter={props.onMouseEnter}
+            onMouseLeave={props.onMouseLeave}
+          >
+            <h1 className="greetingsTitle">My interests</h1>
+            <h1 className="greetingsTitle">My interests</h1>
+            <h1 className="greetingsTitle">My interests</h1>
+            <h1 className="greetingsTitle">My interests</h1>
+            <h1 className="greetingsTitle">My interests</h1>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
