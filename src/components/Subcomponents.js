@@ -34,8 +34,8 @@ export const Section = (props) => {
 };
 
 export const DarkSection = (props) => {
-  const data = props.projectsData;
-  console.log(data);
+  // const data = props.projectsData;
+  // console.log(data);
 
   return (
     <section className="dark-section">
@@ -43,19 +43,12 @@ export const DarkSection = (props) => {
         onMouseEnter={props.textEnter}
         onMouseLeave={props.textLeave}
         className="largeText"
-        style={{ color: "white" }}
+        
       >
         <SectionBanner section={"Projects"} isLightTheme={true} />
         <div className="container">
-          {/* <h3>
-            I will continue to actively update this page and hopefully give you
-            a better experience soon.
-            <br></br>
-            Untill then, take care.
-          </h3> */}
-
-          <div>
-            <h1>Projects</h1>
+           <div>
+            <h1 className="greetingsTitle">Below are some of my projects</h1>
 
             {/* <ul>
               {data.map((item) => (
@@ -64,23 +57,23 @@ export const DarkSection = (props) => {
             </ul> */}
 
             {/* Attempt #2 */}
-            <div className="cards">
+            <div className="cardsContainer">
               <Card
-                img="https://picsum.photos/id/54/400/300"
-                title="What I learned from my visit to The Upside Down"
-                author="Nancy Wheeler"
+                id="123"
+                projectName="ProjectName add"
+                hyperlink="somelink"
               />
               <Card
-                img="https://picsum.photos/id/54/400/300"
-                title="What I learned from my visit to The Upside Down"
-                author="Nancy Wheeler"
+                id="123"
+                projectName="ProjectName add"
+                hyperlink="somelink"
+              />
+              <Card
+                id="123"
+                projectName="ProjectName add"
+                hyperlink="somelink"
               />
             </div>
-
-            {/* Attempt #2 */}
-            
-
-
           </div>
         </div>
       </div>
@@ -91,16 +84,20 @@ export const DarkSection = (props) => {
 export const Card = (props) => {
   return (
     <div className="card">
-      <img src={props.img} alt="souvenir"/>
-      <div className="card-body">
-        <h2>{props.title}</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
-        </p>
-        <h5>{props.author}</h5>
-      </div>
+      <p>{props.id}</p>
+      <p>{props.projectName}</p>
+      <p>{props.hyperlink}</p>
+      <br></br>
+      <p>
+        Voluptate incididunt sit cillum ex culpa aliqua amet consequat cillum
+        culpa ipsum ad veniam. Eu ut nostrud incididunt nostrud amet excepteur
+        veniam nisi est qui nostrud duis excepteur. Magna nulla non dolor aute
+        voluptate adipisicing excepteur eu magna. Aliquip dolore minim amet quis
+        quis occaecat deserunt ut mollit dolor veniam. Adipisicing duis
+        excepteur incididunt id tempor duis ea esse sit ex. Et aute
+        reprehenderit dolor dolor duis incididunt sit duis incididunt. Anim duis
+        culpa amet est consectetur.
+      </p>
     </div>
   );
 };

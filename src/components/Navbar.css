@@ -20,7 +20,7 @@ nav {
 
   color: var(--main-white-color);
   background-color: black;
-  z-index: 1;
+  z-index: 120;
   
   transition: all ease 1s;
 }

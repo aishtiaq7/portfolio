@@ -99,11 +99,11 @@ function App() {
   const footerEnter = () => setCursorVariant("hideCursor");
   const footerLeave = () => setCursorVariant("default");
 
-  const items = [
-    { id: 1, name: "Project 1" },
-    { id: 2, name: "Project 2" },
-    { id: 3, name: "Project 3" },
-  ];
+  // const items = [
+  //   { id: 1, name: "Project 1" },
+  //   { id: 2, name: "Project 2" },
+  //   { id: 3, name: "Project 3" },
+  // ];
 
   return (
     <div>
@@ -169,7 +169,7 @@ function App() {
       {/* Projects Section */}
       <DarkSection textEnter={textEnter} textLeave={textLeave} 
       
-        projectsData={items}
+        // projectsData={items}
       >
         {/* <ul>
           {items.map((item) => (
