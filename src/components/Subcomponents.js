@@ -56,15 +56,52 @@ export const DarkSection = (props) => {
 
           <div>
             <h1>Projects</h1>
-            <ul>
+
+            {/* <ul>
               {data.map((item) => (
                 <li key={item.id}>{item.name}</li>
               ))}
-            </ul>
+            </ul> */}
+
+            {/* Attempt #2 */}
+            <div className="cards">
+              <Card
+                img="https://picsum.photos/id/54/400/300"
+                title="What I learned from my visit to The Upside Down"
+                author="Nancy Wheeler"
+              />
+              <Card
+                img="https://picsum.photos/id/54/400/300"
+                title="What I learned from my visit to The Upside Down"
+                author="Nancy Wheeler"
+              />
+            </div>
+
+            {/* Attempt #2 */}
+            
+
+
           </div>
         </div>
       </div>
     </section>
+  );
+};
+
+export const Card = (props) => {
+  return (
+    <div className="card">
+      <img src={props.img} alt="souvenir"/>
+      <div className="card-body">
+        <h2>{props.title}</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam.
+        </p>
+        <h5>{props.author}</h5>
+      </div>
+    </div>
   );
 };
 
