@@ -5,8 +5,11 @@ import { motion } from "framer-motion";
 import Footer from "./components/Footer";
 import FullScreenNav from "./components/FullScreenNav";
 import Navbar from "./components/Navbar";
-import { Section, DarkSection, InterestSection} from "./components/Subcomponents";
-
+import {
+  Section,
+  DarkSection,
+  InterestSection,
+} from "./components/Subcomponents";
 
 import { useInView } from "react-intersection-observer";
 
@@ -87,9 +90,27 @@ function App() {
       display: "none",
       cursor: "pointer",
     },
+    cardEnter: {
+      height: 150,
+      width: 150,
+
+      x: mousePosition.x - 75,
+      y: mousePosition.y - 75, // 75 cuz radius is 150
+      // mixBlendMode: "difference",
+      backgroundColor: "rgb(104, 104, 104)",
+      zIndex: "15",
+    },
   };
-  const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
+  const cardEnter = () => {
+    setCursorVariant("cardEnter");
+  };
+
+  const textEnter = () => {
+    setCursorVariant("text");
+  };
+  const textLeave = () => {
+    setCursorVariant("default");
+  };
 
   const textEnterLogo = () => setCursorVariant("logo");
   const textLeaveLogo = () => setCursorVariant("default");
@@ -169,7 +190,7 @@ function App() {
 
       {/* Projects Section */}
       <DarkSection
-        textEnter={textEnter}
+        textEnter={cardEnter}
         textLeave={textLeave}
 
         // projectsData={items}
@@ -183,11 +204,10 @@ function App() {
 
       {/* Interests Sections */}
       <InterestSection
-        innerRef = {ref2}
+        innerRef={ref2}
         onMouseEnter={textEnter}
         onMouseLeave={textLeave}
-      >
-      </InterestSection>
+      ></InterestSection>
 
       <Footer
         id="footer"

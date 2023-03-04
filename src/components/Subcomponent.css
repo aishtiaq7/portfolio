@@ -21,6 +21,9 @@
 }
 
 .dark-section {
+  cursor: none;
+  /* pointer-events: none; */
+
   min-height: 150vh;
   background-color: black;
   position: relative;
@@ -139,7 +142,7 @@
 
   padding: 3rem;
 
-  z-index: 130;
+  z-index: 30;
 }
 
 .card:hover {
@@ -156,6 +159,7 @@
 
 /* InterestSection */
 .interestSection {
+  cursor: none;
   width: 100vw;
   min-height: 100vh;
   background-color: var(--main-white-color);
