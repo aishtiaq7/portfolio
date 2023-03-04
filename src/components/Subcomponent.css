@@ -21,6 +21,7 @@
 }
 
 .dark-section {
+  width: 100vw;
   cursor: none;
   /* pointer-events: none; */
 
@@ -36,6 +37,11 @@
   font-family: "Oleo Script", cursive;
   font-weight: 100;
   /* margin: 2rem 2.2rem; */
+}
+
+.about-section {
+  height: 100%;
+  width: 100vw;
 }
 
 .container {

@@ -3,7 +3,7 @@ import "../components/Subcomponent.css";
 
 export const Section = (props) => {
   return (
-    <article ref={props.innerRef ? props.innerRef : ""}>
+    <article className="about-section" ref={props.innerRef ? props.innerRef : ""}>
       <div className="second-section">
         <SectionBanner section={"About"} isLightTheme={false} />
 

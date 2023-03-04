@@ -167,7 +167,7 @@ article {
   justify-content: center;
   align-items: center;
 
-  padding: 4rem;
+  padding: 0rem;
   width: 50vw;
   object-fit: cover;
   filter: grayscale(10%) brightness(100%);
