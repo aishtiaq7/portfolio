@@ -13,6 +13,13 @@ import {
 
 import { useInView } from "react-intersection-observer";
 
+
+const items = [
+  { id: 2, projectName: "Coursley" , hyperlink: "www", des:"Course Management app" , cursorClass:"lala"},
+  { id: 3, projectName: "VibeCheckDiscord.bot" , hyperlink: "www", des:"Multipurpose vibecheck discord bot" , cursorClass:"lala"},
+  { id: 4, projectName: "DxBall-Lite" , hyperlink: "www", des:"Browser game" , cursorClass:"lala"}];
+
+
 function App() {
   const [offset, setOffset] = useState(0); //scrollY
 
@@ -121,11 +128,6 @@ function App() {
   const footerEnter = () => setCursorVariant("hideCursor");
   const footerLeave = () => setCursorVariant("default");
 
-  // const items = [
-  //   { id: 1, name: "Project 1" },
-  //   { id: 2, name: "Project 2" },
-  //   { id: 3, name: "Project 3" },
-  // ];
 
   return (
     <div>
@@ -193,7 +195,7 @@ function App() {
         textEnter={cardEnter}
         textLeave={textLeave}
 
-        // projectsData={items}
+        projectsData={items}
       >
         {/* <ul>
           {items.map((item) => (

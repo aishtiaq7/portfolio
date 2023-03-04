@@ -3,7 +3,10 @@ import "../components/Subcomponent.css";
 
 export const Section = (props) => {
   return (
-    <article className="about-section" ref={props.innerRef ? props.innerRef : ""}>
+    <article
+      className="about-section"
+      ref={props.innerRef ? props.innerRef : ""}
+    >
       <div className="second-section">
         <SectionBanner section={"About"} isLightTheme={false} />
 
@@ -41,8 +44,20 @@ export const Section = (props) => {
 };
 
 export const DarkSection = (props) => {
-  // const data = props.projectsData;
-  // console.log(data);
+  const data = props.projectsData;
+  const listItems = data.map((item) => {
+    return (
+      <Card
+        key={item.id}
+        mouseEnterEvent={props.textEnter}
+        mouseLeaveEvent={props.textLeave}
+        id={item.projecID}
+        projectName={item.projectName}
+        hyperlink={item.projectName}
+        des={item.des}
+      ></Card>
+    );
+  });
 
   return (
     <section className="dark-section">
@@ -54,29 +69,7 @@ export const DarkSection = (props) => {
               I will be updating this projects section soon...
             </h1>
 
-            <div className="cardsContainer">
-              <Card
-                mouseEnterEvent={props.textEnter}
-                mouseLeaveEvent={props.textLeave}
-                id="123"
-                projectName="ProjectName add"
-                hyperlink="somelink"
-              />
-              <Card
-                mouseEnterEvent={props.textEnter}
-                mouseLeaveEvent={props.textLeave}
-                id="123"
-                projectName="ProjectName add"
-                hyperlink="somelink"
-              />
-              <Card
-                mouseEnterEvent={props.textEnter}
-                mouseLeaveEvent={props.textLeave}
-                id="123"
-                projectName="ProjectName add"
-                hyperlink="somelink"
-              />
-            </div>
+            <div className="cardsContainer">{listItems}</div>
           </div>
         </div>
       </div>
@@ -87,24 +80,17 @@ export const DarkSection = (props) => {
 export const Card = (props) => {
   return (
     <div
+      key={props.id}
       className="card"
       onMouseEnter={props.mouseEnterEvent}
       onMouseLeave={props.mouseLeaveEvent}
+      onClick={() => {
+        console.log("click on:", props.projectName);
+      }}
     >
-      <p>{props.id}</p>
       <p>{props.projectName}</p>
-      <p>{props.hyperlink}</p>
       <br></br>
-      <p>
-        Voluptate incididunt sit cillum ex culpa aliqua amet consequat cillum
-        culpa ipsum ad veniam. Eu ut nostrud incididunt nostrud amet excepteur
-        veniam nisi est qui nostrud duis excepteur. Magna nulla non dolor aute
-        voluptate adipisicing excepteur eu magna. Aliquip dolore minim amet quis
-        quis occaecat deserunt ut mollit dolor veniam. Adipisicing duis
-        excepteur incididunt id tempor duis ea esse sit ex. Et aute
-        reprehenderit dolor dolor duis incididunt sit duis incididunt. Anim duis
-        culpa amet est consectetur.
-      </p>
+      <p>{props.des}</p>
     </div>
   );
 };
