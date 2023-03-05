@@ -152,7 +152,7 @@ function App() {
       />
 
       {/* Home Section */}
-      <section className="homepage">
+      <section id='home' className="homepage">
         <div className="landingSection">
           {/* left component */}
           <div className="landingTitle">
@@ -194,15 +194,8 @@ function App() {
       <DarkSection
         textEnter={cardEnter}
         textLeave={textLeave}
-
         projectsData={items}
-      >
-        {/* <ul>
-          {items.map((item) => (
-            <li key={item.id}>{item.name}</li>
-          ))}
-        </ul> */}
-      </DarkSection>
+      ></DarkSection>
 
       {/* Interests Sections */}
       <InterestSection
@@ -212,7 +205,7 @@ function App() {
       ></InterestSection>
 
       <Footer
-        id="footer"
+        // id="footer"
         footerEnter={footerEnter}
         footerLeave={footerLeave}
       ></Footer>

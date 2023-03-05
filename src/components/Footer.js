@@ -4,7 +4,7 @@ import { IconContext } from "react-icons";
 
 const Footer = (props) => {
   return (
-    <footer  onMouseEnter={props.footerEnter} onMouseLeave={props.footerLeave}>
+    <footer id='contact' onMouseEnter={props.footerEnter} onMouseLeave={props.footerLeave}>
       <div className="links">
         <div className="contactMe">
           <h2>Email me at:</h2>

@@ -4,6 +4,7 @@ import "../components/Subcomponent.css";
 export const Section = (props) => {
   return (
     <article
+      id='about'
       className="about-section"
       ref={props.innerRef ? props.innerRef : ""}
     >
@@ -60,7 +61,7 @@ export const DarkSection = (props) => {
   });
 
   return (
-    <section className="dark-section">
+    <section id="projects"  className="dark-section"> 
       <div className="largeText">
         <SectionBanner section={"Projects"} isLightTheme={true} />
         <div className="container">
@@ -85,7 +86,7 @@ export const Card = (props) => {
       onMouseEnter={props.mouseEnterEvent}
       onMouseLeave={props.mouseLeaveEvent}
       onClick={() => {
-        console.log("click on:", props.projectName);
+        // console.log("click on:", props.projectName);
       }}
     >
       <p>{props.projectName}</p>

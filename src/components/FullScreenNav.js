@@ -9,13 +9,15 @@ const googleDriveResumeLink =
 const FullScreenNav = (props) => {
   // const [hideMenu, sethideMenu] = useState(false);
 
-  const handleContantClick = (e) => {
-    // e.preventDefault();
-    // console.log('clickeed on Contact me');
-    // sethideMenu(true);
-  }
+  const handleProjectsClick = (e) => {
+    e.preventDefault();
+    const getSectionId = e.target.innerText.toString().toLowerCase();
+    const element = document.getElementById(getSectionId);
+    element.scrollIntoView({ behavior: "smooth" });
+    props.setShowFullScreenNav(false);
+  };
   return (
-    <div className={props.showFullScreenNav  ? "fs-menu" : "displayNone"}>
+    <div className={props.showFullScreenNav ? "fs-menu" : "displayNone"}>
       <div
         className="closeBtn"
         onClick={() => {
@@ -28,13 +30,18 @@ const FullScreenNav = (props) => {
       </div>
       <ul>
         <li>
-          <a className="fs-nav-links" href="/">
+          <a className="fs-nav-links" href="/" onClick={handleProjectsClick}>
             Home
           </a>
         </li>
         <li>
-          <a className="fs-nav-links" href="/">
+          <a className="fs-nav-links" href="/" onClick={handleProjectsClick}>
             About
+          </a>
+        </li>
+        <li>
+          <a className="fs-nav-links" href="/" onClick={handleProjectsClick}>
+            Projects
           </a>
         </li>
         <li>
@@ -48,7 +55,7 @@ const FullScreenNav = (props) => {
           </a>
         </li>
         <li>
-          <a className="fs-nav-links" href="/" onClick={handleContantClick}>
+          <a className="fs-nav-links" href="/" onClick={handleProjectsClick}>
             Contact
           </a>
         </li>
