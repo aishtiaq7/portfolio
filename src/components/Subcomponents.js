@@ -54,7 +54,7 @@ export const DarkSection = (props) => {
         mouseLeaveEvent={props.textLeave}
         id={item.projecID}
         projectName={item.projectName}
-        hyperlink={item.projectName}
+        hyperlink={item.hyperlink}
         des={item.des}
       ></Card>
     );
@@ -86,12 +86,13 @@ export const Card = (props) => {
       onMouseEnter={props.mouseEnterEvent}
       onMouseLeave={props.mouseLeaveEvent}
       onClick={() => {
-        // console.log("click on:", props.projectName);
+        window.open(props.hyperlink, '_blank');
       }}
     >
       <p>{props.projectName}</p>
       <br></br>
       <p>{props.des}</p>
+      <br></br>
     </div>
   );
 };
