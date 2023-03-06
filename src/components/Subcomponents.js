@@ -4,7 +4,7 @@ import "../components/Subcomponent.css";
 export const Section = (props) => {
   return (
     <article
-      id='about'
+      id="about"
       className="about-section"
       ref={props.innerRef ? props.innerRef : ""}
     >
@@ -56,12 +56,13 @@ export const DarkSection = (props) => {
         projectName={item.projectName}
         hyperlink={item.hyperlink}
         des={item.des}
+        iconsList={item.iconsList}
       ></Card>
     );
   });
 
   return (
-    <section id="projects"  className="dark-section"> 
+    <section id="projects" className="dark-section">
       <div className="largeText">
         <SectionBanner section={"Projects"} isLightTheme={true} />
         <div className="container">
@@ -79,6 +80,14 @@ export const DarkSection = (props) => {
 };
 
 export const Card = (props) => {
+
+  const renderIcons = (iconsList) => {
+    return iconsList.map(icon =>{
+      return <h5 className="icon">*</h5>;
+    })
+  };
+
+
   return (
     <div
       key={props.id}
@@ -86,13 +95,22 @@ export const Card = (props) => {
       onMouseEnter={props.mouseEnterEvent}
       onMouseLeave={props.mouseLeaveEvent}
       onClick={() => {
-        window.open(props.hyperlink, '_blank');
+        window.open(props.hyperlink, "_blank");
       }}
     >
-      <p>{props.projectName}</p>
-      <br></br>
-      <p>{props.des}</p>
-      <br></br>
+      <div className="iconContainer">
+        {/* <h5 className="icon">*</h5> */}
+        {renderIcons(props.iconsList)}
+      </div>
+      <div className="cardTitle">
+        <h5>{props.projectName}</h5>
+      </div>
+      <div className="cardDes">
+        <p>
+          Magna excesint eat exercitation officia eiusmod deserunt veniam. Duis
+          labore qui ut sunt tempor ut officia irure cu.
+        </p>
+      </div>
     </div>
   );
 };

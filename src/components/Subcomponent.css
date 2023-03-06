@@ -138,7 +138,9 @@
   background: black;
   border: 0.4px solid rgb(165, 165, 165);
 
-  border-radius: 0.6em;
+  overflow: hidden;
+
+  border-radius: 1em;
   margin: 1em;
   overflow: hidden;
   cursor: none;
@@ -147,8 +149,11 @@
     0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
   transition: all ease 200ms;
 
-  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 
+  /* padding: 3rem; */
   z-index: 30;
 }
 
@@ -157,12 +162,45 @@
   border: 2px solid rgb(122, 122, 122);
   box-shadow: -15px 13px 34px -15px rgba(255, 255, 255, 0.39);
   -webkit-box-shadow: -15px 13px 34px -15px rgba(255, 255, 255, 0.39);
-
   transform: scale(1.03) translateY(-8px);
-
   backdrop-filter: blur(65px);
 }
 
+
+.iconContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: 30%;
+  width: 100%;
+  /* border: 2px solid red; */
+}
+
+.icon {
+  padding: 1.3rem;
+}
+
+.cardTitle{
+  width: 100%;
+  /* border: green dotted 3px; */
+  text-align: start;
+
+  font-size: 1.2vw;
+  font-family: var(--content-font-family);
+  font-weight: 600;
+  padding: 1rem 1rem;
+  
+}
+
+.cardDes{
+  width: 100%;
+  /* border: blue dotted 3px; */
+  text-align: start;
+  padding: 1rem 1rem;
+
+  font-size: 1.1vw;
+}
 
 /* InterestSection */
 .interestSection {

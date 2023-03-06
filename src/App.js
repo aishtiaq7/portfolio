@@ -13,14 +13,7 @@ import {
 
 import { useInView } from "react-intersection-observer";
 
-
-const items = [
-  { id: 2, projectName: "Coursley" , hyperlink: "www", des:"Course Management app" , cursorClass:"lala"},
-  { id: 3, projectName: "VibeCheckDiscord.bot" , hyperlink: "https://github.com/aishtiaq7/VibeCheck-discord-bot", des:"Multipurpose vibecheck discord bot" , cursorClass:"lala"},
-  { id: 4, projectName: "DxBall-Lite" , hyperlink: "https://github.com/aishtiaq7/DX-ball-lite", des:"Browser game" , cursorClass:"lala"},
-  { id: 5, projectName: "Japanese Website Clone" , hyperlink: "https://github.com/aishtiaq7/Japanese-Website-Clone", des:"Browser game" , cursorClass:"lala"}
-];
-
+import { cardItem } from "./resources/Data";
 
 function App() {
   const [offset, setOffset] = useState(0); //scrollY
@@ -130,7 +123,6 @@ function App() {
   const footerEnter = () => setCursorVariant("hideCursor");
   const footerLeave = () => setCursorVariant("default");
 
-
   return (
     <div>
       <FullScreenNav
@@ -154,7 +146,7 @@ function App() {
       />
 
       {/* Home Section */}
-      <section id='home' className="homepage">
+      <section id="home" className="homepage">
         <div className="landingSection">
           {/* left component */}
           <div className="landingTitle">
@@ -196,7 +188,7 @@ function App() {
       <DarkSection
         textEnter={cardEnter}
         textLeave={textLeave}
-        projectsData={items}
+        projectsData={cardItem}
       ></DarkSection>
 
       {/* Interests Sections */}
