@@ -81,9 +81,18 @@ export const DarkSection = (props) => {
 
 export const Card = (props) => {
 
-  const renderIcons = (iconsList) => {
+  const renderIcons = (iconsList , id) => {
     return iconsList.map(icon =>{
-      return <h5 className="icon">*</h5>;
+      switch(icon) {
+        case 'css':
+          return <img key={icon} className="icon" src={require('../resources/css.png')} alt={id} ></img>;
+        case 'html':
+          return <img key={icon} style={{padding:'1rem'}} className="icon" src={require('../resources/html.png')} alt={id}></img>;
+        case 'js':
+          return <img key={icon} className="icon" src={require('../resources/js.png')} alt={id} ></img>;
+        default:
+          return <h5 key={icon} className="icon">*</h5>;
+      }
     })
   };
 
@@ -100,7 +109,7 @@ export const Card = (props) => {
     >
       <div className="iconContainer">
         {/* <h5 className="icon">*</h5> */}
-        {renderIcons(props.iconsList)}
+        {renderIcons(props.iconsList , props.id)}
       </div>
       <div className="cardTitle">
         <h5>{props.projectName}</h5>

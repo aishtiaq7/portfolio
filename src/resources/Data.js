@@ -3,7 +3,7 @@ export const cardItem = [
     id: 2,
     projectName: "Coursley",
     iconsList: ["html", "js"],
-    hyperlink: "www",
+    hyperlink: "https://github.com/aishtiaq7/",
     des: "Course Management app",
     cursorClass: "lala",
   },

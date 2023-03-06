@@ -151,7 +151,7 @@
 
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 
   /* padding: 3rem; */
   z-index: 30;
@@ -168,6 +168,8 @@
 
 
 .iconContainer {
+  margin-left: 1rem;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -178,7 +180,23 @@
 }
 
 .icon {
-  padding: 1.3rem;
+  
+  padding: 1.4rem 0.6rem;
+
+  height: 100%;
+  /* border: 2px solid red; */
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+
+ 
+  
+  /* aspect-ratio: 1; */
+  object-fit: cover;
+  object-position: center;
+
 }
 
 .cardTitle{
