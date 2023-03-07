@@ -305,7 +305,9 @@ footer {
     padding: 0rem;
     object-fit: cover;
     object-position: center;
-    /* height: auto; */
+    
+    padding: 3rem;
+    margin-top: -4rem;
   }
 
   .closeBtn {

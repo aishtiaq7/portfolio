@@ -109,7 +109,6 @@ export const Card = (props) => {
       }}
     >
       <div className="iconContainer">
-        {/* <h5 className="icon">*</h5> */}
         {renderIcons(props.iconsList , props.id)}
       </div>
       <div className="cardTitle">
