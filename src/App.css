@@ -1,3 +1,10 @@
+/* Hides scrollbar: */
+::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -113,7 +120,7 @@ body {
   left: 0;
   pointer-events: none;
 
-  z-index: 125 ;
+  z-index: 125;
   /* transition: width 0.5s ease, height 0.5s ease; */
 }
 
@@ -146,7 +153,7 @@ article {
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  
+
   color: var(--main-white-color);
 }
 .landingTitle {
@@ -154,7 +161,7 @@ article {
   height: 100%;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
-    
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,10 +272,9 @@ footer {
 /* MEDIA QUERIES */
 @media only screen and (max-width: 391px) {
   /* Turning off cursor: */
-  .cursor{
+  .cursor {
     display: none;
   }
-
 
   .landingSection {
     justify-content: center;
@@ -305,7 +311,7 @@ footer {
     padding: 0rem;
     object-fit: cover;
     object-position: center;
-    
+
     padding: 3rem;
     margin-top: -4rem;
   }
