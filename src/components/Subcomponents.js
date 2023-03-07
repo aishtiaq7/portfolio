@@ -104,7 +104,8 @@ export const Card = (props) => {
       onMouseEnter={props.mouseEnterEvent}
       onMouseLeave={props.mouseLeaveEvent}
       onClick={() => {
-        window.open(props.hyperlink, "_blank");
+        // uncomment to enable onClick listener:
+        // window.open(props.hyperlink, "_blank");
       }}
     >
       <div className="iconContainer">
