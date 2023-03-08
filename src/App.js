@@ -102,6 +102,14 @@ function App() {
       backgroundColor: "rgb(104, 104, 104)",
       zIndex: "15",
     },
+    tourchEnter: {
+      height: 150,
+      width: 150,
+
+      x: mousePosition.x - 75,
+      y: mousePosition.y - 75, // 75 cuz radius is 150
+      // mixBlendMode: "difference",
+    },
   };
   const cardEnter = () => {
     setCursorVariant("cardEnter");
@@ -113,6 +121,10 @@ function App() {
   const textLeave = () => {
     setCursorVariant("default");
   };
+
+  const tourchEnter = () => {
+    setCursorVariant("tourchEnter");
+  }
 
   const textEnterLogo = () => setCursorVariant("logo");
   const textLeaveLogo = () => setCursorVariant("default");
@@ -194,7 +206,7 @@ function App() {
       {/* Interests Sections */}
       <InterestSection
         innerRef={ref2}
-        onMouseEnter={textEnter}
+        onMouseEnter={tourchEnter}
         onMouseLeave={textLeave}
       ></InterestSection>
 

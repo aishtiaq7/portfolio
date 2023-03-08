@@ -80,22 +80,46 @@ export const DarkSection = (props) => {
 };
 
 export const Card = (props) => {
-
-  const renderIcons = (iconsList , id) => {
-    return iconsList.map(icon =>{
-      switch(icon) {
-        case 'css':
-          return <img key={icon} className="icon" src={require('../resources/css.png')} alt={id} ></img>;
-        case 'html':
-          return <img key={icon} style={{padding:'1rem'}} className="icon" src={require('../resources/html.png')} alt={id}></img>;
-        case 'js':
-          return <img key={icon} className="icon" src={require('../resources/js.png')} alt={id} ></img>;
+  const renderIcons = (iconsList, id) => {
+    return iconsList.map((icon) => {
+      switch (icon) {
+        case "css":
+          return (
+            <img
+              key={icon}
+              className="icon"
+              src={require("../resources/css.png")}
+              alt={id}
+            ></img>
+          );
+        case "html":
+          return (
+            <img
+              key={icon}
+              style={{ padding: "1rem" }}
+              className="icon"
+              src={require("../resources/html.png")}
+              alt={id}
+            ></img>
+          );
+        case "js":
+          return (
+            <img
+              key={icon}
+              className="icon"
+              src={require("../resources/js.png")}
+              alt={id}
+            ></img>
+          );
         default:
-          return <h5 key={icon} className="icon">*</h5>;
+          return (
+            <h5 key={icon} className="icon">
+              *
+            </h5>
+          );
       }
-    })
+    });
   };
-
 
   return (
     <div
@@ -109,7 +133,7 @@ export const Card = (props) => {
       }}
     >
       <div className="iconContainer">
-        {renderIcons(props.iconsList , props.id)}
+        {renderIcons(props.iconsList, props.id)}
       </div>
       <div className="cardTitle">
         <h5>{props.projectName}</h5>
@@ -142,16 +166,76 @@ export const InterestSection = (props) => {
       <div className="interestSection">
         <SectionBanner section={"Interests"} isLightTheme={false} />
         <div className="largeText">
-          <div
-            className="container"
-            onMouseEnter={props.onMouseEnter}
-            onMouseLeave={props.onMouseLeave}
-          >
+          <div className="container">
             <h1 className="greetingsTitle">My interests</h1>
-            <h1 className="greetingsTitle">My interests</h1>
-            <h1 className="greetingsTitle">My interests</h1>
-            <h1 className="greetingsTitle">My interests</h1>
-            <h1 className="greetingsTitle">My interests</h1>
+
+            <div className="stroke-svg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.0"
+                width="300.000000pt"
+                height="169.000000pt"
+                viewBox="0 0 300.000000 169.000000"
+                preserveAspectRatio="xMidYMid meet"
+              >
+                <metadata>
+                  Created by potrace 1.10, written by Peter Selinger 2001-2011
+                </metadata>
+                <g
+                  transform="translate(0.000000,169.000000) scale(0.100000,-0.100000)"
+                  fill="#000000"
+                  stroke="none"
+                >
+                  <path d="M2180 1454 c0 -139 -68 -292 -180 -405 -103 -104 -180 -141 -456 -223 -342 -101 -386 -122 -456 -213 -43 -57 -118 -200 -118 -225 0 -33 15 -19 32 30 25 67 86 168 134 217 56 58 114 83 379 160 301 88 391 131 495 233 64 64 85 94 123 172 63 130 99 310 62 310 -12 0 -15 -13 -15 -56z" />
+                </g>
+              </svg>
+            </div>
+
+            <p>if you want to know my interests,</p>
+            <div className="stroke-svg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.0"
+                width="300.000000pt"
+                height="169.000000pt"
+                viewBox="0 0 300.000000 169.000000"
+                preserveAspectRatio="xMidYMid meet"
+              >
+                <g
+                  transform="translate(0.000000,169.000000) scale(0.100000,-0.100000)"
+                  fill="#000000"
+                  stroke="none"
+                >
+                  <path d="M597 1503 c-8 -12 28 -142 56 -203 34 -76 106 -171 166 -219 68 -53 139 -87 240 -112 74 -19 104 -21 225 -16 86 3 180 13 241 26 55 12 156 24 225 28 199 9 326 -22 394 -97 84 -94 77 -169 -61 -620 -36 -118 -68 -221 -70 -227 -3 -7 1 -13 9 -13 15 0 117 315 174 535 34 132 36 234 6 292 -81 155 -335 198 -712 122 -138 -28 -337 -31 -430 -6 -219 58 -373 219 -426 441 -16 70 -26 88 -37 69z" />
+                </g>
+              </svg>
+            </div>
+            <p>
+              you first need to know <u>me</u>.
+            </p>
+
+            <div
+              className="tourchSection"
+              onMouseEnter={props.onMouseEnter}
+              onMouseLeave={props.onMouseLeave}
+            >
+              <p>lala</p>
+              <p>lala</p>
+              <p>lala</p>
+              <p>lala</p>
+              <p>lala</p>
+              <p>lala</p>
+              <p>this text to be visible only by the cursor hover</p>
+              <p>lala</p>
+              <p>lala</p>
+              <p>lala</p>
+              <p>lala</p>
+              <p>lala</p>
+              <p>lala</p>
+              <p>lala</p>
+            </div>
+
+            <p></p>
           </div>
         </div>
       </div>
