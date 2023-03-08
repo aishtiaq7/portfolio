@@ -162,13 +162,20 @@ export const SectionBanner = (props) => {
 };
 
 export const InterestSection = (props) => {
-
   useEffect(() => {
+    // svg-1:
     const path = document.querySelector(".svg-1");
     var pathLength = path.getTotalLength();
 
     path.style.strokeDasharray = pathLength;
-    path.style.strokeDashoffset = pathLength;
+    path.style.strokeDashoffset = pathLength ;
+
+    // svg-2:
+    const path2 = document.querySelector(".svg-2");
+    var pathLength2 = path2.getTotalLength();
+
+    path2.style.strokeDasharray = pathLength2;
+    path2.style.strokeDashoffset = pathLength2;
 
     const onScroll = () => {
       var scrollPercentage =
@@ -176,22 +183,27 @@ export const InterestSection = (props) => {
         (document.documentElement.scrollHeight -
           document.documentElement.clientHeight);
 
-      if (scrollPercentage >= 0.71 || scrollPercentage <= 0.635) {
+      if (scrollPercentage >= 0.635 && scrollPercentage <= 0.71) {
+        scrollPercentage = scrollPercentage * 6.3;
+
+        var drawLength = pathLength * scrollPercentage;
+        path.style.strokeDashoffset = pathLength - drawLength;
+
+      } else if (scrollPercentage > 0.71 && scrollPercentage <= 0.78 ) {
+        // console.clear()
+        // console.log("--------------------------------start");
+        // console.log("scrollPercentage:", scrollPercentage);
+        scrollPercentage = scrollPercentage * 3.2;
+
+        var drawLength2 = pathLength2 * scrollPercentage;
+        // console.log("drawLength:", drawLength2);
+
+        path2.style.strokeDashoffset = pathLength2 - drawLength2;
+        // console.log(path2);
+
+      } else {
         return;
       }
-
-      console.log("--------------------------------start");
-      console.log("scrollPercentage:", scrollPercentage);
-      scrollPercentage = scrollPercentage * 6.3;
-
-      // Length to offset the dashes
-      var drawLength = pathLength * scrollPercentage;
-      console.log("drawLength:", drawLength);
-
-      // Draw in reverse
-      path.style.strokeDashoffset = pathLength - drawLength;
-
-      console.log(path);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -236,12 +248,13 @@ export const InterestSection = (props) => {
                   fill="#000000"
                   stroke="none"
                 >
-                  <path 
+                  <path
                     className="svg-2"
                     fill="none"
                     stroke="black"
                     strokeWidth={30}
-                  d="M597 1503 c-8 -12 28 -142 56 -203 34 -76 106 -171 166 -219 68 -53 139 -87 240 -112 74 -19 104 -21 225 -16 86 3 180 13 241 26 55 12 156 24 225 28 199 9 326 -22 394 -97 84 -94 77 -169 -61 -620 -36 -118 -68 -221 -70 -227 -3 -7 1 -13 9 -13 15 0 117 315 174 535 34 132 36 234 6 292 -81 155 -335 198 -712 122 -138 -28 -337 -31 -430 -6 -219 58 -373 219 -426 441 -16 70 -26 88 -37 69z" />
+                    d="M597 1503 c-8 -12 28 -142 56 -203 34 -76 106 -171 166 -219 68 -53 139 -87 240 -112 74 -19 104 -21 225 -16 86 3 180 13 241 26 55 12 156 24 225 28 199 9 326 -22 394 -97 84 -94 77 -169 -61 -620 -36 -118 -68 -221 -70 -227 -3 -7 1 -13 9 -13 15 0 117 315 174 535 34 132 36 234 6 292 -81 155 -335 198 -712 122 -138 -28 -337 -31 -430 -6 -219 58 -373 219 -426 441 -16 70 -26 88 -37 69z"
+                  />
                 </g>
               </svg>
             </div>
