@@ -1,8 +1,10 @@
 .fs-nav-links {
-    /* display: inline-block; */
-    /* position: relative; */
-    /* z-index: 1; */
-    padding: 2rem 4.5rem;
-    /* background-color: orange; */
-    cursor: none;
+  padding: 2rem 5.8rem;
+  cursor: none;
+}
+
+@media only screen and (max-width: 391px) {
+  .fs-nav-links {
+    padding: 2rem 4rem;
+  }
 }

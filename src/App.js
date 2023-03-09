@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
 
+
 import Footer from "./components/Footer";
 import FullScreenNav from "./components/FullScreenNav";
 import Navbar from "./components/Navbar";
@@ -42,6 +43,7 @@ function App() {
     const onScroll = () => {
       setOffset(window.pageYOffset);
     };
+
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("mousemove", mouseMove);

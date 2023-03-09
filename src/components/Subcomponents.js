@@ -2,7 +2,14 @@ import { useEffect } from "react";
 import "../App.css";
 import "../components/Subcomponent.css";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export const Section = (props) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <article
       id="about"
@@ -19,7 +26,7 @@ export const Section = (props) => {
         >
           <div className="largeText">
             <div className="greetingsTitle">
-              <h3>"helloo"</h3>
+              <h3 data-aos="zoom-out-down" data-aos-once="false"  data-aos-offset={250} data-aos-duration={550}>"helloo"</h3>
             </div>
 
             <div className="des">
@@ -141,8 +148,7 @@ export const Card = (props) => {
       </div>
       <div className="cardDes">
         <p>
-          Magna excesint eat exercitation officia eiusmod deserunt veniam. Duis
-          labore qui ut sunt tempor ut officia irure cu.
+          {props.des}
         </p>
       </div>
     </div>
@@ -177,14 +183,12 @@ export const InterestSection = (props) => {
     path2.style.strokeDasharray = pathLength2;
     path2.style.strokeDashoffset = pathLength2;
 
-
     //svg-3
     const path3 = document.querySelector(".svg-3");
     var pathLength3 = path3.getTotalLength();
 
     path3.style.strokeDasharray = pathLength3;
     path3.style.strokeDashoffset = pathLength3;
-
 
     const onScroll = () => {
       var scrollPercentage =
@@ -193,22 +197,24 @@ export const InterestSection = (props) => {
           document.documentElement.clientHeight);
       // console.log('scrollPercentage:', scrollPercentage);
 
-      if (scrollPercentage >= 0.635 && scrollPercentage <= 0.71) { //TODO: Improve code, refactor into function
+      if (scrollPercentage >= 0.635 && scrollPercentage <= 0.71) {
+        //TODO: Improve code, refactor into function
         scrollPercentage = scrollPercentage * 6.3;
         var drawLength = pathLength * scrollPercentage;
         path.style.strokeDashoffset = pathLength - drawLength;
-      } else if (scrollPercentage > 0.71 && scrollPercentage <= 0.763) { //svg-2 logic
+      } else if (scrollPercentage > 0.71 && scrollPercentage <= 0.763) {
+        //svg-2 logic
         scrollPercentage = scrollPercentage * 8.5;
         var drawLength2 = pathLength2 * scrollPercentage;
         path2.style.strokeDashoffset = pathLength2 - drawLength2;
-      } else if (scrollPercentage > 0.763 && scrollPercentage <=0.79){  //svg-2 logic
+      } else if (scrollPercentage > 0.763 && scrollPercentage <= 0.79) {
+        //svg-2 logic
         // console.clear();
         // console.log('--here at:', scrollPercentage);
         scrollPercentage = scrollPercentage * 13.45;
         var drawLength3 = pathLength3 * scrollPercentage;
         path3.style.strokeDashoffset = pathLength3 - drawLength3;
-      } 
-      else {
+      } else {
         return;
       }
     };
@@ -220,7 +226,7 @@ export const InterestSection = (props) => {
   }, []);
 
   return (
-    <section ref={props.innerRef}>
+    <section id="interests" ref={props.innerRef}>
       <div className="interestSection">
         <SectionBanner section={"Interests"} isLightTheme={false} />
         <div className="largeText">
@@ -280,7 +286,10 @@ export const InterestSection = (props) => {
                       stroke="#000000"
                       strokeWidth={200}
                     >
-                      <path className="svg-3" d="M6530 4824 c-1623 -28 -3200 -87 -4775 -179 -490 -29 -480 -27 -480 -105 0 -34 5 -47 25 -61 24 -19 34 -19 440 6 2151 128 4351 193 6110 182 1044 -7 1527 -22 2215 -68 1116 -74 1854 -202 2221 -387 115 -58 177 -110 209 -176 26 -52 26 -58 15 -107 -11 -44 -17 -53 -48 -66 -106 -44 -184 -49 -1322 -78 -674 -17 -1606 -46 -2445 -75 -1189 -41 -1465 -50 -1985 -65 -294 -8 -825 -21 -1180 -30 -1420 -33 -1617 -45 -1797 -106 -48 -16 -113 -36 -143 -44 -73 -19 -219 -72 -248 -91 -66 -43 -48 -121 52 -219 118 -117 305 -195 604 -254 200 -40 371 -58 737 -77 422 -22 487 -16 514 43 17 37 13 52 -19 84 -28 28 -33 30 -87 24 -72 -9 -534 11 -748 31 -381 35 -674 111 -833 214 -28 19 -52 38 -52 42 0 6 120 47 296 102 168 52 315 59 2074 101 791 19 1447 39 2345 70 1463 51 2612 86 3430 105 513 11 610 16 721 35 173 31 262 89 283 184 34 159 1 263 -118 373 -353 326 -1469 507 -3566 578 -296 10 -2077 20 -2445 14z" />
+                      <path
+                        className="svg-3"
+                        d="M6530 4824 c-1623 -28 -3200 -87 -4775 -179 -490 -29 -480 -27 -480 -105 0 -34 5 -47 25 -61 24 -19 34 -19 440 6 2151 128 4351 193 6110 182 1044 -7 1527 -22 2215 -68 1116 -74 1854 -202 2221 -387 115 -58 177 -110 209 -176 26 -52 26 -58 15 -107 -11 -44 -17 -53 -48 -66 -106 -44 -184 -49 -1322 -78 -674 -17 -1606 -46 -2445 -75 -1189 -41 -1465 -50 -1985 -65 -294 -8 -825 -21 -1180 -30 -1420 -33 -1617 -45 -1797 -106 -48 -16 -113 -36 -143 -44 -73 -19 -219 -72 -248 -91 -66 -43 -48 -121 52 -219 118 -117 305 -195 604 -254 200 -40 371 -58 737 -77 422 -22 487 -16 514 43 17 37 13 52 -19 84 -28 28 -33 30 -87 24 -72 -9 -534 11 -748 31 -381 35 -674 111 -833 214 -28 19 -52 38 -52 42 0 6 120 47 296 102 168 52 315 59 2074 101 791 19 1447 39 2345 70 1463 51 2612 86 3430 105 513 11 610 16 721 35 173 31 262 89 283 184 34 159 1 263 -118 373 -353 326 -1469 507 -3566 578 -296 10 -2077 20 -2445 14z"
+                      />
                     </g>
                   </svg>
                 </div>

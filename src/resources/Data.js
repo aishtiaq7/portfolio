@@ -4,7 +4,7 @@ export const cardItem = [
     projectName: "Coursley",
     iconsList: ["html", "js"],
     hyperlink: "https://github.com/aishtiaq7/",
-    des: "Course Management app",
+    des: "A Course Management MEAN stack app that dashboards an interface for students, professors and staff to manage/add/edit courses and discussion forms. Project handover -April 10th 2023​",
     cursorClass: "lala",
   },
   {
@@ -12,7 +12,7 @@ export const cardItem = [
     projectName: "VibeCheckDiscord.bot",
     iconsList: ["css", "html", "js" ],
     hyperlink: "https://github.com/aishtiaq7/VibeCheck-discord-bot",
-    des: "Multipurpose vibecheck discord bot",
+    des: "Multipurpose discord bot that includes features such as Vibechecking everyone in the server and presenting soccer scores and upcoming matches in local time zone.",
     cursorClass: "lala",
   },
   {
@@ -20,7 +20,7 @@ export const cardItem = [
     projectName: "DxBall-Lite",
     iconsList: ["css", "html", "js"],
     hyperlink: "https://github.com/aishtiaq7/DX-ball-lite",
-    des: "Browser game",
+    des: "PPLAYABLE NOW!  A browser compatible DxBall game that features controlling a paddle to break blocks using a constantly moving ball.",
     cursorClass: "lala",
   },
   {
@@ -28,7 +28,7 @@ export const cardItem = [
     projectName: "Japanese Website Clone",
     iconsList: ["css", "html", "js"],
     hyperlink: "https://github.com/aishtiaq7/Japanese-Website-Clone",
-    des: "Browser game",
+    des: "Aesthetically pleasing Japanese website clone that showcases a prominent Japanese artist and his artworks",
     cursorClass: "lala",
   },
 ];

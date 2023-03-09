@@ -45,6 +45,11 @@ const FullScreenNav = (props) => {
           </a>
         </li>
         <li>
+          <a className="fs-nav-links" href="/" onClick={handleProjectsClick}>
+            Interests
+          </a>
+        </li>
+        <li>
           <a
             className="fs-nav-links"
             href={googleDriveResumeLink}
