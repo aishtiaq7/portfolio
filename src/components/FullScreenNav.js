@@ -4,7 +4,7 @@ import "./FullScreenNav.css";
 
 // import { useState } from "react";
 const googleDriveResumeLink =
-  "https://drive.google.com/file/d/1K5BOZeUnCPommSL-S5A2wb1tGRfAqv5Z/view";
+  "https://drive.google.com/file/d/1ZH4BdwZ1SDUNIGf3LrCtfqUNMbCuJ6rK/view?usp=sharing";
 
 const FullScreenNav = (props) => {
   // const [hideMenu, sethideMenu] = useState(false);
@@ -44,11 +44,11 @@ const FullScreenNav = (props) => {
             Projects
           </a>
         </li>
-        <li>
+        {/* <li>
           <a className="fs-nav-links" href="/" onClick={handleProjectsClick}>
             Interests
           </a>
-        </li>
+        </li> */}
         <li>
           <a
             className="fs-nav-links"

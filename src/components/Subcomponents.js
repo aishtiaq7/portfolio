@@ -26,7 +26,14 @@ export const Section = (props) => {
         >
           <div className="largeText">
             <div className="greetingsTitle">
-              <h3 data-aos="zoom-out-down" data-aos-once="false"  data-aos-offset={250} data-aos-duration={550}>"helloo"</h3>
+              <h3
+                data-aos="zoom-out-down"
+                data-aos-once="false"
+                data-aos-offset={250}
+                data-aos-duration={550}
+              >
+                "helloo"
+              </h3>
             </div>
 
             <div className="des">
@@ -35,14 +42,14 @@ export const Section = (props) => {
                 As I grow my skills to become a competent Software Developer
                 (alongside being a better person of course), I want to use this
                 platform to showcase some of my work, interests and hopefully
-                give you an impression of me. :p
+                give you an impression of me :)
               </h3>
 
               <br></br>
               <h3>
-                Alongside completing my last semester in SFU, i will be spending
-                some time updating my portfolio page and seek software
-                development opportunites
+                As I complete my last semester in SFU - spring'23, <br></br>i
+                will be spending some time updating my projects and seek
+                software development opportunites.
               </h3>
             </div>
           </div>
@@ -76,7 +83,7 @@ export const DarkSection = (props) => {
         <div className="container">
           <div>
             <h1 className="greetingsTitle">
-              I will be updating this projects section soon...
+              Here are some of my <u>running</u> projects...
             </h1>
 
             <div className="cardsContainer">{listItems}</div>
@@ -147,9 +154,7 @@ export const Card = (props) => {
         <h5>{props.projectName}</h5>
       </div>
       <div className="cardDes">
-        <p>
-          {props.des}
-        </p>
+        <p>{props.des}</p>
       </div>
     </div>
   );
@@ -225,13 +230,19 @@ export const InterestSection = (props) => {
     };
   }, []);
 
+  const torchContent = [
+    "I love to play football,",
+    "make softwares,",
+    "building trust & relationships.",
+  ];
+
   return (
     <section id="interests" ref={props.innerRef}>
       <div className="interestSection">
         <SectionBanner section={"Interests"} isLightTheme={false} />
         <div className="largeText">
           <div className="container">
-            <h1 className="greetingsTitle">My interests ??</h1>
+            <h1 className="greetingsTitle">My <u></u>interests ??</h1>
 
             <div className="stroke-svg">
               <svg
@@ -294,30 +305,20 @@ export const InterestSection = (props) => {
                   </svg>
                 </div>
               </div>
-              {/* <p >.</p> */}
             </h5>
-            <div
-              className="tourchSection"
-              onMouseEnter={props.onMouseEnter}
-              onMouseLeave={props.onMouseLeave}
-            >
-              <p>lala</p>
-              <p>lala</p>
-              <p>lala</p>
-              <p>lala</p>
-              <p>lala</p>
-              <p>lala</p>
-              <p>upcoming feature: reveal only by the cursor hover</p>
-              <p>lala</p>
-              <p>lala</p>
-              <p>lala</p>
-              <p>lala</p>
-              <p>lala</p>
-              <p>lala</p>
-              <p>lala</p>
+            <div className="tourchSection">
+              {torchContent.map((sen) => {
+                return (
+                  <p
+                    className="over-objects"
+                    onMouseEnter={props.onMouseEnter}
+                    onMouseLeave={props.onMouseLeave}
+                  >
+                    {sen}
+                  </p>
+                );
+              })}
             </div>
-
-            <p></p>
           </div>
         </div>
       </div>

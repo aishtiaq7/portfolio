@@ -3,8 +3,8 @@ export const cardItem = [
     id: 2,
     projectName: "Coursley",
     iconsList: ["html", "js"],
-    hyperlink: "https://github.com/aishtiaq7/",
-    des: "A Course Management MEAN stack app that dashboards an interface for students, professors and staff to manage/add/edit courses and discussion forms. Project handover -April 10th 2023​",
+    hyperlink: "http://www.sfu.ca/outlines.html?2023/spring/cmpt/372/d100",
+    des: "A Course Management MEAN stack app that dashboards an interface for students, professors and staff to edit & manage courses and discussion forms. Project handover: April 10th 2023 ​", 
     cursorClass: "lala",
   },
   {
@@ -20,7 +20,7 @@ export const cardItem = [
     projectName: "DxBall-Lite",
     iconsList: ["css", "html", "js"],
     hyperlink: "https://github.com/aishtiaq7/DX-ball-lite",
-    des: "PPLAYABLE NOW!  A browser compatible DxBall game that features controlling a paddle to break blocks using a constantly moving ball.",
+    des: "Play NOW!  A browser compatible DxBall game that features controlling a paddle to break blocks using a constantly moving ball.",
     cursorClass: "lala",
   },
   {

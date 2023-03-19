@@ -110,7 +110,7 @@ function App() {
 
       x: mousePosition.x - 75,
       y: mousePosition.y - 75, // 75 cuz radius is 150
-      // mixBlendMode: "difference",
+      mixBlendMode: "difference",
     },
   };
   const cardEnter = () => {
