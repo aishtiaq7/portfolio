@@ -231,7 +231,7 @@ export const InterestSection = (props) => {
   }, []);
 
   const torchContent = [
-    "I love to play football,",
+    "But I love to play football,",
     "make softwares,",
     "building trust & relationships.",
   ];
