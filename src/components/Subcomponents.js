@@ -310,6 +310,7 @@ export const InterestSection = (props) => {
               {torchContent.map((sen) => {
                 return (
                   <p
+                    key={sen}
                     className="over-objects"
                     onMouseEnter={props.onMouseEnter}
                     onMouseLeave={props.onMouseLeave}
