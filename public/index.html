@@ -11,48 +11,42 @@
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
- 
+
     <title>Awshaf Space</title>
     <style>
-      /* Keyframes Spin */
       @keyframes spin {
         from {
           transform: rotate(0deg);
         }
         to {
-          transform: rotate(360deg);
+          transform: rotate(359deg);
         }
       }
-      .container {
+      .loader-container {
+        padding: 0;
+        margin: 0;
         margin: 0 auto;
 
-        width: 100vw;
+        width: 100%;
         height: 100vh;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        background-color: black;
+
+        overflow: hidden;
+        color: rgb(239, 239, 239);
       }
-
-      /* Spinner */
-      .spinner {
-        --spinner-color: black;
-
-        aspect-ratio: 1/1;
+      .loading2 {
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
-
-        animation-name: spin;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-      }
-
-      .spinner--quarter {
-        width: 48px;
-        border: 5px solid var(--spinner-color);
-        border-top-color: transparent;
-
-        animation-duration: 1s;
+        border-top: 4px solid;
+        border-color: #333 transparent;
+        animation: spin 0.6s linear infinite;
       }
     </style>
   </head>
@@ -60,10 +54,10 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
     <div id="root">
-      <div class="container">
-        <span class="spinner spinner--quarter"></span>
-        <h5>Loading...</h5>
-        <h5>Please wait.</h5>
+      <div class="loader-container">
+        <div class="loading2"></div>
+        <h5>Loading <u>awshaf.com</u></h5>
+        <h5>Please wait...</h5>
       </div>
     </div>
   </body>
