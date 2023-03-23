@@ -111,7 +111,7 @@ export const Card = (props) => {
           return (
             <img
               key={icon}
-              style={{ padding: "1rem" }}
+              style={{ padding: "1.4rem"}}
               className="icon"
               src={require("../resources/html.png")}
               alt={id}
@@ -123,6 +123,42 @@ export const Card = (props) => {
               key={icon}
               className="icon"
               src={require("../resources/js.png")}
+              alt={id}
+            ></img>
+          );
+        case "nodejs":
+          return (
+            <img
+              key={icon}
+              className="icon"
+              src={require("../resources/nodejs.png")}
+              alt={id}
+            ></img>
+          );
+        case "psql":
+          return (
+            <img
+              key={icon}
+              className="icon"
+              src={require("../resources/psql.png")}
+              alt={id}
+            ></img>
+          );
+        case "angular":
+          return (
+            <img
+              key={icon}
+              className="icon"
+              src={require("../resources/angular.png")}
+              alt={id}
+            ></img>
+          );
+        case "socketio":
+          return (
+            <img
+              key={icon}
+              className="icon"
+              src={require("../resources/socketio.png")}
               alt={id}
             ></img>
           );
@@ -311,7 +347,7 @@ export const InterestSection = (props) => {
                 return (
                   <p
                     key={sen}
-                    className="over-objects"
+                    className="hover-objects"
                     onMouseEnter={props.onMouseEnter}
                     onMouseLeave={props.onMouseLeave}
                   >
