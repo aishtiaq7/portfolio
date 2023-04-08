@@ -8,3 +8,4 @@ Todos:
 -   coherent styles (in font and sizes)
 -   introduce handwriting font
 -   doodle span elements, like hearts of scriblle.
+-   parallax effect on items.

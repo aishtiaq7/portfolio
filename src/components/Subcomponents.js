@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "../App.css";
 import "../components/Subcomponent.css";
 
+// animation on scroll lib
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -38,18 +39,30 @@ export const Section = (props) => {
 
             <div className="des">
               <h3>
-                Its a pleasure to have you here on my page. <br></br> <br></br>
-                As I grow my skills to become a competent Software Developer
-                (alongside being a better person of course), I want to use this
-                platform to showcase some of my work, interests and hopefully
-                give you an impression of me :)
+                Welcome to my page! <br></br> <br></br>
+                As I continue to develop my skills in this field and strive to
+                become a better person, I look forward to using this space to
+                showcase some of my projects and interests.
+                {/* <br/>
+                Welcome to my page! 
+                <br/>
+                <br/>
+                I'm excited to share my journey as a
+                software developer with you. As I continue to develop my skills
+                in this field and strive to become a better person overall, I
+                look forward to using this platform to showcase my projects and
+                interests. As I near the end of my last semester at SFU in the
+                spring of 2023, I will be taking the time to update my projects
+                and pursue opportunities in software development. */}
               </h3>
 
               <br></br>
               <h3>
-                As I complete my last semester in SFU - spring'23, <br></br>i
-                will be spending some time updating my projects and seek
-                software development opportunites.
+                With the end of my final semester at SFU approaching in spring
+                2023, I'm excited to dedicate time to refining my projects and
+                exploring new opportunities in this field. I'm eager to see
+                where this journey takes me and can't wait to share my
+                experiences with you.{" "}
               </h3>
             </div>
           </div>
@@ -111,7 +124,7 @@ export const Card = (props) => {
           return (
             <img
               key={icon}
-              style={{ padding: "1.4rem"}}
+              style={{ padding: "1.4rem" }}
               className="icon"
               src={require("../resources/html.png")}
               alt={id}
@@ -278,7 +291,9 @@ export const InterestSection = (props) => {
         <SectionBanner section={"Interests"} isLightTheme={false} />
         <div className="largeText">
           <div className="container">
-            <h1 className="greetingsTitle">My <u></u>interests ??</h1>
+            <h1 className="greetingsTitle">
+              My <u></u>interests ??
+            </h1>
 
             <div className="stroke-svg">
               <svg

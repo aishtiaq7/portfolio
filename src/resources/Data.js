@@ -4,7 +4,7 @@ export const cardItem = [
     projectName: "Coursley",
     iconsList: ["nodejs","psql","angular","html", "js", "css"],
     hyperlink: "https://coursely-web-wrcghz3p4a-nn.a.run.app/login",
-    des: "A Course Management MEAN stack app that dashboards an interface for students, professors and staff to edit & manage courses and discussion forms. Project handover: April 10th 2023 ​",
+    des: "A Course Management PEAN stack application that interfaces separate views for both students & instructors to manage courses, access events in google calendar, chat with peers etc.​",
     cursorClass: "lala",
   },
   {

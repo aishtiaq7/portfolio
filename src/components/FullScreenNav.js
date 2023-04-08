@@ -4,7 +4,7 @@ import "./FullScreenNav.css";
 
 // import { useState } from "react";
 const googleDriveResumeLink =
-  "https://drive.google.com/file/d/1ZH4BdwZ1SDUNIGf3LrCtfqUNMbCuJ6rK/view?usp=sharing";
+  "https://drive.google.com/file/d/1LGRrh62eO9ye9VqB8FMflMRG-FbUD3zT/view?usp=share_link";
 
 const FullScreenNav = (props) => {
   // const [hideMenu, sethideMenu] = useState(false);

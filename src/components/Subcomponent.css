@@ -71,6 +71,9 @@
   font-size: var(--content-font-size);
   font-weight: 600;
 }
+.des {
+  user-select: none;
+}
 
 .ribbon-dark {
   width: 0px;
