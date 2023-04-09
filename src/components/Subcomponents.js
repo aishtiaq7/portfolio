@@ -86,25 +86,26 @@ export const DarkSection = (props) => {
   });
 
   return (
-    <section id="projects" className="dark-section">
-      <div className="largeText">
+    <section id="projects" className="dark-section largeText">
+      <div className="projectsBanner">
         <SectionBanner section={"Projects"} isLightTheme={true} />
-        <div className="container">
-          <div>
-            <h1 className="greetingsTitle">
-              Here are some of my <u>running</u> projects...
-            </h1>
+      </div>
 
-            <div className="cardsContainer">{listItems}</div>
-            <button
-              className="learnMoreBtn"
-              onClick={() => {
-                navigateToLearnMore();
-              }}
-            >
-              Learn More
-            </button>
-          </div>
+      <div className="container">
+        <div>
+          <h1 className="greetingsTitle">
+            Here are some of my <u>running</u> projects...
+          </h1>
+
+          <div className="cardsContainer">{listItems}</div>
+          <button
+            className="learnMoreBtn"
+            onClick={() => {
+              navigateToLearnMore();
+            }}
+          >
+            More Projects
+          </button>
         </div>
       </div>
     </section>
@@ -114,6 +115,7 @@ export const DarkSection = (props) => {
 export const Card = (props) => {
   const renderIcons = (iconsList, id) => {
     return iconsList.map((icon) => {
+      //TODO: Refactor the below code
       switch (icon) {
         case "css":
           return (
@@ -205,7 +207,6 @@ export const Card = (props) => {
       onMouseEnter={props.mouseEnterEvent}
       onMouseLeave={props.mouseLeaveEvent}
       onClick={() => {
-        // uncomment to enable onClick listener:
         window.open(props.hyperlink, "_blank");
       }}
     >
