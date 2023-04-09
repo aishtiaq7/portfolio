@@ -113,6 +113,8 @@ function App() {
       mixBlendMode: "difference",
     },
   };
+
+  //TODO: refactor the following to take class name as input
   const cardEnter = () => {
     setCursorVariant("cardEnter");
   };

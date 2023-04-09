@@ -2,10 +2,16 @@ import { HiMenu } from "react-icons/hi";
 import { IconContext } from "react-icons";
 import "../App.css";
 import "./Navbar.css";
+import { useNavigate } from 'react-router-dom';
+
 
 const Navbar = (props) => {
   // console.log("offset:", props.offset);
   // console.log("inView:", props.invertNavColor);
+  const navigate = useNavigate();
+   const navigateToHome = ()  =>{
+    navigate('/');
+  }
 
   return (
     <nav
@@ -15,7 +21,7 @@ const Navbar = (props) => {
       onMouseEnter={props.textEnterLogo}
       onMouseLeave={props.textLeaveLogo}
     >
-      <div className="name-logo">
+      <div className="name-logo" onClick={()=>navigateToHome()}>
         <h4>AWSHAF ___</h4>
         <h4 className="ishtiaque">ISHTIAQUE</h4>
       </div>

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "../App.css";
 import "../components/Subcomponent.css";
+import { useNavigate } from "react-router-dom";
 
 // animation on scroll lib
 import AOS from "aos";
@@ -43,17 +44,6 @@ export const Section = (props) => {
                 As I continue to develop my skills in this field and strive to
                 become a better person, I look forward to using this space to
                 showcase some of my projects and interests.
-                {/* <br/>
-                Welcome to my page! 
-                <br/>
-                <br/>
-                I'm excited to share my journey as a
-                software developer with you. As I continue to develop my skills
-                in this field and strive to become a better person overall, I
-                look forward to using this platform to showcase my projects and
-                interests. As I near the end of my last semester at SFU in the
-                spring of 2023, I will be taking the time to update my projects
-                and pursue opportunities in software development. */}
               </h3>
 
               <br></br>
@@ -73,6 +63,12 @@ export const Section = (props) => {
 };
 
 export const DarkSection = (props) => {
+  const navigate = useNavigate();
+  const navigateToLearnMore = () => {
+    console.log("btn clicked");
+    navigate("/learnMore");
+  };
+
   const data = props.projectsData;
   const listItems = data.map((item) => {
     return (
@@ -100,6 +96,14 @@ export const DarkSection = (props) => {
             </h1>
 
             <div className="cardsContainer">{listItems}</div>
+            <button
+              className="learnMoreBtn"
+              onClick={() => {
+                navigateToLearnMore();
+              }}
+            >
+              Learn More
+            </button>
           </div>
         </div>
       </div>
@@ -163,6 +167,15 @@ export const Card = (props) => {
               key={icon}
               className="icon"
               src={require("../resources/angular.png")}
+              alt={id}
+            ></img>
+          );
+        case "docker":
+          return (
+            <img
+              key={icon}
+              className="icon"
+              src={require("../resources/docker.png")}
               alt={id}
             ></img>
           );

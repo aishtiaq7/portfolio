@@ -2,7 +2,7 @@ export const cardItem = [
   {
     id: 2,
     projectName: "Coursley",
-    iconsList: ["nodejs","psql","angular","html", "js", "css"],
+    iconsList: ["nodejs","psql","angular","html", "docker", "css"],
     hyperlink: "https://coursely-web-wrcghz3p4a-nn.a.run.app/login",
     des: "A Course Management PEAN stack application that interfaces separate views for both students & instructors to manage courses, access events in google calendar, chat with peers etc.​",
     cursorClass: "lala",
@@ -10,7 +10,7 @@ export const cardItem = [
   {
     id: 3,
     projectName: "VibeCheckDiscord.bot",
-    iconsList: ["nodejs","js","socketio"],
+    iconsList: ["nodejs","docker","js","socketio"],
     hyperlink: "https://github.com/aishtiaq7/VibeCheck-discord-bot",
     des: "Multipurpose discord bot that includes features such as Vibechecking everyone in the server and presenting soccer scores and upcoming matches in local time zone.",
     cursorClass: "lala",
@@ -26,7 +26,7 @@ export const cardItem = [
   {
     id: 5,
     projectName: "Japanese Website Clone",
-    iconsList: ["css", "html", "js"],
+    iconsList: [ "js","html", "css"],
     hyperlink: "https://github.com/aishtiaq7/Japanese-Website-Clone",
     des: "Aesthetically pleasing Japanese website clone that showcases a prominent Japanese artist and his artworks",
     cursorClass: "lala",

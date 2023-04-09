@@ -1,0 +1,21 @@
+.learnMoreParent {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 4rem;
+}
+@media only screen and (max-width: 391px) {
+  /* Turning off cursor: */
+
+  .learnMoreParent {
+    font-size: 1.6rem;
+  }
+  .cursor {
+    display: none;
+  }
+}
