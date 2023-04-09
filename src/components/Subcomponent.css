@@ -21,6 +21,7 @@
 }
 
 .dark-section {
+  user-select: none;
   width: 100vw;
   min-height: 100vh;
   cursor: none;
@@ -52,6 +53,9 @@
 
   border: 1px solid transparent;
   transition: all 0.5s ease;
+}
+.learnMoreBtn:hover{
+  scale: 1.1;
 }
 
 .learnMoreBtn:active {
@@ -211,8 +215,6 @@
 
   height: 30%;
   width: 100%;
-
-  /* border: 2px solid red; */
 }
 
 .icon {
@@ -236,7 +238,6 @@
 
 .cardTitle {
   width: 100%;
-  /* border: green dotted 3px; */
   text-align: start;
 
   font-size: 1.2vw;
@@ -249,15 +250,15 @@
 
 .cardDes {
   width: 100%;
-  /* border: blue dotted 3px; */
   text-align: start;
   padding: 1.3rem 1.3rem;
 
   font-size: 1.1vw;
 }
 
-/* InterestSection */
+/* Interests Section */
 .interestSection {
+  user-select: none;
   cursor: none;
   width: 100vw;
   min-height: 120vh;
@@ -266,7 +267,7 @@
   position: relative;
   color: black;
 
-  /* position: relative; */
+  padding-top: 7%;
 }
 .stroke-svg {
   max-height: 15rem;
@@ -299,8 +300,8 @@
   margin-top: -8rem;
 }
 
-/* Torch Section */
-.tourchSection {
+/* Touch Section */
+.touchSection {
   padding: 6rem;
   overflow: hidden;
   width: auto;
@@ -311,13 +312,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  /* border: 2px dotted red; */
 }
 
 .hover-objects {
-  /* color: var(--main-white-color); */
-  
   color: rgb(123, 123, 123 , 0.5);
   filter: blur(4px);
   width: fit-content;
@@ -326,8 +323,6 @@
 
   transition: 0.4s all ease-in;
   transform: translateY(0px);
-
-  /* border: 2px dotted green; */
 }
 
 .hover-objects:hover {
@@ -340,12 +335,8 @@
 @media only screen and (max-width: 391px) {
   .dark-section{
     padding-bottom: 10%;
-
-    /* min-height: 105vh; */
   }
-
   .card {
-    /* position: relative; */
     width: 18em;
     height: 16rem;
   }
@@ -354,7 +345,6 @@
     padding: 0;
 
     background-color: rgb(128, 128, 128, 0.5);
-    /* opacity: 0.5; */
 
     font-size: 4.2vw;
     font-family: var(--content-font-family);
@@ -389,5 +379,9 @@
     border-bottom: solid 15px transparent;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+  }
+
+  .interestSection{
+    padding-top: 10;
   }
 }

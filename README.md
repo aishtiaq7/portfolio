@@ -1,11 +1,17 @@
-## Portfolio
+# Portfolio
 
 View the website here: https://awshaf.com
 
+<hr>
 
-Todos:
--   update content
--   coherent styles (in font and sizes)
--   introduce handwriting font
--   doodle span elements, like hearts of scriblle.
--   parallax effect on items.
+### UI TODOs:
+-   Parallax effect on items.
+-   Design & implement "LearnMore" screen
+-   Fix (2nd) SVG drawings (in Interests)
+-   Consistent Font
+-   More AOS animations. Reveal on view. 
+-   Transition to open/close fs menu bar
+-   Redesign cursor shape for Navbar objects
+
+### Non-Functional TODOs: 
+-   Refactor BAD code

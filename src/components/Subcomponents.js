@@ -41,18 +41,16 @@ export const Section = (props) => {
             <div className="des">
               <h3>
                 Welcome to my page! <br></br> <br></br>
-                As I continue to develop my skills in this field and strive to
-                become a better person, I look forward to using this space to
-                showcase some of my projects and interests.
+                As I continue to develop my technical skills in <u>software dev</u> and
+                become a better version of myself everyday, I look forward to using this
+                space to showcase some of my work, projects and interests.
               </h3>
 
               <br></br>
               <h3>
-                With the end of my final semester at SFU approaching in spring
-                2023, I'm excited to dedicate time to refining my projects and
-                exploring new opportunities in this field. I'm eager to see
-                where this journey takes me and can't wait to share my
-                experiences with you.{" "}
+                I'll be completing my Bachelors in Computer Science this Spring of 2023 from SFU, but in the mean time I'll be
+                organizing my projects in this space and seek Software
+                Development opportunities within <u>Vancouver</u>.
               </h3>
             </div>
           </div>
@@ -302,13 +300,14 @@ export const InterestSection = (props) => {
   return (
     <section id="interests" ref={props.innerRef}>
       <div className="interestSection">
-        <SectionBanner section={"Interests"} isLightTheme={false} />
+        <div className="projectsBanner">
+          <SectionBanner section={"Interests"} isLightTheme={false} />
+        </div>
         <div className="largeText">
           <div className="container">
             <h1 className="greetingsTitle">
               My <u></u>interests ??
             </h1>
-
             <div className="stroke-svg">
               <svg
                 viewBox="0 0 300.000000 169.000000"
@@ -325,7 +324,6 @@ export const InterestSection = (props) => {
                 </g>
               </svg>
             </div>
-
             <p>if you want to know my interests,</p>
             <div className="stroke-svg">
               <svg
@@ -371,7 +369,7 @@ export const InterestSection = (props) => {
                 </div>
               </div>
             </h5>
-            <div className="tourchSection">
+            <div className="touchSection">
               {torchContent.map((sen) => {
                 return (
                   <p

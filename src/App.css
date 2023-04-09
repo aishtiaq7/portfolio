@@ -137,6 +137,7 @@ article {
 }
 
 .homepage {
+  user-select: none;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
