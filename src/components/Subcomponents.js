@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import "../App.css";
 import "../components/Subcomponent.css";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+
+// import React from 'react';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // animation on scroll lib
 import AOS from "aos";
@@ -41,16 +45,18 @@ export const Section = (props) => {
             <div className="des">
               <h3>
                 Welcome to my page! <br></br> <br></br>
-                As I continue to develop my technical skills in <u>software dev</u> and
-                become a better version of myself everyday, I look forward to using this
-                space to showcase some of my work, projects and interests.
+                As I continue to develop my technical skills in{" "}
+                <u>software dev</u> and become a better version of myself
+                everyday, I look forward to using this space to showcase some of
+                my work, projects and interests.
               </h3>
 
               <br></br>
               <h3>
-                I'll be completing my Bachelors in Computer Science this Spring of 2023 from SFU, but in the mean time I'll be
-                organizing my projects in this space and seek Software
-                Development opportunities within <u>Vancouver</u>.
+                I'll be completing my Bachelors in Computer Science this Spring
+                of 2023 from SFU, but in the mean time I'll be organizing my
+                projects in this space and seek Software Development
+                opportunities within <u>Vancouver</u>.
               </h3>
             </div>
           </div>
@@ -61,12 +67,6 @@ export const Section = (props) => {
 };
 
 export const DarkSection = (props) => {
-  const navigate = useNavigate();
-  const navigateToLearnMore = () => {
-    console.log("btn clicked");
-    navigate("/learnMore");
-  };
-
   const data = props.projectsData;
   const listItems = data.map((item) => {
     return (
@@ -82,7 +82,6 @@ export const DarkSection = (props) => {
       ></Card>
     );
   });
-
   return (
     <section id="projects" className="dark-section largeText">
       <div className="projectsBanner">
@@ -94,16 +93,26 @@ export const DarkSection = (props) => {
           <h1 className="greetingsTitle">
             Here are some of my <u>running</u> projects...
           </h1>
-
           <div className="cardsContainer">{listItems}</div>
           <button
             className="learnMoreBtn"
             onClick={() => {
-              navigateToLearnMore();
+              // navigateToLearnMore();
+              toast.info("Working on features! Stay Tuned!", {
+                position: "top-right",
+                autoClose: 3500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+              });
             }}
           >
             More Projects
           </button>
+          <ToastContainer position="bottom-center" />
         </div>
       </div>
     </section>
