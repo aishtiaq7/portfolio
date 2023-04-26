@@ -5,7 +5,8 @@ View the website here: https://awshaf.com
 <hr>
 
 ### UI TODOs:
--   Parallax effect on items.
+-   Parallax effect on items. <br>
+    Ref: https://dev.to/ansonlowzf/how-to-create-react-parallax-effect-with-react-hooks-1fon    
 -   Design & implement "LearnMore" screen
 -   Fix (2nd) SVG drawings (in Interests): Has a starting tail.
 -   Consistent Font
@@ -15,3 +16,4 @@ View the website here: https://awshaf.com
 
 ### Non-Functional TODOs: 
 -   Refactor BAD code
+-   Incorporate REDUX

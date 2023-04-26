@@ -3,9 +3,27 @@ import { CgCopyright } from "react-icons/cg";
 import { IconContext } from "react-icons";
 
 const Footer = (props) => {
+  console.log("props.offset\t\t", props.offset);
+
+  const value = 0.17;
+  console.log("props.offset * value", props.offset * value);
+
   return (
-    <footer id='contact' onMouseEnter={props.footerEnter} onMouseLeave={props.footerLeave}>
-      <div className="links">
+    <footer
+      id="contact"
+      onMouseEnter={props.footerEnter}
+      onMouseLeave={props.footerLeave}
+    >
+      <div
+        className="links"
+        style={{
+          transform:
+            props.offset >= 3000
+              ? `translateY(${(props.offset - 3000) * value}px)`
+              : "none",
+          // opacity: 0,
+        }}
+      >
         <div className="contactMe">
           <h2>Email me at:</h2>
           <br></br>
@@ -26,16 +44,17 @@ const Footer = (props) => {
             <a href="https://github.com/aishtiaq7">github</a>
           </li>
         </ul>
-
       </div>
 
       <div className="permissionstext">
-          <IconContext.Provider value={{}}>
-            <CgCopyright></CgCopyright>
-            <h5>AWSHAF ISHTIAQUE.<span style={{paddingLeft: "0.8rem"}}></span>ALL RIGHTS RESERVED.</h5>
-          </IconContext.Provider>
-          
-        </div>
+        <IconContext.Provider value={{}}>
+          <CgCopyright></CgCopyright>
+          <h5>
+            AWSHAF ISHTIAQUE.<span style={{ paddingLeft: "0.8rem" }}></span>ALL
+            RIGHTS RESERVED.
+          </h5>
+        </IconContext.Provider>
+      </div>
     </footer>
   );
 };

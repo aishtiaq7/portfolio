@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
 
-
 import Footer from "./components/Footer";
 import FullScreenNav from "./components/FullScreenNav";
 import Navbar from "./components/Navbar";
@@ -43,7 +42,6 @@ function App() {
     const onScroll = () => {
       setOffset(window.pageYOffset);
     };
-
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("mousemove", mouseMove);
@@ -128,7 +126,7 @@ function App() {
 
   const tourchEnter = () => {
     setCursorVariant("tourchEnter");
-  }
+  };
 
   const textEnterLogo = () => setCursorVariant("logo");
   const textLeaveLogo = () => setCursorVariant("default");
@@ -139,6 +137,7 @@ function App() {
   const footerEnter = () => setCursorVariant("hideCursor");
   const footerLeave = () => setCursorVariant("default");
 
+  const parallaxSpeedValue = 0.35;
   return (
     <div>
       <FullScreenNav
@@ -170,6 +169,9 @@ function App() {
               onMouseEnter={textEnter}
               onMouseLeave={textLeave}
               className="landingText"
+              style={{
+                transform: `translateY(${offset * parallaxSpeedValue}px)`,
+              }}
             >
               On the journey
               <br />
@@ -181,7 +183,12 @@ function App() {
           </div>
 
           {/* right component */}
-          <div className="portraitImg">
+          <div
+            className="portraitImg"
+            style={{
+              transform: `translateY(${offset * 0.3}px)`,
+            }}
+          >
             <img
               onMouseEnter={portraitEnter}
               onMouseLeave={portraitLeave}
@@ -215,7 +222,7 @@ function App() {
       ></InterestSection>
 
       <Footer
-        // id="footer"
+        offset={offset}
         footerEnter={footerEnter}
         footerLeave={footerLeave}
       ></Footer>
