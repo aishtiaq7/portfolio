@@ -4,12 +4,13 @@ import { useState, useEffect } from "react";
 import "./LearnMore.css";
 import { motion } from "framer-motion";
 
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 const LearnMore = (props) => {
-//   const [offset, setOffset] = useState(0); //scrollY
-  const count = useSelector(state => state.counter.value);
-  console.log('count ==> ', count);
+  //   const [offset, setOffset] = useState(0); //scrollY
+  const count = useSelector(state => state.counter);
+  console.log(count);
+
   useEffect(() => {
     const mouseMove = (e) => {
       setMousePosition({
@@ -17,24 +18,16 @@ const LearnMore = (props) => {
         y: e.clientY,
       });
     };
-    // const onScroll = () => {
-    //   setOffset(window.pageYOffset);
-    // };
-
-    // window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("mousemove", mouseMove);
 
     return () => {
       window.removeEventListener("mousemove", mouseMove);
-    //   window.removeEventListener("scroll", onScroll);
     };
   }, []);
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
   });
-//   const [cursorVariant, setCursorVariant] = useState("default");
-
   const variants = {
     default: {
       x: mousePosition.x - 25,
@@ -98,16 +91,16 @@ const LearnMore = (props) => {
   return (
     <div className="bg container learnMoreParent">
       <Navbar
-        setShowFullScreenNav={()=>{}}
-        showFullScreenNav={()=>{}}
-
+        setShowFullScreenNav={() => {}}
+        showFullScreenNav={() => {}}
       ></Navbar>
       <motion.div
         className="cursor"
         variants={variants}
         animate={mousePosition}
       />
-      <h6>*** Page Under Construction *** <br></br>last update: 9th April 2023 </h6>
+
+      <section className="secondSection">Learn More Section</section>
     </div>
   );
 };
