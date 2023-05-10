@@ -3,10 +3,10 @@ import { CgCopyright } from "react-icons/cg";
 import { IconContext } from "react-icons";
 
 const Footer = (props) => {
-  console.log("props.offset\t\t", props.offset);
+  // console.log("props.offset\t\t", props.offset);
 
   const value = 0.17;
-  console.log("props.offset * value", props.offset * value);
+  // console.log("props.offset * value", props.offset * value);
 
   return (
     <footer

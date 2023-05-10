@@ -16,6 +16,7 @@ export const Section = (props) => {
     AOS.init();
   }, []);
 
+  const parallaxSpeedValue = -0.205;
   return (
     <article
       id="about"
@@ -30,7 +31,13 @@ export const Section = (props) => {
           onMouseEnter={props.textEnter}
           onMouseLeave={props.textLeave}
         >
-          <div className="largeText">
+          <div
+            className="largeText"
+            style={{
+              marginTop: '8rem',
+              transform: `translateY(${props.offset * parallaxSpeedValue}px)`,
+            }}
+          >
             <div className="greetingsTitle">
               <h3
                 data-aos="zoom-out-down"

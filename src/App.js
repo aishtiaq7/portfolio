@@ -202,6 +202,7 @@ function App() {
 
       {/* About Section  */}
       <Section
+        offset={offset}
         innerRef={inputRef}
         textEnter={textEnter}
         textLeave={textLeave}
