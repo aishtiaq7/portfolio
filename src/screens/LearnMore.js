@@ -4,8 +4,12 @@ import { useState, useEffect } from "react";
 import "./LearnMore.css";
 import { motion } from "framer-motion";
 
+import { useSelector } from 'react-redux';
+
 const LearnMore = (props) => {
 //   const [offset, setOffset] = useState(0); //scrollY
+  const count = useSelector(state => state.counter.value);
+  console.log('count ==> ', count);
   useEffect(() => {
     const mouseMove = (e) => {
       setMousePosition({
