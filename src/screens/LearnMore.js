@@ -1,30 +1,34 @@
 // import "./Resume.css";
 import Navbar from "../components/Navbar";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./LearnMore.css";
 import { motion } from "framer-motion";
 
 import { useSelector, useDispatch } from "react-redux";
-import { makeCursorDefault, textEnter, setCursorStyle} from "../features/cursor/cursorSlice";
+import {
+  makeCursorDefault,
+  textEnter,
+  setCursorStyle,
+  updateCursorPosition,
+} from "../features/cursor/cursorSlice";
 
 import returnCursorVariant from "../resources/cursorStyles.js";
 
 const LearnMore = (props) => {
   const curVar = useSelector((state) => state.cursor.cursorVariant);
-
+  const curPosition = useSelector((state) => state.cursor.cursorPosition);
   const dispatch = useDispatch();
 
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0,
-  });
+  // console.log("curPos => ", curPosition);
 
   useEffect(() => {
     const mouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
+      dispatch(
+        updateCursorPosition({
+          x: e.clientX,
+          y: e.clientY,
+        })
+      );
     };
     window.addEventListener("mousemove", mouseMove);
 
@@ -43,7 +47,7 @@ const LearnMore = (props) => {
 
       <motion.div
         className="cursor"
-        variants={returnCursorVariant(mousePosition)}
+        variants={returnCursorVariant(curPosition)}
         animate={curVar}
       />
 
@@ -54,8 +58,13 @@ const LearnMore = (props) => {
           onMouseEnter={() => dispatch(textEnter())}
           onMouseLeave={() => dispatch(makeCursorDefault())}
         >
-          <h2>some content</h2>
+          <h2>TODO(s):</h2>
         </div>
+        <ul>
+          <li>add side hustle info</li>
+          <li>add pangenomic experience</li>
+        </ul>
+
       </section>
     </div>
   );

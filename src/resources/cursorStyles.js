@@ -35,6 +35,8 @@ const returnCursorVariant = (mousePosition) => {
     },
     hideCursor: {
       display: "none",
+      x: mousePosition.x - 25,
+      y: mousePosition.y - 25, // minus 25 cuz radius of cursor is 50
       cursor: "pointer",
     },
     cardEnter: {

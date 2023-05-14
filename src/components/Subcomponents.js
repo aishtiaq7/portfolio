@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "../App.css";
 import "../components/Subcomponent.css";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // import React from 'react';
 import { ToastContainer, toast } from "react-toastify";
@@ -75,6 +75,8 @@ export const Section = (props) => {
 
 export const DarkSection = (props) => {
   const data = props.projectsData;
+  const navigate = useNavigate();
+
   const listItems = data.map((item) => {
     return (
       <Card
@@ -104,17 +106,17 @@ export const DarkSection = (props) => {
           <button
             className="learnMoreBtn"
             onClick={() => {
-              // navigateToLearnMore();
-              toast.info("Working on features! Stay Tuned!", {
-                position: "top-right",
-                autoClose: 3500,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-              });
+              navigate('');
+              // toast.info("Working on features! Stay Tuned!", {
+              //   position: "top-right",
+              //   autoClose: 3500,
+              //   hideProgressBar: false,
+              //   closeOnClick: true,
+              //   pauseOnHover: true,
+              //   draggable: true,
+              //   progress: undefined,
+              //   theme: "dark",
+              // });
             }}
           >
             More Projects
@@ -309,8 +311,8 @@ export const InterestSection = (props) => {
 
   const torchContent = [
     "But I love to play football,",
-    "make softwares,",
-    "building trust & relationships.",
+    "make software,",
+    "build trust & relationships.",
   ];
 
   return (

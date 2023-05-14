@@ -16,12 +16,17 @@ import { cardItem } from "./resources/Data";
 import returnCursorVariant from "./resources/cursorStyles";
 
 import { useSelector, useDispatch } from "react-redux";
-import { setCursorStyle } from "./features/cursor/cursorSlice";
+import {
+  setCursorStyle,
+  updateCursorPosition,
+} from "./features/cursor/cursorSlice";
 
 function App() {
-  const curVar = useSelector((state) =>  state.cursor.cursorVariant);
-  console.log('curVar ==> ' , curVar);
+  const curVar = useSelector((state) => state.cursor.cursorVariant);
+  const curPosition = useSelector((state) => state.cursor.cursorPosition);
   const dispatch = useDispatch();
+
+  // console.log('curPosition:', curPosition);
 
   const [offset, setOffset] = useState(0); //scrollY
 
@@ -33,17 +38,14 @@ function App() {
   const inputRef = ref;
   const [ref2, inView2] = useInView(options); // for the 2nd white section
 
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0,
-  });
-
   useEffect(() => {
     const mouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
+      dispatch(
+        updateCursorPosition({
+          x: e.clientX,
+          y: e.clientY,
+        })
+      );
     };
     const onScroll = () => {
       setOffset(window.pageYOffset);
@@ -81,7 +83,7 @@ function App() {
 
       <motion.div
         className="cursor"
-        variants={returnCursorVariant(mousePosition)}
+        variants={returnCursorVariant(curPosition)}
         animate={curVar}
       />
 

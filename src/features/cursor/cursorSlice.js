@@ -1,26 +1,40 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const cursorSlice = createSlice({
-  name: 'cursor',
+  name: "cursor",
   initialState: {
-    moreData: 'abcd',
-    cursorVariant: 'default',
-    
+    cursorVariant: "default",
+    cursorPosition: {
+      x: 0,
+      y: 0,
+    },
   },
   reducers: {
-    makeCursorDefault: (state, action)=>{
-      state.cursorVariant = 'default';
+    makeCursorDefault: (state, action) => {
+      state.cursorVariant = "default";
     },
     textEnter: (state) => {
-      state.cursorVariant = 'text';
+      state.cursorVariant = "text";
     },
     setCursorStyle: (state, action) => {
       state.cursorVariant = action.payload;
-    }
-  }
-})
+    },
+    updateCursorPosition: (state, action) => {
+      const { x, y } = action.payload;
+      state.cursorPosition = {
+        x: x,
+        y: y,
+      };
+    },
+  },
+});
 
 // Action creators are generated for each case reducer function
-export const { makeCursorDefault, textEnter, setCursorStyle } = cursorSlice.actions
+export const {
+  makeCursorDefault,
+  textEnter,
+  setCursorStyle,
+  updateCursorPosition,
+} = cursorSlice.actions;
 
-export default cursorSlice.reducer
+export default cursorSlice.reducer;
