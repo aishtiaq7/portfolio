@@ -112,30 +112,9 @@ function App() {
     },
   };
 
-  //TODO: refactor the following to take class name as input
-  const cardEnter = () => {
-    setCursorVariant("cardEnter");
+  const setCursorStyle = (style) => {
+    setCursorVariant(style);
   };
-
-  const textEnter = () => {
-    setCursorVariant("text");
-  };
-  const textLeave = () => {
-    setCursorVariant("default");
-  };
-
-  const tourchEnter = () => {
-    setCursorVariant("tourchEnter");
-  };
-
-  const textEnterLogo = () => setCursorVariant("logo");
-  const textLeaveLogo = () => setCursorVariant("default");
-
-  const portraitEnter = () => setCursorVariant("portrait");
-  const portraitLeave = () => setCursorVariant("default");
-
-  const footerEnter = () => setCursorVariant("hideCursor");
-  const footerLeave = () => setCursorVariant("default");
 
   const parallaxSpeedValue = 0.35;
   return (
@@ -148,8 +127,8 @@ function App() {
         offset={offset}
         invertNavColor={inView}
         invertNavColor2={inView2}
-        textEnterLogo={textEnterLogo}
-        textLeaveLogo={textLeaveLogo}
+        textEnterLogo={() => setCursorStyle("logo")}
+        textLeaveLogo={() => setCursorStyle("default")}
         setShowFullScreenNav={setShowFullScreenNav}
         showFullScreenNav={showFullScreenNav}
       ></Navbar>
@@ -166,8 +145,8 @@ function App() {
           {/* left component */}
           <div className="landingTitle">
             <h3
-              onMouseEnter={textEnter}
-              onMouseLeave={textLeave}
+              onMouseEnter={() => setCursorStyle("text")}
+              onMouseLeave={() => setCursorStyle("default")}
               className="landingText"
               style={{
                 transform: `translateY(${offset * parallaxSpeedValue}px)`,
@@ -190,8 +169,8 @@ function App() {
             }}
           >
             <img
-              onMouseEnter={portraitEnter}
-              onMouseLeave={portraitLeave}
+              onMouseEnter={() => setCursorStyle("portrait")}
+              onMouseLeave={() => setCursorStyle("text")}
               className="selfportrait"
               src={require("./resources/landingportrait.png")}
               alt="souvenir"
@@ -204,28 +183,28 @@ function App() {
       <Section
         offset={offset}
         innerRef={inputRef}
-        textEnter={textEnter}
-        textLeave={textLeave}
+        textEnter={() => setCursorStyle("text")}
+        textLeave={() => setCursorStyle("default")}
       ></Section>
 
       {/* Projects Section */}
       <DarkSection
-        textEnter={cardEnter}
-        textLeave={textLeave}
+        textEnter={() => setCursorStyle("cardEnter")}
+        textLeave={() => setCursorStyle("default")}
         projectsData={cardItem}
       ></DarkSection>
 
       {/* Interests Sections */}
       <InterestSection
         innerRef={ref2}
-        onMouseEnter={tourchEnter}
-        onMouseLeave={textLeave}
+        onMouseEnter={() => setCursorStyle("tourchEnter")}
+        onMouseLeave={() => setCursorStyle("default")}
       ></InterestSection>
 
       <Footer
         offset={offset}
-        footerEnter={footerEnter}
-        footerLeave={footerLeave}
+        footerEnter={() => setCursorStyle("hideCursor")}
+        footerLeave={() => setCursorStyle("default")}
       ></Footer>
     </div>
   );

@@ -5,6 +5,7 @@ export const counterSlice = createSlice({
   initialState: {
     value: 8,
     moreData: 'abcd',
+    cursorVariant: 'default',
     
   },
   reducers: {
@@ -20,6 +21,12 @@ export const counterSlice = createSlice({
     },
     incrementByAmount: (state, action) => {
       state.value += action.payload
+    },
+    makeCursorDefault: (state, action)=>{
+      state.cursorVariant = 'default';
+    },
+    textEnter: (state) => {
+      state.cursorVariant = 'text'
     }
   }
 })

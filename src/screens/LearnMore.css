@@ -21,6 +21,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 @media only screen and (max-width: 391px) {
@@ -32,4 +33,9 @@
   .cursor {
     display: none;
   }
+}
+
+
+.someContent{
+  border: 2px solid blue;
 }
