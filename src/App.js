@@ -12,10 +12,17 @@ import {
 } from "./components/Subcomponents";
 
 import { useInView } from "react-intersection-observer";
-
 import { cardItem } from "./resources/Data";
+import returnCursorVariant from "./resources/cursorStyles";
+
+import { useSelector, useDispatch } from "react-redux";
+import { setCursorStyle } from "./features/cursor/cursorSlice";
 
 function App() {
+  const curVar = useSelector((state) =>  state.cursor.cursorVariant);
+  console.log('curVar ==> ' , curVar);
+  const dispatch = useDispatch();
+
   const [offset, setOffset] = useState(0); //scrollY
 
   const [showFullScreenNav, setShowFullScreenNav] = useState(false); // show/Hide Full Scren Nav Bar
@@ -30,7 +37,6 @@ function App() {
     x: 0,
     y: 0,
   });
-  const [cursorVariant, setCursorVariant] = useState("default");
 
   useEffect(() => {
     const mouseMove = (e) => {
@@ -52,68 +58,8 @@ function App() {
     };
   }, []);
 
-  const variants = {
-    default: {
-      x: mousePosition.x - 25,
-      y: mousePosition.y - 25, // minus 25 cuz radius of cursor is 50
-      mixBlendMode: "difference",
-    },
-
-    text: {
-      height: 150,
-      width: 150,
-
-      x: mousePosition.x - 75,
-      y: mousePosition.y - 75, // 75 cuz radius is 150
-      mixBlendMode: "difference",
-      // backgroundColor: "red",
-    },
-
-    logo: {
-      height: 45,
-      width: 45,
-
-      x: mousePosition.x - 45 / 2,
-      y: mousePosition.y - 45 / 2, // 75 cuz radius is 150
-      mixBlendMode: "difference",
-      // backgroundColor: "rgb(82, 186, 246)",
-      borderRadius: "10%",
-    },
-    portrait: {
-      height: 90,
-      width: 90,
-
-      x: mousePosition.x - 90 / 2,
-      y: mousePosition.y - 90 / 2, //
-      // backgroundColor: "rgb(82, 186, 246)",
-      opacity: "30%",
-    },
-    hideCursor: {
-      display: "none",
-      cursor: "pointer",
-    },
-    cardEnter: {
-      height: 150,
-      width: 150,
-
-      x: mousePosition.x - 75,
-      y: mousePosition.y - 75, // 75 cuz radius is 150
-      // mixBlendMode: "difference",
-      backgroundColor: "rgb(104, 104, 104)",
-      zIndex: "15",
-    },
-    tourchEnter: {
-      height: 150,
-      width: 150,
-
-      x: mousePosition.x - 75,
-      y: mousePosition.y - 75, // 75 cuz radius is 150
-      mixBlendMode: "difference",
-    },
-  };
-
-  const setCursorStyle = (style) => {
-    setCursorVariant(style);
+  const setCursorStyleFunction = (style) => {
+    dispatch(setCursorStyle(style));
   };
 
   const parallaxSpeedValue = 0.35;
@@ -127,16 +73,16 @@ function App() {
         offset={offset}
         invertNavColor={inView}
         invertNavColor2={inView2}
-        textEnterLogo={() => setCursorStyle("logo")}
-        textLeaveLogo={() => setCursorStyle("default")}
+        textEnterLogo={() => setCursorStyleFunction("logo")}
+        textLeaveLogo={() => setCursorStyleFunction("default")}
         setShowFullScreenNav={setShowFullScreenNav}
         showFullScreenNav={showFullScreenNav}
       ></Navbar>
 
       <motion.div
         className="cursor"
-        variants={variants}
-        animate={cursorVariant}
+        variants={returnCursorVariant(mousePosition)}
+        animate={curVar}
       />
 
       {/* Home Section */}
@@ -145,8 +91,8 @@ function App() {
           {/* left component */}
           <div className="landingTitle">
             <h3
-              onMouseEnter={() => setCursorStyle("text")}
-              onMouseLeave={() => setCursorStyle("default")}
+              onMouseEnter={() => setCursorStyleFunction("text")}
+              onMouseLeave={() => setCursorStyleFunction("default")}
               className="landingText"
               style={{
                 transform: `translateY(${offset * parallaxSpeedValue}px)`,
@@ -169,8 +115,8 @@ function App() {
             }}
           >
             <img
-              onMouseEnter={() => setCursorStyle("portrait")}
-              onMouseLeave={() => setCursorStyle("text")}
+              onMouseEnter={() => setCursorStyleFunction("portrait")}
+              onMouseLeave={() => setCursorStyleFunction("text")}
               className="selfportrait"
               src={require("./resources/landingportrait.png")}
               alt="souvenir"
@@ -183,28 +129,28 @@ function App() {
       <Section
         offset={offset}
         innerRef={inputRef}
-        textEnter={() => setCursorStyle("text")}
-        textLeave={() => setCursorStyle("default")}
+        textEnter={() => setCursorStyleFunction("text")}
+        textLeave={() => setCursorStyleFunction("default")}
       ></Section>
 
       {/* Projects Section */}
       <DarkSection
-        textEnter={() => setCursorStyle("cardEnter")}
-        textLeave={() => setCursorStyle("default")}
+        textEnter={() => setCursorStyleFunction("cardEnter")}
+        textLeave={() => setCursorStyleFunction("default")}
         projectsData={cardItem}
       ></DarkSection>
 
       {/* Interests Sections */}
       <InterestSection
         innerRef={ref2}
-        onMouseEnter={() => setCursorStyle("tourchEnter")}
-        onMouseLeave={() => setCursorStyle("default")}
+        onMouseEnter={() => setCursorStyleFunction("tourchEnter")}
+        onMouseLeave={() => setCursorStyleFunction("default")}
       ></InterestSection>
 
       <Footer
         offset={offset}
-        footerEnter={() => setCursorStyle("hideCursor")}
-        footerLeave={() => setCursorStyle("default")}
+        footerEnter={() => setCursorStyleFunction("hideCursor")}
+        footerLeave={() => setCursorStyleFunction("default")}
       ></Footer>
     </div>
   );

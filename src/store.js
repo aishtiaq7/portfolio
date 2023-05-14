@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import cursorReducer from './features/counter/cursorSlice'
+import cursorReducer from './features/cursor/cursorSlice'
 
 export default configureStore({
   reducer: {
-    counter: cursorReducer
+    cursor: cursorReducer
   }
 })

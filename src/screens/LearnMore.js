@@ -5,13 +5,13 @@ import "./LearnMore.css";
 import { motion } from "framer-motion";
 
 import { useSelector, useDispatch } from "react-redux";
-import { makeCursorDefault } from "../features/counter/cursorSlice";
-import { textEnter } from "../features/counter/cursorSlice";
+import { makeCursorDefault, textEnter, setCursorStyle} from "../features/cursor/cursorSlice";
 
 import returnCursorVariant from "../resources/cursorStyles.js";
 
 const LearnMore = (props) => {
-  const curVar = useSelector((state) => state.counter.cursorVariant);
+  const curVar = useSelector((state) => state.cursor.cursorVariant);
+
   const dispatch = useDispatch();
 
   const [mousePosition, setMousePosition] = useState({
@@ -37,6 +37,8 @@ const LearnMore = (props) => {
       <Navbar
         setShowFullScreenNav={() => {}}
         showFullScreenNav={() => {}}
+        textEnterLogo={() => dispatch(setCursorStyle("logo"))}
+        textLeaveLogo={() => dispatch(setCursorStyle("default"))}
       ></Navbar>
 
       <motion.div

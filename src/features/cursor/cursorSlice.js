@@ -12,12 +12,15 @@ export const cursorSlice = createSlice({
       state.cursorVariant = 'default';
     },
     textEnter: (state) => {
-      state.cursorVariant = 'text'
+      state.cursorVariant = 'text';
+    },
+    setCursorStyle: (state, action) => {
+      state.cursorVariant = action.payload;
     }
   }
 })
 
 // Action creators are generated for each case reducer function
-export const { makeCursorDefault, textEnter } = cursorSlice.actions
+export const { makeCursorDefault, textEnter, setCursorStyle } = cursorSlice.actions
 
 export default cursorSlice.reducer
