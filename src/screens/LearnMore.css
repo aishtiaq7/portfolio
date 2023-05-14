@@ -1,4 +1,6 @@
 .learnMoreParent {
+  cursor: none;
+
   background-color: white;
   width: 100vw;
   height: 100vh;
@@ -13,7 +15,7 @@
 
 .secondSection {
   height: 100vh;
-  border:  red solid 7px;
+  /* border:  red solid 7px; */
   width: 100%;
   color: black;
 
@@ -21,7 +23,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 @media only screen and (max-width: 391px) {
