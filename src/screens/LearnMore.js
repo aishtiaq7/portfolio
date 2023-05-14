@@ -4,14 +4,17 @@ import { useState, useEffect } from "react";
 import "./LearnMore.css";
 import { motion } from "framer-motion";
 
-// import { useSelector } from "react-redux";
+import { useSelector, useDispatch} from "react-redux";
+import { makeCursorDefault } from "../features/counter/counterSlice";
+import { textEnter } from "../features/counter/counterSlice";
 
 const LearnMore = (props) => {
   //   const [offset, setOffset] = useState(0); //scrollY
-  // const count = useSelector(state => state.counter);
-  // console.log(count);
+  const curVar = useSelector(state => state.counter.cursorVariant);
+  const dispatch = useDispatch();
 
-  const [cursorVariant, setCursorVariant] = useState("default");
+  // trying to move this over to redux: 
+  // const [cursorVariant, setCursorVariant] = useState("default");
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -24,6 +27,8 @@ const LearnMore = (props) => {
         x: e.clientX,
         y: e.clientY,
       });
+
+      console.log('here:',curVar);
     };
     window.addEventListener("mousemove", mouseMove);
 
@@ -61,15 +66,15 @@ const LearnMore = (props) => {
       <motion.div
         className="cursor"
         variants={variants}
-        animate={cursorVariant}
+        animate={curVar}
       />
 
       <section className="secondSection">
         Learn More Section
         <div
           className="someContent"
-          onMouseEnter={() => setCursorVariant("text")}
-          onMouseLeave={() => setCursorVariant("default")}
+          onMouseEnter={() => dispatch(textEnter())}
+          onMouseLeave={() => dispatch(makeCursorDefault())}
         >
           <h2>some content</h2>
         </div>
