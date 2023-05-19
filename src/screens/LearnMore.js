@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 
 import { useSelector, useDispatch } from "react-redux";
 import {
-  makeCursorDefault,
-  textEnter,
+  // makeCursorDefault,
+  // textEnter,
   setCursorStyle,
   updateCursorPosition,
 } from "../features/cursor/cursorSlice";
@@ -35,6 +35,7 @@ const LearnMore = (props) => {
     return () => {
       window.removeEventListener("mousemove", mouseMove);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="bg container learnMoreParent">
@@ -51,19 +52,40 @@ const LearnMore = (props) => {
         animate={curVar}
       />
 
-      <section className="secondSection">
-        Learn More Section
-        <div
-          className="someContent"
-          onMouseEnter={() => dispatch(textEnter())}
-          onMouseLeave={() => dispatch(makeCursorDefault())}
-        >
-          <h2>TODO(s):</h2>
+      <section className="introSection">
+   
+        {/* TODO:
+              - Update padding/styles
+              - AOS - animaiton on scroll (to mimic @Japanese Website clone)
+                - appearing and vanishing
+              - Add parallax on bullets and other element
+              - Different cursor effect based on each hoveredOn element
+              -
+        */}
+
+        <div className="paraContainers globalTextStyles">
+          <h2 className="jobTitle">Work Experience:</h2>
+
+          <h3 className="company">pangenomic heatlh </h3>
+
+          <div className="bulletContainer">
+            <li className="bullet">lorem ipsum blablabalbalbala</li>
+            <li className="bullet">lorem ipsum blablabalbalbala</li>
+            <li className="bullet">lorem ipsum blablabalbalbala</li>
+          </div>
         </div>
-        <ul>
-          <li>add side hustle info</li>
-          <li>add pangenomic experience</li>
-        </ul>
+
+        <div className="paraContainers globalTextStyles">
+          <h2 className="jobTitle">Hobbies & Interests:</h2>
+
+          <h3 className="company">t-shirt e-commerce </h3>
+
+          <div className="bulletContainer">
+            <li className="bullet">lorem ipsum blablabalbalbala</li>
+            <li className="bullet">lorem ipsum blablabalbalbala</li>
+            <li className="bullet">lorem ipsum blablabalbalbala</li>
+          </div>
+        </div>
 
       </section>
     </div>

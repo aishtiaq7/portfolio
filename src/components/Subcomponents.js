@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import "../App.css";
 import "../components/Subcomponent.css";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 // import React from 'react';
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer 
+  // ,toast
+} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // animation on scroll lib
@@ -34,7 +36,7 @@ export const Section = (props) => {
           <div
             className="largeText"
             style={{
-              marginTop: '8rem',
+              marginTop: "8rem",
               transform: `translateY(${props.offset * parallaxSpeedValue}px)`,
             }}
           >
@@ -75,7 +77,7 @@ export const Section = (props) => {
 
 export const DarkSection = (props) => {
   const data = props.projectsData;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const listItems = data.map((item) => {
     return (
@@ -106,7 +108,7 @@ export const DarkSection = (props) => {
           <button
             className="learnMoreBtn"
             onClick={() => {
-              navigate('');
+              // navigate("/learnmore");
               // toast.info("Working on features! Stay Tuned!", {
               //   position: "top-right",
               //   autoClose: 3500,
