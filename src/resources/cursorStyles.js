@@ -12,7 +12,6 @@ const returnCursorVariant = (mousePosition) => {
       x: mousePosition.x - 75,
       y: mousePosition.y - 75, // 75 cuz radius is 150
       mixBlendMode: "difference",
-      // backgroundColor: "red",
     },
     logo: {
       height: 45,
@@ -21,7 +20,6 @@ const returnCursorVariant = (mousePosition) => {
       x: mousePosition.x - 45 / 2,
       y: mousePosition.y - 45 / 2, // 75 cuz radius is 150
       mixBlendMode: "difference",
-      // backgroundColor: "rgb(82, 186, 246)",
       borderRadius: "10%",
     },
     portrait: {
@@ -29,8 +27,7 @@ const returnCursorVariant = (mousePosition) => {
       width: 90,
 
       x: mousePosition.x - 90 / 2,
-      y: mousePosition.y - 90 / 2, //
-      // backgroundColor: "rgb(82, 186, 246)",
+      y: mousePosition.y - 90 / 2, 
       opacity: "30%",
     },
     hideCursor: {
@@ -45,7 +42,6 @@ const returnCursorVariant = (mousePosition) => {
 
       x: mousePosition.x - 75,
       y: mousePosition.y - 75, // 75 cuz radius is 150
-      // mixBlendMode: "difference",
       backgroundColor: "rgb(104, 104, 104)",
       zIndex: "15",
     },

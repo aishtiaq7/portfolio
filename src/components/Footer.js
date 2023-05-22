@@ -21,7 +21,6 @@ const Footer = (props) => {
             props.offset >= 3000
               ? `translateY(${(props.offset - 3000) * value}px)`
               : "none",
-          // opacity: 0,
         }}
       >
         <div className="contactMe">

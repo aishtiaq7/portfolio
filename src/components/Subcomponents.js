@@ -4,7 +4,7 @@ import "../components/Subcomponent.css";
 import { useNavigate } from "react-router-dom";
 
 // import React from 'react';
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // animation on scroll lib
@@ -106,7 +106,7 @@ export const DarkSection = (props) => {
           <button
             className="learnMoreBtn"
             onClick={() => {
-              navigate('');
+              navigate("/learnmore");
               // toast.info("Working on features! Stay Tuned!", {
               //   position: "top-right",
               //   autoClose: 3500,
@@ -121,7 +121,7 @@ export const DarkSection = (props) => {
           >
             More Projects
           </button>
-          <ToastContainer position="bottom-center" />
+          {/* <ToastContainer position="bottom-center" /> */}
         </div>
       </div>
     </section>
