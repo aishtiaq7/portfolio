@@ -20,19 +20,19 @@ import {
   setCursorStyle,
   updateCursorPosition,
 } from "./features/cursor/cursorSlice";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
+  //Cursor Change logic
   const curVar = useSelector((state) => state.cursor.cursorVariant);
   const curPosition = useSelector((state) => state.cursor.cursorPosition);
   const dispatch = useDispatch();
 
-  // console.log('curPosition:', curPosition);
-
+  // Navbar states
   const [offset, setOffset] = useState(0); //scrollY
-
   const [showFullScreenNav, setShowFullScreenNav] = useState(false); // show/Hide Full Scren Nav Bar
 
-  // capturing when an 'ref', comes into the viewport
+  // Changing navbar color on different sections
   const options = { threshold: 0.6 };
   const { ref, inView } = useInView(options); // for the 1st white section
   const inputRef = ref;
@@ -68,6 +68,7 @@ function App() {
   const parallaxSpeedValue = 0.35;
   return (
     <div>
+      <ScrollToTop/> 
       <FullScreenNav
         showFullScreenNav={showFullScreenNav}
         setShowFullScreenNav={setShowFullScreenNav}
@@ -105,8 +106,8 @@ function App() {
               <br />
               to learn & create
               <br />
-              <span style={{ textDecoration: "underline" }}>software</span> that
-              matters.
+              software that{' '}
+              <span style={{ textDecoration: "underline" }}>matters</span>.            
             </h3>
           </div>
 

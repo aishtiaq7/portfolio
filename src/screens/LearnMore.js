@@ -15,6 +15,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import returnCursorVariant from "../resources/cursorStyles.js";
+import ScrollToTop from "../components/ScrollToTop";
 // import Footer from "../components/Footer";
 
 const LearnMore = (props) => {
@@ -33,8 +34,18 @@ const LearnMore = (props) => {
         "Developed strong communication skill and proficiency working between QA and design team, using tools such as JIRA, Slack & Bitbucket to streamline the whole development lifecycle.",
       ],
     },
+    {
+      name:'',
+      company: "T-shirt E-commerce",
+      bullets :[
+        "bullet point 1",
+        "bullet point 2",
+        "bullet point 3",
+        "bullet point 4",
+      ]
+    }
   ];
-  
+
   useEffect(() => {
     const mouseMove = (e) => {
       dispatch(
@@ -62,6 +73,8 @@ const LearnMore = (props) => {
   }, []);
   return (
     <div className="bg container learnMoreParent">
+      <ScrollToTop/>
+
       <Navbar
         setShowFullScreenNav={() => {}}
         showFullScreenNav={() => {}}
@@ -75,21 +88,12 @@ const LearnMore = (props) => {
         animate={curVar}
       />
 
-      <section className="introSection">
-        {/* TODO:
-              - Update padding/styles
-              - AOS - animaiton on scroll (to mimic @Japanese Website clone)
-                - appearing and vanishing
-              - Add parallax on bullets and other element
-              - Different cursor effect based on each hoveredOn element
-              -
-        */}
-
+      <section className="secondSection">
         <div className="paraContainers globalTextStyles">
           <h2 className="jobTitle">Work Experience:</h2>
 
           <h3 className="company" data-aos="zoom-out">
-            Pangenomic health Corp
+            {bulletData[0].company}
           </h3>
 
           <div className="bulletContainer">
@@ -113,15 +117,41 @@ const LearnMore = (props) => {
           <h2 className="jobTitle">Hobies & Interests:</h2>
 
           <h3 className="company" data-aos="zoom-out">
-            t-shirt e-commerce
+            {bulletData[1].company}
           </h3>
         </div>
 
-        <div className="dummy">DUMMY</div>
-      </section>
+        <div className="bulletContainer">
+            {bulletData[1].bullets.map((bullet, index) => {
+              const offset = 100 + index * 50;
+              return (
+                <li
+                  className="bullet"
+                  data-aos="zoom-out-left"
+                  data-aos-offset={offset}
+                  key={bullet}
+                  onMouseEnter={() => dispatch(setCursorStyle("text"))}
+                  onMouseLeave={() => dispatch(setCursorStyle("default"))}
+                >
+                  {bullet}
+                </li>
+              );
+            })}
+          </div>
 
+      
+      </section>
     </div>
   );
 };
 
 export default LearnMore;
+
+/* TODO:
+    - Update padding/styles
+    - AOS - animaiton on scroll (to mimic @Japanese Website clone)
+      - appearing and vanishing
+    - Add parallax on bullets and other element
+    - Different cursor effect based on each hoveredOn element
+    -
+*/
