@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import "../App.css";
 import "../components/Subcomponent.css";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // import React from 'react';
-import { ToastContainer 
+// import { ToastContainer 
   // ,toast
-} from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 // animation on scroll lib
 import AOS from "aos";
@@ -77,7 +77,7 @@ export const Section = (props) => {
 
 export const DarkSection = (props) => {
   const data = props.projectsData;
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const listItems = data.map((item) => {
     return (
@@ -108,7 +108,7 @@ export const DarkSection = (props) => {
           <button
             className="learnMoreBtn"
             onClick={() => {
-              // navigate("/learnmore");
+              navigate("/learnmore");
               // toast.info("Working on features! Stay Tuned!", {
               //   position: "top-right",
               //   autoClose: 3500,
@@ -121,9 +121,9 @@ export const DarkSection = (props) => {
               // });
             }}
           >
-            More Projects
+            Learn More
           </button>
-          <ToastContainer position="bottom-center" />
+          {/* <ToastContainer position="bottom-center" /> */}
         </div>
       </div>
     </section>

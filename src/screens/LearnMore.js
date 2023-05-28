@@ -2,6 +2,7 @@
 import Navbar from "../components/Navbar";
 import { useEffect } from "react";
 import "./LearnMore.css";
+import "../App.css";
 import { motion } from "framer-motion";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -12,14 +13,40 @@ import {
   updateCursorPosition,
 } from "../features/cursor/cursorSlice";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import returnCursorVariant from "../resources/cursorStyles.js";
+import ScrollToTop from "../components/ScrollToTop";
+// import Footer from "../components/Footer";
 
 const LearnMore = (props) => {
   const curVar = useSelector((state) => state.cursor.cursorVariant);
   const curPosition = useSelector((state) => state.cursor.cursorPosition);
   const dispatch = useDispatch();
 
-  // console.log("curPos => ", curPosition);
+  const bulletData = [
+    {
+      name: "Work Experience",
+      company: "Pangenomic Health Corp.",
+      bullets: [
+        "Performed regression, functional, non-functional and unit tests using JUnit 5, to ensure the reliability and functionality of the RESTful API endpoints.",
+        "Designed and implement the feed screen app that displayed a list of natural remedy options to its customers using React-Native to support cross-platform usage (iOS & Android).",
+        "Created API endpoints in NodeJS backend that fetched from Cloud PostgreSQL to populate the multiple screens such as settings and events page.",
+        "Developed strong communication skill and proficiency working between QA and design team, using tools such as JIRA, Slack & Bitbucket to streamline the whole development lifecycle.",
+      ],
+    },
+    {
+      name:'',
+      company: "T-shirt e-commerce platform",
+      bullets :[
+        "Lead the development of a robust e-commerce platform utilizing the PERN stack, facilitating seamless online purchases of t-shirts",
+        "Integrate 3rd Party - Stripe, to accept all major payment methods in a secured transaction process to facilitate more customer trust",
+        "Maintained transparent communication with clients to accommodate their feature requests and ensure client satisfaction",
+        // "bullet point 5",
+      ]
+    }
+  ];
 
   useEffect(() => {
     const mouseMove = (e) => {
@@ -31,6 +58,15 @@ const LearnMore = (props) => {
       );
     };
     window.addEventListener("mousemove", mouseMove);
+    AOS.init({
+      offset: 100,
+      duration: 500,
+      easing: "ease-in-sine",
+      once: false,
+      mirror: true,
+      delay: 100,
+    });
+    AOS.refresh();
 
     return () => {
       window.removeEventListener("mousemove", mouseMove);
@@ -39,6 +75,8 @@ const LearnMore = (props) => {
   }, []);
   return (
     <div className="bg container learnMoreParent">
+      <ScrollToTop/>
+
       <Navbar
         setShowFullScreenNav={() => {}}
         showFullScreenNav={() => {}}
@@ -52,40 +90,56 @@ const LearnMore = (props) => {
         animate={curVar}
       />
 
-      <section className="introSection">
-   
-        {/* TODO:
-              - Update padding/styles
-              - AOS - animaiton on scroll (to mimic @Japanese Website clone)
-                - appearing and vanishing
-              - Add parallax on bullets and other element
-              - Different cursor effect based on each hoveredOn element
-              -
-        */}
-
+      <section className="secondSection">
         <div className="paraContainers globalTextStyles">
           <h2 className="jobTitle">Work Experience:</h2>
 
-          <h3 className="company">pangenomic heatlh </h3>
+          <h3 className="company" data-aos="zoom-out">
+            {bulletData[0].company}
+          </h3>
 
           <div className="bulletContainer">
-            <li className="bullet">lorem ipsum blablabalbalbala</li>
-            <li className="bullet">lorem ipsum blablabalbalbala</li>
-            <li className="bullet">lorem ipsum blablabalbalbala</li>
+            {bulletData[0].bullets.map((bullet, index) => {
+              const offset = 100 + index * 50;
+              return (
+                <li
+                  className="bullet"
+                  data-aos="zoom-out-left"
+                  data-aos-offset={offset}
+                  key={bullet}
+                  onMouseEnter={() => dispatch(setCursorStyle("text"))}
+                  onMouseLeave={() => dispatch(setCursorStyle("default"))}
+                >
+                  {bullet}
+                </li>
+              );
+            })}
           </div>
+
+          <h2 className="jobTitle">Hands on Experience</h2>
+
+          <h3 className="company" data-aos="zoom-out">
+            {bulletData[1].company}
+          </h3>
         </div>
 
-        <div className="paraContainers globalTextStyles">
-          <h2 className="jobTitle">Hobbies & Interests:</h2>
-
-          <h3 className="company">t-shirt e-commerce </h3>
-
-          <div className="bulletContainer">
-            <li className="bullet">lorem ipsum blablabalbalbala</li>
-            <li className="bullet">lorem ipsum blablabalbalbala</li>
-            <li className="bullet">lorem ipsum blablabalbalbala</li>
+        <div className="bulletContainer">
+            {bulletData[1].bullets.map((bullet, index) => {
+              const offset = 100 + index * 50;
+              return (
+                <li
+                  className="bullet"
+                  data-aos="zoom-out-left"
+                  data-aos-offset={offset}
+                  key={bullet}
+                  onMouseEnter={() => dispatch(setCursorStyle("text"))}
+                  onMouseLeave={() => dispatch(setCursorStyle("default"))}
+                >
+                  {bullet}
+                </li>
+              );
+            })}
           </div>
-        </div>
 
       </section>
     </div>
@@ -93,3 +147,12 @@ const LearnMore = (props) => {
 };
 
 export default LearnMore;
+
+/* TODO:
+    - DONE: Update padding/styles
+    - DONE: AOS - animaiton on scroll (to mimic @Japanese Website clone)
+      - appearing and vanishing
+    - Add parallax on bullets and other element
+    - Different cursor effect based on each hoveredOn element
+    -
+*/
