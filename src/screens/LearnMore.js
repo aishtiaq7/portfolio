@@ -36,12 +36,12 @@ const LearnMore = (props) => {
     },
     {
       name:'',
-      company: "T-shirt E-commerce",
+      company: "T-shirt e-commerce platform",
       bullets :[
-        "bullet point 1",
-        "bullet point 2",
-        "bullet point 3",
-        "bullet point 4",
+        "Lead the development of a robust e-commerce platform utilizing the PERN stack, facilitating seamless online purchases of t-shirts",
+        "Integrate 3rd Party - Stripe, to accept all major payment methods in a secured transaction process to facilitate more customer trust",
+        "Maintained transparent communication with clients to accommodate their feature requests and ensure client satisfaction",
+        // "bullet point 5",
       ]
     }
   ];
@@ -114,7 +114,7 @@ const LearnMore = (props) => {
             })}
           </div>
 
-          <h2 className="jobTitle">Hobies & Interests:</h2>
+          <h2 className="jobTitle">Hands on Experience</h2>
 
           <h3 className="company" data-aos="zoom-out">
             {bulletData[1].company}
@@ -148,8 +148,8 @@ const LearnMore = (props) => {
 export default LearnMore;
 
 /* TODO:
-    - Update padding/styles
-    - AOS - animaiton on scroll (to mimic @Japanese Website clone)
+    - DONE: Update padding/styles
+    - DONE: AOS - animaiton on scroll (to mimic @Japanese Website clone)
       - appearing and vanishing
     - Add parallax on bullets and other element
     - Different cursor effect based on each hoveredOn element

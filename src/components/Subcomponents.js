@@ -119,7 +119,7 @@ export const DarkSection = (props) => {
               // });
             }}
           >
-            More Projects
+            Learn More
           </button>
           {/* <ToastContainer position="bottom-center" /> */}
         </div>
