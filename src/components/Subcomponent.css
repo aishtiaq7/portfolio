@@ -33,12 +33,28 @@
   padding-top: 5%;
   padding-bottom: 5%;
 }
-.projectsBanner{
+.projectsBanner {
   position: relative;
 }
 
+.coloredBtn {
+  width: 11rem;
+  height: 3.6rem;
 
-.learnMoreBtn{
+  margin: 3rem;
+
+  cursor: none;
+  font-family: var(--content-font-family);
+
+  border-radius: 1rem;
+  font-size: 1rem;
+  color: var(--main-white-color);
+
+  border: 1px solid transparent;
+  transition: all 0.5s ease;
+  background-color: black;
+}
+.learnMoreBtn {
   width: 11rem;
   height: 3.6rem;
 
@@ -54,7 +70,8 @@
   border: 1px solid transparent;
   transition: all 0.5s ease;
 }
-.learnMoreBtn:hover{
+.learnMoreBtn:hover,
+.coloredBtn:hover {
   scale: 1.1;
 }
 
@@ -106,7 +123,6 @@
   font-size: var(--content-font-size);
   font-weight: 600;
 }
-
 
 .ribbon-dark {
   width: 0px;
@@ -193,7 +209,6 @@
   font: var(--content-font-family);
   font-size: var(--content-font-size-phone-view);
 
-  
   z-index: 30;
 }
 
@@ -315,7 +330,7 @@
 }
 
 .hover-objects {
-  color: rgb(123, 123, 123 , 0.5);
+  color: rgb(123, 123, 123, 0.5);
   filter: blur(4px);
   width: fit-content;
   min-height: 5rem;
@@ -327,13 +342,13 @@
 
 .hover-objects:hover {
   filter: blur(0px);
-  transform: translateY(20px) scale(1.1);;
+  transform: translateY(20px) scale(1.1);
   color: black;
 }
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 391px) {
-  .dark-section{
+  .dark-section {
     padding-bottom: 10%;
   }
   .card {
@@ -381,7 +396,7 @@
     border-top-right-radius: 5px;
   }
 
-  .interestSection{
+  .interestSection {
     padding-top: 10;
   }
 }

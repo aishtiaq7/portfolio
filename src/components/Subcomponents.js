@@ -3,17 +3,11 @@ import "../App.css";
 import "../components/Subcomponent.css";
 import { useNavigate } from "react-router-dom";
 
-// import React from 'react';
-// import { ToastContainer 
-  // ,toast
-// } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-
-// animation on scroll lib
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export const Section = (props) => {
+  const navigate = useNavigate();
   useEffect(() => {
     AOS.init();
   }, []);
@@ -68,7 +62,21 @@ export const Section = (props) => {
                 opportunities within <u>Vancouver</u>.
               </h3>
             </div>
+
+            <div>
+            <button
+              className="coloredBtn"
+              onClick={() => {
+                console.log("my lcick");
+                navigate("/learnmore");
+              }}
+            >
+              Learn More
+            </button>
           </div>
+          </div>
+
+          
         </div>
       </div>
     </article>
