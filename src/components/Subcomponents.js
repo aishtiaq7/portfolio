@@ -67,7 +67,6 @@ export const Section = (props) => {
             <button
               className="coloredBtn"
               onClick={() => {
-                console.log("my lcick");
                 navigate("/learnmore");
               }}
             >

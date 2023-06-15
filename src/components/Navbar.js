@@ -13,6 +13,10 @@ const Navbar = (props) => {
     navigate('/');
   }
 
+  // const onClickHandler = () => {
+  //   console.log('used onclick');
+  // }
+
   return (
     <nav
       className={
@@ -28,6 +32,7 @@ const Navbar = (props) => {
       <div className="menu">
         <h4
           onClick={() => {
+            console.log('here');
             props.setShowFullScreenNav(true);
           }}
         >
