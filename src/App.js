@@ -38,6 +38,10 @@ function App() {
   const inputRef = ref;
   const [ref2, inView2] = useInView(options); // for the 2nd white section
 
+  // eslint-disable-next-line
+  const [currentUrl, setCurrentUrl] = useState();
+  // console.log('currentUrl:', currentUrl);
+
   useEffect(() => {
     const mouseMove = (e) => {
       dispatch(
@@ -53,7 +57,7 @@ function App() {
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("mousemove", mouseMove);
-
+    setCurrentUrl(window.location.href);
     return () => {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("scroll", onScroll);
@@ -68,7 +72,7 @@ function App() {
   const parallaxSpeedValue = 0.35;
   return (
     <div>
-      <ScrollToTop/> 
+      <ScrollToTop />
       <FullScreenNav
         showFullScreenNav={showFullScreenNav}
         setShowFullScreenNav={setShowFullScreenNav}
@@ -106,8 +110,8 @@ function App() {
               <br />
               to learn & create
               <br />
-              software that{' '}
-              <span style={{ textDecoration: "underline" }}>matters</span>.            
+              software that{" "}
+              <span style={{ textDecoration: "underline" }}>matters</span>.
             </h3>
           </div>
 

@@ -57,6 +57,9 @@ const LearnMore = (props) => {
     },
   ];
 
+  // eslint-disable-next-line
+  const [currentUrl, setCurrentUrl] = useState("");
+  // console.log("currentUrl:", currentUrl);
   useEffect(() => {
     const mouseMove = (e) => {
       dispatch(
@@ -76,102 +79,107 @@ const LearnMore = (props) => {
       delay: 100,
     });
     AOS.refresh();
+    setCurrentUrl(window.location.href);
 
     return () => {
       window.removeEventListener("mousemove", mouseMove);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
-    <div className="bg container learnMoreParent">
-      <ScrollToTop />
-
-      <Navbar
-        onClickHandler={()=>handleProjectsClick()}
-        setShowFullScreenNav={() => setShowFullScreenNav}
-        showFullScreenNav={() => showFullScreenNav}
-        textEnterLogo={() => dispatch(setCursorStyle("logo"))}
-        textLeaveLogo={() => dispatch(setCursorStyle("default"))}
-      ></Navbar>
-
+    <div>
       <FullScreenNav
         showFullScreenNav={showFullScreenNav}
         setShowFullScreenNav={setShowFullScreenNav}
       ></FullScreenNav>
+      <div className="bg container learnMoreParent">
+        <ScrollToTop />
 
-      <motion.div
-        className="cursor"
-        variants={returnCursorVariant(curPosition)}
-        animate={curVar}
-      />
+        <Navbar
+          onClickHandler={() => handleProjectsClick()}
+          setShowFullScreenNav={setShowFullScreenNav}
+          showFullScreenNav={showFullScreenNav}
+          textEnterLogo={() => dispatch(setCursorStyle("logo"))}
+          textLeaveLogo={() => dispatch(setCursorStyle("default"))}
+        ></Navbar>
 
-      <section className="secondSection">
-        <div className="paraContainers globalTextStyles">
-          <h2 className="jobTitle">Work Experience:</h2>
+        <motion.div
+          className="cursor"
+          variants={returnCursorVariant(curPosition)}
+          animate={curVar}
+        />
 
-          <a
-            href={bulletData[0].companyHyperlink}
-            className="company"
-            data-aos="zoom-out"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {bulletData[0].company}
-          </a>
+        {!showFullScreenNav && (
+          <section className="secondSection">
+            <div className="paraContainers globalTextStyles">
+              <h2 className="jobTitle">Work Experience:</h2>
 
-          <div className="bulletContainer">
-            {bulletData[0].bullets.map((bullet, index) => {
-              const offset = 100 + index * 50;
-              return (
-                <li
-                  className="bullet"
-                  data-aos="zoom-out-left"
-                  data-aos-offset={offset}
-                  key={bullet}
-                  onMouseEnter={() => dispatch(setCursorStyle("text"))}
-                  onMouseLeave={() => dispatch(setCursorStyle("default"))}
-                >
-                  {bullet}
-                </li>
-              );
-            })}
-          </div>
+              <a
+                href={bulletData[0].companyHyperlink}
+                className="company"
+                data-aos="zoom-out"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {bulletData[0].company}
+              </a>
 
-          <h2 className="jobTitle">Hands on Experience</h2>
+              <div className="bulletContainer">
+                {bulletData[0].bullets.map((bullet, index) => {
+                  const offset = 100 + index * 50;
+                  return (
+                    <li
+                      className="bullet"
+                      data-aos="zoom-out-left"
+                      data-aos-offset={offset}
+                      key={bullet}
+                      onMouseEnter={() => dispatch(setCursorStyle("text"))}
+                      onMouseLeave={() => dispatch(setCursorStyle("default"))}
+                    >
+                      {bullet}
+                    </li>
+                  );
+                })}
+              </div>
 
-          {/* <h3 className="company" data-aos="zoom-out">
+              <h2 className="jobTitle">Hands on Experience</h2>
+
+              {/* <h3 className="company" data-aos="zoom-out">
             {bulletData[1].company}
           </h3> */}
 
-          <a
-            href={bulletData[1].companyHyperlink}
-            className="company"
-            data-aos="zoom-out"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {bulletData[1].company}
-          </a>
-        </div>
-
-        <div className="bulletContainer">
-          {bulletData[1].bullets.map((bullet, index) => {
-            const offset = 100 + index * 50;
-            return (
-              <li
-                className="bullet"
-                data-aos="zoom-out-left"
-                data-aos-offset={offset}
-                key={bullet}
-                onMouseEnter={() => dispatch(setCursorStyle("text"))}
-                onMouseLeave={() => dispatch(setCursorStyle("default"))}
+              <a
+                href={bulletData[1].companyHyperlink}
+                className="company"
+                data-aos="zoom-out"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                {bullet}
-              </li>
-            );
-          })}
-        </div>
-      </section>
+                {bulletData[1].company}
+              </a>
+            </div>
+
+            <div className="bulletContainer">
+              {bulletData[1].bullets.map((bullet, index) => {
+                const offset = 100 + index * 50;
+                return (
+                  <li
+                    className="bullet"
+                    data-aos="zoom-out-left"
+                    data-aos-offset={offset}
+                    key={bullet}
+                    onMouseEnter={() => dispatch(setCursorStyle("text"))}
+                    onMouseLeave={() => dispatch(setCursorStyle("default"))}
+                  >
+                    {bullet}
+                  </li>
+                );
+              })}
+            </div>
+          </section>
+        )}
+      </div>
     </div>
   );
 };
@@ -184,5 +192,4 @@ export default LearnMore;
       - appearing and vanishing
     - Add parallax on bullets and other element
     - Different cursor effect based on each hoveredOn element
-    -
 */
