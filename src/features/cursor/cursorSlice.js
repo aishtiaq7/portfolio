@@ -29,7 +29,6 @@ export const cursorSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const {
   makeCursorDefault,
   textEnter,

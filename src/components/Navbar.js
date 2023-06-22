@@ -6,8 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Navbar = (props) => {
-  // console.log("offset:", props.offset);
-  // console.log("inView:", props.invertNavColor);
   const navigate = useNavigate();
    const navigateToHome = ()  =>{
     navigate('/');
@@ -32,7 +30,6 @@ const Navbar = (props) => {
       <div className="menu">
         <h4
           onClick={() => {
-            console.log('here');
             props.setShowFullScreenNav(true);
           }}
         >

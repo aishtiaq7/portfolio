@@ -7,8 +7,6 @@ import { motion } from "framer-motion";
 
 import { useSelector, useDispatch } from "react-redux";
 import {
-  // makeCursorDefault,
-  // textEnter,
   setCursorStyle,
   updateCursorPosition,
 } from "../features/cursor/cursorSlice";
@@ -18,7 +16,6 @@ import "aos/dist/aos.css";
 
 import returnCursorVariant from "../resources/cursorStyles.js";
 import ScrollToTop from "../components/ScrollToTop";
-// import Footer from "../components/Footer";
 import FullScreenNav from "../components/FullScreenNav";
 
 const LearnMore = (props) => {
@@ -52,7 +49,6 @@ const LearnMore = (props) => {
         "Lead the development of a robust e-commerce platform utilizing the PERN stack, facilitating seamless online purchases of t-shirts",
         "Integrate 3rd Party - Stripe, to accept all major payment methods in a secured transaction process to facilitate more customer trust",
         "Maintained transparent communication with clients to accommodate their feature requests and ensure client satisfaction",
-        // "bullet point 5",
       ],
     },
   ];
@@ -114,7 +110,6 @@ const LearnMore = (props) => {
           <section className="secondSection">
             <div className="paraContainers globalTextStyles">
               <h2 className="jobTitle">Work Experience:</h2>
-
               <a
                 href={bulletData[0].companyHyperlink}
                 className="company"
@@ -145,10 +140,6 @@ const LearnMore = (props) => {
 
               <h2 className="jobTitle">Hands on Experience</h2>
 
-              {/* <h3 className="company" data-aos="zoom-out">
-            {bulletData[1].company}
-          </h3> */}
-
               <a
                 href={bulletData[1].companyHyperlink}
                 className="company"
@@ -158,25 +149,70 @@ const LearnMore = (props) => {
               >
                 {bulletData[1].company}
               </a>
+
+              <div className="bulletContainer">
+                {bulletData[1].bullets.map((bullet, index) => {
+                  const offset = 100 + index * 50;
+                  return (
+                    <li
+                      className="bullet"
+                      data-aos="zoom-out-left"
+                      data-aos-offset={offset}
+                      key={bullet}
+                      onMouseEnter={() => dispatch(setCursorStyle("text"))}
+                      onMouseLeave={() => dispatch(setCursorStyle("default"))}
+                    >
+                      {bullet}
+                    </li>
+                  );
+                })}
+              </div>
+
+              {/* E D U C A T I O N */}
+              <h2 className="jobTitle">Education</h2>
+
+              <div className="educationContainer">
+                <a
+                  href="https://www.sfu.ca/"
+                  className="company"
+                  data-aos="zoom-out"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Simon Fraser University
+                </a>
+                <div className="sfulogo">
+                  <img
+                    className="logoicon"
+                    src={require("../resources/sfulogo.png")}
+                    alt='sfulogo'
+                  ></img>
+                </div>
+              </div>
+
+              <div className="bulletContainer">
+                <h3
+                  className="bullet"
+                  data-aos="zoom-out-left"
+                  data-aos-offset={50}
+                  onMouseEnter={() => dispatch(setCursorStyle("text"))}
+                  onMouseLeave={() => dispatch(setCursorStyle("default"))}
+                >
+                  BSC In Applied Science 
+                </h3>
+                <h3
+                  className="bullet"
+                  data-aos="zoom-out-left"
+                  data-aos-offset={100}
+                  onMouseEnter={() => dispatch(setCursorStyle("text"))}
+                  onMouseLeave={() => dispatch(setCursorStyle("default"))}
+                >
+                  Major in Computer Science
+                </h3>
+              </div>
             </div>
 
-            <div className="bulletContainer">
-              {bulletData[1].bullets.map((bullet, index) => {
-                const offset = 100 + index * 50;
-                return (
-                  <li
-                    className="bullet"
-                    data-aos="zoom-out-left"
-                    data-aos-offset={offset}
-                    key={bullet}
-                    onMouseEnter={() => dispatch(setCursorStyle("text"))}
-                    onMouseLeave={() => dispatch(setCursorStyle("default"))}
-                  >
-                    {bullet}
-                  </li>
-                );
-              })}
-            </div>
+            
           </section>
         )}
       </div>
@@ -190,6 +226,6 @@ export default LearnMore;
     - DONE: Update padding/styles
     - DONE: AOS - animaiton on scroll (to mimic @Japanese Website clone)
       - appearing and vanishing
-    - Add parallax on bullets and other element
     - Different cursor effect based on each hoveredOn element
+    - Transition Groups
 */

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
 
-import Footer from "./components/Footer";
 import FullScreenNav from "./components/FullScreenNav";
 import Navbar from "./components/Navbar";
 import {
@@ -155,11 +154,11 @@ function App() {
         onMouseLeave={() => setCursorStyleFunction("default")}
       ></InterestSection>
 
-      <Footer
+      {/* <Footer
         offset={offset}
         footerEnter={() => setCursorStyleFunction("hideCursor")}
         footerLeave={() => setCursorStyleFunction("default")}
-      ></Footer>
+      ></Footer> */}
     </div>
   );
 }

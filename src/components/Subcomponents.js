@@ -7,7 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export const Section = (props) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   useEffect(() => {
     AOS.init();
   }, []);
@@ -47,35 +47,41 @@ export const Section = (props) => {
 
             <div className="des">
               <h3>
-                Welcome to my page! <br></br> <br></br>
+                Welcome to my space! <br></br> <br></br>
                 As I continue to develop my technical skills in{" "}
-                <u>software dev</u> and become a better version of myself
-                everyday, I look forward to using this space to showcase some of
-                my work, projects and interests.
+                <u>software dev</u>, I look forward to using this space to
+                showcase some of my work, projects and interests.
               </h3>
 
               <br></br>
-              <h3>
+              {/* <h3>
                 I'll be completing my Bachelors in Computer Science this Spring
                 of 2023 from SFU, but in the mean time I'll be organizing my
                 projects in this space and seek Software Development
                 opportunities within <u>Vancouver</u>.
+              </h3> */}
+              <h3>
+                I'm passionate about software solutions that makes everyday
+                tasks easier, and my knowledge of programming and web
+                development has allowed me to express my creativity and skill to
+                reach this goal.
+                <br/><br/>
+                Using <u>React</u> & <u>Node</u> based web stacks, I paint on digital spaces.
               </h3>
             </div>
 
             <div>
-            <button
-              className="coloredBtn"
-              onClick={() => {
-                navigate("/learnmore");
-              }}
-            >
-              Learn More
-            </button>
+              <button
+                className="coloredBtn"
+                onClick={() => {
+                  // navigate("/learnmore");
+                  document.getElementById("projects").scrollIntoView({behavior: "smooth"})
+                }}
+              >
+                Learn More
+              </button>
+            </div>
           </div>
-          </div>
-
-          
         </div>
       </div>
     </article>
@@ -84,7 +90,7 @@ export const Section = (props) => {
 
 export const DarkSection = (props) => {
   const data = props.projectsData;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const listItems = data.map((item) => {
     return (
@@ -115,17 +121,8 @@ export const DarkSection = (props) => {
           <button
             className="learnMoreBtn"
             onClick={() => {
-              navigate("/learnmore");
-              // toast.info("Working on features! Stay Tuned!", {
-              //   position: "top-right",
-              //   autoClose: 3500,
-              //   hideProgressBar: false,
-              //   closeOnClick: true,
-              //   pauseOnHover: true,
-              //   draggable: true,
-              //   progress: undefined,
-              //   theme: "dark",
-              // });
+              // navigate("/learnmore");
+              document.getElementById("interests").scrollIntoView({behavior: "smooth"})
             }}
           >
             Learn More
@@ -324,6 +321,7 @@ export const InterestSection = (props) => {
     "build trust & relationships.",
   ];
 
+  const navigate = useNavigate();
   return (
     <section id="interests" ref={props.innerRef}>
       <div className="interestSection">
@@ -409,6 +407,14 @@ export const InterestSection = (props) => {
                   </p>
                 );
               })}
+              <button
+                className="coloredBtn finalBtn"
+                onClick={() => {
+                  navigate("/learnmore");
+                }}
+              >
+                Learn More
+              </button>
             </div>
           </div>
         </div>

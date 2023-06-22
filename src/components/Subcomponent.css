@@ -74,6 +74,12 @@
 .coloredBtn:hover {
   scale: 1.1;
 }
+.finalBtn {
+  filter: blur(4px);
+}
+.finalBtn:hover {
+  filter: blur(0px);
+}
 
 .learnMoreBtn:active {
   transform: scale(0.85);
