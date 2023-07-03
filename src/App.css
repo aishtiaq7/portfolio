@@ -275,7 +275,7 @@ footer {
 }
 
 /* MEDIA QUERIES */
-@media only screen and (max-width: 391px) {
+@media only screen and (max-width: 600px) {
   /* Turning off cursor: */
   .cursor {
     display: none;

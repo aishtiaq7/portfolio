@@ -24,6 +24,8 @@
   color: black;
   background-color: white;
   padding-bottom: 5rem;
+
+  overflow-x: hidden;
 }
 
 .paraContainers {
@@ -99,12 +101,37 @@
 
 }
 
-@media only screen and (max-width: 391px) {
+@media only screen and (max-width: 600px) {
   .learnMoreParent {
     font-size: 1.6rem;
   }
   .cursor {
     display: none;
+  }
+
+
+  .sfulogo{
+    width: 5rem;
+    padding: 0;
+    margin: 0;
+  }
+  .bulletContainer {
+    display: flex;
+    flex-direction: column;
+  
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+  }
+  .bullet {
+    width: 60%;
+    text-align: left;
+    font-size: 3.2vw;
+    font-weight: 200;
+    padding: 0.8rem;
+  
+    align-self: flex-end;
+  
   }
 }
 

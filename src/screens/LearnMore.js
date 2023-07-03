@@ -89,6 +89,7 @@ const LearnMore = (props) => {
         showFullScreenNav={showFullScreenNav}
         setShowFullScreenNav={setShowFullScreenNav}
       ></FullScreenNav>
+
       <div className="bg container learnMoreParent">
         <ScrollToTop />
 
