@@ -1,9 +1,6 @@
 import { RxCross1 } from "react-icons/rx";
 import { IconContext } from "react-icons";
-import {
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./FullScreenNav.css";
 
 const googleDriveResumeLink =
@@ -33,17 +30,16 @@ const FullScreenNav = (props) => {
     if (currentUrl === "/learnmore") {
       switch (targetElement) {
         case "home":
-          navigate("/" , { state: { targetId: "home" } });
+          navigate("/", { state: { targetId: "home" } });
           break;
         case "about":
-          navigate("/" , { state: { targetId: "about" } });
+          navigate("/", { state: { targetId: "about" } });
           break;
         case "learnmore":
           break;
         case "contact":
-            console.log('my element :', element);
-            element.scrollIntoView({ behavior: "smooth" });
-            break;
+          navigate("/", { state: { targetId: "contact" } });
+          break;
         default:
           navigate("/");
           break;

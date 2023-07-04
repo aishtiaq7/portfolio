@@ -1,19 +1,37 @@
 # Portfolio
 
-View the website here: https://awshaf.com
+A fully responsive and appealing portfolio using <u>React</u>  and animation libraries such as <u>Framer Motion</u>, with a <u>CI/CD</u> pipeline for deploying from GitHub using Firebase hosting.
 
 <hr>
+<br>
+Visit my portfolio here at :  https://awshaf.com
+<br>
+<br>
+<hr>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### UI TODOs:
--   Parallax effect on items. <br>
-    Ref: https://dev.to/ansonlowzf/how-to-create-react-parallax-effect-with-react-hooks-1fon    
--   Design & implement "LearnMore" screen
--   Fix (2nd) SVG drawings (in Interests): Has a starting tail.
--   Consistent Font
--   More AOS animations. Reveal on view. 
--   Transition to open/close fs menu bar
--   Redesign cursor shape for Navbar objects
+
+-   Transition to open/close fs menu bar (preloaders)
 
 ### Non-Functional TODOs: 
--   Refactor BAD code
--   Incorporate REDUX
+-   Refactor Parallax Scrolling code
+
+### Done: 
+-   ✅ Parallax effect on items. 
+-   ✅ Design & implement "LearnMore" screen
+-   ✅ Fix (2nd) SVG drawings (in Interests): Has a starting tail.
+-   ✅ Redesign cursor shape for Navbar objects
+-   ✅ More AOS animations. Reveal on view. 
+-   ✅ Consistent Font
+-   ✅ Incorporate REDUX
+
+
+
