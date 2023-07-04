@@ -127,7 +127,6 @@ export const DarkSection = (props) => {
           >
             Learn More
           </button>
-          {/* <ToastContainer position="bottom-center" /> */}
         </div>
       </div>
     </section>
@@ -139,6 +138,42 @@ export const Card = (props) => {
     return iconsList.map((icon) => {
       //TODO: Refactor the below code
       switch (icon) {
+        case "firebase":
+          return (
+            <img
+              key={icon}
+              className="icon"
+              src={require("../resources/firebase.png")}
+              alt={id}
+            ></img>
+          );
+        case "github":
+          return (
+            <img
+              key={icon}
+              className="icon"
+              src={require("../resources/github.png")}
+              alt={id}
+            ></img>
+          );
+        case "gcp":
+          return (
+            <img
+              key={icon}
+              className="icon"
+              src={require("../resources/gcp.png")}
+              alt={id}
+            ></img>
+          );
+        case "react":
+          return (
+            <img
+              key={icon}
+              className="icon"
+              src={require("../resources/react.png")}
+              alt={id}
+            ></img>
+          );
         case "css":
           return (
             <img
@@ -317,7 +352,7 @@ export const InterestSection = (props) => {
 
   const torchContent = [
     "But I love to play football,",
-    "make software,",
+    "develop software,",
     "build trust & relationships.",
   ];
 

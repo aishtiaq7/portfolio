@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 import FullScreenNav from "./components/FullScreenNav";
 import Navbar from "./components/Navbar";
@@ -39,9 +40,16 @@ function App() {
 
   // eslint-disable-next-line
   const [currentUrl, setCurrentUrl] = useState();
-  // console.log('currentUrl:', currentUrl);
+  const { state } = useLocation();
+  const { targetId } = state || {};
 
   useEffect(() => {
+    //handle redirect and scroll into view
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+
     const mouseMove = (e) => {
       dispatch(
         updateCursorPosition({
@@ -57,6 +65,7 @@ function App() {
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("mousemove", mouseMove);
     setCurrentUrl(window.location.href);
+
     return () => {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("scroll", onScroll);
@@ -154,11 +163,6 @@ function App() {
         onMouseLeave={() => setCursorStyleFunction("default")}
       ></InterestSection>
 
-      {/* <Footer
-        offset={offset}
-        footerEnter={() => setCursorStyleFunction("hideCursor")}
-        footerLeave={() => setCursorStyleFunction("default")}
-      ></Footer> */}
     </div>
   );
 }

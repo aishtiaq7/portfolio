@@ -6,7 +6,6 @@ const Footer = (props) => {
   // console.log("props.offset\t\t", props.offset);
 
   const value = 0.17;
-  // console.log("props.offset * value", props.offset * value);
 
   return (
     <footer
@@ -18,8 +17,8 @@ const Footer = (props) => {
         className="links"
         style={{
           transform:
-            props.offset >= 3000
-              ? `translateY(${(props.offset - 3000) * value}px)`
+            props.offset >= 3800
+              ? `translateY(${(props.offset - 3800) * value}px)`
               : "none",
         }}
       >

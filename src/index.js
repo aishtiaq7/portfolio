@@ -23,11 +23,8 @@ const FooterComponent = () => {
   const dispatch = useDispatch();
   const [windowOffset, setWindowOffset] = useState(0);
 
-  // console.log('footer offset:', windowOffset);
-
   useEffect(() => {
     const handleScroll = () => {
-      // console.log('scrollY:', window.scrollY);
       setWindowOffset(window.pageYOffset);
     };
 

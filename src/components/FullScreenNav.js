@@ -3,18 +3,15 @@ import { IconContext } from "react-icons";
 import {
   useLocation,
   useNavigate,
-  // , useNavigate
 } from "react-router-dom";
 import "./FullScreenNav.css";
 
-// import { useState } from "react";
 const googleDriveResumeLink =
   "https://drive.google.com/file/d/1v3Wg3pl-AYEMR8OeJRS8vQnoFAPi6so3/view?usp=sharing";
 
 const FullScreenNav = (props) => {
   const navigate = useNavigate();
   const location = useLocation();
-  // const navigate = useNavigate();
   const handleNavLinkClick = (e) => {
     e.preventDefault();
 
@@ -24,12 +21,7 @@ const FullScreenNav = (props) => {
     const getSectionId = targetElement;
     const element = document.getElementById(getSectionId);
 
-    // console.log("element:", element);
-
     if (currentUrl === "/" || element !== null) {
-      // console.log("> landing page <");
-      // console.log("targetElement:", element);
-
       if (targetElement === "learn more") {
         navigate("/learnmore");
         return;
@@ -39,18 +31,14 @@ const FullScreenNav = (props) => {
     }
 
     if (currentUrl === "/learnmore") {
-      // console.log("> learnmore <");
-      // console.log("targetElement:", targetElement);
-
       switch (targetElement) {
         case "home":
-          navigate("/");
+          navigate("/" , { state: { targetId: "home" } });
           break;
         case "about":
-          navigate("/");
+          navigate("/" , { state: { targetId: "about" } });
           break;
         case "learnmore":
-          // navigate("/learnmore");
           break;
         case "contact":
             console.log('my element :', element);
@@ -90,11 +78,6 @@ const FullScreenNav = (props) => {
             Learn More
           </a>
         </li>
-        {/* <li>
-          <a className="fs-nav-links" href="/" onClick={handleProjectsClick}>
-            Interests
-          </a>
-        </li> */}
         <li>
           <a
             className="fs-nav-links"

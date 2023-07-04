@@ -1,8 +1,24 @@
 export const cardItem = [
   {
+    id: 1,
+    projectName: "E-Commerce Clothing Platform",
+    iconsList: ["react", "nodejs", "gcp", "psql", "docker"],
+    hyperlink: "http://howuniversehowls.ca/",
+    des: "A personalized clothing brand, on a PERN stack e-commerce platform hosted on GCP, serving as an online store for aesthetic t-shirts. Managed PCI standard payments, data handling and much more...",
+    cursorClass: "lala",
+  },
+  {
+    id: 6,
+    projectName: "Portfolio",
+    iconsList: ["react", "nodejs", "github", "firebase"],
+    hyperlink: "https://github.com/aishtiaq7/portfolio",
+    des: "A fully responsive and appealing portfolio using React and animation libraries like Framer Motion, with a CI/CD pipeline for deploying from GitHub using Firebase hosting",
+    cursorClass: "lala",
+  },
+  {
     id: 3,
     projectName: "VibeCheckDiscord.bot",
-    iconsList: ["nodejs","docker","js","socketio"],
+    iconsList: ["nodejs", "docker", "js", "socketio"],
     hyperlink: "https://github.com/aishtiaq7/VibeCheck-discord-bot",
     des: "Multipurpose discord bot that includes features such as Vibechecking everyone in the server and presenting soccer scores and upcoming matches in local time zone.",
     cursorClass: "lala",
@@ -10,8 +26,9 @@ export const cardItem = [
   {
     id: 2,
     projectName: "Coursley",
-    iconsList: ["nodejs","psql","angular","html", "docker", "css"],
-    hyperlink: "https://drive.google.com/file/d/17PdfU2Cfp-49PoI1uINHZACaqU9TTwx5/view?usp=sharing",
+    iconsList: ["nodejs", "psql", "angular", "html", "docker", "css"],
+    hyperlink:
+      "https://drive.google.com/file/d/17PdfU2Cfp-49PoI1uINHZACaqU9TTwx5/view?usp=sharing",
     des: "A Course Management PEAN stack application that interfaces separate views for both students & instructors to manage courses, access events in google calendar, chat with peers etc.​",
     cursorClass: "lala",
   },
@@ -26,7 +43,7 @@ export const cardItem = [
   {
     id: 5,
     projectName: "Japanese Website Clone",
-    iconsList: [ "js","html", "css"],
+    iconsList: ["js", "html", "css"],
     hyperlink: "https://github.com/aishtiaq7/Japanese-Website-Clone",
     des: "Aesthetically pleasing Japanese website clone that showcases a prominent Japanese artist and his artworks",
     cursorClass: "lala",
