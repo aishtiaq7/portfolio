@@ -65,8 +65,10 @@ export const Section = (props) => {
                 tasks easier, and my knowledge of programming and web
                 development has allowed me to express my creativity and skill to
                 reach this goal.
-                <br/><br/>
-                Using <u>React</u> & <u>Node</u> based web stacks, I paint on digital spaces.
+                <br />
+                <br />
+                Using <u>React</u> & <u>Node</u> based web stacks, I paint on
+                digital spaces.
               </h3>
             </div>
 
@@ -75,7 +77,9 @@ export const Section = (props) => {
                 className="coloredBtn"
                 onClick={() => {
                   // navigate("/learnmore");
-                  document.getElementById("projects").scrollIntoView({behavior: "smooth"})
+                  document
+                    .getElementById("projects")
+                    .scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 Learn More
@@ -122,7 +126,9 @@ export const DarkSection = (props) => {
             className="learnMoreBtn"
             onClick={() => {
               // navigate("/learnmore");
-              document.getElementById("interests").scrollIntoView({behavior: "smooth"})
+              document
+                .getElementById("interests")
+                .scrollIntoView({ behavior: "smooth" });
             }}
           >
             Learn More
@@ -132,128 +138,21 @@ export const DarkSection = (props) => {
     </section>
   );
 };
+const getIconHTML = (icon, id) => {
+  return (
+    <img
+      key={icon}
+      className="icon"
+      src={require(`../resources/${icon}.png`)}
+      alt={id}
+    ></img>
+  );
+};
 
 export const Card = (props) => {
   const renderIcons = (iconsList, id) => {
     return iconsList.map((icon) => {
-      //TODO: Refactor the below code
-      switch (icon) {
-        case "firebase":
-          return (
-            <img
-              key={icon}
-              className="icon"
-              src={require("../resources/firebase.png")}
-              alt={id}
-            ></img>
-          );
-        case "github":
-          return (
-            <img
-              key={icon}
-              className="icon"
-              src={require("../resources/github.png")}
-              alt={id}
-            ></img>
-          );
-        case "gcp":
-          return (
-            <img
-              key={icon}
-              className="icon"
-              src={require("../resources/gcp.png")}
-              alt={id}
-            ></img>
-          );
-        case "react":
-          return (
-            <img
-              key={icon}
-              className="icon"
-              src={require("../resources/react.png")}
-              alt={id}
-            ></img>
-          );
-        case "css":
-          return (
-            <img
-              key={icon}
-              className="icon"
-              src={require("../resources/css.png")}
-              alt={id}
-            ></img>
-          );
-        case "html":
-          return (
-            <img
-              key={icon}
-              style={{ padding: "1.4rem" }}
-              className="icon"
-              src={require("../resources/html.png")}
-              alt={id}
-            ></img>
-          );
-        case "js":
-          return (
-            <img
-              key={icon}
-              className="icon"
-              src={require("../resources/js.png")}
-              alt={id}
-            ></img>
-          );
-        case "nodejs":
-          return (
-            <img
-              key={icon}
-              className="icon"
-              src={require("../resources/nodejs.png")}
-              alt={id}
-            ></img>
-          );
-        case "psql":
-          return (
-            <img
-              key={icon}
-              className="icon"
-              src={require("../resources/psql.png")}
-              alt={id}
-            ></img>
-          );
-        case "angular":
-          return (
-            <img
-              key={icon}
-              className="icon"
-              src={require("../resources/angular.png")}
-              alt={id}
-            ></img>
-          );
-        case "docker":
-          return (
-            <img
-              key={icon}
-              className="icon"
-              src={require("../resources/docker.png")}
-              alt={id}
-            ></img>
-          );
-        case "socketio":
-          return (
-            <img
-              key={icon}
-              className="icon"
-              src={require("../resources/socketio.png")}
-              alt={id}
-            ></img>
-          );
-        default:
-          return (
-            <h5 key={icon} className="icon">
-              *
-            </h5>
-          );
-      }
+      return getIconHTML(icon, id);
     });
   };
 

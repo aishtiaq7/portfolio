@@ -73,7 +73,7 @@ const FullScreenNav = (props) => {
             About
           </a>
         </li>
-        <li>
+        <li className="fs-nav-li">
           <a className="fs-nav-links" href="/" onClick={handleNavLinkClick}>
             Learn More
           </a>
