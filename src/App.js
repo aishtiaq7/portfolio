@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
+import Rodal from "rodal";
 import { useLocation } from "react-router-dom";
 
 import FullScreenNav from "./components/FullScreenNav";
@@ -20,6 +21,10 @@ import {
   setCursorStyle,
   updateCursorPosition,
 } from "./features/cursor/cursorSlice";
+import{
+  setIsModalOpen
+} from "./features/cursor/globalStatesSlice";
+
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -42,6 +47,27 @@ function App() {
   const [currentUrl, setCurrentUrl] = useState();
   const { state } = useLocation();
   const { targetId } = state || {};
+  
+  const customStyles = {
+    // minHeight: "auto",
+    top: "50%",
+    left:"50%",
+    transform: "translateY(-50%) translateX(-50%)",
+
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+
+    margin: "auto",
+    padding: 0,
+
+    position: "fixed",
+    zIndex:200,
+  };
+  const globalStates = useSelector(state => state.globalStates);
+
+  // console.log("state:", globalStates);
 
   useEffect(() => {
     //handle redirect and scroll into view
@@ -69,6 +95,7 @@ function App() {
     return () => {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("scroll", onScroll);
+
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -100,6 +127,16 @@ function App() {
         variants={returnCursorVariant(curPosition)}
         animate={curVar}
       />
+
+      {globalStates.modalIsOpen && (
+        <Rodal
+          visible={globalStates.modalIsOpen}
+          onClose={()=>{ dispatch(setIsModalOpen(false))}}
+          customStyles={customStyles}
+        >
+          <div style={{color:"black" ,backgroundColor:"white",}}>Content</div>
+        </Rodal>
+      )}
 
       {/* Home Section */}
       <section id="home" className="homepage">
@@ -162,7 +199,6 @@ function App() {
         onMouseEnter={() => setCursorStyleFunction("tourchEnter")}
         onMouseLeave={() => setCursorStyleFunction("default")}
       ></InterestSection>
-
     </div>
   );
 }

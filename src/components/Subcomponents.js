@@ -5,6 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsModalOpen } from "../features/cursor/globalStatesSlice";
+
+
+
 
 export const Section = (props) => {
   // const navigate = useNavigate();
@@ -155,15 +160,22 @@ export const Card = (props) => {
       return getIconHTML(icon, id);
     });
   };
+  const globalStates = useSelector(state => state.globalStates);
+  const dispatch = useDispatch();
 
   return (
     <div
       key={props.id}
       className="card"
       onMouseEnter={props.mouseEnterEvent}
-      onMouseLeave={props.mouseLeaveEvent}
+      onMouseLeave={props.mouseLeaveEvent
+      }
+      // onClick={() => {
+      //   window.open(props.hyperlink, "_blank");
+      // }}
       onClick={() => {
-        window.open(props.hyperlink, "_blank");
+        // setModalIsOpen(!modalIsOpen);
+        dispatch(setIsModalOpen(!globalStates.modalIsOpen))
       }}
     >
       <div className="iconContainer">
