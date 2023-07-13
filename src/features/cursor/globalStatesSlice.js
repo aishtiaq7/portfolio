@@ -8,10 +8,7 @@ export const globalStatesSlice = createSlice({
   reducers: {
     setIsModalOpen: (state, action) => {
       state.modalIsOpen = action.payload;
-      console.log('************* ****** ***** here');
     },
-
-    
   },
 });
 

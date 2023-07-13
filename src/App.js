@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
 import Rodal from "rodal";
@@ -21,9 +21,7 @@ import {
   setCursorStyle,
   updateCursorPosition,
 } from "./features/cursor/cursorSlice";
-import{
-  setIsModalOpen
-} from "./features/cursor/globalStatesSlice";
+import { setIsModalOpen } from "./features/cursor/globalStatesSlice";
 
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -47,11 +45,11 @@ function App() {
   const [currentUrl, setCurrentUrl] = useState();
   const { state } = useLocation();
   const { targetId } = state || {};
-  
+
   const customStyles = {
-    // minHeight: "auto",
+    minHeight: "auto",
     top: "50%",
-    left:"50%",
+    left: "50%",
     transform: "translateY(-50%) translateX(-50%)",
 
     display: "flex",
@@ -63,14 +61,13 @@ function App() {
     padding: 0,
 
     position: "fixed",
-    zIndex:200,
+    zIndex: 200,
   };
-  const globalStates = useSelector(state => state.globalStates);
+  const globalStates = useSelector((state) => state.globalStates);
 
-  // console.log("state:", globalStates);
+  const rodalRef = useRef();
 
   useEffect(() => {
-    //handle redirect and scroll into view
     const el = document.getElementById(targetId);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -92,10 +89,17 @@ function App() {
     window.addEventListener("mousemove", mouseMove);
     setCurrentUrl(window.location.href);
 
+    const handleClickOutside = (event) => {
+      if (rodalRef.current && !rodalRef.current.contains(event.target)) {
+        dispatch(setIsModalOpen(false));
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("scroll", onScroll);
 
+      document.removeEventListener("mousedown", handleClickOutside);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -131,10 +135,17 @@ function App() {
       {globalStates.modalIsOpen && (
         <Rodal
           visible={globalStates.modalIsOpen}
-          onClose={()=>{ dispatch(setIsModalOpen(false))}}
+          onClose={() => {
+            dispatch(setIsModalOpen(false));
+          }}
           customStyles={customStyles}
         >
-          <div style={{color:"black" ,backgroundColor:"white",}}>Content</div>
+          <div
+            ref={rodalRef}
+            className="rodal-parent"
+          >
+            Content
+          </div>
         </Rodal>
       )}
 
