@@ -225,11 +225,16 @@ footer {
 
 }
 .rodal-parent {
+
   z-index: 122;
+
   width: 60vw;
   height: 75vh;
+  
   color: black;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+  border-radius: 10%;
+
+
   /* background-color: var(--main-white-color); */
 
 }

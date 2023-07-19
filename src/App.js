@@ -50,7 +50,6 @@ function App() {
   const { targetId } = state || {};
 
   const customStyles = {
-    // minHeight: "auto",
     top: "50%",
     left: "50%",
     transform: "translateY(-50%) translateX(-50%)",
@@ -58,9 +57,7 @@ function App() {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    // flexDirection: "column",
 
-    // margin: "auto",
     padding: 0,
 
     position: "fixed",
@@ -138,20 +135,26 @@ function App() {
       />
 
       {globalStates.modalIsOpen && (
-        <section className="rodalSection"><Rodal
-        visible={globalStates.modalIsOpen}
-        onClose={() => {
-          dispatch(setIsModalOpen(false));
-          dispatch(setModalContent({}));
-        }}
-        customStyles={customStyles}
-      >
-        <div ref={rodalRef} className="rodal-parent flex-row">
-          <div className="modal-subSection">{rodalContent.title}</div>
-          <div className="modal-subSection modalDes">{rodalContent.descriontion}</div>
-          <div className="modal-subSection">{rodalContent.tech}</div>
-        </div>
-      </Rodal></section>
+        <section className="rodalSection">
+          <Rodal
+            animation="flip"
+            duraiont={550}
+            visible={globalStates.modalIsOpen}
+            onClose={() => {
+              dispatch(setIsModalOpen(false));
+              dispatch(setModalContent({}));
+            }}
+            customStyles={customStyles}
+          >
+            <div ref={rodalRef} className="rodal-parent flex-row">
+              <div className="modal-subSection">{rodalContent.title}</div>
+              <div className="modal-subSection modalDes">
+                {rodalContent.descriontion}
+              </div>
+              <div className="modal-subSection">{rodalContent.tech}</div>
+            </div>
+          </Rodal>
+        </section>
       )}
 
       {/* Home Section */}
