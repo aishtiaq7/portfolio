@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsModalOpen } from "../features/cursor/globalStatesSlice";
+// eslint-disable-next-line 
+import { setIsModalOpen, setModalContent } from "../features/cursor/globalStatesSlice";
 
 
 
@@ -160,7 +161,9 @@ export const Card = (props) => {
       return getIconHTML(icon, id);
     });
   };
+  // eslint-disable-next-line 
   const globalStates = useSelector(state => state.globalStates);
+  // eslint-disable-next-line 
   const dispatch = useDispatch();
 
   return (
@@ -170,13 +173,17 @@ export const Card = (props) => {
       onMouseEnter={props.mouseEnterEvent}
       onMouseLeave={props.mouseLeaveEvent
       }
-      // onClick={() => {
-      //   window.open(props.hyperlink, "_blank");
-      // }}
       onClick={() => {
-        // setModalIsOpen(!modalIsOpen);
-        dispatch(setIsModalOpen(!globalStates.modalIsOpen))
+        window.open(props.hyperlink, "_blank");
       }}
+      // onClick={() => {
+      //   dispatch(setIsModalOpen(!globalStates.modalIsOpen))
+      //   dispatch(setModalContent({
+      //     title: props.projectName,
+      //     descriontion: props.des, 
+      //     tech: props.iconsList,
+      //   }))
+      // }}
     >
       <div className="iconContainer">
         {renderIcons(props.iconsList, props.id)}

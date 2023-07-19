@@ -21,7 +21,10 @@ import {
   setCursorStyle,
   updateCursorPosition,
 } from "./features/cursor/cursorSlice";
-import { setIsModalOpen } from "./features/cursor/globalStatesSlice";
+import {
+  setIsModalOpen,
+  setModalContent,
+} from "./features/cursor/globalStatesSlice";
 
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -47,7 +50,7 @@ function App() {
   const { targetId } = state || {};
 
   const customStyles = {
-    minHeight: "auto",
+    // minHeight: "auto",
     top: "50%",
     left: "50%",
     transform: "translateY(-50%) translateX(-50%)",
@@ -55,9 +58,9 @@ function App() {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    flexDirection: "column",
+    // flexDirection: "column",
 
-    margin: "auto",
+    // margin: "auto",
     padding: 0,
 
     position: "fixed",
@@ -109,6 +112,8 @@ function App() {
   };
 
   const parallaxSpeedValue = 0.35;
+
+  const rodalContent = useSelector((state) => state.globalStates.modalContent);
   return (
     <div>
       <ScrollToTop />
@@ -137,14 +142,14 @@ function App() {
           visible={globalStates.modalIsOpen}
           onClose={() => {
             dispatch(setIsModalOpen(false));
+            dispatch(setModalContent({}));
           }}
           customStyles={customStyles}
         >
-          <div
-            ref={rodalRef}
-            className="rodal-parent"
-          >
-            Content
+          <div ref={rodalRef} className="rodal-parent flex-row">
+            <div className="modal-subSection">{rodalContent.title}</div>
+            <div className="modal-subSection modalDes">{rodalContent.descriontion}</div>
+            <div className="modal-subSection">{rodalContent.tech}</div>
           </div>
         </Rodal>
       )}

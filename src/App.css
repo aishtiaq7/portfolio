@@ -43,7 +43,6 @@ body {
     url(./fonts/HelveticaNowText-Light.ttf) format("truetype");
 }
 
-
 /*
       Cursor
 */
@@ -208,11 +207,40 @@ footer {
   padding-left: 1rem;
 }
 
-.rodal-parent{
-  width: 100%;
-  height: 100%;
+.rodal-parent {
+
+  width: 60vw;
+  height: 75vh;
   color: black;
-  background-color: orange;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+  /* background-color: var(--main-white-color); */
+
+}
+.modal-subSection {
+  width: 100%;
+  height: auto;
+  background-image: linear-gradient(to right top, #ffffff, #f6f6f6, #ededed, #e4e4e4, #dbdbdb );
+  color: black;
+
+  padding: 0.5rem 0rem;
+  flex-grow: 1;
+  border: 2px solid blue;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.modalDes{
+  padding: 0.5rem 0.5rem;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* MEDIA QUERIES */
