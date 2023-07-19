@@ -173,17 +173,17 @@ export const Card = (props) => {
       onMouseEnter={props.mouseEnterEvent}
       onMouseLeave={props.mouseLeaveEvent
       }
-      onClick={() => {
-        window.open(props.hyperlink, "_blank");
-      }}
       // onClick={() => {
-      //   dispatch(setIsModalOpen(!globalStates.modalIsOpen))
-      //   dispatch(setModalContent({
-      //     title: props.projectName,
-      //     descriontion: props.des, 
-      //     tech: props.iconsList,
-      //   }))
+      //   window.open(props.hyperlink, "_blank");
       // }}
+      onClick={() => {
+        dispatch(setIsModalOpen(!globalStates.modalIsOpen))
+        dispatch(setModalContent({
+          title: props.projectName,
+          descriontion: props.des, 
+          tech: props.iconsList,
+        }))
+      }}
     >
       <div className="iconContainer">
         {renderIcons(props.iconsList, props.id)}

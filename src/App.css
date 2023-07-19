@@ -207,8 +207,25 @@ footer {
   padding-left: 1rem;
 }
 
-.rodal-parent {
+.rodalSection{
+  cursor: none;
+  background-color: rgba(90, 90, 90, 0.73);
+  width: 100vw;
+  height: 100vh;
+  z-index: 120;
 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.rodal-parent {
+  z-index: 122;
   width: 60vw;
   height: 75vh;
   color: black;

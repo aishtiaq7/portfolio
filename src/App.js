@@ -138,20 +138,20 @@ function App() {
       />
 
       {globalStates.modalIsOpen && (
-        <Rodal
-          visible={globalStates.modalIsOpen}
-          onClose={() => {
-            dispatch(setIsModalOpen(false));
-            dispatch(setModalContent({}));
-          }}
-          customStyles={customStyles}
-        >
-          <div ref={rodalRef} className="rodal-parent flex-row">
-            <div className="modal-subSection">{rodalContent.title}</div>
-            <div className="modal-subSection modalDes">{rodalContent.descriontion}</div>
-            <div className="modal-subSection">{rodalContent.tech}</div>
-          </div>
-        </Rodal>
+        <section className="rodalSection"><Rodal
+        visible={globalStates.modalIsOpen}
+        onClose={() => {
+          dispatch(setIsModalOpen(false));
+          dispatch(setModalContent({}));
+        }}
+        customStyles={customStyles}
+      >
+        <div ref={rodalRef} className="rodal-parent flex-row">
+          <div className="modal-subSection">{rodalContent.title}</div>
+          <div className="modal-subSection modalDes">{rodalContent.descriontion}</div>
+          <div className="modal-subSection">{rodalContent.tech}</div>
+        </div>
+      </Rodal></section>
       )}
 
       {/* Home Section */}
