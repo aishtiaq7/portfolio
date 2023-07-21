@@ -57,7 +57,6 @@ body {
   pointer-events: none;
 
   z-index: 125;
-  /* transition: width 0.5s ease, height 0.5s ease; */
 }
 
 /***************************
@@ -225,8 +224,6 @@ footer {
 }
 
 .rodal-parent {
-  /* z-index: 122; */
-
   color: black;
   border-radius: 10%;
 }
@@ -250,10 +247,33 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  position: relative;
 }
 
 .modalDes {
   padding: 2rem 2.5rem;
+}
+.closeModalButton{
+  display: inline-block;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 2.1vw;
+  padding: 1.5rem;
+  /* border: 2px solid red; */
+}
+.closeModalButton:hover {
+  color: red;
+}
+.openProjectLink{
+  cursor: none;
+  text-decoration: none;
+}
+.openProjectLink:hover{
+  color: blue;
 }
 
 .flex-row {
@@ -285,6 +305,17 @@ footer {
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
   /* Modal styles */
+  .closeModalButton{
+    display: inline-block;
+    position: absolute;
+    right: 20%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  
+    font-size: 4.1vw;
+    /* border: 2px solid red; */
+    padding: 1.5rem;
+  }
 
   /* Turning off cursor: */
   .cursor {

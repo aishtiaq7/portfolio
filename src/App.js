@@ -31,7 +31,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  console.log('screenWidth:', screenWidth);
+
   //Cursor Change logic
   const curVar = useSelector((state) => state.cursor.cursorVariant);
   const curPosition = useSelector((state) => state.cursor.cursorPosition);
@@ -65,7 +65,7 @@ function App() {
     zIndex: 200,
 
     /* Chane Rodal Dimension here: */
-    width: "60%", 
+    // width: "60%",
     width: `${screenWidth < 600 ? "40%" : "60%"}`,
     // width: "20%",
   };
@@ -101,20 +101,20 @@ function App() {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
- 
+
     // Event listener to update the state when the screen size changes
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
       dispatch(updateScreenWidth(window.innerWidth));
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("scroll", onScroll);
 
       document.removeEventListener("mousedown", handleClickOutside);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenWidth]);
@@ -127,11 +127,15 @@ function App() {
 
   const rodalContent = useSelector((state) => state.globalStates.modalContent);
 
-  const getTechStackRender = (stackArray)=>{
-    return stackArray.map( (item, index) =>{
-      return <h3 className="tech">{item}</h3>
-    })
-  }
+  const getTechStackRender = (stackArray) => {
+    return stackArray.map((item, index) => {
+      return (
+        <h3 key={item} className="tech">
+          {item}
+        </h3>
+      );
+    });
+  };
   return (
     <div>
       <ScrollToTop />
@@ -167,16 +171,56 @@ function App() {
             }}
             customStyles={customStyles}
           >
-            <div ref={rodalRef} className="rodal-parent flex-row">
+            <div
+              ref={rodalRef}
+              className="rodal-parent flex-row"
+              onMouseEnter={() => {
+                dispatch(setCursorStyle("modalEnter"));
+              }}
+              onMouseLeave={() => {
+                dispatch(setCursorStyle("default"));
+              }}
+            >
               <div className="modal-subSection titleStyles">
-                {rodalContent.title}
+                <h2>{rodalContent.title}</h2>
+                <h1
+                  className="closeModalButton"
+                  onMouseEnter={() => {
+                    dispatch(setCursorStyle("crossEnter"));
+                  }}
+                  onMouseLeave={() => {
+                    dispatch(setCursorStyle("modalEnter"));
+                  }}
+                  onClick={()=>{
+                    dispatch(setCursorStyle("default"));
+                    dispatch(setIsModalOpen(false));
+                  }}
+                >
+                  X
+                </h1>
               </div>
+
               <div className="modal-subSection modalDes">
                 {rodalContent.descriontion}
               </div>
-              <div className="modal-subSection">{ getTechStackRender(rodalContent.tech)}</div>
               <div className="modal-subSection">
-                <a href={rodalContent.hyperlink}>Visti page</a>
+                {getTechStackRender(rodalContent.tech)}
+              </div>
+              <div className="modal-subSection">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={rodalContent.hyperlink}
+                  className="openProjectLink"
+                  onMouseEnter={()=>{
+                    dispatch(setCursorStyle("hyperLinkEnter"));
+                  }}
+                  onMouseLeave={()=>{
+                    dispatch(setCursorStyle("modalEnter"));
+                  }}
+                >
+                  Open Project
+                </a>
               </div>
             </div>
           </Rodal>

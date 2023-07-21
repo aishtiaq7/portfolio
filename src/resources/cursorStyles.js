@@ -53,6 +53,36 @@ const returnCursorVariant = (mousePosition) => {
       y: mousePosition.y - 75, // 75 cuz radius is 150
       mixBlendMode: "difference",
     },
+    modalEnter: {
+      height: 150,
+      width: 150,
+
+      x: mousePosition.x - 75,
+      y: mousePosition.y - 75, // 75 cuz radius is 150
+      background: "transparent",
+      border: "5px solid black",
+      // mixBlendMode: "difference",
+    },
+    crossEnter: {
+      height: 70,
+      width: 70,
+
+      x: mousePosition.x - 35,
+      y: mousePosition.y - 35, // 75 cuz radius is 150
+      background: "transparent",
+      border: "5px solid red",
+      // mixBlendMode: "difference",
+    },
+    hyperLinkEnter: {
+      height: 70,
+      width: 70,
+
+      x: mousePosition.x - 35,
+      y: mousePosition.y - 35, // 75 cuz radius is 150
+      background: "transparent",
+      border: "5px solid blue",
+      // mixBlendMode: "difference",
+    },
   };
   return variants;
 };
