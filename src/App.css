@@ -207,7 +207,7 @@ footer {
   padding-left: 1rem;
 }
 
-.rodalSection{
+.rodalSection {
   cursor: none;
   background-color: rgba(90, 90, 90, 0.73);
   width: 100vw;
@@ -222,40 +222,38 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
+
 .rodal-parent {
+  /* z-index: 122; */
 
-  z-index: 122;
-
-  width: 60vw;
-  height: 75vh;
-  
   color: black;
   border-radius: 10%;
-
-
-  /* background-color: var(--main-white-color); */
-
 }
 .modal-subSection {
   width: 100%;
   height: auto;
-  background-image: linear-gradient(to right top, #ffffff, #f6f6f6, #ededed, #e4e4e4, #dbdbdb );
+  background-image: linear-gradient(
+    to right top,
+    #ffffff,
+    #f6f6f6,
+    #ededed,
+    #e4e4e4,
+    #dbdbdb
+  );
   color: black;
 
-  padding: 0.5rem 0rem;
+  padding: 1.8rem 5.7rem;
   flex-grow: 1;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-.modalDes{
-  padding: 0.5rem 0.5rem;
+.modalDes {
+  padding: 2rem 2.5rem;
 }
 
 .flex-row {
@@ -265,8 +263,29 @@ footer {
   flex-direction: column;
 }
 
+.titleStyles {
+  font-weight: 750;
+  font-size: 2.3vw;
+}
+
+.tech {
+  margin: 0rem 1.5rem;
+  display: inline-block;
+  padding: 10px 20px; 
+  border: none;
+  border-radius: 20px; 
+  background-color: blue; 
+  color: white;
+  font-size: 16px;
+  cursor: none;
+  text-align: center;
+  text-decoration: none;
+}
+
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
+  /* Modal styles */
+
   /* Turning off cursor: */
   .cursor {
     display: none;

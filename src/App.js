@@ -58,10 +58,11 @@ function App() {
     justifyContent: "center",
     alignItems: "center",
 
-    padding: 0,
-
     position: "fixed",
     zIndex: 200,
+
+    /* Chane Rodal Dimension here: */
+    width: "60%", 
   };
   const globalStates = useSelector((state) => state.globalStates);
 
@@ -111,6 +112,12 @@ function App() {
   const parallaxSpeedValue = 0.35;
 
   const rodalContent = useSelector((state) => state.globalStates.modalContent);
+
+  const getTechStackRender = (stackArray)=>{
+    return stackArray.map( (item, index) =>{
+      return <h3 className="tech">{item}</h3>
+    })
+  }
   return (
     <div>
       <ScrollToTop />
@@ -147,11 +154,14 @@ function App() {
             customStyles={customStyles}
           >
             <div ref={rodalRef} className="rodal-parent flex-row">
-              <div className="modal-subSection">{rodalContent.title}</div>
+              <div className="modal-subSection titleStyles">
+                {rodalContent.title}
+              </div>
               <div className="modal-subSection modalDes">
                 {rodalContent.descriontion}
               </div>
-              <div className="modal-subSection">{rodalContent.tech}</div>
+              <div className="modal-subSection">{ getTechStackRender(rodalContent.tech)}</div>
+              <div className="modal-subSection">button</div>
             </div>
           </Rodal>
         </section>

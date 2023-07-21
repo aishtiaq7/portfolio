@@ -58,14 +58,7 @@ export const Section = (props) => {
                 <u>software dev</u>, I look forward to using this space to
                 showcase some of my work, projects and interests.
               </h3>
-
               <br></br>
-              {/* <h3>
-                I'll be completing my Bachelors in Computer Science this Spring
-                of 2023 from SFU, but in the mean time I'll be organizing my
-                projects in this space and seek Software Development
-                opportunities within <u>Vancouver</u>.
-              </h3> */}
               <h3>
                 I'm passionate about software solutions that makes everyday
                 tasks easier, and my knowledge of programming and web
