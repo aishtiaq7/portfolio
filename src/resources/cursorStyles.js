@@ -102,6 +102,32 @@ const returnCursorVariant = (mousePosition) => {
       border: "5px solid blue",
       // mixBlendMode: "difference",
     },
+    learnMore: {
+      height: 150,
+      width: 150,
+
+      x: mousePosition.x - 75,
+      y: mousePosition.y - 75, // 75 cuz radius is 150
+      // background: "transparent",
+      backgroundColor: "rgba(239, 239, 239, 0.1)",
+
+      border: "5px solid black",
+      cursor: "pointer",
+      // mixBlendMode: "difference",
+    },
+    learnMoreContrast: {
+      height: 150,
+      width: 150,
+
+      x: mousePosition.x - 75,
+      y: mousePosition.y - 75, // 75 cuz radius is 150
+      // background: "transparent",
+      backgroundColor: "rgba(239, 239, 239, 0.1)",
+
+      border: "5px solid white",
+      cursor: "pointer",
+      // mixBlendMode: "difference",
+    },
   };
   return variants;
 };

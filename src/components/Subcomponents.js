@@ -8,11 +8,13 @@ import "aos/dist/aos.css";
 import { useDispatch, useSelector } from "react-redux";
 // eslint-disable-next-line 
 import { setIsModalOpen, setModalContent } from "../features/cursor/globalStatesSlice";
+import { setCursorStyle } from "../features/cursor/cursorSlice";
 
 
 
 
 export const Section = (props) => {
+  const dispatch = useDispatch();
   // const navigate = useNavigate();
   useEffect(() => {
     AOS.init();
@@ -80,6 +82,12 @@ export const Section = (props) => {
                     .getElementById("projects")
                     .scrollIntoView({ behavior: "smooth" });
                 }}
+                onMouseEnter={()=>{
+                  dispatch(setCursorStyle("learnMore"))
+                }}
+                onMouseLeave={()=>{
+                  dispatch(setCursorStyle("default"));
+                }}
               >
                 Learn More
               </button>
@@ -109,6 +117,8 @@ export const DarkSection = (props) => {
       ></Card>
     );
   });
+
+  const dispatch = useDispatch();
   return (
     <section id="projects" className="dark-section largeText">
       <div className="projectsBanner">
@@ -128,6 +138,12 @@ export const DarkSection = (props) => {
               document
                 .getElementById("interests")
                 .scrollIntoView({ behavior: "smooth" });
+            }}
+            onMouseEnter={()=>{
+              dispatch(setCursorStyle("learnMoreContrast"))
+            }}
+            onMouseLeave={()=>{
+              dispatch(setCursorStyle("default"));
             }}
           >
             Learn More
@@ -269,6 +285,7 @@ export const InterestSection = (props) => {
   ];
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <section id="interests" ref={props.innerRef}>
       <div className="interestSection">
@@ -358,6 +375,12 @@ export const InterestSection = (props) => {
                 className="coloredBtn finalBtn"
                 onClick={() => {
                   navigate("/learnmore");
+                }}
+                onMouseEnter={()=>{
+                  dispatch(setCursorStyle("learnMore"))
+                }}
+                onMouseLeave={()=>{
+                  dispatch(setCursorStyle("default"));
                 }}
               >
                 Learn More
