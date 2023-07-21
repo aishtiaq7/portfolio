@@ -3,6 +3,7 @@ const returnCursorVariant = (mousePosition) => {
     default: {
       x: mousePosition.x - 25,
       y: mousePosition.y - 25, // minus 25 cuz radius of cursor is 50
+      backgroundColor: "rgba(239, 239, 239, 0.9)",
       mixBlendMode: "difference",
     },
     text: {
@@ -12,6 +13,8 @@ const returnCursorVariant = (mousePosition) => {
       x: mousePosition.x - 75,
       y: mousePosition.y - 75, // 75 cuz radius is 150
       mixBlendMode: "difference",
+      backgroundColor: "rgba(239, 239, 239, 0.9)",
+
     },
     logo: {
       height: 45,
@@ -21,6 +24,8 @@ const returnCursorVariant = (mousePosition) => {
       y: mousePosition.y - 45 / 2, // 75 cuz radius is 150
       mixBlendMode: "difference",
       borderRadius: "10%",
+      backgroundColor: "rgba(239, 239, 239, 0.9)",
+
     },
     portrait: {
       height: 90,
@@ -29,6 +34,8 @@ const returnCursorVariant = (mousePosition) => {
       x: mousePosition.x - 90 / 2,
       y: mousePosition.y - 90 / 2, 
       opacity: "30%",
+      backgroundColor: "rgba(239, 239, 239, 0.9)",
+
     },
     hideCursor: {
       display: "none",
@@ -42,13 +49,15 @@ const returnCursorVariant = (mousePosition) => {
 
       x: mousePosition.x - 75,
       y: mousePosition.y - 75, // 75 cuz radius is 150
-      backgroundColor: "rgb(104, 104, 104)",
+      backgroundColor: "rgba(239, 239, 239, 0.9)",
       zIndex: "15",
     },
     tourchEnter: {
       height: 150,
       width: 150,
+      
 
+      backgroundColor: "rgba(239, 239, 239, 0.9)",
       x: mousePosition.x - 75,
       y: mousePosition.y - 75, // 75 cuz radius is 150
       mixBlendMode: "difference",
@@ -59,9 +68,13 @@ const returnCursorVariant = (mousePosition) => {
 
       x: mousePosition.x - 75,
       y: mousePosition.y - 75, // 75 cuz radius is 150
-      background: "transparent",
+      // background: "transparent",
+      backgroundColor: "rgba(239, 239, 239, 0.1)",
+      
       border: "5px solid black",
       // mixBlendMode: "difference",
+      // backgroundColor: "rgba(239, 239, 239, 0.9)",
+
     },
     crossEnter: {
       height: 70,
@@ -69,7 +82,11 @@ const returnCursorVariant = (mousePosition) => {
 
       x: mousePosition.x - 35,
       y: mousePosition.y - 35, // 75 cuz radius is 150
-      background: "transparent",
+      backgroundColor: "rgba(239, 239, 239, 0.9)",
+
+      // background: "transparent",
+      backgroundColor: "rgba(239, 239, 239, 0.1)",
+
       border: "5px solid red",
       // mixBlendMode: "difference",
     },
@@ -79,7 +96,9 @@ const returnCursorVariant = (mousePosition) => {
 
       x: mousePosition.x - 35,
       y: mousePosition.y - 35, // 75 cuz radius is 150
-      background: "transparent",
+      // background: "transparent",
+      backgroundColor: "rgba(239, 239, 239, 0.1)",
+
       border: "5px solid blue",
       // mixBlendMode: "difference",
     },

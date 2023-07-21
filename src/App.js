@@ -193,8 +193,8 @@ function App() {
                     dispatch(setCursorStyle("modalEnter"));
                   }}
                   onClick={()=>{
-                    dispatch(setCursorStyle("default"));
                     dispatch(setIsModalOpen(false));
+                    dispatch(setCursorStyle("default"));
                   }}
                 >
                   X
