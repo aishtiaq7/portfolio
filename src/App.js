@@ -65,9 +65,10 @@ function App() {
     zIndex: 200,
 
     /* Chane Rodal Dimension here: */
-    // width: "60%",
-    width: `${screenWidth < 600 ? "40%" : "60%"}`,
-    // width: "20%",
+    // width: "10rem",
+    // height: "8rem"
+    // width: `${screenWidth < 600 ? "40%" : "60%"}`,
+    width: `${screenWidth < 600 ? "80%" : "60%"}`,
   };
   const globalStates = useSelector((state) => state.globalStates);
 

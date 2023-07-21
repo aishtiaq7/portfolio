@@ -226,6 +226,11 @@ footer {
 .rodal-parent {
   color: black;
   border-radius: 10%;
+
+  width: 50rem;
+  /* height: 22rem; */
+  /* width: 100vw; */
+  overflow: hidden;
 }
 .modal-subSection {
   width: 100%;
@@ -257,12 +262,13 @@ footer {
 .closeModalButton{
   display: inline-block;
   position: absolute;
-  right: 5%;
+  right: 0%;
   top: 50%;
   transform: translate(-50%, -50%);
 
   font-size: 2.1vw;
   padding: 1.5rem;
+  color: rgba(252, 11, 11, 0.571);
   /* border: 2px solid red; */
 }
 .closeModalButton:hover {
@@ -305,10 +311,16 @@ footer {
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
   /* Modal styles */
+
+  .rodal-parent {
+    color: black;
+    border-radius: 10%;
+  
+  }
   .closeModalButton{
     display: inline-block;
     position: absolute;
-    right: 20%;
+    right: 0%;
     top: 50%;
     transform: translate(-50%, -50%);
   
