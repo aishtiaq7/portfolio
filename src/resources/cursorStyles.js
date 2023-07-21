@@ -82,7 +82,6 @@ const returnCursorVariant = (mousePosition) => {
 
       x: mousePosition.x - 35,
       y: mousePosition.y - 35, // 75 cuz radius is 150
-      backgroundColor: "rgba(239, 239, 239, 0.9)",
 
       // background: "transparent",
       backgroundColor: "rgba(239, 239, 239, 0.1)",
