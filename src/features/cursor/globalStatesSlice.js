@@ -8,15 +8,25 @@ export const globalStatesSlice = createSlice({
       title: '',
       descriontion: '', 
       tech: '',
-    }
+      hyperlink: "", 
+    },
+    screenWidth: 500,
   },
   reducers: {
+    updateScreenWidth: (state, action) => {
+      state.screenWidth = action.payload;
+    },
     setIsModalOpen: (state, action) => {
       state.modalIsOpen = action.payload;
     },
     setModalContent: (state, action) => {
-      // console.log('action.payload => ', action.payload);
-      state.modalContent = action.payload ;
+      const { title, descriontion, tech, hyperlink} = action.payload;
+      state.modalContent = {
+        title: title,
+        descriontion: descriontion,
+        tech: tech,
+        hyperlink: hyperlink,
+      };
     }
   },
 });
@@ -24,6 +34,7 @@ export const globalStatesSlice = createSlice({
 export const {
   setIsModalOpen,
   setModalContent,
+  updateScreenWidth
 } = globalStatesSlice.actions;
 
 export default globalStatesSlice.reducer;

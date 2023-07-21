@@ -24,11 +24,14 @@ import {
 import {
   setIsModalOpen,
   setModalContent,
+  updateScreenWidth,
 } from "./features/cursor/globalStatesSlice";
 
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  console.log('screenWidth:', screenWidth);
   //Cursor Change logic
   const curVar = useSelector((state) => state.cursor.cursorVariant);
   const curPosition = useSelector((state) => state.cursor.cursorPosition);
@@ -63,6 +66,8 @@ function App() {
 
     /* Chane Rodal Dimension here: */
     width: "60%", 
+    width: `${screenWidth < 600 ? "40%" : "60%"}`,
+    // width: "20%",
   };
   const globalStates = useSelector((state) => state.globalStates);
 
@@ -96,14 +101,23 @@ function App() {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
+ 
+    // Event listener to update the state when the screen size changes
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+      dispatch(updateScreenWidth(window.innerWidth));
+    };
+
+    window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("scroll", onScroll);
 
       document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener('resize', handleResize);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [screenWidth]);
 
   const setCursorStyleFunction = (style) => {
     dispatch(setCursorStyle(style));
@@ -161,7 +175,9 @@ function App() {
                 {rodalContent.descriontion}
               </div>
               <div className="modal-subSection">{ getTechStackRender(rodalContent.tech)}</div>
-              <div className="modal-subSection">button</div>
+              <div className="modal-subSection">
+                <a href={rodalContent.hyperlink}>Visti page</a>
+              </div>
             </div>
           </Rodal>
         </section>

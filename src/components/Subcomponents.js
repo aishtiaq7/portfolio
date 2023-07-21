@@ -175,6 +175,7 @@ export const Card = (props) => {
           title: props.projectName,
           descriontion: props.des, 
           tech: props.iconsList,
+          hyperlink: props.hyperlink,
         }))
       }}
     >
