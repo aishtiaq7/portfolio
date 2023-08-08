@@ -42,13 +42,22 @@ const LearnMore = (props) => {
       ],
     },
     {
-      name: "",
+      name: "handsOnExperience",
       company: "T-shirt e-commerce platform",
       companyHyperlink: "https://howuniversehowls.ca/",
       bullets: [
         "Lead the development of a robust e-commerce platform utilizing the PERN stack, facilitating seamless online purchases of t-shirts",
         "Integrate 3rd Party - Stripe, to accept all major payment methods in a secured transaction process to facilitate more customer trust",
         "Maintained transparent communication with clients to accommodate their feature requests and ensure client satisfaction",
+      ],
+    },
+    {
+      name: "Work Experience",
+      company: "Wave Business Intelligence.",
+      companyHyperlink: "https://www.linkedin.com/company/wavebi/mycompany/",
+      bullets: [
+        "Redesigned and optimized a static website, implementing Next.js framework and server-side rendering techniques, resulting in a 40% increase in page load speed and improved user engagement.",
+        "Utilized Storybook extensively to thoroughly test and validate components' functionality, responsiveness, and visual consistency across multiple platforms and devices, ensuring 100% bug-free deliverables.",
       ],
     },
   ];
@@ -139,6 +148,34 @@ const LearnMore = (props) => {
                 })}
               </div>
 
+              <a
+                href={bulletData[2].companyHyperlink}
+                className="company"
+                data-aos="zoom-out"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {bulletData[2].company}
+              </a>
+
+              <div className="bulletContainer">
+                {bulletData[2].bullets.map((bullet, index) => {
+                  const offset = 100 + index * 50;
+                  return (
+                    <li
+                      className="bullet"
+                      data-aos="zoom-out-left"
+                      data-aos-offset={offset}
+                      key={bullet}
+                      onMouseEnter={() => dispatch(setCursorStyle("text"))}
+                      onMouseLeave={() => dispatch(setCursorStyle("default"))}
+                    >
+                      {bullet}
+                    </li>
+                  );
+                })}
+              </div>
+
               <h2 className="jobTitle">Hands on Experience</h2>
 
               <a
@@ -186,7 +223,7 @@ const LearnMore = (props) => {
                   <img
                     className="logoicon"
                     src={require("../resources/sfulogo.png")}
-                    alt='sfulogo'
+                    alt="sfulogo"
                   ></img>
                 </div>
               </div>
@@ -199,7 +236,7 @@ const LearnMore = (props) => {
                   onMouseEnter={() => dispatch(setCursorStyle("text"))}
                   onMouseLeave={() => dispatch(setCursorStyle("default"))}
                 >
-                  BSC In Applied Science 
+                  BSC In Applied Science
                 </h3>
                 <h3
                   className="bullet"
@@ -212,8 +249,6 @@ const LearnMore = (props) => {
                 </h3>
               </div>
             </div>
-
-            
           </section>
         )}
       </div>
@@ -224,9 +259,7 @@ const LearnMore = (props) => {
 export default LearnMore;
 
 /* TODO:
-    - DONE: Update padding/styles
-    - DONE: AOS - animaiton on scroll (to mimic @Japanese Website clone)
-      - appearing and vanishing
     - Different cursor effect based on each hoveredOn element
+      -> on hovering over job experience, show its timeline
     - Transition Groups
 */
