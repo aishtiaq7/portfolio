@@ -54,6 +54,26 @@
   transition: all 0.5s ease;
   background-color: black;
 }
+
+.clicked_coloredBtn {
+  width: 11rem;
+  height: 3.6rem;
+
+  margin: 3rem;
+
+  cursor: none;
+  font-family: var(--content-font-family);
+
+  border-radius: 1rem;
+  font-size: 1rem;
+  color: var(--main-white-color);
+
+  border: 1px solid transparent;
+  transition: all 0.5s ease;
+  background-color: grey;
+}
+
+
 .learnMoreBtn {
   width: 11rem;
   height: 3.6rem;
@@ -70,6 +90,23 @@
   border: 1px solid transparent;
   transition: all 0.5s ease;
 }
+
+.clicked_learnMoreBtn {
+  width: 11rem;
+  height: 3.6rem;
+
+  cursor: none;
+  font-family: var(--content-font-family);
+
+  border-radius: 1rem;
+  margin: 2rem;
+  font-size: 1rem;
+  background-color: grey;
+  color: black;
+
+  border: 1px solid transparent;
+}
+
 .learnMoreBtn:hover,
 .coloredBtn:hover {
   scale: 1.1;

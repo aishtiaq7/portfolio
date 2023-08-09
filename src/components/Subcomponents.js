@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../App.css";
 import "../components/Subcomponent.css";
 import { useNavigate } from "react-router-dom";
@@ -6,16 +6,17 @@ import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useDispatch, useSelector } from "react-redux";
-// eslint-disable-next-line 
-import { setIsModalOpen, setModalContent } from "../features/cursor/globalStatesSlice";
+// eslint-disable-next-line
+import {
+  setIsModalOpen,
+  setModalContent,
+} from "../features/cursor/globalStatesSlice";
 import { setCursorStyle } from "../features/cursor/cursorSlice";
 
-
-
-
 export const Section = (props) => {
+  const [btn1Clicked, setBtn1Clicked] = useState(false);
+
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
   useEffect(() => {
     AOS.init();
   }, []);
@@ -75,17 +76,19 @@ export const Section = (props) => {
 
             <div>
               <button
-                className="coloredBtn"
+                className={`coloredBtn ${
+                  btn1Clicked ? "clicked_coloredBtn" : ""
+                }`}
                 onClick={() => {
-                  // navigate("/learnmore");
+                  setBtn1Clicked(!btn1Clicked);
                   document
                     .getElementById("projects")
                     .scrollIntoView({ behavior: "smooth" });
                 }}
-                onMouseEnter={()=>{
-                  dispatch(setCursorStyle("learnMore"))
+                onMouseEnter={() => {
+                  dispatch(setCursorStyle("learnMore"));
                 }}
-                onMouseLeave={()=>{
+                onMouseLeave={() => {
                   dispatch(setCursorStyle("default"));
                 }}
               >
@@ -101,7 +104,7 @@ export const Section = (props) => {
 
 export const DarkSection = (props) => {
   const data = props.projectsData;
-  // const navigate = useNavigate();
+  const [btn2Clicked, setBtn2Clicked] = useState(false);
 
   const listItems = data.map((item) => {
     return (
@@ -119,6 +122,7 @@ export const DarkSection = (props) => {
   });
 
   const dispatch = useDispatch();
+
   return (
     <section id="projects" className="dark-section largeText">
       <div className="projectsBanner">
@@ -132,17 +136,19 @@ export const DarkSection = (props) => {
           </h1>
           <div className="cardsContainer">{listItems}</div>
           <button
-            className="learnMoreBtn"
+            className={`learnMoreBtn ${
+              btn2Clicked ? "clicked_learnMoreBtn" : ""
+            }`}
             onClick={() => {
-              // navigate("/learnmore");
+              setBtn2Clicked(!btn2Clicked);
               document
                 .getElementById("interests")
                 .scrollIntoView({ behavior: "smooth" });
             }}
-            onMouseEnter={()=>{
-              dispatch(setCursorStyle("learnMoreContrast"))
+            onMouseEnter={() => {
+              dispatch(setCursorStyle("learnMoreContrast"));
             }}
-            onMouseLeave={()=>{
+            onMouseLeave={() => {
               dispatch(setCursorStyle("default"));
             }}
           >
@@ -170,9 +176,9 @@ export const Card = (props) => {
       return getIconHTML(icon, id);
     });
   };
-  // eslint-disable-next-line 
-  const globalStates = useSelector(state => state.globalStates);
-  // eslint-disable-next-line 
+  // eslint-disable-next-line
+  const globalStates = useSelector((state) => state.globalStates);
+  // eslint-disable-next-line
   const dispatch = useDispatch();
 
   return (
@@ -180,19 +186,20 @@ export const Card = (props) => {
       key={props.id}
       className="card"
       onMouseEnter={props.mouseEnterEvent}
-      onMouseLeave={props.mouseLeaveEvent
-      }
+      onMouseLeave={props.mouseLeaveEvent}
       // onClick={() => {
       //   window.open(props.hyperlink, "_blank");
       // }}
       onClick={() => {
-        dispatch(setIsModalOpen(!globalStates.modalIsOpen))
-        dispatch(setModalContent({
-          title: props.projectName,
-          descriontion: props.des, 
-          tech: props.iconsList,
-          hyperlink: props.hyperlink,
-        }))
+        dispatch(setIsModalOpen(!globalStates.modalIsOpen));
+        dispatch(
+          setModalContent({
+            title: props.projectName,
+            descriontion: props.des,
+            tech: props.iconsList,
+            hyperlink: props.hyperlink,
+          })
+        );
       }}
     >
       <div className="iconContainer">
@@ -376,10 +383,10 @@ export const InterestSection = (props) => {
                 onClick={() => {
                   navigate("/learnmore");
                 }}
-                onMouseEnter={()=>{
-                  dispatch(setCursorStyle("learnMore"))
+                onMouseEnter={() => {
+                  dispatch(setCursorStyle("learnMore"));
                 }}
-                onMouseLeave={()=>{
+                onMouseLeave={() => {
                   dispatch(setCursorStyle("default"));
                 }}
               >

@@ -101,6 +101,18 @@
 
 }
 
+.boldPara{
+  font-weight: 700;
+  font-size: 5vw;
+  font-family: 'Architects Daughter', cursive;
+}
+
+.spanPara {
+  font-weight: 400;
+  font-size: 3.8vw;
+}
+
+
 @media only screen and (max-width: 600px) {
   .learnMoreParent {
     font-size: 1.6rem;

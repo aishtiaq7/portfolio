@@ -249,7 +249,14 @@ const LearnMore = (props) => {
                 </h3>
               </div>
             </div>
+
+            <div className="doodleSection">
+              <p className="spanPara">
+                <span className="boldPara">doodleSection</span> - coming soon
+              </p>
+            </div>
           </section>
+
         )}
       </div>
     </div>
