@@ -1,6 +1,6 @@
 // import "./Resume.css";
 import Navbar from "../components/Navbar";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./LearnMore.css";
 import "../App.css";
 import { motion } from "framer-motion";
@@ -62,9 +62,11 @@ const LearnMore = (props) => {
     },
   ];
 
-  // eslint-disable-next-line
   const [currentUrl, setCurrentUrl] = useState("");
-  // console.log("currentUrl:", currentUrl);
+
+  const doodleSectionRef = useRef(null);
+  const [doodleSectionInView, setDoodleSectionInView] = useState(false);
+
   useEffect(() => {
     const mouseMove = (e) => {
       dispatch(
@@ -86,8 +88,31 @@ const LearnMore = (props) => {
     AOS.refresh();
     setCurrentUrl(window.location.href);
 
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      const { top, height } = doodleSectionRef.current.getBoundingClientRect();
+
+      console.clear();
+      console.log("===>", scrollPosition);
+      console.log("top:", top);
+
+      console.log(doodleSectionRef.current.getBoundingClientRect());
+
+      if ( top >= -604 && top <= height ) {
+        console.log("User has scrolled to Section 3!");
+        setDoodleSectionInView(true);
+      } else{
+        setDoodleSectionInView(false);
+      }
+
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("mousemove", mouseMove);
+      window.removeEventListener("scroll", handleScroll);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -117,7 +142,7 @@ const LearnMore = (props) => {
         />
 
         {!showFullScreenNav && (
-          <section className="secondSection">
+          <section className={`secondSection ${doodleSectionInView? "doodleSectionStyles" :""}`}>
             <div className="paraContainers globalTextStyles">
               <h2 className="jobTitle">Work Experience:</h2>
               <a
@@ -250,13 +275,12 @@ const LearnMore = (props) => {
               </div>
             </div>
 
-            <div className="doodleSection">
+            <div ref={doodleSectionRef} className="doodleSection">
               <p className="spanPara">
                 <span className="boldPara">doodleSection</span> - coming soon
               </p>
             </div>
           </section>
-
         )}
       </div>
     </div>

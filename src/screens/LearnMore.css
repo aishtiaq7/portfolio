@@ -22,10 +22,14 @@
   min-height: 100vh;
   width: 100%;
   color: black;
-  background-color: white;
   padding-bottom: 5rem;
 
   overflow-x: hidden;
+
+  background-color: var(--main-white-color);
+
+  transition: all 1.3s ease;
+
 }
 
 .paraContainers {
@@ -64,7 +68,6 @@
 }
 .globalTextStyles {
   font-weight: 100;
-  background-color: white;
 }
 .jobTitle {
   font-size: 5.6vw;
@@ -88,7 +91,7 @@
 
   width: 100%;
   padding: 2rem;
-  background-color: white;
+  /* background-color: white; */
 }
 .bullet {
   width: 60%;
@@ -101,16 +104,29 @@
 
 }
 
+/* 
+    DOODLE SECTION
+*/
+.doodleSection{ 
+  z-index: 1400;
+  width: 100vw;
+  min-height: 80vh;
+
+}
 .boldPara{
   font-weight: 700;
   font-size: 5vw;
   font-family: 'Architects Daughter', cursive;
 }
-
 .spanPara {
   font-weight: 400;
   font-size: 3.8vw;
 }
+
+.doodleSectionStyles{ 
+  background-color: yellow;
+}
+
 
 
 @media only screen and (max-width: 600px) {
@@ -133,7 +149,7 @@
   
     width: 100%;
     padding: 1rem;
-    background-color: white;
+    /* background-color: white; */
   }
   .bullet {
     width: 60%;
@@ -145,10 +161,4 @@
     align-self: flex-end;
   
   }
-}
-
-.dummy {
-  background-color: white;
-  text-align: center;
-  height: 110vh;
 }
