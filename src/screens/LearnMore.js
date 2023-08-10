@@ -5,7 +5,6 @@ import "./LearnMore.css";
 import "../App.css";
 import { motion } from "framer-motion";
 
-
 import { useSelector, useDispatch } from "react-redux";
 import {
   setCursorStyle,
@@ -117,14 +116,23 @@ const LearnMore = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
   return (
     <div>
-      {doodleSectionInView && (
-        <section className="LMrodalSection">
-          <p>Ullamco officia laborum ea quis laborum deserunt labore proident eiusmod esse duis est commodo. Duis sunt tempor veniam occaecat minim. Magna cillum qui nulla cupidatat anim dolore minim ipsum. Labore velit fugiat sunt sit esse sint. Proident aliqua ipsum esse et qui ea.</p>
+      <div className="doodleContainer">
+        <section
+          className={`LMrodalSection ${
+            doodleSectionInView ? "doodleFSactive" : ""
+          }`}
+        >
+          <p>
+            Ullamco officia laborum ea quis laborum deserunt labore proident
+            eiusmod esse duis est commodo. Duis sunt tempor veniam occaecat
+            minim. Magna cillum qui nulla cupidatat anim dolore minim ipsum.
+            Labore velit fugiat sunt sit esse sint. Proident aliqua ipsum esse
+            et qui ea.
+          </p>
         </section>
-      )}
+      </div>
 
       <FullScreenNav
         showFullScreenNav={showFullScreenNav}
