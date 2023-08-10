@@ -5,6 +5,7 @@ import "./LearnMore.css";
 import "../App.css";
 import { motion } from "framer-motion";
 
+
 import { useSelector, useDispatch } from "react-redux";
 import {
   setCursorStyle,
@@ -99,13 +100,12 @@ const LearnMore = (props) => {
 
       console.log(doodleSectionRef.current.getBoundingClientRect());
 
-      if ( top >= -604 && top <= height ) {
+      if (top >= -604 && top <= height) {
         console.log("User has scrolled to Section 3!");
         setDoodleSectionInView(true);
-      } else{
+      } else {
         setDoodleSectionInView(false);
       }
-
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -117,8 +117,15 @@ const LearnMore = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+
   return (
     <div>
+      {doodleSectionInView && (
+        <section className="LMrodalSection">
+          <p>Ullamco officia laborum ea quis laborum deserunt labore proident eiusmod esse duis est commodo. Duis sunt tempor veniam occaecat minim. Magna cillum qui nulla cupidatat anim dolore minim ipsum. Labore velit fugiat sunt sit esse sint. Proident aliqua ipsum esse et qui ea.</p>
+        </section>
+      )}
+
       <FullScreenNav
         showFullScreenNav={showFullScreenNav}
         setShowFullScreenNav={setShowFullScreenNav}
@@ -142,7 +149,11 @@ const LearnMore = (props) => {
         />
 
         {!showFullScreenNav && (
-          <section className={`secondSection ${doodleSectionInView? "doodleSectionStyles" :""}`}>
+          <section
+            className={`secondSection ${
+              doodleSectionInView ? "doodleSectionStyles" : ""
+            }`}
+          >
             <div className="paraContainers globalTextStyles">
               <h2 className="jobTitle">Work Experience:</h2>
               <a
