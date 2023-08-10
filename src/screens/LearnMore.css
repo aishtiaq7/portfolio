@@ -29,7 +29,6 @@
   background-color: var(--main-white-color);
 
   transition: all 1.3s ease;
-
 }
 
 .paraContainers {
@@ -39,9 +38,8 @@
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-
 }
-.educationContainer{
+.educationContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -53,7 +51,7 @@
   color: rgb(181, 30, 30);
 }
 
-.sfulogo{
+.sfulogo {
   width: 10rem;
   /* height: 100px; */
   /* border: 2px solid green; */
@@ -101,53 +99,50 @@
   padding: 1.1rem;
 
   align-self: flex-end;
-
 }
 
 /* 
     DOODLE SECTION
 */
-.doodleSection{ 
+.doodleSection {
   z-index: 1400;
   width: 100vw;
   min-height: 80vh;
 
+  border: 5px solid green;
+  padding-top: 5rem;
+  margin-top: 8rem;
+
+  margin-bottom: 40rem;
 }
-.boldPara{
+.boldPara {
   font-weight: 700;
   font-size: 5vw;
-  font-family: 'Architects Daughter', cursive;
+  font-family: "Architects Daughter", cursive;
 }
 .spanPara {
   font-weight: 400;
   font-size: 3.8vw;
 }
 
-.doodleSectionStyles{ 
+.doodleSectionStyles {
   background-color: yellow;
 }
 
-
-.doodleContainer{
+.doodleContainer {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  
 }
 .LMrodalSection {
-
-
-  cursor: none;
+  cursor: none !important;
   width: 100vw;
   height: 100vh;
   z-index: 120;
 
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
 
   display: flex;
   justify-content: center;
@@ -156,18 +151,14 @@
   opacity: 0;
   visibility: hidden;
   transition: all 1s ease;
-  
 }
 
-.doodleFSactive { 
+.doodleFSactive {
   opacity: 1;
   visibility: visible;
 
-  background-color: red;
-
-
+  background-color: rgb(208, 193, 30);
 }
-
 
 @media only screen and (max-width: 600px) {
   .learnMoreParent {
@@ -177,8 +168,7 @@
     display: none;
   }
 
-
-  .sfulogo{
+  .sfulogo {
     width: 5rem;
     padding: 0;
     margin: 0;
@@ -186,7 +176,7 @@
   .bulletContainer {
     display: flex;
     flex-direction: column;
-  
+
     width: 100%;
     padding: 1rem;
     /* background-color: white; */
@@ -197,8 +187,7 @@
     font-size: 3.2vw;
     font-weight: 200;
     padding: 0.8rem;
-  
+
     align-self: flex-end;
-  
   }
 }

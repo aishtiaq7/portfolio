@@ -99,7 +99,8 @@ const LearnMore = (props) => {
 
       console.log(doodleSectionRef.current.getBoundingClientRect());
 
-      if (top >= -604 && top <= height) {
+      // if (top >= 205 && top <= height) {
+      if ( top <= 150) {
         console.log("User has scrolled to Section 3!");
         setDoodleSectionInView(true);
       } else {
