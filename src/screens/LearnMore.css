@@ -53,8 +53,6 @@
 
 .sfulogo {
   width: 10rem;
-  /* height: 100px; */
-  /* border: 2px solid green; */
   padding: 0;
   margin: 0;
 }
@@ -89,7 +87,6 @@
 
   width: 100%;
   padding: 2rem;
-  /* background-color: white; */
 }
 .bullet {
   width: 60%;
@@ -107,9 +104,9 @@
 .doodleSection {
   z-index: 1400;
   width: 100vw;
-  min-height: 80vh;
+  min-height: 40vh;
 
-  border: 5px solid green;
+  /* border: 5px solid green; */
   padding-top: 5rem;
   margin-top: 8rem;
 
@@ -126,7 +123,7 @@
 }
 
 .doodleSectionStyles {
-  background-color: yellow;
+  background-color: rgb(191, 191, 183);
 }
 
 .doodleContainer {
@@ -135,9 +132,10 @@
   left: 0;
   right: 0;
   bottom: 0;
+  cursor: none !important;
+
 }
 .LMrodalSection {
-  cursor: none !important;
   width: 100vw;
   height: 100vh;
   z-index: 120;
@@ -153,11 +151,26 @@
   transition: all 1s ease;
 }
 
+
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+.content {
+  line-height: 75px;
+  /* font-family: 'Dancing Script', cursive; */
+  font-family: "Architects Daughter", cursive;
+  font-size: 4.4vw;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+}
+
 .doodleFSactive {
   opacity: 1;
   visibility: visible;
 
-  background-color: rgb(208, 193, 30);
+  /* background-color: rgb(208, 193, 30); */
+
+  padding: 4rem 5.5rem;
+  height: 100%;
+  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
 }
 
 @media only screen and (max-width: 600px) {

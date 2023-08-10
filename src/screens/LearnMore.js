@@ -100,7 +100,7 @@ const LearnMore = (props) => {
       console.log(doodleSectionRef.current.getBoundingClientRect());
 
       // if (top >= 205 && top <= height) {
-      if ( top <= 150) {
+      if (top <= 150 && top >= -440) {
         console.log("User has scrolled to Section 3!");
         setDoodleSectionInView(true);
       } else {
@@ -125,13 +125,15 @@ const LearnMore = (props) => {
             doodleSectionInView ? "doodleFSactive" : ""
           }`}
         >
-          <p>
-            Ullamco officia laborum ea quis laborum deserunt labore proident
-            eiusmod esse duis est commodo. Duis sunt tempor veniam occaecat
-            minim. Magna cillum qui nulla cupidatat anim dolore minim ipsum.
-            Labore velit fugiat sunt sit esse sint. Proident aliqua ipsum esse
-            et qui ea.
-          </p>
+          <div className="content">
+            <ul>
+              <li>I like to paint on digital surfaces</li>
+              <li>Unleash creativity on digital canvases</li>
+              <li>Paint your dreams with pixels.</li>
+              <li>Strive to impress and make waves</li>
+              <li>Unleash potential, leave an impression.</li>
+            </ul>
+          </div>
         </section>
       </div>
 
