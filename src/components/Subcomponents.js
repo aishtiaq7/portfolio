@@ -6,12 +6,12 @@ import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useDispatch, useSelector } from "react-redux";
-// eslint-disable-next-line 
-import { setIsModalOpen, setModalContent } from "../features/cursor/globalStatesSlice";
+// eslint-disable-next-line
+import {
+  setIsModalOpen,
+  setModalContent,
+} from "../features/cursor/globalStatesSlice";
 import { setCursorStyle } from "../features/cursor/cursorSlice";
-
-
-
 
 export const Section = (props) => {
   const dispatch = useDispatch();
@@ -56,20 +56,22 @@ export const Section = (props) => {
             <div className="des">
               <h3>
                 Welcome to my space! <br></br> <br></br>
-                As I continue to develop my technical skills in{" "}
+                As I continue to improve my technical skills in{" "}
                 <u>software dev</u>, I look forward to using this space to
                 showcase some of my work, projects and interests.
               </h3>
               <br></br>
               <h3>
-                I'm passionate about software solutions that makes everyday
-                tasks easier, and my knowledge of programming and web
-                development has allowed me to express my creativity and skill to
-                reach this goal.
+                My fascination lies in devising software solutions that enhance
+                the ease of daily activities. By harnessing my programming and
+                web development expertise, I've found a creative outlet to
+                pursue this aspiration.
                 <br />
                 <br />
-                Using <u>React</u> & <u>Node</u> based web stacks, I paint on
-                digital spaces.
+                I specialize in leveraging <u>React</u> and <u>NodeJS</u> based
+                web stacks to create digital experiences that leave an impact.{" "}
+                <br></br><br></br> Join me as I explore and innovate in the realm of
+                software development.
               </h3>
             </div>
 
@@ -82,10 +84,10 @@ export const Section = (props) => {
                     .getElementById("projects")
                     .scrollIntoView({ behavior: "smooth" });
                 }}
-                onMouseEnter={()=>{
-                  dispatch(setCursorStyle("learnMore"))
+                onMouseEnter={() => {
+                  dispatch(setCursorStyle("learnMore"));
                 }}
-                onMouseLeave={()=>{
+                onMouseLeave={() => {
                   dispatch(setCursorStyle("default"));
                 }}
               >
@@ -139,10 +141,10 @@ export const DarkSection = (props) => {
                 .getElementById("interests")
                 .scrollIntoView({ behavior: "smooth" });
             }}
-            onMouseEnter={()=>{
-              dispatch(setCursorStyle("learnMoreContrast"))
+            onMouseEnter={() => {
+              dispatch(setCursorStyle("learnMoreContrast"));
             }}
-            onMouseLeave={()=>{
+            onMouseLeave={() => {
               dispatch(setCursorStyle("default"));
             }}
           >
@@ -170,9 +172,9 @@ export const Card = (props) => {
       return getIconHTML(icon, id);
     });
   };
-  // eslint-disable-next-line 
-  const globalStates = useSelector(state => state.globalStates);
-  // eslint-disable-next-line 
+  // eslint-disable-next-line
+  const globalStates = useSelector((state) => state.globalStates);
+  // eslint-disable-next-line
   const dispatch = useDispatch();
 
   return (
@@ -180,19 +182,20 @@ export const Card = (props) => {
       key={props.id}
       className="card"
       onMouseEnter={props.mouseEnterEvent}
-      onMouseLeave={props.mouseLeaveEvent
-      }
+      onMouseLeave={props.mouseLeaveEvent}
       // onClick={() => {
       //   window.open(props.hyperlink, "_blank");
       // }}
       onClick={() => {
-        dispatch(setIsModalOpen(!globalStates.modalIsOpen))
-        dispatch(setModalContent({
-          title: props.projectName,
-          descriontion: props.des, 
-          tech: props.iconsList,
-          hyperlink: props.hyperlink,
-        }))
+        dispatch(setIsModalOpen(!globalStates.modalIsOpen));
+        dispatch(
+          setModalContent({
+            title: props.projectName,
+            descriontion: props.des,
+            tech: props.iconsList,
+            hyperlink: props.hyperlink,
+          })
+        );
       }}
     >
       <div className="iconContainer">
@@ -376,10 +379,10 @@ export const InterestSection = (props) => {
                 onClick={() => {
                   navigate("/learnmore");
                 }}
-                onMouseEnter={()=>{
-                  dispatch(setCursorStyle("learnMore"))
+                onMouseEnter={() => {
+                  dispatch(setCursorStyle("learnMore"));
                 }}
-                onMouseLeave={()=>{
+                onMouseLeave={() => {
                   dispatch(setCursorStyle("default"));
                 }}
               >
