@@ -230,6 +230,7 @@ footer {
   /* height: 22rem; */
   /* width: 100vw; */
   overflow: hidden;
+  user-select: none;
 }
 .modal-subSection {
   width: 100%;

@@ -100,7 +100,7 @@ const LearnMore = (props) => {
       console.log(doodleSectionRef.current.getBoundingClientRect());
 
       // trigger DoodleSection to show on scroll position
-      if (top <= 150 && top >= -440) {
+      if (top >= -403 && top <= 150) {
         console.log("User has scrolled to Section 3!");
         setDoodleSectionInView(true);
         dispatch(setCursorStyle("modalEnter"));
@@ -132,17 +132,19 @@ const LearnMore = (props) => {
           <div className="content">
             <p>
               I'm thrilled to share my journey of
-              self-expression through the realm of digital doodles and software
-              development. Welcome to my space, a digital canvas where I'm not
+              self-expression through the realm of <strong>digital art</strong> and <strong>software
+              development</strong>. Welcome to my space, a digital canvas where I'm not
               just a developer, but an artist crafting with lines of code
             </p>
             <br></br>
             <p>
-              Beyond the screen, I'm deeply passionate about football and
-              volleyball. The thrill of the game, the teamwork, and the pursuit
+              Beyond the screen, I'm deeply passionate about <strong>football</strong> and 
+              <strong> volleyball</strong>. The thrill of the game, the teamwork, and the pursuit
               of excellence on the field resonate with me as strongly as lines
               of code do in the virtual world.
             </p>
+            <br></br>
+            <h4>{`did you realize that the only place you could select text is here? `}</h4>
           </div>
         </section>
       </div>
@@ -311,8 +313,10 @@ const LearnMore = (props) => {
 
             <div ref={doodleSectionRef} className="doodleSection">
               <p className="spanPara">
-                <span className="boldPara">My Doodle Section :</span>
+                <h2 className="boldPara">My Doodle Section :</h2>
               </p>
+
+              {/* <h3 className="bottomText">some bottom text</h3> */}
             </div>
 
 
