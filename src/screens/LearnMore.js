@@ -99,7 +99,7 @@ const LearnMore = (props) => {
 
       console.log(doodleSectionRef.current.getBoundingClientRect());
 
-      // if (top >= 205 && top <= height) {
+      // trigger DoodleSection to show on scroll position
       if (top <= 150 && top >= -440) {
         console.log("User has scrolled to Section 3!");
         setDoodleSectionInView(true);
@@ -126,13 +126,15 @@ const LearnMore = (props) => {
           }`}
         >
           <div className="content">
-            <ul>
+            {/* <ul>
               <li>I like to paint on digital surfaces</li>
               <li>Unleash creativity on digital canvases</li>
               <li>Paint your dreams with pixels.</li>
               <li>Strive to impress and make waves</li>
               <li>Unleash potential, leave an impression.</li>
-            </ul>
+            </ul> */}
+            <p>Allow me to invite you into my world where technology and art seamlessly blend. I'm thrilled to share my journey of self-expression through the realm of digital doodles and software development. Welcome to my space, a digital canvas where I'm not just a developer, but an artist crafting with lines of code</p>
+            <p>Beyond the screen, I'm deeply passionate about football and volleyball. The thrill of the game, the teamwork, and the pursuit of excellence on the field resonate with me as strongly as lines of code do in the virtual world.</p>
           </div>
         </section>
       </div>
@@ -299,7 +301,7 @@ const LearnMore = (props) => {
 
             <div ref={doodleSectionRef} className="doodleSection">
               <p className="spanPara">
-                <span className="boldPara">doodleSection</span> - coming soon
+                <span className="boldPara">My Doodle Section :</span>
               </p>
             </div>
           </section>
