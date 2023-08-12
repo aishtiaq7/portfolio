@@ -154,7 +154,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 .content {
-  line-height: 75px;
+  line-height: 55px;
   /* font-family: 'Dancing Script', cursive; */
   font-family: "Architects Daughter", cursive;
   font-size: 2.5vw;
@@ -167,10 +167,10 @@
   visibility: visible;
 
   padding: 4.5rem 6.5rem;
-  margin: 1.1rem 0rem;
   height: 100%;
-  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+  background-image: repeating-linear-gradient(#FEF4D4 0px, #FEF4D4 24px, teal 25px);
 
+  cursor: text;
 
 }
 

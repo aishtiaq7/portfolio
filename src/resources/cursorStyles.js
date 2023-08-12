@@ -68,13 +68,8 @@ const returnCursorVariant = (mousePosition) => {
 
       x: mousePosition.x - 75,
       y: mousePosition.y - 75, // 75 cuz radius is 150
-      // background: "transparent",
       backgroundColor: "rgba(239, 239, 239, 0.1)",
-      
       border: "5px solid black",
-      // mixBlendMode: "difference",
-      // backgroundColor: "rgba(239, 239, 239, 0.9)",
-
     },
     crossEnter: {
       height: 70,
@@ -82,12 +77,9 @@ const returnCursorVariant = (mousePosition) => {
 
       x: mousePosition.x - 35,
       y: mousePosition.y - 35, // 75 cuz radius is 150
-
-      // background: "transparent",
       backgroundColor: "rgba(239, 239, 239, 0.1)",
 
       border: "5px solid red",
-      // mixBlendMode: "difference",
     },
     hyperLinkEnter: {
       height: 70,
