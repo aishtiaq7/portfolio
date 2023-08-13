@@ -135,7 +135,6 @@ article {
   Footer
 -------*/
 footer {
-  /* cursor: none; */
   min-height: 65vh;
   width: 100vw;
   background-color: black;
@@ -174,7 +173,6 @@ footer {
   list-style-type: none;
 
   padding-top: 1rem;
-  /* margin-bottom: 1rem; */
 }
 .links ul li:nth-child(1) {
   padding-left: 0;
@@ -190,7 +188,6 @@ footer {
   position: absolute;
   left: 4.35%;
   bottom: 5%;
-  /* padding-top: 5rem; */
 
   display: flex;
   align-items: center;
@@ -227,8 +224,6 @@ footer {
   color: black;
   border-radius: 20px;
 
-  /* height: 22rem; */
-  /* width: 100vw; */
   overflow: hidden;
   user-select: none;
 }
@@ -269,7 +264,6 @@ footer {
   font-size: 2.1vw;
   padding: 1.5rem;
   color: rgba(252, 11, 11, 0.571);
-  /* border: 2px solid red; */
 }
 .closeModalButton:hover {
   color: red;
@@ -297,10 +291,10 @@ footer {
 .tech {
   margin: 0rem 1.5rem;
   display: inline-block;
-  padding: 10px 20px; 
+  padding: 10px 20px;
   border: none;
-  border-radius: 20px; 
-  background-color: blue; 
+  border-radius: 20px;
+  background-color: blue;
   color: white;
   font-size: 16px;
   cursor: none;
@@ -314,18 +308,17 @@ footer {
 
   .rodal-parent {
     color: black;
-    border-radius: 10%;
-  
+    border-radius: 20px;
+
   }
   .closeModalButton{
     display: inline-block;
     position: absolute;
-    right: 0%;
+    right: -5%;
     top: 50%;
     transform: translate(-50%, -50%);
-  
-    font-size: 4.1vw;
-    /* border: 2px solid red; */
+
+    font-size: 5.5vw;
     padding: 1.5rem;
   }
 
