@@ -4,7 +4,6 @@ import { IconContext } from "react-icons";
 
 const Footer = (props) => {
   // console.log("props.offset\t\t", props.offset);
-
   const value = 0.17;
 
   return (

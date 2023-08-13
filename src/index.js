@@ -17,6 +17,7 @@ import {
   makeCursorDefault,
   setCursorStyle,
 } from "./features/cursor/cursorSlice";
+import { setWindowOffsetY } from "./features/cursor/globalStatesSlice";
 
 
 const FooterComponent = () => {
@@ -26,6 +27,7 @@ const FooterComponent = () => {
   useEffect(() => {
     const handleScroll = () => {
       setWindowOffset(window.pageYOffset);
+      setWindowOffsetY(window.pageYOffset)
     };
 
     window.addEventListener('scroll', handleScroll);

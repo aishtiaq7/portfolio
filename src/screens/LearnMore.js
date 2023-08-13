@@ -62,6 +62,7 @@ const LearnMore = (props) => {
     },
   ];
 
+  // eslint-disable-next-line
   const [currentUrl, setCurrentUrl] = useState("");
 
   const doodleSectionRef = useRef(null);
@@ -89,19 +90,18 @@ const LearnMore = (props) => {
     setCurrentUrl(window.location.href);
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
+      // const scrollPosition = window.scrollY;
 
-      const { top, height } = doodleSectionRef.current.getBoundingClientRect();
+      const { top } = doodleSectionRef.current.getBoundingClientRect();
 
-      console.clear();
-      console.log("===>", scrollPosition);
-      console.log("top:", top);
-
-      console.log(doodleSectionRef.current.getBoundingClientRect());
+      // console.clear();
+      // console.log("===>", scrollPosition);
+      // console.log("top:", top);
+      // console.log(doodleSectionRef.current.getBoundingClientRect());
 
       // trigger DoodleSection to show on scroll position
       if (top >= -403 && top <= 150) {
-        console.log("User has scrolled to Section 3!");
+        // console.log("User has scrolled to Section 3!");
         setDoodleSectionInView(true);
         dispatch(setCursorStyle("modalEnter"));
       } else if (top <= -441) {
@@ -144,7 +144,7 @@ const LearnMore = (props) => {
               of code do in the virtual world.
             </p>
             <br></br>
-            <h4>{`did you realize that the only place you could select text is here? `}</h4>
+            {/* <h4>{`did you realize that the only place you could select text is here? `}</h4> */}
           </div>
         </section>
       </div>
@@ -312,16 +312,11 @@ const LearnMore = (props) => {
             </div>
 
             <div ref={doodleSectionRef} className="doodleSection">
-              <p className="spanPara">
-                <h2 className="boldPara">My Doodle Section :</h2>
+              <p className="boldPara">
+                My Doodle Section:
               </p>
-
               {/* <h3 className="bottomText">some bottom text</h3> */}
             </div>
-
-
-
-
           </section>
         )}
       </div>

@@ -11,6 +11,7 @@ export const globalStatesSlice = createSlice({
       hyperlink: "", 
     },
     screenWidth: 500,
+    screenOffsetY: 0,
   },
   reducers: {
     updateScreenWidth: (state, action) => {
@@ -27,11 +28,15 @@ export const globalStatesSlice = createSlice({
         tech: tech,
         hyperlink: hyperlink,
       };
+    },
+    setWindowOffsetY: (state, action) =>{
+      state.screenOffsetY = action.payload;
     }
   },
 });
 
 export const {
+  setWindowOffsetY,
   setIsModalOpen,
   setModalContent,
   updateScreenWidth

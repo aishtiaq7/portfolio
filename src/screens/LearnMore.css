@@ -112,7 +112,6 @@ strong {
   width: 100vw;
   min-height: 40vh;
 
-  /* border: 5px solid green; */
   padding-top: 5rem;
   margin-top: 8rem;
 
@@ -125,7 +124,7 @@ strong {
 }
 .spanPara {
   font-weight: 400;
-  font-size: 3.8vw;
+  font-size: 4.8vw;
 }
 .doodleSectionStyles {
   background-color: rgb(191, 191, 183);
@@ -137,12 +136,11 @@ strong {
   right: 0;
   bottom: 0;
   cursor: none !important;
-
 }
 .LMrodalSection {
   width: 100vw;
   height: 100vh;
-  z-index: 120;
+  /* z-index: 120; */
 
   position: fixed;
 
@@ -153,6 +151,7 @@ strong {
   opacity: 0;
   visibility: hidden;
   transition: all 1s ease;
+  z-index: -200;
 }
 .bottomText{
   position: relative;
@@ -162,7 +161,6 @@ strong {
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 .content {
   line-height: 55px;
-  /* font-family: 'Dancing Script', cursive; */
   font-family: "Architects Daughter", cursive;
   font-size: 2.5vw;
   letter-spacing: 1px;
@@ -172,6 +170,7 @@ strong {
 .doodleFSactive {
   opacity: 1;
   visibility: visible;
+  z-index: inherit;
 
   padding: 4.5rem 6.5rem;
   height: 100%;
@@ -179,7 +178,6 @@ strong {
 
   cursor: text;
   /* cursor: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='24px' height='24px' viewBox='0 0 512 512' style='enable-background:new 0 0 512.011 512.011;' xml:space='preserve'%3E %3Cpath fill='DeepSkyBlue' d='M434.215,344.467L92.881,3.134c-4.16-4.171-10.914-4.179-15.085-0.019  c-2.011,2.006-3.139,4.731-3.134,7.571v490.667c0.003,4.382,2.685,8.316,6.763,9.92c4.081,1.603,8.727,0.545,11.712-2.667  l135.509-145.92h198.016c5.891,0.011,10.675-4.757,10.686-10.648C437.353,349.198,436.226,346.473,434.215,344.467z'/%3E %3C/svg%3E"), pointer; */
-
 }
 
 ::selection {
@@ -188,6 +186,27 @@ strong {
 }
 
 @media only screen and (max-width: 600px) {
+  .content {
+    line-height: 29px;
+    font-family: "Architects Daughter", cursive;
+    font-size: 5.5vw;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    /* border: 2px solid red; */
+  }
+  .doodleFSactive {
+    opacity: 1;
+    visibility: visible;
+    z-index: inherit;
+  
+    padding: 1rem 3.5rem;
+    height: 100%;
+    background-image: repeating-linear-gradient(#FEF4D4 0px, #FEF4D4 24px, teal 25px);
+  
+    cursor: text;
+    /* cursor: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='24px' height='24px' viewBox='0 0 512 512' style='enable-background:new 0 0 512.011 512.011;' xml:space='preserve'%3E %3Cpath fill='DeepSkyBlue' d='M434.215,344.467L92.881,3.134c-4.16-4.171-10.914-4.179-15.085-0.019  c-2.011,2.006-3.139,4.731-3.134,7.571v490.667c0.003,4.382,2.685,8.316,6.763,9.92c4.081,1.603,8.727,0.545,11.712-2.667  l135.509-145.92h198.016c5.891,0.011,10.675-4.757,10.686-10.648C437.353,349.198,436.226,346.473,434.215,344.467z'/%3E %3C/svg%3E"), pointer; */
+  }
+
   .learnMoreParent {
     font-size: 1.6rem;
   }
@@ -206,7 +225,6 @@ strong {
 
     width: 100%;
     padding: 1rem;
-    /* background-color: white; */
   }
   .bullet {
     width: 60%;
