@@ -50,16 +50,19 @@ export const Section = (props) => {
                 data-aos-offset={250}
                 data-aos-duration={550}
               >
-                "helloo"
+                "hello"
               </h3>
             </div>
 
             <div className="des">
               <h3>
                 {/* Welcome to my space! <br></br> */}
-                My name is <strong>Awshaf</strong>
-                <br></br> and let me take you through this digital journey and
-                introduce myself as we go.
+                <br></br>
+                My name is Awshaf,<br></br>
+                I'm a computer science graduate with 3+ years of experience
+                building & deploying web apps.
+                {/* I'm a software developer problem solver, <br></br>  */}
+                {/* Allow me take you through this digital journey and learn more about  */}
                 <br></br>
                 {/* As I continue to improve my technical skills in{" "}
                 <u>software dev</u>, I look forward to using this space to
@@ -69,14 +72,19 @@ export const Section = (props) => {
               <h3>
                 My fascination lies in devising software solutions that enhance
                 the ease of daily activities. By harnessing my programming and
-                web development expertise, I've found a creative outlet to
-                pursue this aspiration.
+                web development , I've found a creative outlet to pursue this
+                aspiration.
                 <br />
                 <br />I specialize in leveraging <u>React</u> and <u>NodeJS</u>{" "}
                 based web stacks to create digital experiences that leave an
                 impact. <br></br>
+                <br></br>
+                Join me on this digital journey exploring software innovation
+                and my story.
+                {/* Let me to take you through this digital journey and lern more about me.
+
                 <br></br> Join me as I explore and innovate in the realm of
-                software development.
+                software development. */}
               </h3>
             </div>
 
@@ -140,11 +148,17 @@ export const DarkSection = (props) => {
           <h1 className="greetingsTitle">
             Here are some of my <u>running</u> projects...
           </h1>
-          <p>Many problems require a different type of stacks, and to adobt to it you need accustom to it.</p>
+          <p>
+            Many problems require a different type of stacks, and to adobt to it
+            you need accustom to it.
+          </p>
 
           <div className="cardsContainer">{listItems}</div>
 
-          <p>Many problems require a different type of stack, and to adobt to it is the way to go!!!</p>
+          <p>
+            Many problems require a different type of stack, and to adobt to it
+            is the way to go!!!
+          </p>
           <button
             className={`learnMoreBtn ${
               btn2Clicked ? "clicked_learnMoreBtn" : ""
