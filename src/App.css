@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oleo+Script&family=Poppins:wght@300&family=Roboto:wght@100;400&display=swap");
 
-
 /* Hides scrollbar: */
 ::-webkit-scrollbar {
   display: none;
@@ -25,8 +24,8 @@ body {
 :root {
   --main-white-color: rgb(239, 239, 239);
   /* --content-font-family: HelveticaNowText-Light; */
-  --content-font-family: 'Poppins';
-  
+  --content-font-family: "Poppins";
+
   --content-font-size: 1.8vw;
   --content-font-size-phone-view: 3.4vw;
 }
@@ -432,6 +431,17 @@ footer {
     font-size: 0.7rem;
   }
 
+ 
+  .largeText {
+    font-size: var(--content-font-size);
+    font-family: var(--content-font-family);
+    font-weight: normal;
+
+    border: 2px solid black;
+    text-align: left;
+    padding: 2rem 1.2rem;
+    /* padding-left: 2rem; */
+  }
   .largeText,
   footer {
     font-size: var(--content-font-size-phone-view);

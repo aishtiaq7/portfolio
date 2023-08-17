@@ -3,14 +3,22 @@ import { CgCopyright } from "react-icons/cg";
 import { IconContext } from "react-icons";
 import { useSelector } from "react-redux";
 
-
 const Footer = (props) => {
-  const {screenWidth} = useSelector(state => state.globalStates)
-  console.log('sc:\t', screenWidth);
+  const { screenWidth } = useSelector((state) => state.globalStates);
+  // console.log("sc:\t", screenWidth);
 
   console.log("props.offset\t\t", props.offset);
   const value = 0.17;
 
+  const getParallaxProperty = () => {
+    if (props.offset >= 4175 && screenWidth > 600) { // for lg screens
+      return `translateY(${(props.offset - 4175) * value}px)`;
+    } else if (props.offset >= 4638 && screenWidth < 600) { // for phones
+      return `translateY(${(props.offset - 4638) * value}px)`;
+    } else {
+      return `none`;
+    }
+  };
   return (
     <footer
       id="contact"
@@ -24,9 +32,7 @@ const Footer = (props) => {
             // props.offset >= 3800
             //   ? `translateY(${(props.offset - 3800) * value}px)`
             //   : "none",
-            props.offset >= 3800
-              ? `translateY(${(props.offset - 3800) * value}px)`
-              : "none",
+            getParallaxProperty(),
         }}
       >
         <div className="contactMe">

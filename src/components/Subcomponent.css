@@ -489,9 +489,27 @@
 
 /* SM screens */
 @media only screen and (max-width: 600px) {
+
+  .greetingsTitle {
+    padding-top: 0rem;
+    font-family: "Oleo Script", cursive;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  .btnConainter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  
+  }
+  .btnConainter > button {
+    width: 100%;
+  }
   .projectsSubhead{
     margin: 1rem 0;
-    /* border: 2px dotted red; */
   }
   .about-section {
     margin-bottom: -10rem;
@@ -502,7 +520,7 @@
   }
   .card {
     width: 18em;
-    height: 26rem;
+    height: auto;
   }
   .cardTitle {
     margin: 0;
