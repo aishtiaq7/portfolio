@@ -45,7 +45,7 @@ export const Section = (props) => {
           >
             <div className="greetingsTitle">
               <h3
-                data-aos="fade-left"
+                data-aos="fade-down-left"
                 data-aos-once="false"
                 data-aos-offset={185}
                 data-aos-duration={475}
@@ -60,7 +60,7 @@ export const Section = (props) => {
                 <br></br>
                 My name is Awshaf,<br></br>
                 I'm a computer science graduate with 3+ years of experience
-                building & deploying web apps.
+                building & deploying full stack apps.
                 {/* I'm a software developer problem solver, <br></br>  */}
                 {/* Allow me take you through this digital journey and learn more about  */}
                 <br></br>
@@ -88,7 +88,10 @@ export const Section = (props) => {
               </h3>
             </div>
 
-            <div className="btnConainter">
+            <div className="btnConainter" data-aos="fade-down-left"
+                data-aos-once="false"
+                data-aos-offset={45}
+                data-aos-duration={475}>
               <button
                 className={`coloredBtn ${
                   btn1Clicked ? "clicked_coloredBtn" : ""
