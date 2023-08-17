@@ -54,7 +54,7 @@
   transition: all 0.5s ease;
   background-color: black;
 }
-.btnConainter{
+.btnConainter {
   width: 100%;
   /* background-color: pink; */
 
@@ -78,7 +78,6 @@
   transition: all 0.5s ease;
   background-color: grey;
 }
-
 
 .learnMoreBtn {
   width: 11rem;
@@ -231,8 +230,11 @@
 
   width: 100%;
   height: 100%;
+
+  /* border: 2px solid white; */
 }
 
+/* all classes outside media target small screens (below 600px width )*/
 .card {
   position: relative;
   width: 9em;
@@ -399,7 +401,7 @@
 @media only screen and (min-width: 1400px) and (max-width: 3500px) {
   .card {
     position: relative;
-    width: 9em;
+    width: 40%;
     height: 22rem;
     background: black;
     border: 0.4px solid rgb(165, 165, 165);
@@ -433,6 +435,37 @@
     font-size: 1.1vw;
   }
 }
+@media only screen and (min-width: 740px) and (max-width: 1399px) {
+  .card {
+    position: relative;
+    width: 40%;
+    height: 22rem;
+    background: black;
+    border: 0.4px solid rgb(165, 165, 165);
+
+    overflow: hidden;
+
+    border-radius: 1em;
+    margin: 1em;
+    overflow: hidden;
+    cursor: none;
+
+    box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25),
+      0 8px 16px -8px hsla(0, 0%, 0%, 0.3),
+      0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
+    transition: all ease 200ms;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    font: var(--content-font-family);
+    font-size: var(--content-font-size-phone-view);
+
+    z-index: 30;
+    /* background-color: orange; */
+  }
+}
 
 /* Small screens & Phones */
 @media only screen and (max-width: 600px) {
@@ -450,7 +483,7 @@
   }
   .card {
     width: 18em;
-    height: 16rem;
+    height: 26rem;
   }
   .cardTitle {
     margin: 0;

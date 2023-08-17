@@ -56,17 +56,10 @@ export const Section = (props) => {
 
             <div className="des">
               <h3>
-                {/* Welcome to my space! <br></br> */}
                 <br></br>
                 My name is Awshaf,<br></br>
                 I'm a computer science graduate with 3+ years of experience
                 building & deploying full stack apps.
-                {/* I'm a software developer problem solver, <br></br>  */}
-                {/* Allow me take you through this digital journey and learn more about  */}
-                <br></br>
-                {/* As I continue to improve my technical skills in{" "}
-                <u>software dev</u>, I look forward to using this space to
-                showcase some of my work, projects and interests. */}
               </h3>
               <br></br>
               <h3>
@@ -81,10 +74,6 @@ export const Section = (props) => {
                 <br></br>
                 Join me on this digital journey exploring software innovation
                 and my story.
-                {/* Let me to take you through this digital journey and lern more about me.
-
-                <br></br> Join me as I explore and innovate in the realm of
-                software development. */}
               </h3>
             </div>
 
