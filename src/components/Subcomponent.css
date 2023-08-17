@@ -54,6 +54,12 @@
   transition: all 0.5s ease;
   background-color: black;
 }
+.btnConainter{
+  width: 100%;
+  /* background-color: pink; */
+
+  text-align: center;
+}
 
 .clicked_coloredBtn {
   width: 11rem;
@@ -325,7 +331,7 @@
   position: relative;
   color: black;
 
-  padding-top: 7%;
+  /* padding-top: 7%; */
 }
 .stroke-svg {
   max-height: 15rem;

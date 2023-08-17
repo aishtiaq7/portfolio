@@ -45,10 +45,10 @@ export const Section = (props) => {
           >
             <div className="greetingsTitle">
               <h3
-                data-aos="zoom-out-down"
+                data-aos="fade-left"
                 data-aos-once="false"
-                data-aos-offset={250}
-                data-aos-duration={550}
+                data-aos-offset={185}
+                data-aos-duration={475}
               >
                 "hello"
               </h3>
@@ -88,7 +88,7 @@ export const Section = (props) => {
               </h3>
             </div>
 
-            <div>
+            <div className="btnConainter">
               <button
                 className={`coloredBtn ${
                   btn1Clicked ? "clicked_coloredBtn" : ""
@@ -155,10 +155,6 @@ export const DarkSection = (props) => {
 
           <div className="cardsContainer">{listItems}</div>
 
-          <p>
-            Many problems require a different type of stack, and to adobt to it
-            is the way to go!!!
-          </p>
           <button
             className={`learnMoreBtn ${
               btn2Clicked ? "clicked_learnMoreBtn" : ""

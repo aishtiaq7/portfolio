@@ -129,6 +129,11 @@ article {
   font-size: var(--content-font-size);
   font-family: var(--content-font-family);
   font-weight: normal;
+
+  border: 2px solid black;
+  text-align: left;
+  padding: 2rem 1.8rem;
+  /* padding-left: 2rem; */
 }
 
 /*-------
