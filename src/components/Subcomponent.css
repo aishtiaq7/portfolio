@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
+
 :root {
   --main-white-color: rgb(239, 239, 239);
   --content-font-family: HelveticaNowText-Light;
@@ -117,6 +119,8 @@
   scale: 1.1;
 }
 .finalBtn {
+  /* transition: all 1s ease-in; */
+
   filter: blur(4px);
 }
 .finalBtn:hover {
@@ -129,12 +133,20 @@
   box-shadow: 0px 0px 50px 30px rgba(223, 223, 223, 0.2);
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
 .greetingsTitle {
   padding-top: 2rem;
   font-family: "Oleo Script", cursive;
   font-weight: 100;
-  /* margin: 2rem 2.2rem; */
+  text-align: center;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oleo+Script&family=Poppins:wght@300&family=Roboto:wght@100;400&display=swap");
+.largeText{
+  font-family: 'Poppins', sans-serif;
+}
+
+.projectsSubhead{
+  margin: 1rem 0;
 }
 
 .about-section {
@@ -238,14 +250,15 @@
 .card {
   position: relative;
   width: 9em;
-  height: 18rem;
+  /* height: 18rem; */
+  height: auto;
   background: black;
   border: 0.4px solid rgb(165, 165, 165);
 
   overflow: hidden;
 
   border-radius: 1em;
-  margin: 1em;
+  margin: 1em 0rem;
   overflow: hidden;
   cursor: none;
 
@@ -258,7 +271,8 @@
   align-items: flex-start;
 
   font: var(--content-font-family);
-  font-size: var(--content-font-size-phone-view);
+  /* font-size: var(--content-font-size-phone-view); */
+  font-size: 3.8vw;
 
   z-index: 30;
 }
@@ -435,6 +449,8 @@
     font-size: 1.1vw;
   }
 }
+
+/* MID screens */
 @media only screen and (min-width: 740px) and (max-width: 1399px) {
   .card {
     position: relative;
@@ -465,16 +481,19 @@
     z-index: 30;
     /* background-color: orange; */
   }
+  .cardDes {
+    font-size: 1.3vw;
+    /* background-color: orange; */
+  }
 }
 
-/* Small screens & Phones */
+/* SM screens */
 @media only screen and (max-width: 600px) {
+  .projectsSubhead{
+    margin: 1rem 0;
+    /* border: 2px dotted red; */
+  }
   .about-section {
-    /* height: auto;
-    width: 100vw;
-  
-    user-select: none;
-    padding-top: 10%; */
     margin-bottom: -10rem;
   }
 

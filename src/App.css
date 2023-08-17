@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oleo+Script&family=Poppins:wght@300&family=Roboto:wght@100;400&display=swap");
+
+
 /* Hides scrollbar: */
 ::-webkit-scrollbar {
   display: none;
@@ -21,7 +24,9 @@ body {
 
 :root {
   --main-white-color: rgb(239, 239, 239);
-  --content-font-family: HelveticaNowText-Light;
+  /* --content-font-family: HelveticaNowText-Light; */
+  --content-font-family: 'Poppins';
+  
   --content-font-size: 1.8vw;
   --content-font-size-phone-view: 3.4vw;
 }
@@ -92,11 +97,11 @@ article {
 
   color: var(--main-white-color);
 }
+
 .landingTitle {
   width: 50vw;
   height: 100%;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Poppins", sans-serif;
 
   display: flex;
   justify-content: center;
@@ -106,7 +111,6 @@ article {
   font-size: 3.8vw;
 }
 .portraitImg {
-  /* margin: 0  auto; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -311,10 +315,6 @@ footer {
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
- 
-
-
-
   .modal-subSection {
     width: 100%;
     /* max-height: 20vh;
@@ -407,14 +407,14 @@ footer {
     align-items: center;
   }
   .selfportrait {
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
-    padding: 0rem;
     object-fit: cover;
     object-position: center;
 
-    padding: 3rem;
-    margin-top: -4rem;
+    /* padding: 1rem; */
+    margin-top: -9rem;
+    /* border: 2px solid red; */
   }
 
   .closeBtn {

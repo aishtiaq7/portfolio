@@ -90,10 +90,7 @@ const LearnMore = (props) => {
     setCurrentUrl(window.location.href);
 
     const handleScroll = () => {
-      // const scrollPosition = window.scrollY;
-
       const { top } = doodleSectionRef.current.getBoundingClientRect();
-
       // console.clear();
       // console.log("===>", scrollPosition);
       // console.log("top:", top);

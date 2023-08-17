@@ -45,9 +45,10 @@ export const Section = (props) => {
           >
             <div className="greetingsTitle">
               <h3
-                data-aos="fade-down-left"
+                data-aos="zoom-in-left"
                 data-aos-once="false"
                 data-aos-offset={185}
+                // data-aos-offset={300}
                 data-aos-duration={475}
               >
                 "hello"
@@ -64,23 +65,27 @@ export const Section = (props) => {
               <br></br>
               <h3>
                 My fascination lies in devising software solutions that enhance
-                the ease of daily activities. By harnessing my programming and
-                web development , I've found a creative outlet to pursue this
-                aspiration.
+                the ease of daily activities using cloud solutions.
+                <br></br>
+                By harnessing my programming and web development knowledge, I've
+                found a creative outlet to pursue this aspiration.
                 <br />
                 <br />I specialize in leveraging <u>React</u> and <u>NodeJS</u>{" "}
                 based web stacks to create digital experiences that leave an
                 impact. <br></br>
                 <br></br>
-                Join me on this digital journey exploring software innovation
-                and my story.
+                Join me on this digital voyage where we explore software
+                innovation and my narrativey.
               </h3>
             </div>
 
-            <div className="btnConainter" data-aos="fade-down-left"
-                data-aos-once="false"
-                data-aos-offset={45}
-                data-aos-duration={475}>
+            <div
+              className="btnConainter"
+              data-aos="zoom-in-left"
+              data-aos-once="false"
+              data-aos-offset={10}
+              data-aos-duration={275}
+            >
               <button
                 className={`coloredBtn ${
                   btn1Clicked ? "clicked_coloredBtn" : ""
@@ -140,9 +145,9 @@ export const DarkSection = (props) => {
           <h1 className="greetingsTitle">
             Here are some of my <u>running</u> projects...
           </h1>
-          <p>
-            Many problems require a different type of stacks, and to adobt to it
-            you need accustom to it.
+          <p className="projectsSubhead">
+            Countless problems call for varying stacks, and the ability to
+            adjust successfully hinges on gaining expertise with each.
           </p>
 
           <div className="cardsContainer">{listItems}</div>
@@ -163,6 +168,10 @@ export const DarkSection = (props) => {
             onMouseLeave={() => {
               dispatch(setCursorStyle("default"));
             }}
+            data-aos="zoom-in-left"
+            data-aos-once="false"
+            data-aos-offset={10}
+            data-aos-duration={275}
           >
             Learn More
           </button>
@@ -199,9 +208,6 @@ export const Card = (props) => {
       className="card"
       onMouseEnter={props.mouseEnterEvent}
       onMouseLeave={props.mouseLeaveEvent}
-      // onClick={() => {
-      //   window.open(props.hyperlink, "_blank");
-      // }}
       onClick={() => {
         dispatch(setIsModalOpen(!globalStates.modalIsOpen));
         dispatch(
@@ -390,20 +396,27 @@ export const InterestSection = (props) => {
                   </p>
                 );
               })}
-              <button
-                className="coloredBtn finalBtn"
-                onClick={() => {
-                  navigate("/learnmore");
-                }}
-                onMouseEnter={() => {
-                  dispatch(setCursorStyle("learnMore"));
-                }}
-                onMouseLeave={() => {
-                  dispatch(setCursorStyle("default"));
-                }}
+              <div
+                data-aos="zoom-in-left"
+                data-aos-once="false"
+                data-aos-offset={10}
+                data-aos-duration={275}
               >
-                Learn More
-              </button>
+                <button
+                  className="coloredBtn finalBtn"
+                  onClick={() => {
+                    navigate("/learnmore");
+                  }}
+                  onMouseEnter={() => {
+                    dispatch(setCursorStyle("learnMore"));
+                  }}
+                  onMouseLeave={() => {
+                    dispatch(setCursorStyle("default"));
+                  }}
+                >
+                  Learn More
+                </button>
+              </div>
             </div>
           </div>
         </div>
