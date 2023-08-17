@@ -89,6 +89,8 @@ const LearnMore = (props) => {
     AOS.refresh();
     setCurrentUrl(window.location.href);
 
+
+    // for DoodleSection:
     const handleScroll = () => {
       const { top } = doodleSectionRef.current.getBoundingClientRect();
       // console.clear();

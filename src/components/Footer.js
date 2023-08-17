@@ -1,9 +1,14 @@
 import "../App.css";
 import { CgCopyright } from "react-icons/cg";
 import { IconContext } from "react-icons";
+import { useSelector } from "react-redux";
+
 
 const Footer = (props) => {
-  // console.log("props.offset\t\t", props.offset);
+  const {screenWidth} = useSelector(state => state.globalStates)
+  console.log('sc:\t', screenWidth);
+
+  console.log("props.offset\t\t", props.offset);
   const value = 0.17;
 
   return (
@@ -16,6 +21,9 @@ const Footer = (props) => {
         className="links"
         style={{
           transform:
+            // props.offset >= 3800
+            //   ? `translateY(${(props.offset - 3800) * value}px)`
+            //   : "none",
             props.offset >= 3800
               ? `translateY(${(props.offset - 3800) * value}px)`
               : "none",
