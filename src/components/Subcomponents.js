@@ -56,10 +56,14 @@ export const Section = (props) => {
 
             <div className="des">
               <h3>
-                Welcome to my space! <br></br> <br></br>
-                As I continue to improve my technical skills in{" "}
+                {/* Welcome to my space! <br></br> */}
+                My name is <strong>Awshaf</strong>
+                <br></br> and let me take you through this digital journey and
+                introduce myself as we go.
+                <br></br>
+                {/* As I continue to improve my technical skills in{" "}
                 <u>software dev</u>, I look forward to using this space to
-                showcase some of my work, projects and interests.
+                showcase some of my work, projects and interests. */}
               </h3>
               <br></br>
               <h3>
@@ -68,10 +72,10 @@ export const Section = (props) => {
                 web development expertise, I've found a creative outlet to
                 pursue this aspiration.
                 <br />
-                <br />
-                I specialize in leveraging <u>React</u> and <u>NodeJS</u> based
-                web stacks to create digital experiences that leave an impact.{" "}
-                <br></br><br></br> Join me as I explore and innovate in the realm of
+                <br />I specialize in leveraging <u>React</u> and <u>NodeJS</u>{" "}
+                based web stacks to create digital experiences that leave an
+                impact. <br></br>
+                <br></br> Join me as I explore and innovate in the realm of
                 software development.
               </h3>
             </div>
@@ -136,7 +140,11 @@ export const DarkSection = (props) => {
           <h1 className="greetingsTitle">
             Here are some of my <u>running</u> projects...
           </h1>
+          <p>Many problems require a different type of stacks, and to adobt to it you need accustom to it.</p>
+
           <div className="cardsContainer">{listItems}</div>
+
+          <p>Many problems require a different type of stack, and to adobt to it is the way to go!!!</p>
           <button
             className={`learnMoreBtn ${
               btn2Clicked ? "clicked_learnMoreBtn" : ""
