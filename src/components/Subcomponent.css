@@ -141,11 +141,11 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oleo+Script&family=Poppins:wght@300&family=Roboto:wght@100;400&display=swap");
-.largeText{
-  font-family: 'Poppins', sans-serif;
+.largeText {
+  font-family: "Poppins", sans-serif;
 }
 
-.projectsSubhead{
+.projectsSubhead {
   margin: 1rem 0;
 }
 
@@ -438,7 +438,6 @@
 
     font: var(--content-font-family);
     font-size: var(--content-font-size-phone-view);
-    background-color: orange;
 
     z-index: 30;
   }
@@ -477,8 +476,6 @@
 
     font: var(--content-font-family);
     font-size: var(--content-font-size-phone-view);
-    /* background-color: red; */
-
     z-index: 30;
   }
 
@@ -529,7 +526,6 @@
 
 /* SM screens */
 @media only screen and (max-width: 600px) {
-
   .greetingsTitle {
     padding-top: 0rem;
     font-family: "Oleo Script", cursive;
@@ -543,12 +539,11 @@
     justify-content: center;
     padding: 0;
     margin: 0;
-  
   }
   .btnConainter > button {
     width: 100%;
   }
-  .projectsSubhead{
+  .projectsSubhead {
     margin: 1rem 0;
   }
   .about-section {

@@ -293,9 +293,9 @@ footer {
   flex-direction: column;
 }
 
-.titleStyles {
+.titleStyles > h2 {
   font-weight: 750;
-  font-size: 2.3vw;
+  font-size: 2vw;
 }
 
 .tech {
@@ -314,10 +314,17 @@ footer {
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
+  /* 
+   *
+   RODAL Styles:
+   *
+  */
+  .rodal-parent {
+    color: black;
+    border-radius: 20px;
+  }
   .modal-subSection {
     width: 100%;
-    /* max-height: 20vh;
-    overflow-y: scroll; */
     height: auto;
     background-image: linear-gradient(
       to right top,
@@ -328,10 +335,10 @@ footer {
       #dbdbdb
     );
     color: black;
+    background-color: orange;
 
     padding: 1.8rem 5.7rem;
     flex-grow: 1;
-    /* border: 2px solid blue; */
 
     display: flex;
     flex-wrap: wrap;
@@ -339,7 +346,20 @@ footer {
 
     background-color: orange;
   }
+  .techStack{
+    /* border: 2px solid red; */
+    padding: 0.8rem;
+  }
+  .titleStyles > h2 {
+    font-weight: 750;
+    font-size: 4.8vw;
+  }
+  .modal-subSection.titleStyles {
+    /* border: 3px solid green; */
+    padding: 2rem 1.8rem;
+    padding-right: 3.5rem;
 
+  }
   .tech {
     display: inline-block;
     padding: 10px 20px;
@@ -355,11 +375,6 @@ footer {
     flex-wrap: wrap;
     margin: 0.3rem 0.2rem;
   }
-
-  .rodal-parent {
-    color: black;
-    border-radius: 20px;
-  }
   .closeModalButton {
     display: inline-block;
     position: absolute;
@@ -369,6 +384,10 @@ footer {
 
     font-size: 5.5vw;
     padding: 1.5rem;
+  }
+  .modalDes {
+    padding: 2rem 2.5rem;
+    /* border: 4px solid red; */
   }
 
   /* Turning off cursor: */
@@ -446,4 +465,6 @@ footer {
   footer {
     font-size: var(--content-font-size-phone-view);
   }
+
+
 }

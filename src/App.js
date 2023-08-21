@@ -204,7 +204,7 @@ function App() {
               <div className="modal-subSection modalDes">
                 {rodalContent.descriontion}
               </div>
-              <div className="modal-subSection ">
+              <div className="modal-subSection techStack">
                 {getTechStackRender(rodalContent.tech)}
               </div>
               <div className="modal-subSection">
