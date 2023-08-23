@@ -456,7 +456,7 @@ footer {
     font-family: var(--content-font-family);
     font-weight: normal;
 
-    border: 2px solid black;
+    /* border: 2px solid black; */
     text-align: left;
     padding: 2rem 1.2rem;
     /* padding-left: 2rem; */
