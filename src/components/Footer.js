@@ -7,7 +7,7 @@ const Footer = (props) => {
   const { screenWidth } = useSelector((state) => state.globalStates);
   // console.log("sc:\t", screenWidth);
 
-  console.log("props.offset\t\t", props.offset);
+  // console.log("props.offset\t\t", props.offset);
   const value = 0.17;
 
   const getParallaxProperty = () => {
