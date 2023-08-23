@@ -89,7 +89,6 @@ const LearnMore = (props) => {
     AOS.refresh();
     setCurrentUrl(window.location.href);
 
-
     // for DoodleSection:
     const handleScroll = () => {
       const { top } = doodleSectionRef.current.getBoundingClientRect();
@@ -130,17 +129,21 @@ const LearnMore = (props) => {
         >
           <div className="content">
             <p>
-              I'm thrilled to share my journey of
-              self-expression through the realm of <strong>digital art</strong> and <strong>software
-              development</strong>. Welcome to my space, a digital canvas where I'm not
-              just a developer, but an artist crafting with lines of code
+              <strong>Changes coming here soon . . . . . :</strong>
+              <br></br>
+              I'm thrilled to share my journey of self-expression through the
+              realm of <strong>digital art</strong> and{" "}
+              <strong>software development</strong>. Welcome to my space, a
+              digital canvas where I'm not just a developer, but an artist
+              crafting with lines of code
             </p>
             <br></br>
             <p>
-              Beyond the screen, I'm deeply passionate about <strong>football</strong> and 
-              <strong> volleyball</strong>. The thrill of the game, the teamwork, and the pursuit
-              of excellence on the field resonate with me as strongly as lines
-              of code do in the virtual world.
+              Beyond the screen, I'm deeply passionate about{" "}
+              <strong>football</strong> and
+              <strong> volleyball</strong>. The thrill of the game, the
+              teamwork, and the pursuit of excellence on the field resonate with
+              me as strongly as lines of code do in the virtual world.
             </p>
             <br></br>
             {/* <h4>{`did you realize that the only place you could select text is here? `}</h4> */}
@@ -311,9 +314,7 @@ const LearnMore = (props) => {
             </div>
 
             <div ref={doodleSectionRef} className="doodleSection">
-              <p className="boldPara">
-                My Doodle Section:
-              </p>
+              <p className="boldPara">My Doodle Section:</p>
               {/* <h3 className="bottomText">some bottom text</h3> */}
             </div>
           </section>

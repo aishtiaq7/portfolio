@@ -92,7 +92,7 @@ export const Section = (props) => {
                   btn1Clicked ? "clicked_coloredBtn" : ""
                 }`}
                 onClick={() => {
-                  setBtn1Clicked(!btn1Clicked);
+                  setBtn1Clicked(true);
                   document
                     .getElementById("projects")
                     .scrollIntoView({ behavior: "smooth" });
@@ -104,7 +104,7 @@ export const Section = (props) => {
                   dispatch(setCursorStyle("default"));
                 }}
               >
-                Learn More
+                Learn More ?
               </button>
             </div>
           </div>
@@ -137,12 +137,10 @@ export const DarkSection = (props) => {
 
   return (
     <section id="projects" className="dark-section largeText">
-      <div className="projectsBanner">
-        <SectionBanner section={"Projects"} isLightTheme={true} />
-      </div>
+      <SectionBanner section={"Projects"} isLightTheme={true} />
 
       <div className="container">
-        <div>
+        <div className="projectsContent">
           <h1 className="greetingsTitle">
             Here are some of my <u>running</u> projects...
           </h1>
@@ -158,7 +156,7 @@ export const DarkSection = (props) => {
               btn2Clicked ? "clicked_learnMoreBtn" : ""
             }`}
             onClick={() => {
-              setBtn2Clicked(!btn2Clicked);
+              setBtn2Clicked(true);
               document
                 .getElementById("interests")
                 .scrollIntoView({ behavior: "smooth" });
@@ -174,7 +172,7 @@ export const DarkSection = (props) => {
             data-aos-offset={10}
             data-aos-duration={275}
           >
-            Learn More
+            Learn More ?
           </button>
         </div>
       </div>
@@ -239,7 +237,9 @@ export const SectionBanner = (props) => {
   const sectionTitle = props.section;
   return (
     <div className={`section-banner `}>
-      <div className={`${isLightTheme ? "ribbon-light" : "ribbon-dark"}`}>
+      <div
+        className={`ribbon ${isLightTheme ? "ribbon-light" : "ribbon-dark"}`}
+      >
         <h4 className="about-title">{sectionTitle}</h4>
       </div>
     </div>
@@ -316,7 +316,7 @@ export const InterestSection = (props) => {
     <section id="interests" ref={props.innerRef}>
       <div className="interestSection">
         <div className="projectsBanner">
-          <SectionBanner section={"Interests"} isLightTheme={false} />
+          <SectionBanner section={"Hobbies"} isLightTheme={false} />
         </div>
         <div className="largeText">
           <div className="container">
