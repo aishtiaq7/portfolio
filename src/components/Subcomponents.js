@@ -40,6 +40,7 @@ export const Section = (props) => {
             className="largeText"
             style={{
               marginTop: "8rem",
+              border: "2px solid black",
               transform: `translateY(${props.offset * parallaxSpeedValue}px)`,
             }}
           >
