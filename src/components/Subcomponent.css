@@ -35,9 +35,9 @@
   padding-top: 5%;
   padding-bottom: 5%;
 }
-/* .projectsBanner {
+.projectsBanner {
   position: relative;
-} */
+}
 
 .coloredBtn {
   width: 11rem;
@@ -653,6 +653,7 @@
     /* color: green; */
 
     font-size: 2vw;
+    position: relative;
   }
 
   .ribbon-light {
