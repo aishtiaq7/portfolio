@@ -180,6 +180,13 @@
   font-family: var(--content-font-family);
   font-size: var(--content-font-size);
   font-weight: 600;
+
+
+  /* position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateX(-50%) translateY(-170%); */
+
 }
 
 .ribbon.ribbon-light {
@@ -620,8 +627,8 @@
 
     /* background-color: orange; */
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0%;
+    left: 0%;
     transform: translateX(-50%) translateY(-170%);
 
     /* border:  2px  solid green; */
@@ -636,6 +643,16 @@
     border-bottom: solid 15px transparent;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+
+    /* border: 2px solid red; */
+    /* background-color: orange; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+    /* color: green; */
+
+    font-size: 2vw;
   }
 
   .ribbon-light {
