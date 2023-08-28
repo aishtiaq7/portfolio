@@ -14,7 +14,6 @@ Visit my portfolio here at :  https://awshaf.com
 
 <br>
 <br>
-<br>
 
 ### UI TODOs:
 
@@ -23,15 +22,7 @@ Visit my portfolio here at :  https://awshaf.com
 ### Non-Functional TODOs: 
 -   Test git branch protection rules
 -   Refactor Parallax Scrolling code
-
-### Done: 
--   ✅ Parallax effect on items. 
--   ✅ Design & implement "LearnMore" screen
--   ✅ Fix (2nd) SVG drawings (in Interests): Has a starting tail.
--   ✅ Redesign cursor shape for Navbar objects
--   ✅ More AOS animations. Reveal on view. 
--   ✅ Consistent Font
--   ✅ Incorporate REDUX
+-   test git branch protection rules.
 
 
 
