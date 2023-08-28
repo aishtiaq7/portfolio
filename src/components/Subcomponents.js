@@ -13,16 +13,19 @@ import {
 } from "../features/cursor/globalStatesSlice";
 import { setCursorStyle } from "../features/cursor/cursorSlice";
 import AnimatedNumber from "animated-number-react";
+import { useInView } from 'react-intersection-observer';
 
 export const Section = (props) => {
   const [btn1Clicked, setBtn1Clicked] = useState(false);
+
+  const options = { threshold: 0.6, triggerOnce: true, };
+  const [inViewRef, inView] = useInView(options);
 
   const dispatch = useDispatch();
   useEffect(() => {
     AOS.init();
   }, []);
 
-  // const [yearsExperience, setYearsExperience] = useState(4);
   const formatValue = (value) => Math.round(value);
 
   const parallaxSpeedValue = -0.205;
@@ -61,11 +64,13 @@ export const Section = (props) => {
             </div>
 
             <div className="des">
-              <h3>
+              <h3 ref={inViewRef} >
                 <br></br>
                 My name is <span className="bold">Awshaf</span>,<br></br>
                 I'm a computer science graduate with{" "}
-                <AnimatedNumber value={3} formatValue={formatValue} duration={2000} delay={1000} />+ years of
+                {/* <AnimatedNumber value={3} formatValue={formatValue} duration={2000} delay={1000} /> */}
+                <AnimatedNumber value={inView ? 3 : 0} formatValue={formatValue} duration={1500} delay={350} />
+                + years of
                 experience building & deploying web apps.
               </h3>
               <br></br>
