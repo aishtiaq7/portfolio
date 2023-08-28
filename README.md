@@ -11,8 +11,7 @@ Visit my portfolio here at :  https://awshaf.com
 
 
 
-<br>
-<br>
+
 <br>
 <br>
 <br>
@@ -22,6 +21,7 @@ Visit my portfolio here at :  https://awshaf.com
 -   Transition to open/close fs menu bar (preloaders)
 
 ### Non-Functional TODOs: 
+-   Test git branch protection rules
 -   Refactor Parallax Scrolling code
 
 ### Done: 
