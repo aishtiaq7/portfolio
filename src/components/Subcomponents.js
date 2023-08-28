@@ -12,6 +12,7 @@ import {
   setModalContent,
 } from "../features/cursor/globalStatesSlice";
 import { setCursorStyle } from "../features/cursor/cursorSlice";
+import AnimatedNumber from "animated-number-react";
 
 export const Section = (props) => {
   const [btn1Clicked, setBtn1Clicked] = useState(false);
@@ -20,6 +21,9 @@ export const Section = (props) => {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  // const [yearsExperience, setYearsExperience] = useState(4);
+  const formatValue = (value) => Math.round(value);
 
   const parallaxSpeedValue = -0.205;
   return (
@@ -59,9 +63,10 @@ export const Section = (props) => {
             <div className="des">
               <h3>
                 <br></br>
-                My name is Awshaf,<br></br>
-                I'm a computer science graduate with 3+ years of experience
-                building & deploying full stack apps.
+                My name is <span className="bold">Awshaf</span>,<br></br>
+                I'm a computer science graduate with{" "}
+                <AnimatedNumber value={3} formatValue={formatValue} duration={2000} delay={1000} />+ years of
+                experience building & deploying web apps.
               </h3>
               <br></br>
               <h3>
@@ -73,7 +78,7 @@ export const Section = (props) => {
                 <br />
                 <br />I specialize in leveraging <u>React</u> and <u>NodeJS</u>{" "}
                 based web stacks to create digital experiences that leave an
-                impact. <br></br>
+                impact! <br></br>
                 <br></br>
                 Join me on this digital voyage where we explore software
                 innovation and my narrativey.

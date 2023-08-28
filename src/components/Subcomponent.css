@@ -21,6 +21,10 @@
 
   position: relative;
 }
+.bold {
+  font-weight: bolder;
+  text-decoration: underline;
+}
 
 .dark-section {
   user-select: none;
