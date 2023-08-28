@@ -26,7 +26,7 @@ export const Section = (props) => {
     AOS.init();
   }, []);
 
-  const formatValue = (value) => Math.round(value);
+  const formatValue = (value) => Math.round(value); 
 
   const parallaxSpeedValue = -0.205;
   return (
