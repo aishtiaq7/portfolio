@@ -66,7 +66,7 @@ export const Section = (props) => {
             <div className="des">
               <h3 ref={inViewRef} >
                 <br></br>
-                My name is <span className="bold">Awshaf</span>,<br></br>
+                xxx <span className="bold">Awshaf</span>,<br></br>
                 I'm a computer science graduate with{" "}
                 {/* <AnimatedNumber value={3} formatValue={formatValue} duration={2000} delay={1000} /> */}
                 <AnimatedNumber value={inView ? 3 : 0} formatValue={formatValue} duration={1500} delay={350} />
