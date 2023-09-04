@@ -128,19 +128,23 @@ const LearnMore = (props) => {
           }`}
         >
           <div className="content">
+          <br></br>
+          <br></br>
+
+            <p>I like dooodle, both on paper and the web.</p>
             <p>
-              <strong>Changes coming here soon . . . . . :</strong>
+              target is to bring a doodle right --- <span id="doodletarget">here</span> ---
               <br></br>
+              <br></br>
+            </p>
+            <br></br>
+            <p>
               I'm thrilled to share my journey of self-expression through the
               realm of <strong>digital art</strong> and{" "}
               <strong>software development</strong>. Welcome to my space, a
               digital canvas where I'm not just a developer, but an artist
-              crafting with lines of code
-            </p>
-            <br></br>
-            <p>
-              Beyond the screen, I'm deeply passionate about{" "}
-              <strong>football</strong> and
+              crafting with lines of code Beyond the screen, I'm deeply
+              passionate about <strong>football</strong> and
               <strong> volleyball</strong>. The thrill of the game, the
               teamwork, and the pursuit of excellence on the field resonate with
               me as strongly as lines of code do in the virtual world.
