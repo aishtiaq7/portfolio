@@ -128,29 +128,30 @@ const LearnMore = (props) => {
           }`}
         >
           <div className="content">
-          <br></br>
-          <br></br>
-
-            <p>I like dooodle, both on paper and the web.</p>
             <p>
-              target is to bring a doodle right --- <span id="doodletarget">here</span> ---
+              {/* "doodle section",  */}
+              
               <br></br>
+              a place where i can paint my ideas, from the pages of my notebook onto a digital canvas.
+               {/* my journey of self-expression through digital art & software development */}
+              {/* self-expression through the realm of <strong>digital art</strong>{" "} */}
+              {/* and <strong>software development</strong>.  */}
+              
               <br></br>
-            </p>
-            <br></br>
-            <p>
-              I'm thrilled to share my journey of self-expression through the
-              realm of <strong>digital art</strong> and{" "}
-              <strong>software development</strong>. Welcome to my space, a
-              digital canvas where I'm not just a developer, but an artist
-              crafting with lines of code Beyond the screen, I'm deeply
+              here I wear the hat not only of a developer but also an artist, crafting with lines of code & passion.
+              
+              {/* <br></br> 
+              Beyond the screen, I'm deeply
               passionate about <strong>football</strong> and
               <strong> volleyball</strong>. The thrill of the game, the
               teamwork, and the pursuit of excellence on the field resonate with
-              me as strongly as lines of code do in the virtual world.
+              me as strongly as lines of code do in the virtual world. */}
+
+              <br></br> 
+              <br></br> 
+              target is to bring a doodle right ---{" "}
+              <span id="doodletarget">here</span> ---
             </p>
-            <br></br>
-            {/* <h4>{`did you realize that the only place you could select text is here? `}</h4> */}
           </div>
         </section>
       </div>
