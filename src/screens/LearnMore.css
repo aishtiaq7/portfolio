@@ -73,6 +73,8 @@ strong {
   font-weight: 100;
 }
 .jobTitle {
+  user-select: none;
+  text-align: left;
   font-size: 5.6vw;
 }
 
@@ -86,6 +88,7 @@ strong {
   text-decoration: none;
 
   margin: 1.5rem;
+  user-select: none;
 }
 
 .bulletContainer {
@@ -116,7 +119,7 @@ strong {
     DOODLE SECTION
 */
 .doodleSection {
-  z-index: 1400;
+  z-index: -1400;
   width: 100vw;
   min-height: 40vh;
 
@@ -138,6 +141,7 @@ strong {
   background-color: rgb(191, 191, 183);
 }
 .doodleContainer {
+  height: 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -178,9 +182,10 @@ strong {
 }
 
 .doodleFSactive {
+  /* height: inherit; */
   opacity: 1;
   visibility: visible;
-  z-index: inherit;
+  z-index: 1400;
 
   padding: 4.5rem 6.5rem;
   height: 100%;
@@ -217,8 +222,8 @@ strong {
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-  top: -60%;
-  left: 0%;
+  top: -130%;
+  left: -10%;
   right: 0;
   bottom: 0;
   z-index: -1;
