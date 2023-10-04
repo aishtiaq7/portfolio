@@ -155,25 +155,19 @@ const LearnMore = (props) => {
         >
           <div className="content">
             <p>
-              {/* "doodle section",  */}
-              <br></br>a place where i can paint my ideas, from the pages of my
-              notebook onto a digital canvas.
-              {/* my journey of self-expression through digital art & software development */}
-              {/* self-expression through the realm of <strong>digital art</strong>{" "} */}
-              {/* and <strong>software development</strong>.  */}
               <br></br>
-              here I wear the hat not only of a developer but also an artist,
-              crafting with lines of code & passion.
-              {/* <br></br> 
-              Beyond the screen, I'm deeply
-              passionate about <strong>football</strong> and
-              <strong> volleyball</strong>. The thrill of the game, the
-              teamwork, and the pursuit of excellence on the field resonate with
-              me as strongly as lines of code do in the virtual world. */}
+              In this section, I aim to bring my thoughts and imagination into a free flowing space. 
+              <br></br>
+              Much like the pages of my <strong>notebook</strong>, i aspire to draw, scribble, and sketch ideas that roam freely in my mind's landscape. 
+              <br></br>
+              In doing so, I can transcend the confines of paper and continue to  <span id="doodletarget">paint</span> my thoughts without the constraints of ink, space & time. 
+              <br></br>
+              I want to leave behind my self-expression in the form of digital art and software development.
+               {/* my digital footprint of zeros & ones so that my people beyond my generation can see what i  */}
+              <br></br>
+              
               <br></br>
               <br></br>
-              target is to bring a doodle right ---{" "}
-              <span id="doodletarget">here</span> ---
             </p>
           </div>
         </section>
