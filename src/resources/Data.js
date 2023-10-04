@@ -8,6 +8,14 @@ export const cardItem = [
     cursorClass: "lala",
   },
   {
+    id: 7,
+    projectName: "Clipping Path Service ASIA",
+    iconsList: ["next", "redux","github", "html", "js"],
+    hyperlink: "http://clippingpathserviceasia.com/",
+    des: "Developed a scalable Next.js web application with reusable components, leading to a 40% increase in scalability. Implemented secure NodeMailer API for seamless email communication with large attachments.",
+    cursorClass: "lala",
+  },
+  {
     id: 6,
     projectName: "Portfolio",
     iconsList: ["react", "nodejs", "github", "firebase", "redux"],

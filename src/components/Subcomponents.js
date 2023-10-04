@@ -86,7 +86,7 @@ export const Section = (props) => {
                 impact! <br></br>
                 <br></br>
                 Join me on this digital voyage where we explore software
-                innovation and my narrativey.
+                innovation and my narrative.
               </h3>
             </div>
 

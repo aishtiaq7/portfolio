@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./FullScreenNav.css";
 
 const googleDriveResumeLink =
-  "https://drive.google.com/file/d/13GH7vXcvnNhY6EtMCiQ222K6_iQ1Y_c_/view?usp=sharing";
+  "https://drive.google.com/file/d/1UGpJ9ZZaGpyalO-b7EYj05Jq7PQ91D6I/view?usp=sharing";
 
 const FullScreenNav = (props) => {
   const navigate = useNavigate();
