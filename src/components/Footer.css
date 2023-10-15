@@ -1,0 +1,78 @@
+/*-------
+  Footer
+-------*/
+footer {
+  min-height: 85vh;
+  width: 100vw;
+  background-color: black;
+  color: white;
+
+  position: relative;
+  font-size: var(--content-font-size);
+}
+.contactMe {
+  padding: 3rem 0;
+}
+.contactMe a {
+  text-decoration: none;
+  color: var(--main-white-color);
+  font-family: var(--content-font-family);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.links {
+  width: 91vw;
+  height: 100%;
+  margin: auto;
+}
+.horizontalLine {
+  background-color: var(--main-white-color);
+  width: 100%;
+  height: 0.3vh;
+  margin: auto;
+  border: 10%;
+}
+.links ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  list-style-type: none;
+
+  padding-top: 1rem;
+}
+.links ul li:nth-child(1) {
+  padding-left: 0;
+}
+.links ul li {
+  padding-left: 1.1rem;
+}
+.links ul li a {
+  text-decoration: none;
+  color: var(--main-white-color);
+}
+.permissionstext {
+  position: absolute;
+  left: 4.35%;
+  bottom: 5%;
+
+  display: flex;
+  align-items: center;
+
+  color: rgb(118, 118, 118);
+
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  font-family: var(--content-font-family);
+  font-size: 0.8vw;
+}
+.permissionstext h5 {
+  padding-left: 1rem;
+}
+/* MEDIA QUERIES */
+@media only screen and (max-width: 600px) {
+  footer {
+    min-height: 50vh;
+    font-size: var(--content-font-size-phone-view);
+  }
+}
