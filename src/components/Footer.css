@@ -2,13 +2,14 @@
   Footer
 -------*/
 footer {
-  min-height: 95vh;
+  min-height: 70vh;
   width: 100vw;
   background-color: black;
   color: white;
 
   position: relative;
   font-size: var(--content-font-size);
+
 }
 .contactMe {
   padding: 3rem 0;
@@ -52,6 +53,7 @@ footer {
   color: var(--main-white-color);
 }
 .permissionstext {
+  user-select: none;
   position: absolute;
   left: 4.35%;
   bottom: 5%;
@@ -64,7 +66,7 @@ footer {
   letter-spacing: 0.1rem;
   font-weight: 500;
   font-family: var(--content-font-family);
-  font-size: 0.8vw;
+  font-size: 1.2vw;
 }
 .permissionstext h5 {
   padding-left: 1rem;
@@ -75,13 +77,29 @@ footer {
     min-height: 50vh;
     font-size: var(--content-font-size-phone-view);
   }
+
+  .permissionstext {
+  user-select: none;
+
+    position: absolute;
+    left: 4.35%;
+    bottom: 5%;
+  
+    display: flex;
+    align-items: center;
+  
+    color: rgb(118, 118, 118);
+  
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    font-family: var(--content-font-family);
+    font-size: 2.2vw;
+  }
 }
 @media only screen and (min-width: 1800px) {
   .horizontalLine {
     margin-top: 1.8rem;
   }
-  .contactMe {
-    /* padding: 4rem 0; */
-    padding-top: 16rem;
-  }
+
+
 }

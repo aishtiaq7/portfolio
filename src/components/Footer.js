@@ -10,8 +10,8 @@ function getWindowSize() {
 }
 
 const Footer = (props) => {
-  const [windowSize, setWindowSize] = useState(getWindowSize());
   // eslint-disable-next-line
+  const [windowSize, setWindowSize] = useState(getWindowSize());
   const [footerElement, setFooterElement] = useState({});
 
   useEffect(() => {
@@ -34,43 +34,55 @@ const Footer = (props) => {
     };
   }, []);
 
-  const value = 0.117;
+  const value = 1.88;
 
   const getParallaxProperty = () => {
-    if (windowSize.innerWidth >= 1848) {
-      console.log("warning, lg scr!!");
-      return "none";
-    }
+    // if (windowSize.innerWidth >= 1848) {
+    //   console.log("warning, lg scr!!");
+    //   return "none";
+    // }
 
     // console.clear();
     // console.log("rec: ", footerElement);
     // console.log("props.offset: ", props.offset);
 
-    // const docHeight =  document.documentElement.offsetHeight;
+    const docHeight =  document.documentElement.offsetHeight;
     // console.log("doc height ", docHeight);
     
     // console.log("el h:", docHeight - props.offset);
     // console.log("FIXED el h:", footerElement.height);
 
-    // if(footerElement.top < footerElement.height){
-    //   console.log('NOWWWW do it');
-    //   let translation = (props.offset/docHeight)*100
-    //   console.log('tras:', translation )
-    //   // return `translateY(${(props.offset - 4175) * value}px)`;
-    // }
+    function mapRange(value, fromMin, fromMax, toMin, toMax) {
+      // First, normalize the input value within the from range.
+      const normalizedValue = (value - fromMin) / (fromMax - fromMin);
+      // Then, apply the normalized value to the to range.
+      const result = toMin + normalizedValue * (toMax - toMin);
+
+      return result;
+    }
+    
+
+    if(footerElement.top - 400 < footerElement.height){
+      // console.log('NOWWWW do it');
+      let translation = (props.offset/docHeight)*100
+      // console.log('tras:', translation )
+      let mappedValue = mapRange(translation, 75, 95, 1,110);
+      // console.log('rangee--->', mappedValue )
+      return `translateY(${mappedValue * value}px)`;
+    }
     
 
     // return `translateY(${(props.offset - 4175) * value}px)`;
 
-    if (props.offset >= 4175 && windowSize.innerWidth > 600) {
-      // for lg screens
-      return `translateY(${(props.offset - 4175) * value}px)`;
-    } else if (props.offset >= 4638 && windowSize.innerWidth < 600) {
-      // for phones
-      return `translateY(${(props.offset - 4638) * value}px)`;
-    } else {
-      return `none`;
-    }
+    // if (props.offset >= 4175 && windowSize.innerWidth > 600) {
+    //   // for lg screens
+    //   return `translateY(${(props.offset - 4175) * value}px)`;
+    // } else if (props.offset >= 4638 && windowSize.innerWidth < 600) {
+    //   // for phones
+    //   return `translateY(${(props.offset - 4638) * value}px)`;
+    // } else {
+    //   return `none`;
+    // }
   };
   return (
     <footer
