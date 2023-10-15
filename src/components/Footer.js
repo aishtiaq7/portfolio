@@ -1,88 +1,37 @@
 import { CgCopyright } from "react-icons/cg";
 import { IconContext } from "react-icons";
-// eslint-disable-next-line
 import { useState, useEffect } from "react";
-
 import "./Footer.css";
-function getWindowSize() {
-  const { innerWidth, innerHeight } = window;
-  return { innerWidth, innerHeight };
-}
 
 const Footer = (props) => {
-  // eslint-disable-next-line
-  const [windowSize, setWindowSize] = useState(getWindowSize());
   const [footerElement, setFooterElement] = useState({});
-
   useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
-    }
     function handleWindowScroll() {
       setFooterElement(
         document.getElementById("contact").getBoundingClientRect()
       );
     }
-
-    window.addEventListener("resize", handleWindowResize);
     window.addEventListener("scroll", handleWindowScroll);
-
-
     return () => {
       window.removeEventListener("scroll", handleWindowScroll);
-      window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
   const value = 1.88;
 
   const getParallaxProperty = () => {
-    // if (windowSize.innerWidth >= 1848) {
-    //   console.log("warning, lg scr!!");
-    //   return "none";
-    // }
-
-    // console.clear();
-    // console.log("rec: ", footerElement);
-    // console.log("props.offset: ", props.offset);
-
-    const docHeight =  document.documentElement.offsetHeight;
-    // console.log("doc height ", docHeight);
-    
-    // console.log("el h:", docHeight - props.offset);
-    // console.log("FIXED el h:", footerElement.height);
-
+    const docHeight = document.documentElement.offsetHeight;
     function mapRange(value, fromMin, fromMax, toMin, toMax) {
-      // First, normalize the input value within the from range.
       const normalizedValue = (value - fromMin) / (fromMax - fromMin);
-      // Then, apply the normalized value to the to range.
       const result = toMin + normalizedValue * (toMax - toMin);
-
       return result;
     }
-    
 
-    if(footerElement.top - 400 < footerElement.height){
-      // console.log('NOWWWW do it');
-      let translation = (props.offset/docHeight)*100
-      // console.log('tras:', translation )
-      let mappedValue = mapRange(translation, 75, 95, 1,110);
-      // console.log('rangee--->', mappedValue )
+    if (footerElement.top - 400 < footerElement.height) {
+      let translation = (props.offset / docHeight) * 100;
+      let mappedValue = mapRange(translation, 75, 95, 1, 110);
       return `translateY(${mappedValue * value}px)`;
     }
-    
-
-    // return `translateY(${(props.offset - 4175) * value}px)`;
-
-    // if (props.offset >= 4175 && windowSize.innerWidth > 600) {
-    //   // for lg screens
-    //   return `translateY(${(props.offset - 4175) * value}px)`;
-    // } else if (props.offset >= 4638 && windowSize.innerWidth < 600) {
-    //   // for phones
-    //   return `translateY(${(props.offset - 4638) * value}px)`;
-    // } else {
-    //   return `none`;
-    // }
   };
   return (
     <footer

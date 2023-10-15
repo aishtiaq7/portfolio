@@ -9,7 +9,6 @@ footer {
 
   position: relative;
   font-size: var(--content-font-size);
-
 }
 .contactMe {
   padding: 3rem 0;
@@ -79,17 +78,17 @@ footer {
   }
 
   .permissionstext {
-  user-select: none;
+    user-select: none;
 
     position: absolute;
     left: 4.35%;
     bottom: 5%;
-  
+
     display: flex;
     align-items: center;
-  
+
     color: rgb(118, 118, 118);
-  
+
     letter-spacing: 0.1rem;
     font-weight: 500;
     font-family: var(--content-font-family);
@@ -100,6 +99,4 @@ footer {
   .horizontalLine {
     margin-top: 1.8rem;
   }
-
-
 }
