@@ -2,7 +2,7 @@
   Footer
 -------*/
 footer {
-  min-height: 85vh;
+  min-height: 95vh;
   width: 100vw;
   background-color: black;
   color: white;
@@ -74,5 +74,14 @@ footer {
   footer {
     min-height: 50vh;
     font-size: var(--content-font-size-phone-view);
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .horizontalLine {
+    margin-top: 1.8rem;
+  }
+  .contactMe {
+    /* padding: 4rem 0; */
+    padding-top: 16rem;
   }
 }

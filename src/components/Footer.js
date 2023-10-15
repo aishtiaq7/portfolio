@@ -1,49 +1,71 @@
-
 import { CgCopyright } from "react-icons/cg";
 import { IconContext } from "react-icons";
 // eslint-disable-next-line
 import { useState, useEffect } from "react";
 
-
-import "./Footer.css"
+import "./Footer.css";
 function getWindowSize() {
-  const {innerWidth, innerHeight} = window;
-  return {innerWidth, innerHeight};
+  const { innerWidth, innerHeight } = window;
+  return { innerWidth, innerHeight };
 }
 
-
 const Footer = (props) => {
-
-
   const [windowSize, setWindowSize] = useState(getWindowSize());
+  const [footerElement, setFooterElement] = useState({});
 
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
     }
+    function handleWindowScroll() {
+      setFooterElement(
+        document.getElementById("contact").getBoundingClientRect()
+      );
+    }
 
-    window.addEventListener('resize', handleWindowResize);
+    window.addEventListener("resize", handleWindowResize);
+    window.addEventListener("scroll", handleWindowScroll);
+
 
     return () => {
-      window.removeEventListener('resize', handleWindowResize);
+      window.removeEventListener("scroll", handleWindowScroll);
+      window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
-
-  console.log('new windowSize: ', windowSize.innerWidth);
 
   const value = 0.117;
 
   const getParallaxProperty = () => {
-
-    if(windowSize.innerWidth >= 1848){
-      console.log('warning, lg scr!!')
-      return 'none';
+    if (windowSize.innerWidth >= 1848) {
+      console.log("warning, lg scr!!");
+      return "none";
     }
 
+    // console.clear();
+    // console.log("rec: ", footerElement);
+    // console.log("props.offset: ", props.offset);
 
-    if (props.offset >= 4175 && windowSize.innerWidth > 600) { // for lg screens
+    // const docHeight =  document.documentElement.offsetHeight;
+    // console.log("doc height ", docHeight);
+    
+    // console.log("el h:", docHeight - props.offset);
+    // console.log("FIXED el h:", footerElement.height);
+
+    // if(footerElement.top < footerElement.height){
+    //   console.log('NOWWWW do it');
+    //   let translation = (props.offset/docHeight)*100
+    //   console.log('tras:', translation )
+    //   // return `translateY(${(props.offset - 4175) * value}px)`;
+    // }
+    
+
+    // return `translateY(${(props.offset - 4175) * value}px)`;
+
+    if (props.offset >= 4175 && windowSize.innerWidth > 600) {
+      // for lg screens
       return `translateY(${(props.offset - 4175) * value}px)`;
-    } else if (props.offset >= 4638 && windowSize.innerWidth < 600) { // for phones
+    } else if (props.offset >= 4638 && windowSize.innerWidth < 600) {
+      // for phones
       return `translateY(${(props.offset - 4638) * value}px)`;
     } else {
       return `none`;
