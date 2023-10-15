@@ -11,7 +11,7 @@ function getWindowSize() {
 
 const Footer = (props) => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
-  const [footerElement, setFooterElement] = useState({});
+  // const [footerElement, setFooterElement] = useState({});
 
   useEffect(() => {
     function handleWindowResize() {
