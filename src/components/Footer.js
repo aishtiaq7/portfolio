@@ -11,7 +11,8 @@ function getWindowSize() {
 
 const Footer = (props) => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
-  // const [footerElement, setFooterElement] = useState({});
+  // eslint-disable-next-line
+  const [footerElement, setFooterElement] = useState({});
 
   useEffect(() => {
     function handleWindowResize() {
