@@ -128,13 +128,13 @@ export const DarkSection = (props) => {
   const data = props.projectsData;
   const [btn2Clicked, setBtn2Clicked] = useState(false);
 
-  const listItems = data.map((item) => {
+  const listItems = data.map((item,index) => {
     return (
       <Card
         key={item.id}
         mouseEnterEvent={props.textEnter}
         mouseLeaveEvent={props.textLeave}
-        id={item.projecID}
+        id={index}
         projectName={item.projectName}
         hyperlink={item.hyperlink}
         des={item.des}
@@ -211,6 +211,9 @@ export const Card = (props) => {
   // eslint-disable-next-line
   const dispatch = useDispatch();
 
+
+  // console.log('id?:', props.id % 3);
+
   return (
     <div
       key={props.id}
@@ -229,7 +232,7 @@ export const Card = (props) => {
         );
       }}
     >
-      <div className="iconContainer">
+      <div className={`iconContainer delay-${(props.id%3)}s`}>
         {renderIcons(props.iconsList, props.id)}
       </div>
       <div className="cardTitle">

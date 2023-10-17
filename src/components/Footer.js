@@ -37,10 +37,10 @@ const Footer = (props) => {
   const value = 0.117;
 
   const getParallaxProperty = () => {
-    if (windowSize.innerWidth >= 1848) {
-      console.log("warning, lg scr!!");
-      return "none";
-    }
+    // if (windowSize.innerWidth >= 1848) {
+    //   console.log("warning, lg scr!!");
+    //   return "none";
+    // }
 
     // console.clear();
     // console.log("rec: ", footerElement);
