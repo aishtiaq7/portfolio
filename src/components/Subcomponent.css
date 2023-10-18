@@ -300,13 +300,13 @@
 
 @keyframes autoSlide {
   0% {
-    transform: translateX(25%);
+    transform: translateX(10%);
   }
   50% {
-    transform: translateX(-30%);
+    transform: translateX(-40%);
   }
   100% {
-    transform: translateX(25%);
+    transform: translateX(10%);
   }
 }
 .delay-0s {
