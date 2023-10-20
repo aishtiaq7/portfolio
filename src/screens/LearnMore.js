@@ -138,12 +138,6 @@ const LearnMore = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // const filteredWorkExperience = bulletData
-  //   .filter((item) => item.category === "Work Experience")
-  //   .map((item) => item);
-
-  // console.log(filteredWorkExperience);
-
   return (
     <div>
       {/* DOODLE SECTION */}
