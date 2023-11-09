@@ -13,12 +13,12 @@ import {
 } from "../features/cursor/globalStatesSlice";
 import { setCursorStyle } from "../features/cursor/cursorSlice";
 import AnimatedNumber from "animated-number-react";
-import { useInView } from 'react-intersection-observer';
+import { useInView } from "react-intersection-observer";
 
 export const Section = (props) => {
   const [btn1Clicked, setBtn1Clicked] = useState(false);
 
-  const options = { threshold: 0.6, triggerOnce: false, };
+  const options = { threshold: 0.6, triggerOnce: false };
   const [inViewRef, inView] = useInView(options);
 
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ export const Section = (props) => {
     AOS.init();
   }, []);
 
-  const formatValue = (value) => Math.round(value); 
+  const formatValue = (value) => Math.round(value);
 
   const parallaxSpeedValue = -0.205;
   return (
@@ -64,26 +64,49 @@ export const Section = (props) => {
             </div>
 
             <div className="des">
-              <h3 ref={inViewRef} >
+              <h3 ref={inViewRef}>
                 <br></br>
                 My name is <span className="bold">Awshaf</span>,<br></br>
-                I'm a computer science graduate with{" "}
-                {/* <AnimatedNumber value={3} formatValue={formatValue} duration={2000} delay={1000} /> */}
-                <AnimatedNumber value={inView ? 3 : 0} formatValue={formatValue} duration={1700}  />
-                + years of
-                experience building & deploying robust web applications.
+                I'm a bachelor's graduate in computer science, from Simon Fraser
+                University, with{" "}
+                <AnimatedNumber
+                  value={inView ? 3 : 0}
+                  formatValue={formatValue}
+                  duration={1700}
+                />
+                + years of experience building robust full stack apps.
               </h3>
               <br></br>
               <h3>
-                My fascination lies in devising software solutions that enhance
-                the ease of daily activities using cloud solutions.
+                As a co-founder of{" "}
+                <span className="bold">
+                  <a className="bold" href="https://www.digitecinnovation.ca/">
+                    Digitec Innovation
+                  </a>
+                </span>
+                , I orchestrate the software development lifecycle—from client
+                stories acquitsion, to selecting the right web architecture,
+                ensuring successful deployment, ongoing maintenance &
+                improvements.
                 <br></br>
-                By harnessing my programming and web development knowledge, I've
-                found a creative outlet to pursue this aspiration.
-                <br />
-                <br />I specialize in leveraging <u>React</u> and <u>NodeJS</u>{" "}
-                based web stacks to create digital experiences that leave an
-                impact! <br></br>
+                {/* <br></br>
+                I've successfully managed multiple projects concurrently,
+                ensuring top-notch quality and timely delivery. */}
+                <br></br>
+                Check out some of my projects in production now, including an
+                E-commerce store for branded T-shirts -
+                <a className="bold" href="https://www.digitecinnovation.ca/">
+                  HUH
+                </a>{" "}
+                , company website portfolio for{" "}
+                <a
+                  className="bold"
+                  href="https://www.clippingpathserviceasia.com/"
+                >
+                  Clipping Path Service Asia
+                </a>{" "}
+                and much more in the "Projects" section below!
+                <br></br>
                 <br></br>
                 Join me on this digital voyage where we explore software
                 innovation and my narrative.
@@ -128,7 +151,7 @@ export const DarkSection = (props) => {
   const data = props.projectsData;
   const [btn2Clicked, setBtn2Clicked] = useState(false);
 
-  const listItems = data.map((item,index) => {
+  const listItems = data.map((item, index) => {
     return (
       <Card
         key={item.id}
@@ -211,7 +234,6 @@ export const Card = (props) => {
   // eslint-disable-next-line
   const dispatch = useDispatch();
 
-
   // console.log('id?:', props.id % 3);
 
   return (
@@ -232,7 +254,7 @@ export const Card = (props) => {
         );
       }}
     >
-      <div className={`iconContainer delay-${(props.id%3)}s`}>
+      <div className={`iconContainer delay-${props.id % 3}s`}>
         {renderIcons(props.iconsList, props.id)}
       </div>
       <div className="cardTitle">

@@ -204,14 +204,9 @@ strong {
 
 #doodletarget {
   position: relative;
-  /* border: 2px dotted black; */
   color: red;
-
 }
-
 #doodletarget::before {
-
-  
   content: "";
   display: block;
   padding-top: 60%;
@@ -228,11 +223,6 @@ strong {
   right: 0;
   bottom: 0;
   z-index: -1;
-
-  /* opacity: 0.3; */
-  /* transform: translate(0%,-35%); */
-
-  /* border: 2px dotted red; */
 }
 
 @media only screen and (max-width: 600px) {

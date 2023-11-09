@@ -22,7 +22,8 @@
   position: relative;
 }
 .bold {
-  font-weight: bolder;
+  /* color: rgb(35, 56, 126); */
+  font-weight: 800 !important;
   text-decoration: underline;
 }
 

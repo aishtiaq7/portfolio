@@ -38,7 +38,6 @@ const LearnMore = (props) => {
         "Co-founded and directed Digitec Innovation, a dynamic software firm specializing in web development and cloud technologies to digitalize small-to-medium sized businesses.",
         "Designed and implement the feed screen app that displayed a list of natural remedy options to its customers using React-Native to support cross-platform usage (iOS & Android).",
         "Created API endpoints in NodeJS backend that fetched from Cloud PostgreSQL to populate the multiple screens such as settings and events page.",
-        "Developed strong communication skill and proficiency working between QA and design team, using tools such as JIRA, Slack & Bitbucket to streamline the whole development lifecycle.",
       ],
     },
     {
@@ -157,7 +156,6 @@ const LearnMore = (props) => {
               In doing so, I can transcend the confines of paper and continue to  <span id="doodletarget">paint</span> my thoughts without the constraints of ink, space & time. 
               <br></br>
               I want to leave behind my self-expression in the form of digital art and software development.
-               {/* my digital footprint of zeros & ones so that my people beyond my generation can see what i  */}
               <br></br>
               
               <br></br>
@@ -274,7 +272,6 @@ const LearnMore = (props) => {
 
             <div ref={doodleSectionRef} className="doodleSection">
               <p className="boldPara">My Doodle Section:</p>
-              {/* <h3 className="bottomText">some bottom text</h3> */}
             </div>
           </section>
         )}
@@ -321,7 +318,6 @@ const WorkExperienceItem = ({ company, companyHyperlink, bullets }) => {
 export default LearnMore;
 
 /* TODO:
-    - map implementation, refactor code. 
     - Different cursor effect based on each hoveredOn element
       -> on hovering over job experience, show its timeline
     - Transition Groups
