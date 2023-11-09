@@ -21,6 +21,10 @@ export const Section = (props) => {
   const options = { threshold: 0.6, triggerOnce: false };
   const [inViewRef, inView] = useInView(options);
 
+  // awshaf name underline ref
+  const [nameRef, nameRefinView] = useInView(options);
+  // console.log(nameRefinView);
+
   const dispatch = useDispatch();
   useEffect(() => {
     AOS.init();
@@ -56,7 +60,6 @@ export const Section = (props) => {
                 data-aos="zoom-in-left"
                 data-aos-once="false"
                 data-aos-offset={185}
-                // data-aos-offset={300}
                 data-aos-duration={475}
               >
                 "hello"
@@ -66,15 +69,38 @@ export const Section = (props) => {
             <div className="des">
               <h3 ref={inViewRef}>
                 <br></br>
-                My name is <span className="bold">Awshaf</span>,<br></br>
-                I'm a bachelor's graduate in computer science, from Simon Fraser
-                University, with{" "}
+                My name is {/* <span className="bold">Awshaf</span> */}
+                <span
+                  ref={nameRef}
+                  className={`underline-animation ${
+                    nameRefinView ? "in-view" : ""
+                  }`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 255 32.61"
+                  >
+                    <path
+                      d="M5 14.11s54-8 125-9 120 5 120 5-200.5-5.5-239.5 17.5"
+                      className="stroke"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="10"
+                    />
+                  </svg>
+                  Awshaf
+                </span>
+                ,<br></br>
+                I'm a developer with{" "}
                 <AnimatedNumber
                   value={inView ? 3 : 0}
                   formatValue={formatValue}
-                  duration={1700}
+                  duration={1900}
                 />
-                + years of experience building robust full stack apps.
+                + years of experience building full stack web apps with a
+                bachelor degree in computer science, from Simon Fraser
+                University.
               </h3>
               <br></br>
               <h3>
