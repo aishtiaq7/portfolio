@@ -28,7 +28,7 @@
 }
 
 .underline-animation {
-  text-decoration: none; 
+  text-decoration: none;
   position: relative;
   /* white-space: nowrap; */
 }
@@ -42,17 +42,16 @@
 }
 .underline-animation .stroke {
   stroke: rgb(0, 0, 0);
-  stroke-width: .15em;
+  stroke-width: 0.15em;
   stroke-dasharray: 822;
   stroke-dashoffset: 822;
-  animation: underlineAnimation 0.88s 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) forwards;
+  animation: underlineAnimation 0.88s 0.7s cubic-bezier(0.17, 0.55, 0.55, 1)
+    forwards;
   animation-play-state: paused;
-  
 }
 .underline-animation.in-view .stroke {
   animation-play-state: running; /* Start animation when in view */
 }
-
 
 @keyframes underlineAnimation {
   0% {
@@ -62,7 +61,6 @@
     stroke-dashoffset: 465;
   }
 }
-
 
 .dark-section {
   user-select: none;
@@ -219,12 +217,10 @@
   font-size: var(--content-font-size);
   font-weight: 600;
 
-
   /* position: absolute;
   top: 0%;
   left: 0%;
   transform: translateX(-50%) translateY(-170%); */
-
 }
 
 .ribbon {
@@ -358,7 +354,6 @@
 .delay-2s {
   animation-delay: 0.25s !important;
 }
-
 
 .iconContainer:hover {
   animation-play-state: paused;

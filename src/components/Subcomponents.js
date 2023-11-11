@@ -49,11 +49,7 @@ export const Section = (props) => {
       <div className="second-section">
         <SectionBanner section={"About"} isLightTheme={false} />
 
-        <div
-          className="container"
-          onMouseEnter={props.textEnter}
-          onMouseLeave={props.textLeave}
-        >
+        <div className="container">
           <div
             className="largeText"
             style={{
@@ -61,6 +57,8 @@ export const Section = (props) => {
               border: "2px solid black",
               transform: `translateY(${props.offset * parallaxSpeedValue}px)`,
             }}
+            onMouseEnter={props.textEnter}
+            onMouseLeave={props.textLeave}
           >
             <div className="greetingsTitle">
               <h3
