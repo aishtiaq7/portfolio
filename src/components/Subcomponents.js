@@ -16,20 +16,26 @@ import AnimatedNumber from "animated-number-react";
 import { useInView } from "react-intersection-observer";
 
 export const Section = (props) => {
+  const dispatch = useDispatch();
   const [btn1Clicked, setBtn1Clicked] = useState(false);
 
   const options = { threshold: 0.6, triggerOnce: false };
   const [inViewRef, inView] = useInView(options);
 
-  // awshaf name underline ref
-  const [nameRef, nameRefinView] = useInView(options);
-  console.clear();
-  console.log(nameRefinView);
+  //name underline svg
+  const [nameKey, setNameKey] = useState(Math.random());
+  const [nameRef, nameRefinView] = useInView({
+    threshold: 0.6,
+    triggerOnce: false,
+  });
 
-  const dispatch = useDispatch();
   useEffect(() => {
     AOS.init();
-  }, []);
+    if (!nameRefinView) {
+    } else {
+      setNameKey(Math.random());
+    }
+  }, [nameRefinView]);
 
   const formatValue = (value) => Math.round(value);
 
@@ -70,7 +76,7 @@ export const Section = (props) => {
             <div className="des">
               <h3 ref={inViewRef}>
                 <br></br>
-                My name is {" "}
+                My name is{" "}
                 <span
                   ref={nameRef}
                   className={`underline-animation ${
@@ -80,6 +86,7 @@ export const Section = (props) => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 255 32.61"
+                    key={nameKey}
                   >
                     <path
                       d="M5 14.11s54-8 125-9 120 5 120 5-200.5-5.5-239.5 17.5"
