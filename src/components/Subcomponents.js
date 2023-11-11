@@ -23,7 +23,8 @@ export const Section = (props) => {
 
   // awshaf name underline ref
   const [nameRef, nameRefinView] = useInView(options);
-  // console.log(nameRefinView);
+  console.clear();
+  console.log(nameRefinView);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -69,7 +70,7 @@ export const Section = (props) => {
             <div className="des">
               <h3 ref={inViewRef}>
                 <br></br>
-                My name is {/* <span className="bold">Awshaf</span> */}
+                My name is {" "}
                 <span
                   ref={nameRef}
                   className={`underline-animation ${

@@ -45,7 +45,7 @@
   stroke-width: .15em;
   stroke-dasharray: 822;
   stroke-dashoffset: 822;
-  animation: underlineAnimation 0.88s linear forwards;
+  animation: underlineAnimation 0.88s 1.2s linear forwards;
   animation-play-state: paused;
 }
 .underline-animation.in-view .stroke {
