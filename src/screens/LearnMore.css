@@ -118,12 +118,6 @@ strong {
 /* 
     DOODLE SECTION
 */
-
-#demo-svg path {
-  /* stroke-dasharray: 15000;
-  stroke-dashoffset: 0; */
-}
-
 .doodleSection {
   z-index: -1400;
   width: 100vw;
@@ -162,9 +156,9 @@ strong {
 
   position: fixed;
 
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 
   opacity: 0;
   visibility: hidden;
@@ -180,12 +174,12 @@ strong {
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oleo+Script&family=Poppins:wght@300&family=Roboto:wght@100;400&display=swap");
 
 .content {
-  text-align: justify;
+  /* text-align: justify;
   line-height: 55px;
   font-family: "Architects Daughter", cursive;
   font-size: 2.5vw;
   letter-spacing: 1px;
-  word-spacing: 5px;
+  word-spacing: 5px; */
 }
 
 .doodleFSactive {
