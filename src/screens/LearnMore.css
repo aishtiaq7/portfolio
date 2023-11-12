@@ -118,6 +118,12 @@ strong {
 /* 
     DOODLE SECTION
 */
+
+#demo-svg path {
+  /* stroke-dasharray: 15000;
+  stroke-dashoffset: 0; */
+}
+
 .doodleSection {
   z-index: -1400;
   width: 100vw;
