@@ -1,6 +1,6 @@
 // import "./Resume.css";
 import Navbar from "../components/Navbar";
-import { useEffect, useRef, useState, useCallback} from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import "./LearnMore.css";
 import "../App.css";
 import { motion } from "framer-motion";
@@ -18,8 +18,8 @@ import returnCursorVariant from "../resources/cursorStyles.js";
 import ScrollToTop from "../components/ScrollToTop";
 import FullScreenNav from "../components/FullScreenNav";
 
-import Vara from 'vara';
-import { useInView } from 'react-intersection-observer';
+import Vara from "vara";
+import { useInView } from "react-intersection-observer";
 
 const LearnMore = (props) => {
   const curVar = useSelector((state) => state.cursor.cursorVariant);
@@ -95,7 +95,22 @@ const LearnMore = (props) => {
     threshold: 0.5, // Adjust the threshold as needed
   });
 
-  console.log('inview now:', inView);
+  // console.log("inview now:", inView);
+
+  // const lines = [];
+  // [
+  //   "this is line 1",
+  //   "line 2 is here text",
+  //   "line 3 is here text",
+  //   "line 4 is here text",
+  // ].forEach((lineText, index) => {
+  //   lines.push({
+  //     text: lineText,
+  //     fontSize: 40,
+  //     strokeWidth: 1,
+  //     duration: 2200,
+  //   });
+  // });
 
 
   const initializeVara = useCallback(() => {
@@ -105,13 +120,25 @@ const LearnMore = (props) => {
       const vara = new Vara(
         "#myVaraText",
         "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",
+        // lines
         [
           {
-            // text: 'hello world text bla bla bla bla ',
-            text: text,
+            text: 'this is line 1',
             fontSize: 40,
             strokeWidth: 1,
-            duration: 35000,
+            duration: 1500,
+          },
+          {
+            text: 'line 2 is here text',
+            fontSize: 40,
+            strokeWidth: 1,
+            duration: 1500,
+          },
+          {
+            text: 'line 3 is here text',
+            fontSize: 40,
+            strokeWidth: 1,
+            duration: 1500,
           },
         ],
       );
@@ -143,14 +170,7 @@ const LearnMore = (props) => {
     // for DoodleSection:
     const handleScroll = () => {
       const { top } = doodleSectionRef.current.getBoundingClientRect();
-      // console.clear();
-      // console.log("===>", scrollPosition);
-      // console.log("top:", top);
-      // console.log(doodleSectionRef.current.getBoundingClientRect());
-
-      // trigger DoodleSection to show on scroll position
       if (top >= -403 && top <= 150) {
-        // console.log("User has scrolled to Section 3!");
         setDoodleSectionInView(true);
         dispatch(setCursorStyle("modalEnter"));
       } else if (top <= -441) {
@@ -161,40 +181,6 @@ const LearnMore = (props) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // anime({
-    //   targets: '#demo-svg path',
-    //   strokeDashoffset: [anime.setDashoffset, 0,],
-    //   easing: 'easeInOutQuad',
-    //   duration: 2000,
-    //   direction: 'normal',
-    //   loop: true
-    // });
-
-    // const vara = new Vara('#myVaraText', {
-    //   text: 'Hello, Vara!',
-    //   fontSize: 36,
-    //   fontFamily: 'Arial, sans-serif',
-    //   textAlign: 'center',
-    //   duration: 2000, // Animation duration in milliseconds
-    //   easing: 'easeOutExpo', // Easing function
-    //   color: 'black', // Text color
-    // });
-    // vara.ready();
-
-
-    // var vara = new Vara(
-		// 	"#myVaraText",
-		// 	"https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",
-		// 	[
-		// 		{
-		// 			text: 'hello world text bla bla bla bla ',
-		// 			fontSize: 40,
-		// 			strokeWidth: 1,
-    //       duration:7000,
-		// 		},
-		// 	],
-		// );
 
     initializeVara();
 
@@ -216,7 +202,7 @@ const LearnMore = (props) => {
         >
           <div className="content" id="myVaraText" ref={ref}>
             {/* <p> */}
-              {/* <br></br>
+            {/* <br></br>
               In this section, I aim to bring my thoughts and imagination into a free flowing space. 
               <br></br>
               Much like the pages of my <strong>notebook</strong>, i aspire to draw, scribble, and sketch ideas that roam freely in my mind's landscape. 
@@ -228,7 +214,7 @@ const LearnMore = (props) => {
               
               <br></br>
               <br></br> */}
-              {/* test */}
+            {/* test */}
             {/* </p> */}
             {/* <div id="myVaraText"></div> */}
           </div>
@@ -271,7 +257,6 @@ const LearnMore = (props) => {
               {bulletData
                 .filter((item) => item.category === "Work Experience")
                 .map((singleBullet, index) => {
-
                   return (
                     <WorkExperienceItem
                       key={singleBullet.company}
@@ -285,7 +270,6 @@ const LearnMore = (props) => {
               {bulletData
                 .filter((item) => item.category === "Digitec Projects")
                 .map((singleBullet, index) => {
-
                   return (
                     <WorkExperienceItem
                       key={singleBullet.company}
@@ -341,7 +325,9 @@ const LearnMore = (props) => {
             </div>
 
             <div ref={doodleSectionRef} className="doodleSection">
-              <p className="boldPara" ref={ref}>My Doodle Section:</p>
+              <p className="boldPara" ref={ref}>
+                My Doodle Section:
+              </p>
             </div>
           </section>
         )}
