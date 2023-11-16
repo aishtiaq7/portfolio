@@ -122,25 +122,102 @@ const LearnMore = (props) => {
         "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",
         // lines
         [
+          // {
+            
+          //   delay: 750,
+          //   text: "this is line 1",
+          //   fontSize: 40,
+          //   strokeWidth: 1,
+          //   duration: 1500,
+          // },
           {
-            text: 'this is line 1',
-            fontSize: 40,
-            strokeWidth: 1,
-            duration: 1500,
+            id: "line1", // String or integer, for if animations are called manually or when using the get() method. Default is the index of the object.
+            text: "Hello World", // String, text to be shown
+            fontSize: 40, // Number, size of the text
+            strokeWidth: 1, // Width / Thickness of the stroke
+            color: "black", // Color of the text
+            duration: 1500, // Number, Duration of the animation in milliseconds
+            textAlign: "center", // String, text align, accepted values are left,center,right
+            x: 0, // Number, x coordinate of the text
+            y: 0, // Number, y coordinate of the text
+            fromCurrentPosition: {
+              // Whether the x or y coordinate should be from its calculated position, ie the position if x or y coordinates were not applied
+              x: true, // Boolean
+              y: true, // Boolean
+            },
+            autoAnimation: true, // Boolean, Whether to animate the text automatically
+            queued: true, // Boolean, Whether the animation should be in a queue
+            delay:750,// Delay before the animation starts in milliseconds
+            /* Letter spacing can be a number or an object, if number, the spacing will be applied to every character.
+              If object, each letter can be assigned a different spacing as follows,
+              letterSpacing: {
+                  a: 4,
+                  j: -6,
+                  global: -1
+              }
+              The global property is used to set spacing of all other characters
+              */
+            letterSpacing: 0,
           },
           {
-            text: 'line 2 is here text',
-            fontSize: 40,
-            strokeWidth: 1,
-            duration: 1500,
+            id: "line1", // String or integer, for if animations are called manually or when using the get() method. Default is the index of the object.
+            text: "this is line 2", // String, text to be shown
+            fontSize: 40, // Number, size of the text
+            strokeWidth: 1, // Width / Thickness of the stroke
+            color: "black", // Color of the text
+            duration: 1500, // Number, Duration of the animation in milliseconds
+            textAlign: "left", // String, text align, accepted values are left,center,right
+            x: 0, // Number, x coordinate of the text
+            y: 0, // Number, y coordinate of the text
+            fromCurrentPosition: {
+              // Whether the x or y coordinate should be from its calculated position, ie the position if x or y coordinates were not applied
+              x: true, // Boolean
+              y: true, // Boolean
+            },
+            autoAnimation: true, // Boolean, Whether to animate the text automatically
+            queued: true, // Boolean, Whether the animation should be in a queue
+            delay:750,// Delay before the animation starts in milliseconds
+            /* Letter spacing can be a number or an object, if number, the spacing will be applied to every character.
+              If object, each letter can be assigned a different spacing as follows,
+              letterSpacing: {
+                  a: 4,
+                  j: -6,
+                  global: -1
+              }
+              The global property is used to set spacing of all other characters
+              */
+            letterSpacing: 0,
           },
           {
-            text: 'line 3 is here text',
-            fontSize: 40,
-            strokeWidth: 1,
-            duration: 1500,
-          },
-        ],
+            id: "line1", // String or integer, for if animations are called manually or when using the get() method. Default is the index of the object.
+            text: "later write line 3", // String, text to be shown
+            fontSize: 40, // Number, size of the text
+            strokeWidth: 1, // Width / Thickness of the stroke
+            color: "black", // Color of the text
+            duration: 1500, // Number, Duration of the animation in milliseconds
+            textAlign: "left", // String, text align, accepted values are left,center,right
+            x: 0, // Number, x coordinate of the text
+            y: 0, // Number, y coordinate of the text
+            fromCurrentPosition: {
+              // Whether the x or y coordinate should be from its calculated position, ie the position if x or y coordinates were not applied
+              x: true, // Boolean
+              y: true, // Boolean
+            },
+            autoAnimation: true, // Boolean, Whether to animate the text automatically
+            queued: true, // Boolean, Whether the animation should be in a queue
+            delay:1000,// Delay before the animation starts in milliseconds
+            /* Letter spacing can be a number or an object, if number, the spacing will be applied to every character.
+              If object, each letter can be assigned a different spacing as follows,
+              letterSpacing: {
+                  a: 4,
+                  j: -6,
+                  global: -1
+              }
+              The global property is used to set spacing of all other characters
+              */
+            letterSpacing: 0,
+          }
+        ]
       );
       vara.ready();
     }
