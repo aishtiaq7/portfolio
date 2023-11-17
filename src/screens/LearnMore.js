@@ -129,7 +129,7 @@ const LearnMore = (props) => {
             fontSize: fontsizing, // Number, size of the text
             strokeWidth: 1, // Width / Thickness of the stroke
             color: "black", // Color of the text
-            duration: 1500, // Number, Duration of the animation in milliseconds
+            duration: 2000, // Number, Duration of the animation in milliseconds
             textAlign: "left", // String, text align, accepted values are left,center,right
             x: 10, // Number, x coordinate of the text
             y: spacing, // Number, y coordinate of the text
@@ -140,7 +140,7 @@ const LearnMore = (props) => {
             },
             autoAnimation: true, // Boolean, Whether to animate the text automatically
             queued: true, // Boolean, Whether the animation should be in a queue
-            delay: 1250, // Delay before the animation starts in milliseconds
+            delay: 850, // Delay before the animation starts in milliseconds
             /* Letter spacing can be a number or an object, if number, the spacing will be applied to every character.
               If object, each letter can be assigned a different spacing as follows,
               letterSpacing: {
@@ -308,24 +308,8 @@ const LearnMore = (props) => {
           }`}
         >
           <div className="content" id="myVaraText" ref={ref}>
-            {/* <p> */}
-            {/* <br></br>
-              In this section, I aim to bring my thoughts and imagination into a free flowing space. 
-              <br></br>
-              Much like the pages of my <strong>notebook</strong>, i aspire to draw, scribble, and sketch ideas that roam freely in my mind's landscape. 
-              <br></br>
-              In doing so, I can transcend the confines of paper and continue to  <span id="doodletarget">paint</span> my thoughts without the constraints of ink, space & time. 
-              <br></br>
-              I want to leave behind my self-expression in the form of digital art and software development.
-              <br></br>
-              
-              <br></br>
-              <br></br> */}
-            {/* test */}
-            {/* </p> */}
-            {/* <div id="myVaraText"></div> */}
           </div>
-          <div id="target2"></div>
+          {/* <div id="target2"></div> */}
         </section>
       </div>
 
