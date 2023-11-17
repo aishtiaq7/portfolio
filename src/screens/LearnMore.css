@@ -173,14 +173,14 @@ strong {
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oleo+Script&family=Poppins:wght@300&family=Roboto:wght@100;400&display=swap");
 
-.content {
-  /* text-align: justify;
+/* .content {
+  text-align: justify;
   line-height: 55px;
   font-family: "Architects Daughter", cursive;
   font-size: 2.5vw;
   letter-spacing: 1px;
-  word-spacing: 5px; */
-}
+  word-spacing: 5px;
+} */
 
 .doodleFSactive {
   /* height: inherit; */
@@ -188,7 +188,9 @@ strong {
   visibility: visible;
   z-index: 1400;
 
-  padding: 4.5rem 6.5rem;
+  /* padding: 4.5rem 0rem; */
+  padding-top: 5rem;
+  padding-left: 1.3rem;
   height: 100%;
   background-image: repeating-linear-gradient(#FEF4D4 0px, #FEF4D4 24px, teal 25px);
 
@@ -239,7 +241,7 @@ strong {
     visibility: visible;
     z-index: inherit;
   
-    padding: 1rem 3.5rem;
+    padding: 1rem 1.8rem;
     height: 100%;
     background-image: repeating-linear-gradient(#FEF4D4 0px, #FEF4D4 24px, teal 25px);
   

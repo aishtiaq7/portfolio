@@ -91,27 +91,9 @@ const LearnMore = (props) => {
   const [doodleSectionInView, setDoodleSectionInView] = useState(false);
 
   const [ref, inView] = useInView({
-    triggerOnce: true, // Ensures the animation triggers only once
-    threshold: 0.5, // Adjust the threshold as needed
+    triggerOnce: true,
+    threshold: 0.5, 
   });
-
-  // console.log("inview now:", inView);
-
-  // const lines = [];
-  // [
-  //   "this is line 1",
-  //   "line 2 is here text",
-  //   "line 3 is here text",
-  //   "line 4 is here text",
-  // ].forEach((lineText, index) => {
-  //   lines.push({
-  //     text: lineText,
-  //     fontSize: 40,
-  //     strokeWidth: 1,
-  //     duration: 2200,
-  //   });
-  // });
-  // const text = `In this section, I aim to bring my thoughts and imagination into a free-flowing space. Much like the pages of my notebook, I aspire to draw, scribble, and sketch ideas that roam freely in my mind's landscape. In doing so, I can transcend the confines of paper and continue to paint my thoughts without the constraints of ink, space & time. I want to leave behind my self-expression in the form of digital art and software development.`;
 
   const initializeVara = useCallback(() => {
     if (inView) {
@@ -121,22 +103,25 @@ const LearnMore = (props) => {
         year: "numeric",
       });
 
-      console.log("Current Time:", currentDate);
+      // console.log("Current Time:", currentDate);
 
       const vara = new Vara(
         "#myVaraText",
         "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",
+        // "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Parisienne/Parisienne.json",
+        // "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Pacifico/PacificoSLO.json",
+        // "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Shadows-Into-Light/shadows-into-light.json",
         [
           {
             id: "line1", // String or integer, for if animations are called manually or when using the get() method. Default is the index of the object.
-            text: currentDate, // String, text to be shown
+            text: `${currentDate},`, // String, text to be shown
             fontSize: 40, // Number, size of the text
             strokeWidth: 1, // Width / Thickness of the stroke
             color: "black", // Color of the text
             duration: 1500, // Number, Duration of the animation in milliseconds
-            textAlign: "center", // String, text align, accepted values are left,center,right
-            x: 0, // Number, x coordinate of the text
-            y: 0, // Number, y coordinate of the text
+            textAlign: "left", // String, text align, accepted values are left,center,right
+            x: 10, // Number, x coordinate of the text
+            y: 40, // Number, y coordinate of the text
             fromCurrentPosition: {
               // Whether the x or y coordinate should be from its calculated position, ie the position if x or y coordinates were not applied
               x: true, // Boolean
@@ -144,7 +129,7 @@ const LearnMore = (props) => {
             },
             autoAnimation: true, // Boolean, Whether to animate the text automatically
             queued: true, // Boolean, Whether the animation should be in a queue
-            delay: 750, // Delay before the animation starts in milliseconds
+            delay: 1250, // Delay before the animation starts in milliseconds
             /* Letter spacing can be a number or an object, if number, the spacing will be applied to every character.
               If object, each letter can be assigned a different spacing as follows,
               letterSpacing: {
@@ -157,92 +142,98 @@ const LearnMore = (props) => {
             letterSpacing: 0,
           },
           {
-            id: "line2", // String or integer, for if animations are called manually or when using the get() method. Default is the index of the object.
-            text: `thats today's date when you visited my page!`, // String, text to be shown
-            fontSize: 40, // Number, size of the text
-            strokeWidth: 1, // Width / Thickness of the stroke
-            color: "black", // Color of the text
-            duration: 3300, // Number, Duration of the animation in milliseconds
-            textAlign: "left", // String, text align, accepted values are left,center,right
-            x: 0, // Number, x coordinate of the text
-            y: 0, // Number, y coordinate of the text
+            id: "line2", 
+            text: `thats today.`,
+            fontSize: 40, 
+            strokeWidth: 1, 
+            color: "black", 
+            duration: 1500, 
+            textAlign: "left", 
+            x: 55, 
+            y: -10, 
             fromCurrentPosition: {
-              // Whether the x or y coordinate should be from its calculated position, ie the position if x or y coordinates were not applied
-              x: true, // Boolean
-              y: true, // Boolean
+              x: true, 
+              y: true, 
             },
-            autoAnimation: true, // Boolean, Whether to animate the text automatically
-            queued: true, // Boolean, Whether the animation should be in a queue
-            delay: 750, // Delay before the animation starts in milliseconds
-            /* Letter spacing can be a number or an object, if number, the spacing will be applied to every character.
-              If object, each letter can be assigned a different spacing as follows,
-              letterSpacing: {
-                  a: 4,
-                  j: -6,
-                  global: -1
-              }
-              The global property is used to set spacing of all other characters
-              */
+            autoAnimation: true, 
+            queued: true, 
+            delay: 1150, 
+            letterSpacing: -1
+          },
+          {
+            id: "line3", 
+            text: `A delightful day when you visited my page and followed through my narrative i created.`, 
+            fontSize: 40, 
+            strokeWidth: 1, 
+            color: "black",
+            duration: 3300, 
+            textAlign: "left", 
+            x: 10, 
+            y: 55, 
+            fromCurrentPosition: {
+              x: true, 
+              y: true, 
+            },
+            autoAnimation: true, 
+            queued: true, 
+            delay: 750,
             letterSpacing: 0,
           },
           {
-            id: "line3", // String or integer, for if animations are called manually or when using the get() method. Default is the index of the object.
-            text: `If you enjoyed the digital voyage I tried to paint on this canvas, feel free to reach out to me.`, // String, text to be shown
-            fontSize: 40, // Number, size of the text
-            strokeWidth: 1, // Width / Thickness of the stroke
-            color: "black", // Color of the text
-            duration: 3300, // Number, Duration of the animation in milliseconds
-            textAlign: "left", // String, text align, accepted values are left,center,right
-            x: 0, // Number, x coordinate of the text
-            y: 0, // Number, y coordinate of the text
+            id: "line4", 
+            text: `Hope you enjoyed this digital experience.`, 
+            fontSize: 40, 
+            strokeWidth: 1, 
+            color: "black", 
+            duration: 2500, 
+            textAlign: "left", 
+            x: 10, 
+            y: 20, 
             fromCurrentPosition: {
-              // Whether the x or y coordinate should be from its calculated position, ie the position if x or y coordinates were not applied
-              x: true, // Boolean
-              y: true, // Boolean
+              x: true, 
+              y: true, 
             },
-            autoAnimation: true, // Boolean, Whether to animate the text automatically
-            queued: true, // Boolean, Whether the animation should be in a queue
-            delay: 750, // Delay before the animation starts in milliseconds
-            /* Letter spacing can be a number or an object, if number, the spacing will be applied to every character.
-              If object, each letter can be assigned a different spacing as follows,
-              letterSpacing: {
-                  a: 4,
-                  j: -6,
-                  global: -1
-              }
-              The global property is used to set spacing of all other characters
-              */
+            autoAnimation: true,
+            queued: true, 
+            delay: 1250, 
             letterSpacing: 0,
           },
           {
-            id: "line4", // String or integer, for if animations are called manually or when using the get() method. Default is the index of the object.
-            text: `I'm just an email away.`, // String, text to be shown
-            fontSize: 40, // Number, size of the text
-            strokeWidth: 1, // Width / Thickness of the stroke
-            color: "black", // Color of the text
-            duration: 3300, // Number, Duration of the animation in milliseconds
-            textAlign: "left", // String, text align, accepted values are left,center,right
-            x: 0, // Number, x coordinate of the text
-            y: 0, // Number, y coordinate of the text
+            id: "line4",
+            text: `Yours truly,`,
+            fontSize: 40, 
+            strokeWidth: 1, 
+            color: "black",
+            duration: 1800, 
+            textAlign: "left", 
+            x: 10,
+            y: 50,
             fromCurrentPosition: {
-              // Whether the x or y coordinate should be from its calculated position, ie the position if x or y coordinates were not applied
-              x: true, // Boolean
-              y: true, // Boolean
+              x: true,
+              y: true,
             },
-            autoAnimation: true, // Boolean, Whether to animate the text automatically
-            queued: true, // Boolean, Whether the animation should be in a queue
-            delay: 750, // Delay before the animation starts in milliseconds
-            /* Letter spacing can be a number or an object, if number, the spacing will be applied to every character.
-              If object, each letter can be assigned a different spacing as follows,
-              letterSpacing: {
-                  a: 4,
-                  j: -6,
-                  global: -1
-              }
-              The global property is used to set spacing of all other characters
-              */
-            letterSpacing: 0,
+            autoAnimation: true, 
+            queued: true,
+            delay: 1000,
           },
+          {
+            id: "line4",
+            text: `Awshaf Ishtiaque`,
+            fontSize: 40, 
+            strokeWidth: 1.8, 
+            color: "black",
+            duration: 2900, 
+            textAlign: "left", 
+            x: 10,
+            y: 38,
+            fromCurrentPosition: {
+              x: true,
+              y: true,
+            },
+            autoAnimation: true, 
+            queued: true,
+            delay: 1000,
+          }
         ]
       );
       vara.ready();
