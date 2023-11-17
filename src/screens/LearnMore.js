@@ -95,6 +95,17 @@ const LearnMore = (props) => {
     threshold: 0.5, 
   });
 
+  // eslint-disable-next-line 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  
+  const spacing = screenWidth > 600 ? 45 : 15;
+  const fontsizing = screenWidth > 600 ? 40: 35; 
+
+  // console.clear();
+  // console.log('screen width:', screenWidth);
+  // console.log('spacing:\t', spacing)
+
   const initializeVara = useCallback(() => {
     if (inView) {
       const currentDate = new Date().toLocaleDateString("en-US", {
@@ -115,13 +126,13 @@ const LearnMore = (props) => {
           {
             id: "line1", // String or integer, for if animations are called manually or when using the get() method. Default is the index of the object.
             text: `${currentDate},`, // String, text to be shown
-            fontSize: 40, // Number, size of the text
+            fontSize: fontsizing, // Number, size of the text
             strokeWidth: 1, // Width / Thickness of the stroke
             color: "black", // Color of the text
             duration: 1500, // Number, Duration of the animation in milliseconds
             textAlign: "left", // String, text align, accepted values are left,center,right
             x: 10, // Number, x coordinate of the text
-            y: 40, // Number, y coordinate of the text
+            y: spacing, // Number, y coordinate of the text
             fromCurrentPosition: {
               // Whether the x or y coordinate should be from its calculated position, ie the position if x or y coordinates were not applied
               x: true, // Boolean
@@ -144,13 +155,13 @@ const LearnMore = (props) => {
           {
             id: "line2", 
             text: `thats today.`,
-            fontSize: 40, 
+            fontSize: (fontsizing/1.4), 
             strokeWidth: 1, 
             color: "black", 
             duration: 1500, 
             textAlign: "left", 
-            x: 55, 
-            y: -10, 
+            x: 65, 
+            y: -15, 
             fromCurrentPosition: {
               x: true, 
               y: true, 
@@ -162,14 +173,14 @@ const LearnMore = (props) => {
           },
           {
             id: "line3", 
-            text: `A delightful day when you visited my page and followed through my narrative i created.`, 
-            fontSize: 40, 
+            text: `On this day you visited my page and immersed yourself in the narrative I created.`, 
+            fontSize: fontsizing, 
             strokeWidth: 1, 
             color: "black",
             duration: 3300, 
             textAlign: "left", 
             x: 10, 
-            y: 55, 
+            y: spacing, 
             fromCurrentPosition: {
               x: true, 
               y: true, 
@@ -181,14 +192,14 @@ const LearnMore = (props) => {
           },
           {
             id: "line4", 
-            text: `Hope you enjoyed this digital experience.`, 
-            fontSize: 40, 
+            text: `I hope you enjoyed this digital experience.`, 
+            fontSize: fontsizing, 
             strokeWidth: 1, 
             color: "black", 
             duration: 2500, 
             textAlign: "left", 
             x: 10, 
-            y: 20, 
+            y: (spacing/1.3), 
             fromCurrentPosition: {
               x: true, 
               y: true, 
@@ -201,13 +212,13 @@ const LearnMore = (props) => {
           {
             id: "line4",
             text: `Yours truly,`,
-            fontSize: 40, 
+            fontSize: fontsizing, 
             strokeWidth: 1, 
             color: "black",
             duration: 1800, 
             textAlign: "left", 
             x: 10,
-            y: 50,
+            y: spacing,
             fromCurrentPosition: {
               x: true,
               y: true,
@@ -219,13 +230,13 @@ const LearnMore = (props) => {
           {
             id: "line4",
             text: `Awshaf Ishtiaque`,
-            fontSize: 40, 
+            fontSize: fontsizing, 
             strokeWidth: 1.8, 
             color: "black",
             duration: 2900, 
             textAlign: "left", 
             x: 10,
-            y: 38,
+            y: (spacing+10),
             fromCurrentPosition: {
               x: true,
               y: true,
@@ -240,7 +251,7 @@ const LearnMore = (props) => {
 
      
     }
-  }, [inView]);
+  }, [inView, fontsizing, spacing]);
 
   useEffect(() => {
     const mouseMove = (e) => {

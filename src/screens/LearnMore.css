@@ -241,7 +241,9 @@ strong {
     visibility: visible;
     z-index: inherit;
   
-    padding: 1rem 1.8rem;
+    /* padding: 1rem 1.8rem; */
+    padding-top: 5rem;
+    padding-left: 1.5rem;
     height: 100%;
     background-image: repeating-linear-gradient(#FEF4D4 0px, #FEF4D4 24px, teal 25px);
   
