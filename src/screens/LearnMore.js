@@ -98,9 +98,12 @@ const LearnMore = (props) => {
   // eslint-disable-next-line 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  
-  const spacing = screenWidth > 600 ? 45 : 15;
-  const fontsizing = screenWidth > 600 ? 40: 35; 
+  //                                     lg  sm    - screens
+  const spacing = screenWidth > 600 ?    45 : 22;
+  const fontsizing = screenWidth > 600 ? 40 : 29; 
+
+  // console.log('scn width:', screenWidth);
+  // console.log('fontsizing:', fontsizing);
 
   // console.clear();
   // console.log('screen width:', screenWidth);
@@ -108,13 +111,12 @@ const LearnMore = (props) => {
 
   const initializeVara = useCallback(() => {
     if (inView) {
-      const currentDate = new Date().toLocaleDateString("en-US", {
+      let currentDate = new Date().toLocaleDateString("en-US", {
         day: "numeric",
         month: "long",
         year: "numeric",
       });
-
-      // console.log("Current Time:", currentDate);
+      currentDate = currentDate.replace(',', '');
 
       const vara = new Vara(
         "#myVaraText",
@@ -125,11 +127,11 @@ const LearnMore = (props) => {
         [
           {
             id: "line1", // String or integer, for if animations are called manually or when using the get() method. Default is the index of the object.
-            text: `${currentDate},`, // String, text to be shown
+            text: `Today is ${currentDate},`, // String, text to be shown
             fontSize: fontsizing, // Number, size of the text
             strokeWidth: 1, // Width / Thickness of the stroke
             color: "black", // Color of the text
-            duration: 2000, // Number, Duration of the animation in milliseconds
+            duration: 1750, // Number, Duration of the animation in milliseconds
             textAlign: "left", // String, text align, accepted values are left,center,right
             x: 10, // Number, x coordinate of the text
             y: spacing, // Number, y coordinate of the text
@@ -152,28 +154,28 @@ const LearnMore = (props) => {
               */
             letterSpacing: 0,
           },
-          {
-            id: "line2", 
-            text: `thats today.`,
-            fontSize: (fontsizing/1.4), 
-            strokeWidth: 1, 
-            color: "black", 
-            duration: 1500, 
-            textAlign: "left", 
-            x: 65, 
-            y: -15, 
-            fromCurrentPosition: {
-              x: true, 
-              y: true, 
-            },
-            autoAnimation: true, 
-            queued: true, 
-            delay: 1150, 
-            letterSpacing: -1
-          },
+          // {
+          //   id: "line2", 
+          //   text: `thats today.`,
+          //   fontSize: (fontsizing/1.2), 
+          //   strokeWidth: 1, 
+          //   color: "black", 
+          //   duration: 1500, 
+          //   textAlign: "left", 
+          //   x: 65, 
+          //   y: -10, 
+          //   fromCurrentPosition: {
+          //     x: true, 
+          //     y: true, 
+          //   },
+          //   autoAnimation: true, 
+          //   queued: true, 
+          //   delay: 1150, 
+          //   letterSpacing: -1
+          // },
           {
             id: "line3", 
-            text: `On this day you visited my page and immersed yourself in the narrative I created.`, 
+            text: `On this date, you explored my page and delved into the story I crafted.`, 
             fontSize: fontsizing, 
             strokeWidth: 1, 
             color: "black",
@@ -192,14 +194,33 @@ const LearnMore = (props) => {
           },
           {
             id: "line4", 
-            text: `I hope you enjoyed this digital experience.`, 
+            text: `I trust you relished this digital journey.`, 
             fontSize: fontsizing, 
             strokeWidth: 1, 
             color: "black", 
             duration: 2500, 
             textAlign: "left", 
             x: 10, 
-            y: (spacing/1.3), 
+            y: (spacing/1.8), 
+            fromCurrentPosition: {
+              x: true, 
+              y: true, 
+            },
+            autoAnimation: true,
+            queued: true, 
+            delay: 1250, 
+            letterSpacing: 0,
+          },
+          {
+            id: "line4", 
+            text: `Don't hesitate to reach out, I'm just a message away!`, 
+            fontSize: fontsizing, 
+            strokeWidth: 1, 
+            color: "black", 
+            duration: 2500, 
+            textAlign: "left", 
+            x: 10, 
+            y: (spacing/1.8), 
             fromCurrentPosition: {
               x: true, 
               y: true, 
@@ -215,7 +236,7 @@ const LearnMore = (props) => {
             fontSize: fontsizing, 
             strokeWidth: 1, 
             color: "black",
-            duration: 1800, 
+            duration: 1350, 
             textAlign: "left", 
             x: 10,
             y: spacing,
