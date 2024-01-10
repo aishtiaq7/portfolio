@@ -13,7 +13,6 @@ import {
 } from "./components/Subcomponents";
 import AOS from "aos";
 
-
 import { useInView } from "react-intersection-observer";
 import { cardItem } from "./resources/Data";
 import returnCursorVariant from "./resources/cursorStyles";

@@ -2,8 +2,8 @@ import { useEffect, useState, useCallback } from "react";
 import "../App.css";
 import "../components/Subcomponent.css";
 import { useNavigate } from "react-router-dom";
-
 import AOS from "aos";
+
 import "aos/dist/aos.css";
 import { useDispatch, useSelector } from "react-redux";
 // eslint-disable-next-line
@@ -23,29 +23,14 @@ export const Section = (props) => {
   const options = { threshold: 0.6, triggerOnce: false };
   const [inViewRef, inView] = useInView(options);
 
-  //name underline svg
-  const [nameKey, setNameKey] = useState(Math.random());
-  const [nameRef, nameRefinView] = useInView({
-    threshold: 0.6,
-    triggerOnce: false,
-  });
-
-  useEffect(() => {
-    AOS.init();
-    if (!nameRefinView) {
-    } else {
-      setNameKey(Math.random());
-    }
-  }, [nameRefinView]);
-
+  
   //vara handwriting for AWSHAF text
   const [AwshafRef, AwshafinView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
   });
-  // console.log('AwshafInView?',AwshafinView)
+  // eslint-disable-next-line 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  console.log('screenWidth?',screenWidth)
   const spacing = screenWidth > 600 ? 55 : 0;
   const fontsizing = screenWidth > 600 ? 40 : 17;
   const initializeVara = useCallback(() => {
@@ -90,6 +75,7 @@ export const Section = (props) => {
       );
       vara.ready();
     }
+    // eslint-disable-next-line 
   }, [AwshafinView, fontsizing, spacing]);
   useEffect(() => {
     initializeVara();
@@ -153,7 +139,7 @@ export const Section = (props) => {
               <h3>
                 As a co-founder of{" "}
                 <span className="bold">
-                  <a className="bold" href="https://www.digitecinnovation.ca/">
+                  <a className="bold" href="https://www.digitecinnovation.ca/" rel="noreferrer" target="_blank">
                     Digitec Innovation
                   </a>
                 </span>
@@ -182,7 +168,7 @@ export const Section = (props) => {
                 creativity and skills to achieve this goal!
                 <br></br>
                 <br></br>
-                Join me on this digital voyage by clicking on the button below.
+                Join me on this digital journey as we explore software innovation & my narrative.
               </h3>
             </div>
 
@@ -210,7 +196,7 @@ export const Section = (props) => {
                   dispatch(setCursorStyle("default"));
                 }}
               >
-                Learn More ?
+                Let's Begin
               </button>
             </div>
           </div>
