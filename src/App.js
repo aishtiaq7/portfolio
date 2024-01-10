@@ -132,6 +132,20 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenWidth]);
 
+  //spinner loading timeout
+  const [isLoading, setIsLoading] = useState(true);
+  const isFirstLoadDone = localStorage.getItem("isFirstLoadingDone");
+  useEffect(() => {
+    if (isFirstLoadDone) {
+      setIsLoading(false);
+    } else {
+      setTimeout(() => {
+        setIsLoading(false);
+        localStorage.setItem("isFirstLoadingDone", "true");
+      }, 1650);
+    }
+  }, [isFirstLoadDone]);
+
   const setCursorStyleFunction = (style) => {
     dispatch(setCursorStyle(style));
   };
@@ -151,6 +165,20 @@ function App() {
   };
   return (
     <div>
+      {isLoading ? (
+        <div className="loading">
+        <div className="loading-text">
+          <span className="loading-text-words">L</span>
+          <span className="loading-text-words">O</span>
+          <span className="loading-text-words">A</span>
+          <span className="loading-text-words">D</span>
+          <span className="loading-text-words">I</span>
+          <span className="loading-text-words">N</span>
+          <span className="loading-text-words">G</span>
+        </div>
+      </div>
+      ) : (
+        <div>
       <ScrollToTop />
       <FullScreenNav
         showFullScreenNav={showFullScreenNav}
@@ -324,6 +352,10 @@ function App() {
         onMouseLeave={() => setCursorStyleFunction("default")}
       ></InterestSection>
     </div>
+      )}
+    </div>
+
+    
   );
 }
 
