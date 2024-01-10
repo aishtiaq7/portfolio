@@ -68,6 +68,24 @@ body {
     GLOBAL styles ends here
 
 ***************************/
+.AwshafContent {
+  display: inline-block !important;
+  line-height: 29px;
+  font-family: "Architects Daughter", cursive;
+  font-size: 5.5vw;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+  /* border: 2px solid green; */
+  /* margin-top: 40px; */
+  max-width: 40%;
+}
+.AwshafContent > svg {
+  display: inline-block !important;
+  /* background-color: orange; */
+  transform: translateY(20px);
+}
+
+
 article {
   min-height: 110vh;
   background-color: var(--main-white-color);
@@ -330,6 +348,23 @@ article {
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
+  .AwshafContent {
+    display: inline-block !important;
+    line-height: 29px;
+    font-family: "Architects Daughter", cursive;
+    font-size: 5.5vw;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    /* border: 2px solid red; */
+    /* margin-top: 40px; */
+    max-width: 30%;
+  }
+  .AwshafContent > svg {
+    display: inline-block !important;
+    /* background-color: orange; */
+    transform: translateY(15px);
+  }
+
   /* 
    *
    RODAL Styles:

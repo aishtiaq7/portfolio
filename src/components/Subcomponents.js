@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "../App.css";
 import "../components/Subcomponent.css";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +14,7 @@ import {
 import { setCursorStyle } from "../features/cursor/cursorSlice";
 import AnimatedNumber from "animated-number-react";
 import { useInView } from "react-intersection-observer";
+import Vara from "vara";
 
 export const Section = (props) => {
   const dispatch = useDispatch();
@@ -37,9 +38,67 @@ export const Section = (props) => {
     }
   }, [nameRefinView]);
 
+  //vara handwriting for AWSHAF text
+  const [AwshafRef, AwshafinView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+  // console.log('AwshafInView?',AwshafinView)
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  console.log('screenWidth?',screenWidth)
+  const spacing = screenWidth > 600 ? 55 : 0;
+  const fontsizing = screenWidth > 600 ? 40 : 17;
+  const initializeVara = useCallback(() => {
+    if (AwshafinView) {
+      const vara = new Vara(
+        "#myVaraText",
+        "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",
+        // "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Parisienne/Parisienne.json",
+        // "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Pacifico/PacificoSLO.json",
+        // "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Shadows-Into-Light/shadows-into-light.json",
+        [
+          {
+            id: "line1", // String or integer, for if animations are called manually or when using the get() method. Default is the index of the object.
+            text: `Awshaf,`, // String, text to be shown
+            fontSize: fontsizing, // Number, size of the text
+            strokeWidth: 2, // Width / Thickness of the stroke
+            color: "black", // Color of the text
+            duration: 1750, // Number, Duration of the animation in milliseconds
+            textAlign: "left", // String, text align, accepted values are left,center,right
+            x: 10, // Number, x coordinate of the text
+            y: 5, // Number, y coordinate of the text
+            fromCurrentPosition: {
+              // Whether the x or y coordinate should be from its calculated position, ie the position if x or y coordinates were not applied
+              x: true, // Boolean
+              y: true, // Boolean
+            },
+            autoAnimation: AwshafinView, // Boolean, Whether to animate the text automatically
+            queued: true, // Boolean, Whether the animation should be in a queue
+            delay: 850, // Delay before the animation starts in milliseconds
+            /* Letter spacing can be a number or an object, if number, the spacing will be applied to every character.
+              If object, each letter can be assigned a different spacing as follows,
+              letterSpacing: {
+                  a: 4,
+                  j: -6,
+                  global: -1
+              }
+              The global property is used to set spacing of all other characters
+              */
+            letterSpacing: 0,
+          },
+        ]
+      );
+      vara.ready();
+    }
+  }, [AwshafinView, fontsizing, spacing]);
+  useEffect(() => {
+    initializeVara();
+  }, [initializeVara]);
+
   const formatValue = (value) => Math.round(value);
 
   const parallaxSpeedValue = -0.205;
+
   return (
     <article
       id="about"
@@ -76,37 +135,19 @@ export const Section = (props) => {
                 <br></br>
                 My name is{" "}
                 <span
-                  ref={nameRef}
-                  className={`underline-animation ${
-                    nameRefinView ? "in-view" : ""
-                  }`}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 255 32.61"
-                    key={nameKey}
-                    style={{"transform": "scaleX(-1)"}}
-                  >
-                    <path
-                      d="M5 14.11s54-8 125-9 120 5 120 5-200.5-5.5-239.5 17.5"
-                      className="stroke"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="10"
-                    />
-                  </svg>
-                  Awshaf
-                </span>
-                ,<br></br>
+                  className="AwshafContent"
+                  id="myVaraText"
+                  ref={AwshafRef}
+                ></span>
+                <br></br>
                 I'm a developer with{" "}
                 <AnimatedNumber
                   value={inView ? 3 : 0}
                   formatValue={formatValue}
                   duration={1900}
                 />
-                + years of experience building full stack web apps & a computer science graduate from Simon Fraser
-                University.
+                + years of experience building full stack web apps & a computer
+                science graduate from Simon Fraser University.
               </h3>
               <br></br>
               <h3>
@@ -135,11 +176,13 @@ export const Section = (props) => {
                   Clipping Path Service Asia
                 </a>{" "}
                 and much more in the "Projects" section below! */}
-                My passion lies in devising software solutions that make everyday tasks easier and more efficient, and my knowledge of programming and web development has empowered me to express my creativity and skills to achieve this goal!
+                My passion lies in devising software solutions that make
+                everyday tasks easier and more efficient, and my knowledge of
+                programming and web development has empowered me to express my
+                creativity and skills to achieve this goal!
                 <br></br>
                 <br></br>
-                Join me on this digital voyage where we explore software
-                innovation and my narrative.
+                Join me on this digital voyage by clicking on the button below.
               </h3>
             </div>
 
@@ -291,7 +334,11 @@ export const Card = (props) => {
         <h5>{props.projectName}</h5>
       </div>
       <div className="cardDes">
-        <p>{props.des.length > 150 ? `${props.des.substring(0, 200)}...` : props.des}</p>
+        <p>
+          {props.des.length > 150
+            ? `${props.des.substring(0, 200)}...`
+            : props.des}
+        </p>
       </div>
     </div>
   );

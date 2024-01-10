@@ -156,25 +156,6 @@ const LearnMore = (props) => {
               */
             letterSpacing: 0,
           },
-          // {
-          //   id: "line2",
-          //   text: `thats today.`,
-          //   fontSize: (fontsizing/1.2),
-          //   strokeWidth: 1,
-          //   color: "black",
-          //   duration: 1500,
-          //   textAlign: "left",
-          //   x: 65,
-          //   y: -10,
-          //   fromCurrentPosition: {
-          //     x: true,
-          //     y: true,
-          //   },
-          //   autoAnimation: true,
-          //   queued: true,
-          //   delay: 1150,
-          //   letterSpacing: -1
-          // },
           {
             id: "line3",
             text: `On this date, you explored my page and delved into the story I crafted.`,
@@ -329,7 +310,6 @@ const LearnMore = (props) => {
           }`}
         >
           <div className="content" id="myVaraText" ref={ref}></div>
-          {/* <div id="target2"></div> */}
         </section>
       </div>
 
