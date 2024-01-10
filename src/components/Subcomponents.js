@@ -78,6 +78,7 @@ export const Section = (props) => {
     // eslint-disable-next-line 
   }, [AwshafinView, fontsizing, spacing]);
   useEffect(() => {
+    AOS.init();
     initializeVara();
   }, [initializeVara]);
 
@@ -144,7 +145,7 @@ export const Section = (props) => {
                   </a>
                 </span>
                 , I orchestrate the software development lifecycle—from client
-                stories acquitsion, to selecting the right web architecture,
+                acquitsion, to selecting the optimal web architecture,
                 ensuring successful deployment, ongoing maintenance &
                 improvements.
                 <br></br>
