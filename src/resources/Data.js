@@ -36,7 +36,7 @@ export const cardItem = [
     projectName: "Coursley",
     iconsList: ["nodejs", "psql", "angular", "docker", "gcp"],
     hyperlink:
-      "https://drive.google.com/file/d/17PdfU2Cfp-49PoI1uINHZACaqU9TTwx5/view?usp=sharing",
+      "https://drive.google.com/file/d/1TBPjCo3mxfpkJn_gcuQS0EMA-mnfwEGM/view?usp=sharing",
     des: "A Course Management PEAN stack application that interfaces separate views for both students & instructors to manage courses, access events in google calendar, chat with peers etc.​",
     cursorClass: "lala",
   },
