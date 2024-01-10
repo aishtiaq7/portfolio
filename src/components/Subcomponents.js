@@ -293,7 +293,7 @@ export const Card = (props) => {
         <h5>{props.projectName}</h5>
       </div>
       <div className="cardDes">
-        <p>{props.des}</p>
+        <p>{props.des.length > 150 ? `${props.des.substring(0, 200)}...` : props.des}</p>
       </div>
     </div>
   );

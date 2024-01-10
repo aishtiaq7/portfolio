@@ -10,9 +10,17 @@ export const cardItem = [
   {
     id: 7,
     projectName: "Clipping Path Service ASIA",
-    iconsList: ["next", "redux","github", "html", "js"],
+    iconsList: ["next", "redux", "github", "html", "js"],
     hyperlink: "http://clippingpathserviceasia.com/",
-    des: "Developed a scalable Next.js web application with reusable components, leading to a 40% increase in scalability. Implemented secure NodeMailer API for seamless email communication with large attachments.",
+    des: "Developed responsive NextJS components with modularized CSS for improved reusability. Implemented a secure NodeMailer API in Next.js for enhanced email transmission with large attachments, boosting user experience.",
+    cursorClass: "lala",
+  },
+  {
+    id: 8,
+    projectName: "Clinical Remedy Store",
+    iconsList: ["html", "css", "python", "django", "psql", "digital-ocean"],
+    hyperlink: "http://tripsnrips.ca/",
+    des: "Developed an e-commerce platform for remedy sales, featuring an editable content dashboard for the website owner. The site offers multiple shipping options at checkout and includes a cryptocurrency payment gateway.",
     cursorClass: "lala",
   },
   {
