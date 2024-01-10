@@ -85,6 +85,7 @@ export const Section = (props) => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 255 32.61"
                     key={nameKey}
+                    style={{"transform": "scaleX(-1)"}}
                   >
                     <path
                       d="M5 14.11s54-8 125-9 120 5 120 5-200.5-5.5-239.5 17.5"

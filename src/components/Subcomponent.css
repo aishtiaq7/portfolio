@@ -28,6 +28,8 @@
 }
 
 .underline-animation {
+  /* border:  2px solid white; */
+  /* background-color: white; */
   text-decoration: none;
   position: relative;
   /* white-space: nowrap; */
@@ -50,6 +52,18 @@
   animation-play-state: paused;
 }
 .underline-animation.in-view .stroke {
+  animation-play-state: running; /* Start animation when in view */
+}
+.underline-animation .strokeWhite {
+  stroke: rgb(255, 255, 255);
+  stroke-width: 0.065em;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: underlineAnimation 0.88s 0.7s cubic-bezier(0.17, 0.55, 0.55, 1)
+    forwards;
+  animation-play-state: paused;
+}
+.underline-animation.in-view .strokeWhite {
   animation-play-state: running; /* Start animation when in view */
 }
 

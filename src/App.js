@@ -11,6 +11,8 @@ import {
   DarkSection,
   InterestSection,
 } from "./components/Subcomponents";
+import AOS from "aos";
+
 
 import { useInView } from "react-intersection-observer";
 import { cardItem } from "./resources/Data";
@@ -46,6 +48,16 @@ function App() {
   const { ref, inView } = useInView(options); // for the 1st white section
   const inputRef = ref;
   const [ref2, inView2] = useInView(options); // for the 2nd white section
+
+  const [mattersRef, inViewMatters] = useInView(options); // for the 2nd white section
+  const [mattersKey, setMattersKey] = useState(Math.random());
+  useEffect(() => {
+    AOS.init();
+    if (!inViewMatters) {
+    } else {
+      setMattersKey(Math.random());
+    }
+  }, [inViewMatters]);
 
   // eslint-disable-next-line
   const [currentUrl, setCurrentUrl] = useState();
@@ -246,7 +258,29 @@ function App() {
               to learn & create
               <br />
               software that{" "}
-              <span style={{ textDecoration: "underline" }}>matters</span>.
+              {/* <span style={{ textDecoration: "underline" }}>matters</span>. */}
+              <span
+                  ref={mattersRef}
+                  className={`underline-animation ${
+                    inViewMatters ? "in-view" : ""
+                  }`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 255 32.61"
+                    key={mattersKey}
+                  >
+                    <path
+                      d="M5 14.11s54-8 125-9 120 5 120 5-200.5-5.5-239.5 17.5"
+                      className="strokeWhite"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="10"
+                    />
+                  </svg>
+                  matters
+                </span>.
             </h3>
           </div>
 
