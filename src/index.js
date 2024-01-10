@@ -1,9 +1,8 @@
 import React from "react";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 
-import { Routes, Route } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 
 import App from "./App";
 import LearnMore from "./screens/LearnMore";
@@ -19,7 +18,6 @@ import {
 } from "./features/cursor/cursorSlice";
 import { setWindowOffsetY } from "./features/cursor/globalStatesSlice";
 
-
 const FooterComponent = () => {
   const dispatch = useDispatch();
   const [windowOffset, setWindowOffset] = useState(0);
@@ -27,13 +25,13 @@ const FooterComponent = () => {
   useEffect(() => {
     const handleScroll = () => {
       setWindowOffset(window.pageYOffset);
-      setWindowOffsetY(window.pageYOffset)
+      setWindowOffsetY(window.pageYOffset);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   return (
@@ -44,6 +42,16 @@ const FooterComponent = () => {
     />
   );
 };
+const googleDriveResumeLink =
+  "https://drive.google.com/file/d/1GhCt6K-rvhmt3UlfBkfexSgQPVzNNylv/view?usp=sharing";
+const ExternalRedirect = ({ to }) => {
+  useEffect(() => {
+    window.location.href = to;
+  }, [to]);
+
+  return null;
+};
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -52,6 +60,8 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/learnmore" element={<LearnMore />} />
+        <Route path="/resume" element={<ExternalRedirect to={googleDriveResumeLink} />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
     <FooterComponent />
