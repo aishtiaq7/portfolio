@@ -105,8 +105,7 @@ export const Section = (props) => {
                   formatValue={formatValue}
                   duration={1900}
                 />
-                + years of experience building full stack web apps with a
-                bachelor degree in computer science, from Simon Fraser
+                + years of experience building full stack web apps & a computer science graduate from Simon Fraser
                 University.
               </h3>
               <br></br>
@@ -122,11 +121,8 @@ export const Section = (props) => {
                 ensuring successful deployment, ongoing maintenance &
                 improvements.
                 <br></br>
-                {/* <br></br>
-                I've successfully managed multiple projects concurrently,
-                ensuring top-notch quality and timely delivery. */}
                 <br></br>
-                Check out some of my projects in production now, including an
+                {/* Check out some of my projects in production now, including an
                 E-commerce store for branded T-shirts -
                 <a className="bold" href="https://www.digitecinnovation.ca/">
                   HUH
@@ -138,7 +134,8 @@ export const Section = (props) => {
                 >
                   Clipping Path Service Asia
                 </a>{" "}
-                and much more in the "Projects" section below!
+                and much more in the "Projects" section below! */}
+                My passion lies in devising software solutions that make everyday tasks easier and more efficient, and my knowledge of programming and web development has empowered me to express my creativity and skills to achieve this goal!
                 <br></br>
                 <br></br>
                 Join me on this digital voyage where we explore software

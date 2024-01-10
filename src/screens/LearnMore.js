@@ -38,9 +38,10 @@ const LearnMore = (props) => {
       company: "Digitec Innovation",
       companyHyperlink: "https://www.digitecinnovation.ca/",
       bullets: [
-        "Co-founded and directed Digitec Innovation, a dynamic software firm specializing in web development and cloud technologies to digitalize small-to-medium sized businesses.",
-        "Designed and implement the feed screen app that displayed a list of natural remedy options to its customers using React-Native to support cross-platform usage (iOS & Android).",
-        "Created API endpoints in NodeJS backend that fetched from Cloud PostgreSQL to populate the multiple screens such as settings and events page.",
+        "Co-founded Digitec Innovation to provide custom-tailored web services, with a focus on client-centric development and market-driven solutions.",
+        "Led the end-to-end development of feature requests, starting from the creation of RESTful APIs and culminating in frontend rendering, resulting in a 20% reduction in time-to-market for client requested features.",
+        "Led the implementation of CI/CD pipeline shortening the development cycle and automated testing before merges.",
+        "Efficiently managed client relationships using an agile-waterfall methods, to address evolving client needs resulting in higher client satisfaction & company recognition.",
       ],
     },
     {
@@ -48,8 +49,9 @@ const LearnMore = (props) => {
       company: "Wave Business Intelligence.",
       companyHyperlink: "https://www.wavebi.com.ar/",
       bullets: [
-        "Transformed static HTML/CSS/JavaScript pages into Next.js web apps with support for each page manipulation thorough props and modularized CSS resulting 60% increase in both maintainability and performance.",
-        "Utilized Storybook extensively to thoroughly test and validate components' functionality, responsiveness, and visual consistency across multiple platforms and devices, ensuring 100% bug-free deliverables.",
+        "Upgraded legacy HTML/CSS/JavaScript pages to interactive Next.js web apps streamlining code reusability and enforcing a cohesive design framework, resulting in a notable 27% improvement in conversion rates.",
+        "Implemented a dynamic caching solution that prioritized the efficient loading of high-bandwidth content, like images & videos, reducing resource load times by 15% offering an uninterrupted & rapid browsing experience.",
+        "Utilized StorybookJS to extensively test and visualize React reusable components, their functionality & responsiveness across multiple devices and dimension, ensuring 100% bug-free deliverables.",
       ],
     },
     {
@@ -57,10 +59,10 @@ const LearnMore = (props) => {
       company: "Pangenomic Health Corp.",
       companyHyperlink: "https://www.pangenomic.com/",
       bullets: [
-        "Performed regression, functional, non-functional and unit tests using JUnit 5, to ensure the reliability and functionality of the RESTful API endpoints.",
-        "Designed and implement the feed screen app that displayed a list of natural remedy options to its customers using React-Native to support cross-platform usage (iOS & Android).",
-        "Created API endpoints in NodeJS backend that fetched from Cloud PostgreSQL to populate the multiple screens such as settings and events page.",
-        "Developed strong communication skill and proficiency working between QA and design team, using tools such as JIRA, Slack & Bitbucket to streamline the whole development lifecycle.",
+        "Integrated Strapi CMS to optimize content management workflows resulting in a 26% increase in editorial efficiency and content production velocity.",
+        "Collaborated with the UI/UX team to gather specifications and developed the Feed screen using React-Native functional components, ensuring cross-platform functionality for both Android and iOS.",
+        "Defined API endpoints in NodeJS backend to fetch data from Cloud PostgreSQL asynchronously and cache it locally to reduce page load times by 25% for the Feed & Settings screen.",
+        "Built comprehensive API test plans, identifying critical bugs on emulators & mobile devices before production.",
       ],
     },
     {
@@ -68,7 +70,7 @@ const LearnMore = (props) => {
       company: "Clipping Path Service ASIA",
       companyHyperlink: "https://www.clippingpathserviceasia.com/",
       bullets: [
-        "Built responsive, reusable components in NextJS using props and modularized CSS facilitating their utilization across multiple pages within the application and 40% increase in scalability.",
+        "Built responsive, reusable components in NextJS using props and modularized CSS facilitating their utilization across multiple pages enhancing code reusability & time to deploy new webpages by 30%.",
         "Implemented a secure NodeMailer API endpoint within server-side Next.js components for secured email transmission with large attachments, facilitating seamless communication and better user experience.",
       ],
     },
@@ -92,15 +94,15 @@ const LearnMore = (props) => {
 
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.5, 
+    threshold: 0.5,
   });
 
-  // eslint-disable-next-line 
+  // eslint-disable-next-line
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   //                                     lg  sm    - screens
-  const spacing = screenWidth > 600 ?    45 : 22;
-  const fontsizing = screenWidth > 600 ? 40 : 29; 
+  const spacing = screenWidth > 600 ? 45 : 22;
+  const fontsizing = screenWidth > 600 ? 40 : 29;
 
   // console.log('scn width:', screenWidth);
   // console.log('fontsizing:', fontsizing);
@@ -116,7 +118,7 @@ const LearnMore = (props) => {
         month: "long",
         year: "numeric",
       });
-      currentDate = currentDate.replace(',', '');
+      currentDate = currentDate.replace(",", "");
 
       const vara = new Vara(
         "#myVaraText",
@@ -155,122 +157,120 @@ const LearnMore = (props) => {
             letterSpacing: 0,
           },
           // {
-          //   id: "line2", 
+          //   id: "line2",
           //   text: `thats today.`,
-          //   fontSize: (fontsizing/1.2), 
-          //   strokeWidth: 1, 
-          //   color: "black", 
-          //   duration: 1500, 
-          //   textAlign: "left", 
-          //   x: 65, 
-          //   y: -10, 
+          //   fontSize: (fontsizing/1.2),
+          //   strokeWidth: 1,
+          //   color: "black",
+          //   duration: 1500,
+          //   textAlign: "left",
+          //   x: 65,
+          //   y: -10,
           //   fromCurrentPosition: {
-          //     x: true, 
-          //     y: true, 
+          //     x: true,
+          //     y: true,
           //   },
-          //   autoAnimation: true, 
-          //   queued: true, 
-          //   delay: 1150, 
+          //   autoAnimation: true,
+          //   queued: true,
+          //   delay: 1150,
           //   letterSpacing: -1
           // },
           {
-            id: "line3", 
-            text: `On this date, you explored my page and delved into the story I crafted.`, 
-            fontSize: fontsizing, 
-            strokeWidth: 1, 
+            id: "line3",
+            text: `On this date, you explored my page and delved into the story I crafted.`,
+            fontSize: fontsizing,
+            strokeWidth: 1,
             color: "black",
-            duration: 3300, 
-            textAlign: "left", 
-            x: 10, 
-            y: spacing, 
-            fromCurrentPosition: {
-              x: true, 
-              y: true, 
-            },
-            autoAnimation: true, 
-            queued: true, 
-            delay: 750,
-            letterSpacing: 0,
-          },
-          {
-            id: "line4", 
-            text: `I trust you relished this digital journey.`, 
-            fontSize: fontsizing, 
-            strokeWidth: 1, 
-            color: "black", 
-            duration: 2500, 
-            textAlign: "left", 
-            x: 10, 
-            y: (spacing/1.8), 
-            fromCurrentPosition: {
-              x: true, 
-              y: true, 
-            },
-            autoAnimation: true,
-            queued: true, 
-            delay: 1250, 
-            letterSpacing: 0,
-          },
-          {
-            id: "line4", 
-            text: `Don't hesitate to reach out, I'm just a message away!`, 
-            fontSize: fontsizing, 
-            strokeWidth: 1, 
-            color: "black", 
-            duration: 2500, 
-            textAlign: "left", 
-            x: 10, 
-            y: (spacing/1.8), 
-            fromCurrentPosition: {
-              x: true, 
-              y: true, 
-            },
-            autoAnimation: true,
-            queued: true, 
-            delay: 1250, 
-            letterSpacing: 0,
-          },
-          {
-            id: "line4",
-            text: `Yours truly,`,
-            fontSize: fontsizing, 
-            strokeWidth: 1, 
-            color: "black",
-            duration: 1350, 
-            textAlign: "left", 
+            duration: 3300,
+            textAlign: "left",
             x: 10,
             y: spacing,
             fromCurrentPosition: {
               x: true,
               y: true,
             },
-            autoAnimation: true, 
+            autoAnimation: true,
+            queued: true,
+            delay: 750,
+            letterSpacing: 0,
+          },
+          {
+            id: "line4",
+            text: `I hope you enjoyed this digital experience.`,
+            fontSize: fontsizing,
+            strokeWidth: 1,
+            color: "black",
+            duration: 2500,
+            textAlign: "left",
+            x: 10,
+            y: spacing / 1.8,
+            fromCurrentPosition: {
+              x: true,
+              y: true,
+            },
+            autoAnimation: true,
+            queued: true,
+            delay: 1250,
+            letterSpacing: 0,
+          },
+          {
+            id: "line4",
+            text: `Shoot me a message to let me know your thoughts!`,
+            fontSize: fontsizing,
+            strokeWidth: 1,
+            color: "black",
+            duration: 2500,
+            textAlign: "left",
+            x: 10,
+            y: spacing / 1.8,
+            fromCurrentPosition: {
+              x: true,
+              y: true,
+            },
+            autoAnimation: true,
+            queued: true,
+            delay: 1250,
+            letterSpacing: 0,
+          },
+          {
+            id: "line4",
+            text: `Yours truly,`,
+            fontSize: fontsizing,
+            strokeWidth: 1,
+            color: "black",
+            duration: 1350,
+            textAlign: "left",
+            x: 10,
+            y: spacing,
+            fromCurrentPosition: {
+              x: true,
+              y: true,
+            },
+            autoAnimation: true,
             queued: true,
             delay: 1000,
           },
           {
             id: "line4",
             text: `Awshaf Ishtiaque`,
-            fontSize: fontsizing, 
-            strokeWidth: 1.8, 
+            fontSize: fontsizing,
+            strokeWidth: 1.8,
             color: "black",
-            duration: 2900, 
-            textAlign: "left", 
+            duration: 2900,
+            textAlign: "left",
             x: 10,
-            y: (spacing+10),
+            y: spacing + 10,
             fromCurrentPosition: {
               x: true,
               y: true,
             },
-            autoAnimation: true, 
+            autoAnimation: true,
             queued: true,
             delay: 1000,
-          }
+          },
         ]
       );
       vara.ready();
-
-     
     }
   }, [inView, fontsizing, spacing]);
 
@@ -328,8 +328,7 @@ const LearnMore = (props) => {
             doodleSectionInView ? "doodleFSactive" : ""
           }`}
         >
-          <div className="content" id="myVaraText" ref={ref}>
-          </div>
+          <div className="content" id="myVaraText" ref={ref}></div>
           {/* <div id="target2"></div> */}
         </section>
       </div>
