@@ -334,13 +334,13 @@
 
 @keyframes autoSlide {
   0% {
-    transform: translateX(10%);
+    transform: translateX(13%);
   }
   50% {
     transform: translateX(-40%);
   }
   100% {
-    transform: translateX(10%);
+    transform: translateX(13%);
   }
 }
 .delay-0s {
@@ -358,9 +358,6 @@
 .iconContainer:hover {
   animation-play-state: paused;
 }
-/* .cardsContainer:hover .iconContainer {
-  animation-play-state: paused;
-} */
 
 .iconContainer {
   margin-left: 1rem;
@@ -372,7 +369,8 @@
   height: 30%;
   width: 100%;
 
-  animation: autoSlide 6.3s ease-in-out infinite forwards;
+  animation: autoSlide 4.3s cubic-bezier(.35, 0, .65, 1) infinite forwards;
+
 }
 
 .icon {
@@ -594,11 +592,9 @@
     font-size: var(--content-font-size-phone-view);
 
     z-index: 30;
-    /* background-color: orange; */
   }
   .cardDes {
     font-size: 1.3vw;
-    /* background-color: orange; */
   }
 }
 
@@ -688,13 +684,11 @@
     font-size: var(--content-font-size-phone-view);
     font-weight: 600;
 
-    /* background-color: orange; */
     position: absolute;
     top: 0%;
     left: 0%;
     transform: translateX(-50%) translateY(-170%);
 
-    /* border:  2px  solid green; */
   }
 
   .ribbon {
@@ -707,13 +701,9 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 
-    /* border: 2px solid red; */
-    /* background-color: orange; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 100%; */
-    /* color: green; */
 
     font-size: 2vw;
     position: relative;
