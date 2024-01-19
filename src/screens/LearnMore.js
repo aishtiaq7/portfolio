@@ -76,7 +76,7 @@ const LearnMore = (props) => {
     },
     {
       category: "Digitec Projects",
-      company: "T-shirt e-commerce platform",
+      company: "E-commerce Clothing platform",
       companyHyperlink: "https://howuniversehowls.ca/",
       bullets: [
         "Lead the development of a robust e-commerce platform utilizing the PERN stack, facilitating seamless online purchases of t-shirts",
@@ -158,7 +158,7 @@ const LearnMore = (props) => {
           },
           {
             id: "line3",
-            text: `On this date, you explored my page and delved into the story I crafted.`,
+            text: `On this date, you explored my page and delved into the narrative I've crafted.`,
             fontSize: fontsizing,
             strokeWidth: 1,
             color: "black",
@@ -177,7 +177,7 @@ const LearnMore = (props) => {
           },
           {
             id: "line4",
-            text: `I hope you enjoyed this digital experience.`,
+            text: `I hope you found this digital journey engaging.`,
             fontSize: fontsizing,
             strokeWidth: 1,
             color: "black",
@@ -196,7 +196,7 @@ const LearnMore = (props) => {
           },
           {
             id: "line4",
-            text: `Shoot me a message to let me know your thoughts!`,
+            text: `Feel free to shoot me a message on Linkedin or email to let me know your thoughts!`,
             fontSize: fontsizing,
             strokeWidth: 1,
             color: "black",

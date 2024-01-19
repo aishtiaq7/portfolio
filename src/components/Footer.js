@@ -56,7 +56,7 @@ const Footer = (props) => {
         <div className="horizontalLine"></div>
         <ul>
           <li>
-            <a href="https://www.linkedin.com/in/awshaf-ishtiaque/">linkedIn</a>
+            <a href="https://www.linkedin.com/in/awshaf/">linkedIn</a>
           </li>
           <li>
             <a href="https://www.instagram.com/awshaf__/">instagram</a>

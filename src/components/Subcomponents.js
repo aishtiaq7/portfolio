@@ -44,7 +44,7 @@ export const Section = (props) => {
         [
           {
             id: "line1", // String or integer, for if animations are called manually or when using the get() method. Default is the index of the object.
-            text: `Awshaf,`, // String, text to be shown
+            text: `Awshaf.`, // String, text to be shown
             fontSize: fontsizing, // Number, size of the text
             strokeWidth: 2, // Width / Thickness of the stroke
             color: "black", // Color of the text
@@ -127,14 +127,13 @@ export const Section = (props) => {
                   ref={AwshafRef}
                 ></span>
                 <br></br>
-                I'm a developer with{" "}
+                I would like to describe myself as a collaborative & solution-driven software developer with {" "}
                 <AnimatedNumber
                   value={inView ? 3 : 0}
                   formatValue={formatValue}
                   duration={1900}
                 />
-                + years of experience building full stack web apps & a computer
-                science graduate from Simon Fraser University.
+                + years of experience in building and deploying full-stack applications. I recently graduated from Simon Fraser University with a bachelor's degree in computer science.
               </h3>
               <br></br>
               <h3>
@@ -144,27 +143,11 @@ export const Section = (props) => {
                     Digitec Innovation
                   </a>
                 </span>
-                , I orchestrate the software development lifecycle—from client
-                acquitsion, to selecting the optimal web architecture,
-                ensuring successful deployment, ongoing maintenance &
-                improvements.
+                , I excel in orchestrating B2B client relationships, 
+                guiding the architectural design of sophisticated web solutions, and leading projects from strategic inception through to successful deployment and proactive maintenance.
                 <br></br>
                 <br></br>
-                {/* Check out some of my projects in production now, including an
-                E-commerce store for branded T-shirts -
-                <a className="bold" href="https://www.digitecinnovation.ca/">
-                  HUH
-                </a>{" "}
-                , company website portfolio for{" "}
-                <a
-                  className="bold"
-                  href="https://www.clippingpathserviceasia.com/"
-                >
-                  Clipping Path Service Asia
-                </a>{" "}
-                and much more in the "Projects" section below! */}
-                My passion lies in devising software solutions that make
-                everyday tasks easier and more efficient, and my knowledge of
+                My passion lies in devising software solutions that streamline and enrich everyday experiences, and my knowledge of
                 programming and web development has empowered me to express my
                 creativity and skills to achieve this goal!
                 <br></br>
