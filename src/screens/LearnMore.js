@@ -345,12 +345,12 @@ const LearnMore = (props) => {
           >
             <div className="paraContainers globalTextStyles">
               <h2 className="jobTitle">Work Experience</h2>
-
               {bulletData
                 .filter((item) => item.category === "Work Experience")
                 .map((singleBullet, index) => {
                   return (
                     <WorkExperienceItem
+                      category={singleBullet.category}
                       key={singleBullet.company}
                       company={singleBullet.company}
                       companyHyperlink={singleBullet.companyHyperlink}
@@ -358,12 +358,14 @@ const LearnMore = (props) => {
                     />
                   );
                 })}
+
               <h2 className="jobTitle">Digitec Projects</h2>
               {bulletData
                 .filter((item) => item.category === "Digitec Projects")
                 .map((singleBullet, index) => {
                   return (
                     <WorkExperienceItem
+                      category={singleBullet.category}
                       key={singleBullet.company}
                       company={singleBullet.company}
                       companyHyperlink={singleBullet.companyHyperlink}
@@ -373,13 +375,13 @@ const LearnMore = (props) => {
                 })}
 
               {/* E D U C A T I O N */}
-              <h2 className="jobTitle">Education</h2>
+              {/* <h2 className="jobTitle">Education</h2> */}
 
-              <div className="educationContainer">
+              {/* <div className="educationContainer">
                 <a
                   href="https://www.sfu.ca/"
                   className="company"
-                  data-aos="zoom-out"
+                  // data-aos="zoom-out"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -392,12 +394,12 @@ const LearnMore = (props) => {
                     alt="sfulogo"
                   ></img>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="bulletContainer">
+              {/* <div className="bulletContainer">
                 <h3
                   className="bullet"
-                  data-aos="zoom-out-left"
+                  // data-aos="zoom-out-left"
                   data-aos-offset={50}
                   onMouseEnter={() => dispatch(setCursorStyle("text"))}
                   onMouseLeave={() => dispatch(setCursorStyle("default"))}
@@ -406,14 +408,14 @@ const LearnMore = (props) => {
                 </h3>
                 <h3
                   className="bullet"
-                  data-aos="zoom-out-left"
+                  // data-aos="zoom-out-left"
                   data-aos-offset={100}
                   onMouseEnter={() => dispatch(setCursorStyle("text"))}
                   onMouseLeave={() => dispatch(setCursorStyle("default"))}
                 >
                   Major in Computer Science
                 </h3>
-              </div>
+              </div> */}
             </div>
 
             <div ref={doodleSectionRef} className="doodleSection">
@@ -428,36 +430,46 @@ const LearnMore = (props) => {
   );
 };
 
-const WorkExperienceItem = ({ company, companyHyperlink, bullets }) => {
+const WorkExperienceItem = ({
+  company,
+  companyHyperlink,
+  bullets,
+  category,
+}) => {
   const dispatch = useDispatch();
   return (
-    <div>
-      <a
-        href={companyHyperlink}
-        className="company"
-        data-aos="zoom-out"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {company}
-      </a>
+    <div className="EachBulletObject ">
+      <div className="parentBulletContainer">
 
-      <div className="bulletContainer">
-        {bullets.map((bullet, index) => {
-          const offset = 100 + index * 50;
-          return (
-            <li
-              className="bullet"
-              data-aos="zoom-out-left"
-              data-aos-offset={offset}
-              key={bullet}
-              onMouseEnter={() => dispatch(setCursorStyle("text"))}
-              onMouseLeave={() => dispatch(setCursorStyle("default"))}
-            >
-              {bullet}
-            </li>
-          );
-        })}
+        <div className="positionSticky">
+        <a
+          href={companyHyperlink}
+          className="company"
+          // data-aos="zoom-out"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {company}
+        </a>
+        </div>
+
+        <div className="bulletContainer">
+          {bullets.map((bullet, index) => {
+            const offset = 100 + index * 50;
+            return (
+              <li
+                className="bullet"
+                // data-aos="zoom-out-left"
+                data-aos-offset={offset}
+                key={bullet}
+                onMouseEnter={() => dispatch(setCursorStyle("text"))}
+                onMouseLeave={() => dispatch(setCursorStyle("default"))}
+              >
+                {bullet}
+              </li>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

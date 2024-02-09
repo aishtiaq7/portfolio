@@ -23,6 +23,7 @@ nav {
   z-index: 120;
   
   transition: all ease 1s;
+  /* opacity: 0; */
 }
 .navOnWhite {
   color: black;

@@ -29,7 +29,7 @@ strong {
   color: black;
   padding-bottom: 5rem;
 
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 
   background-color: var(--main-white-color);
 
@@ -71,11 +71,20 @@ strong {
 .globalTextStyles {
   font-family: 'Poppins', sans-serif;
   font-weight: 100;
+
 }
 .jobTitle {
   user-select: none;
   text-align: left;
   font-size: 5.6vw;
+
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top:4.5rem;
+
+  background-color: white;
+  width: 100%;
+  z-index: 1000;
 }
 
 .company {
@@ -89,6 +98,29 @@ strong {
 
   margin: 1.5rem;
   user-select: none;
+
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top:5rem;
+}
+.positionSticky{
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top:5rem;
+}
+.parentBulletContainer{
+  /* overflow: hidden; */
+  border: 3px solid red;
+}
+
+.EachBulletObject{
+  width: 100%;
+
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top: 12.5rem;
+
+  background-color: white;
 }
 
 .bulletContainer {
@@ -98,6 +130,9 @@ strong {
   width: 100%;
   padding: 2rem;
   user-select: none;
+
+  background-color: pink;
+  
 }
 .bullet {
   width: 60%;
@@ -113,6 +148,8 @@ strong {
   list-style-type: disc;
   list-style-position: inside;
   text-indent: -1.4em;
+
+
 }
 
 /* 
@@ -269,6 +306,10 @@ strong {
 
     width: 100%;
     padding: 1rem;
+
+    position: sticky;
+    position: -webkit-sticky;
+    top: 5.4rem;
   }
   .bullet {
     width: 60%;
