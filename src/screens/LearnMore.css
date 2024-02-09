@@ -80,11 +80,13 @@ strong {
 
   position: sticky;
   position: -webkit-sticky; /* Safari */
-  top:4.5rem;
+  top:4.8rem;
 
   background-color: white;
   width: 100%;
-  z-index: 1000;
+
+  border: 3px solid green;
+  
 }
 
 .company {
@@ -97,20 +99,26 @@ strong {
   text-decoration: none;
 
   margin: 1.5rem;
+  margin-top: 12rem;
   user-select: none;
 
   position: sticky;
   position: -webkit-sticky; /* Safari */
-  top:5rem;
+  top:6.6rem;
 }
 .positionSticky{
   position: sticky;
   position: -webkit-sticky; /* Safari */
-  top:5rem;
 }
 .parentBulletContainer{
   /* overflow: hidden; */
-  border: 3px solid red;
+  /* border: 2px solid red; */
+  border-radius: 3px;
+
+}
+.bigRow{
+  /* background-color: teal !important; */
+  border: 2px solid red;
 }
 
 .EachBulletObject{
@@ -118,7 +126,7 @@ strong {
 
   position: sticky;
   position: -webkit-sticky; /* Safari */
-  top: 12.5rem;
+  top: 15.5rem;
 
   background-color: white;
 }
@@ -131,13 +139,13 @@ strong {
   padding: 2rem;
   user-select: none;
 
-  background-color: pink;
+  min-height: 50vh;
   
 }
 .bullet {
   width: 60%;
   text-align: left;
-  font-size: 2.2vw;
+  font-size: 1.2vw;
   font-weight: 200;
 
   padding: 1.1rem;
@@ -148,7 +156,6 @@ strong {
   list-style-type: disc;
   list-style-position: inside;
   text-indent: -1.4em;
-
 
 }
 

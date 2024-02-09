@@ -266,7 +266,7 @@ const LearnMore = (props) => {
     };
     window.addEventListener("mousemove", mouseMove);
     AOS.init({
-      offset: 100,
+      offset: 550,
       duration: 500,
       easing: "ease-in-sine",
       once: false,
@@ -344,35 +344,39 @@ const LearnMore = (props) => {
             }`}
           >
             <div className="paraContainers globalTextStyles">
-              <h2 className="jobTitle">Work Experience</h2>
-              {bulletData
-                .filter((item) => item.category === "Work Experience")
-                .map((singleBullet, index) => {
-                  return (
-                    <WorkExperienceItem
-                      category={singleBullet.category}
-                      key={singleBullet.company}
-                      company={singleBullet.company}
-                      companyHyperlink={singleBullet.companyHyperlink}
-                      bullets={singleBullet.bullets}
-                    />
-                  );
-                })}
+              <div className="bigRow">
+                <h2 className="jobTitle">Work Experience</h2>
+                {bulletData
+                  .filter((item) => item.category === "Work Experience")
+                  .map((singleBullet, index) => {
+                    return (
+                      <WorkExperienceItem
+                        category={singleBullet.category}
+                        key={singleBullet.company}
+                        company={singleBullet.company}
+                        companyHyperlink={singleBullet.companyHyperlink}
+                        bullets={singleBullet.bullets}
+                      />
+                    );
+                  })}
+              </div>
 
-              <h2 className="jobTitle">Digitec Projects</h2>
-              {bulletData
-                .filter((item) => item.category === "Digitec Projects")
-                .map((singleBullet, index) => {
-                  return (
-                    <WorkExperienceItem
-                      category={singleBullet.category}
-                      key={singleBullet.company}
-                      company={singleBullet.company}
-                      companyHyperlink={singleBullet.companyHyperlink}
-                      bullets={singleBullet.bullets}
-                    />
-                  );
-                })}
+              <div className="bigRow">
+                <h2 className="jobTitle">Digitec Projects</h2>
+                {bulletData
+                  .filter((item) => item.category === "Digitec Projects")
+                  .map((singleBullet, index) => {
+                    return (
+                      <WorkExperienceItem
+                        category={singleBullet.category}
+                        key={singleBullet.company}
+                        company={singleBullet.company}
+                        companyHyperlink={singleBullet.companyHyperlink}
+                        bullets={singleBullet.bullets}
+                      />
+                    );
+                  })}
+              </div>
 
               {/* E D U C A T I O N */}
               {/* <h2 className="jobTitle">Education</h2> */}
@@ -440,17 +444,16 @@ const WorkExperienceItem = ({
   return (
     <div className="EachBulletObject ">
       <div className="parentBulletContainer">
-
-        <div className="positionSticky">
-        <a
-          href={companyHyperlink}
-          className="company"
-          // data-aos="zoom-out"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {company}
-        </a>
+        <div className="">
+          <a
+            href={companyHyperlink}
+            className="company"
+            // data-aos="zoom-out"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {company}
+          </a>
         </div>
 
         <div className="bulletContainer">
@@ -460,7 +463,7 @@ const WorkExperienceItem = ({
               <li
                 className="bullet"
                 // data-aos="zoom-out-left"
-                data-aos-offset={offset}
+                // data-aos-offset={offset}
                 key={bullet}
                 onMouseEnter={() => dispatch(setCursorStyle("text"))}
                 onMouseLeave={() => dispatch(setCursorStyle("default"))}
