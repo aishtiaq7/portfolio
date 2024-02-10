@@ -380,6 +380,22 @@ const LearnMore = (props) => {
 
               {/* E D U C A T I O N */}
               {/* <h2 className="jobTitle">Education</h2> */}
+              <div className="bigRow">
+                <h2 className="jobTitle">Education EXAMPLE</h2>
+                {bulletData
+                  .filter((item) => item.category === "Digitec Projects")
+                  .map((singleBullet, index) => {
+                    return (
+                      <WorkExperienceItem
+                        category={singleBullet.category}
+                        key={singleBullet.company}
+                        company={singleBullet.company}
+                        companyHyperlink={singleBullet.companyHyperlink}
+                        bullets={singleBullet.bullets}
+                      />
+                    );
+                  })}
+              </div>
 
               {/* <div className="educationContainer">
                 <a
@@ -444,7 +460,7 @@ const WorkExperienceItem = ({
   return (
     <div className="EachBulletObject ">
       <div className="parentBulletContainer">
-        <div className="">
+        <div className="companyRow">
           <a
             href={companyHyperlink}
             className="company"

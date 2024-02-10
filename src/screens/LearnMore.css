@@ -43,6 +43,11 @@ strong {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+
+  background-color: orange;
+  padding: 3rem 2.2rem;
+
+  min-height: 300vh;
 }
 .educationContainer {
   width: 100%;
@@ -80,13 +85,22 @@ strong {
 
   position: sticky;
   position: -webkit-sticky; /* Safari */
-  top:4.8rem;
+  top:104px; /* cuz 104= 6.5rem (navbar) */
 
   background-color: white;
   width: 100%;
 
-  border: 3px solid green;
+  height: 153px;
+  z-index: 119;
   
+}
+.companyRow{
+  /* background-color: green; */
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top:257px;
+  width: 100%;
+  background-color: white;
 }
 
 .company {
@@ -104,7 +118,8 @@ strong {
 
   position: sticky;
   position: -webkit-sticky; /* Safari */
-  top:6.6rem;
+  top: 254px;
+  z-index: 200;
 }
 .positionSticky{
   position: sticky;
@@ -126,9 +141,12 @@ strong {
 
   position: sticky;
   position: -webkit-sticky; /* Safari */
-  top: 15.5rem;
+  /* top: 15.5rem; */
+  top: 6.5rem;
 
   background-color: white;
+  padding: 0;
+  margin: 0;
 }
 
 .bulletContainer {
@@ -156,6 +174,9 @@ strong {
   list-style-type: disc;
   list-style-position: inside;
   text-indent: -1.4em;
+
+  background-color: transparent;
+
 
 }
 
