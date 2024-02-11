@@ -379,63 +379,50 @@ const LearnMore = (props) => {
               </div>
 
               {/* E D U C A T I O N */}
-              {/* <h2 className="jobTitle">Education</h2> */}
               <div className="bigRow">
-                <h2 className="jobTitle">Education EXAMPLE</h2>
-                {/* {bulletData
-                  .filter((item) => item.category === "Digitec Projects")
-                  .map((singleBullet, index) => {
-                    return (
-                      <WorkExperienceItem
-                        category={singleBullet.category}
-                        key={singleBullet.company}
-                        company={singleBullet.company}
-                        companyHyperlink={singleBullet.companyHyperlink}
-                        bullets={singleBullet.bullets}
-                      />
-                    );
-                  })} */}
-              </div>
+                <h2 className="jobTitle">Education</h2>
 
-              {/* <div className="educationContainer">
-                <a
-                  href="https://www.sfu.ca/"
-                  className="company"
-                  // data-aos="zoom-out"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Simon Fraser University
-                </a>
-                <div className="sfulogo">
-                  <img
-                    className="logoicon"
-                    src={require("../resources/sfulogo.png")}
-                    alt="sfulogo"
-                  ></img>
+                <div className="educationContainer">
+                  <a
+                    id="schoolName"
+                    href="https://www.sfu.ca/"
+                    className="company"
+                    // data-aos="zoom-out"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Simon Fraser University
+                  </a>
+                  <div className="sfulogo">
+                    <img
+                      className="logoicon"
+                      src={require("../resources/sfulogo.png")}
+                      alt="sfulogo"
+                    ></img>
+                  </div>
                 </div>
-              </div> */}
 
-              {/* <div className="bulletContainer">
-                <h3
-                  className="bullet"
-                  // data-aos="zoom-out-left"
-                  data-aos-offset={50}
-                  onMouseEnter={() => dispatch(setCursorStyle("text"))}
-                  onMouseLeave={() => dispatch(setCursorStyle("default"))}
-                >
-                  BSC In Applied Science
-                </h3>
-                <h3
-                  className="bullet"
-                  // data-aos="zoom-out-left"
-                  data-aos-offset={100}
-                  onMouseEnter={() => dispatch(setCursorStyle("text"))}
-                  onMouseLeave={() => dispatch(setCursorStyle("default"))}
-                >
-                  Major in Computer Science
-                </h3>
-              </div> */}
+                <div className="bulletContainer eduBullet">
+                  <h3
+                    className="bullet"
+                    // data-aos="zoom-out-left"
+                    data-aos-offset={50}
+                    onMouseEnter={() => dispatch(setCursorStyle("text"))}
+                    onMouseLeave={() => dispatch(setCursorStyle("default"))}
+                  >
+                    BSC In Applied Science
+                  </h3>
+                  <h3
+                    className="bullet"
+                    // data-aos="zoom-out-left"
+                    data-aos-offset={100}
+                    onMouseEnter={() => dispatch(setCursorStyle("text"))}
+                    onMouseLeave={() => dispatch(setCursorStyle("default"))}
+                  >
+                    Major in Computer Science
+                  </h3>
+                </div>
+              </div>
             </div>
 
             <div ref={doodleSectionRef} className="doodleSection">

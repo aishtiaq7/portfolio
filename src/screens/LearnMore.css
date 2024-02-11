@@ -45,6 +45,7 @@ strong {
   flex-direction: column;
 
   /* padding: 3rem 2.2rem; */
+  background-color: white;
 
   min-height: 300vh;
 }
@@ -55,15 +56,25 @@ strong {
   justify-content: center;
   align-items: center;
   background-color: rgb(206, 206, 206);
+  min-height: 60vh;
+  z-index: 115;
+
+  margin: 1rem 0;
 }
 .educationContainer > a {
   color: rgb(181, 30, 30);
+  background-color: #CECECE;
+  z-index: 115;
 }
-
+#schoolName{
+  min-height: 12.5vh;
+  /* background-color: white !important; */
+}
 .sfulogo {
   width: 10rem;
   padding: 0;
   margin: 0;
+  transform: translateY(6%);
 }
 .sfulogo > img {
   width: 100%;
@@ -80,7 +91,7 @@ strong {
 .jobTitle {
   user-select: none;
   text-align: left;
-  font-size: 5.6vw;
+  font-size: 5vw;
 
   position: sticky;
   position: -webkit-sticky; /* Safari */
@@ -91,7 +102,7 @@ strong {
 
   height: 153px;
   z-index: 118;
-  
+
 }
 .companyRow{
   position: sticky;
@@ -105,7 +116,7 @@ strong {
 }
 
 .company {
-  font-size: 4.4vw;
+  font-size: 4vw;
   font-weight: 300;
   width: 100%;
   text-align: center;
@@ -122,7 +133,7 @@ strong {
   top: 265px;
   z-index: 200;
 
-  border: 3px dotted green !important;
+  /* border: 3px dotted green !important; */
 }
 .positionSticky{
   position: sticky;
@@ -133,7 +144,7 @@ strong {
 
 }
 .bigRow{
-  /* background-color: teal !important; */
+  width: 100%;
   background-color: white;
 }
 
@@ -155,10 +166,11 @@ strong {
   flex-direction: column;
 
   width: 100%;
-  padding: 2rem;
+  padding: 2.8rem 2rem;
   user-select: none;
 
-  min-height: 50vh;
+  /* min-height: 50vh; */
+  height: auto;
   z-index: 115;
 }
 .bullet {
@@ -177,8 +189,6 @@ strong {
   text-indent: -1.4em;
 
   background-color: transparent;
-
-
 }
 
 /* 
@@ -340,6 +350,8 @@ strong {
     position: -webkit-sticky;
     top: 5.4rem;
     z-index: 115;
+
+    height: auto;
   }
   .bullet {
     width: 60%;
@@ -377,7 +389,7 @@ strong {
     width: 100%;
   
     /* background-color: white !important; */
-    border: 3px solid dotted red !important;
+    /* border: 3px solid dotted red !important; */
 
     display: flex;
     justify-content: center;
@@ -405,14 +417,58 @@ strong {
     user-select: none;
 
     /* background-color: white !important; */
-    background-color: red;
+    /* background-color: red; */
 
     z-index: 119;
   }
+
+  .educationContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(206, 206, 206);
+    min-height: 45vh;
+    z-index: 115;
+  }
+  .educationContainer > .company {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(206, 206, 206);
+    /* min-height: 60vh; */
+    z-index: 115;
+
+    position: sticky;
+    position: -webkit-sticky; 
+    top: 126px;
+  }
+  .bulletContainer.eduBullet{
+    min-height: 0;
+    /* background-color: blue; */
+    height: 25vh !important;
+  }
+
 }
 
 /* T A B L E T */
-@media only screen and (min-width: 601px) and (max-width: 1200px) {
+@media only screen and (min-width: 601px) and (max-width: 1420px) {
+  .bulletContainer {
+    display: flex;
+    flex-direction: column;
+  
+    width: 100%;
+    padding: 2rem;
+    user-select: none;
+  
+    min-height: 0vh;
+    height: auto;
+    z-index: 115;
+  }
+
   .jobTitle {
     user-select: none;
     text-align: left;
@@ -451,7 +507,7 @@ strong {
     padding-top: 1rem;
     z-index: 119;
 
-    background-color: yellow;
+    /* background-color: yellow; */
   }
 
   .company {
@@ -470,7 +526,21 @@ strong {
     /* background-color: white !important; */
     z-index: 119;
 
-    background-color: yellow !important;
+    /* background-color: yellow !important; */
 
+  }
+  .educationContainer > .company {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(206, 206, 206);
+    /* min-height: 60vh; */
+    z-index: 115;
+
+    position: sticky;
+    position: -webkit-sticky; 
+    top: 175px;
   }
 }
