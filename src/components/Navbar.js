@@ -24,9 +24,10 @@ const Navbar = (props) => {
       onMouseLeave={props.textLeaveLogo}
     >
       <div className="name-logo" onClick={()=>navigateToHome()}>
-        <h4>AWSHAF ___</h4>
-        <h4 className="ishtiaque">ISHTIAQUE</h4>
+        <h4 className="firstName">AWSHAF__</h4>
+        <h4 className="lastName">ISHTIAQUE</h4>
       </div>
+
       <div className="menu">
         <h4
           onClick={() => {

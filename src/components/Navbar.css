@@ -2,14 +2,10 @@
 
 nav {
   cursor: none;
-  /* height: 6.5rem; */
   height: 104px;
   width: 100vw;
-  font-size: 1vw;
 
-  position: fixed;   
-  /* position: sticky;
-  position: -webkit-sticky; */
+  position: fixed;
   top: 0;
   left: 0;
 
@@ -20,13 +16,11 @@ nav {
   padding-left: 1rem;
   padding-right: 1rem;
 
-
   color: var(--main-white-color);
   background-color: black;
   z-index: 120;
-  
+
   transition: all ease 1s;
-  /* opacity: 0.6; */
 }
 .navOnWhite {
   color: black;
@@ -37,10 +31,6 @@ nav {
   width: 3.1rem;
   height: 3.1rem;
 }
-.ishtiaque {
-  letter-spacing: 0.1rem;
-}
-
 .name-logo,
 menu {
   box-sizing: border-box;
@@ -50,16 +40,41 @@ menu {
 .menu {
   margin-right: 3%;
 }
+.name-logo {
+  font-size: 1vw;
 
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.firstName,
+.lastName {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* P H O N E */
 @media only screen and (max-width: 600px) {
   .name-logo {
     font-size: 2.5vw;
     margin-left: 0.8rem;
-    padding-left: 1.3rem ;
-  }  
+    padding-left: 1.3rem;
+  }
 
   .hambergerMenu {
     width: 2.1rem;
     height: 2.1rem;
+  }
+}
+
+/* T A B L E T */
+@media only screen and (min-width: 601px) and (max-width: 1100px) {
+  .name-logo {
+    font-size: 2vw;
+    margin-left: 0.8rem;
+    padding-left: 1.3rem;
   }
 }
