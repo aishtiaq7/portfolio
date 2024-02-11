@@ -44,8 +44,7 @@ strong {
   align-items: flex-start;
   flex-direction: column;
 
-  background-color: orange;
-  padding: 3rem 2.2rem;
+  /* padding: 3rem 2.2rem; */
 
   min-height: 300vh;
 }
@@ -91,16 +90,18 @@ strong {
   width: 100%;
 
   height: 153px;
-  z-index: 119;
+  z-index: 118;
   
 }
 .companyRow{
-  /* background-color: green; */
   position: sticky;
   position: -webkit-sticky; /* Safari */
   top:257px;
   width: 100%;
   background-color: white;
+
+  z-index: 119;
+
 }
 
 .company {
@@ -118,22 +119,22 @@ strong {
 
   position: sticky;
   position: -webkit-sticky; /* Safari */
-  top: 254px;
+  top: 265px;
   z-index: 200;
+
+  border: 3px dotted green !important;
 }
 .positionSticky{
   position: sticky;
   position: -webkit-sticky; /* Safari */
 }
 .parentBulletContainer{
-  /* overflow: hidden; */
-  /* border: 2px solid red; */
   border-radius: 3px;
 
 }
 .bigRow{
   /* background-color: teal !important; */
-  border: 2px solid red;
+  background-color: white;
 }
 
 .EachBulletObject{
@@ -158,7 +159,7 @@ strong {
   user-select: none;
 
   min-height: 50vh;
-  
+  z-index: 115;
 }
 .bullet {
   width: 60%;
@@ -292,6 +293,7 @@ strong {
   z-index: -1;
 }
 
+/* P H O N E  */
 @media only screen and (max-width: 600px) {
   .content {
     line-height: 29px;
@@ -299,7 +301,6 @@ strong {
     font-size: 5.5vw;
     letter-spacing: 1px;
     word-spacing: 5px;
-    /* border: 2px solid red; */
   }
   .doodleFSactive {
     opacity: 1;
@@ -338,6 +339,7 @@ strong {
     position: sticky;
     position: -webkit-sticky;
     top: 5.4rem;
+    z-index: 115;
   }
   .bullet {
     width: 60%;
@@ -347,5 +349,128 @@ strong {
     padding: 0.8rem;
 
     align-self: flex-end;
+  }
+
+  .jobTitle {
+    user-select: none;
+    text-align: left;
+    font-size: 5.6vw;
+  
+    position: sticky;
+    position: -webkit-sticky; /* Safari */
+    top:101px; /* cuz 104= 6.5rem (navbar) */
+  
+    width: 100%;
+  
+    height: 83px;
+    z-index: 119;
+    /* background-color: rgb(255, 161, 161); */
+    background-color: transparent;
+    opacity: 1;
+    
+  }
+  .companyRow{
+    /* background-color: green; */
+    position: sticky;
+    position: -webkit-sticky; 
+    top: 116px;
+    width: 100%;
+  
+    /* background-color: white !important; */
+    border: 3px solid dotted red !important;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+
+    padding: 0;
+    margin: 0;
+    height: 4rem;
+    padding-top: 1rem;
+    z-index: 119;
+  }
+
+  .company {
+    font-size: 4.4vw;
+    font-weight: 300;
+    width: 100%;
+    text-align: center;
+  
+    color: rgb(63, 69, 122);
+    text-decoration: none;
+  
+    margin: 1.5rem;
+    /* margin-top: 12rem; */
+    user-select: none;
+
+    /* background-color: white !important; */
+    background-color: red;
+
+    z-index: 119;
+  }
+}
+
+/* T A B L E T */
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+  .jobTitle {
+    user-select: none;
+    text-align: left;
+    font-size: 5.6vw;
+  
+    position: sticky;
+    position: -webkit-sticky; /* Safari */
+    top:101px; /* cuz 104= 6.5rem (navbar) */
+  
+    width: 100%;
+  
+    height: 83px;
+    z-index: 119;
+    /* background-color: rgb(255, 161, 161); */
+    background-color: white ;
+    opacity: 1;
+    
+  }
+  .companyRow{
+    position: sticky;
+    position: -webkit-sticky; 
+    top: 175px;
+    width: 100%;
+  
+    /* border: 3px solid black; */
+    background-color: white !important;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+
+    padding: 0;
+    margin: 0;
+    height: 4rem;
+    padding-top: 1rem;
+    z-index: 119;
+
+    background-color: yellow;
+  }
+
+  .company {
+    font-size: 4.4vw;
+    font-weight: 300;
+    width: 100%;
+    text-align: center;
+  
+    color: rgb(63, 69, 122);
+    text-decoration: none;
+  
+    margin: 1.5rem;
+    /* margin-top: 12rem; */
+    user-select: none;
+
+    /* background-color: white !important; */
+    z-index: 119;
+
+    background-color: yellow !important;
+
   }
 }

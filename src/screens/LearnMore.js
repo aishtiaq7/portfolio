@@ -382,7 +382,7 @@ const LearnMore = (props) => {
               {/* <h2 className="jobTitle">Education</h2> */}
               <div className="bigRow">
                 <h2 className="jobTitle">Education EXAMPLE</h2>
-                {bulletData
+                {/* {bulletData
                   .filter((item) => item.category === "Digitec Projects")
                   .map((singleBullet, index) => {
                     return (
@@ -394,7 +394,7 @@ const LearnMore = (props) => {
                         bullets={singleBullet.bullets}
                       />
                     );
-                  })}
+                  })} */}
               </div>
 
               {/* <div className="educationContainer">
