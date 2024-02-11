@@ -266,12 +266,12 @@ const LearnMore = (props) => {
     };
     window.addEventListener("mousemove", mouseMove);
     AOS.init({
-      offset: 550,
+      offset: 30,
       duration: 500,
       easing: "ease-in-sine",
-      once: false,
-      mirror: true,
-      delay: 100,
+      once: true,
+      mirror: false,
+      delay: 25,
     });
     AOS.refresh();
     setCurrentUrl(window.location.href);
@@ -387,7 +387,7 @@ const LearnMore = (props) => {
                     id="schoolName"
                     href="https://www.sfu.ca/"
                     className="company"
-                    // data-aos="zoom-out"
+                    data-aos="zoom-out"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -405,7 +405,7 @@ const LearnMore = (props) => {
                 <div className="bulletContainer eduBullet">
                   <h3
                     className="bullet"
-                    // data-aos="zoom-out-left"
+                    data-aos="zoom-out-left"
                     data-aos-offset={50}
                     onMouseEnter={() => dispatch(setCursorStyle("text"))}
                     onMouseLeave={() => dispatch(setCursorStyle("default"))}
@@ -414,7 +414,7 @@ const LearnMore = (props) => {
                   </h3>
                   <h3
                     className="bullet"
-                    // data-aos="zoom-out-left"
+                    data-aos="zoom-out-left"
                     data-aos-offset={100}
                     onMouseEnter={() => dispatch(setCursorStyle("text"))}
                     onMouseLeave={() => dispatch(setCursorStyle("default"))}
@@ -461,12 +461,13 @@ const WorkExperienceItem = ({
 
         <div className="bulletContainer">
           {bullets.map((bullet, index) => {
-            const offset = 100 + index * 50;
+            const offset = 0 + index * 15;
+            // const offset = 0;
             return (
               <li
                 className="bullet"
-                // data-aos="zoom-out-left"
-                // data-aos-offset={offset}
+                data-aos="zoom-out-left"
+                data-aos-offset={offset}
                 key={bullet}
                 onMouseEnter={() => dispatch(setCursorStyle("text"))}
                 onMouseLeave={() => dispatch(setCursorStyle("default"))}

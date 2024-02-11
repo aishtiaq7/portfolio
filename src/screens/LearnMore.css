@@ -476,7 +476,7 @@ strong {
   
     position: sticky;
     position: -webkit-sticky; /* Safari */
-    top:101px; /* cuz 104= 6.5rem (navbar) */
+    top:104px; /* cuz 104= 6.5rem (navbar) */
   
     width: 100%;
   
@@ -490,7 +490,7 @@ strong {
   .companyRow{
     position: sticky;
     position: -webkit-sticky; 
-    top: 175px;
+    top: 185px;
     width: 100%;
   
     /* border: 3px solid black; */
