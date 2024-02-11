@@ -32,8 +32,9 @@ strong {
   /* overflow-x: hidden; */
 
   background-color: var(--main-white-color);
-
   transition: all 1.3s ease;
+
+  overflow-x: clip;
 }
 
 .paraContainers {
