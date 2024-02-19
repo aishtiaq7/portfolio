@@ -91,7 +91,7 @@ export const Section = (props) => {
       className="about-section"
       ref={props.innerRef ? props.innerRef : ""}
     >
-      <div className="second-section" ref={props.aboutSectionInView_Ref}>
+      <div className="second-section" ref={props.aboutSectionInViewRef ? props.aboutSectionInViewRef : ""}>
         <SectionBanner section={"About"} isLightTheme={false} />
 
         <div className="container">
