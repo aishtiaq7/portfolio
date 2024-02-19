@@ -23,13 +23,12 @@ export const Section = (props) => {
   const options = { threshold: 0.6, triggerOnce: false };
   const [inViewRef, inView] = useInView(options);
 
-  
   //vara handwriting for AWSHAF text
   const [AwshafRef, AwshafinView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
   });
-  // eslint-disable-next-line 
+  // eslint-disable-next-line
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const spacing = screenWidth > 600 ? 55 : 0;
   const fontsizing = screenWidth > 600 ? 40 : 17;
@@ -75,7 +74,7 @@ export const Section = (props) => {
       );
       vara.ready();
     }
-    // eslint-disable-next-line 
+    // eslint-disable-next-line
   }, [AwshafinView, fontsizing, spacing]);
   useEffect(() => {
     AOS.init();
@@ -92,7 +91,7 @@ export const Section = (props) => {
       className="about-section"
       ref={props.innerRef ? props.innerRef : ""}
     >
-      <div className="second-section">
+      <div className="second-section" ref={props.aboutSectionInView_Ref}>
         <SectionBanner section={"About"} isLightTheme={false} />
 
         <div className="container">
@@ -106,7 +105,7 @@ export const Section = (props) => {
             onMouseEnter={props.textEnter}
             onMouseLeave={props.textLeave}
           >
-            <div className="greetingsTitle">
+            <div className="greetingsTitle" >
               <h3
                 data-aos="zoom-in-left"
                 data-aos-once="false"
@@ -126,33 +125,44 @@ export const Section = (props) => {
                   id="myVaraText"
                   ref={AwshafRef}
                 ></span>
-                <br></br>
-                I would like to describe myself as a collaborative & solution-driven software developer with {" "}
+                <br></br>I would like to describe myself as a collaborative &
+                solution-driven software developer with{" "}
                 <AnimatedNumber
                   value={inView ? 3 : 0}
                   formatValue={formatValue}
                   duration={1900}
                 />
-                + years of experience in building and deploying full-stack applications. I recently graduated from Simon Fraser University with a bachelor's degree in computer science.
+                + years of experience in building and deploying full-stack
+                applications. I recently graduated from Simon Fraser University
+                with a bachelor's degree in computer science.
               </h3>
               <br></br>
               <h3>
                 As a co-founder of{" "}
                 <span className="bold">
-                  <a className="bold" href="https://www.digitecinnovation.ca/" rel="noreferrer" target="_blank">
+                  <a
+                    className="bold"
+                    href="https://www.digitecinnovation.ca/"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
                     Digitec Innovation
                   </a>
                 </span>
-                , I excel in orchestrating B2B client relationships, 
-                guiding the architectural design of sophisticated web solutions, and leading projects from strategic inception through to successful deployment and proactive maintenance.
+                , I excel in orchestrating B2B client relationships, guiding the
+                architectural design of sophisticated web solutions, and leading
+                projects from strategic inception through to successful
+                deployment and proactive maintenance.
                 <br></br>
                 <br></br>
-                My passion lies in devising software solutions that streamline and enrich everyday experiences, and my knowledge of
-                programming and web development has empowered me to express my
-                creativity and skills to achieve this goal!
+                My passion lies in devising software solutions that streamline
+                and enrich everyday experiences, and my knowledge of programming
+                and web development has empowered me to express my creativity
+                and skills to achieve this goal!
                 <br></br>
                 <br></br>
-                Join me on this digital journey as we explore software innovation & my narrative.
+                Join me on this digital journey as we explore software
+                innovation & my narrative.
               </h3>
             </div>
 

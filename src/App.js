@@ -47,6 +47,7 @@ function App() {
   const { ref, inView } = useInView(options); // for the 1st white section
   const inputRef = ref;
   const [ref2, inView2] = useInView(options); // for the 2nd white section
+  const [aboutSectionInView_Ref, aboutSectionInvView] = useInView(options); // for the 2nd white section
 
   const [mattersRef, inViewMatters] = useInView(options); // for the 2nd white section
   const [mattersKey, setMattersKey] = useState(Math.random());
@@ -186,7 +187,8 @@ function App() {
       <Navbar
         offset={offset}
         invertNavColor={inView}
-        invertNavColor2={inView2}
+        invertNavColor2={(inView2)}
+        aboutSectionInView={aboutSectionInvView}
         textEnterLogo={() => setCursorStyleFunction("logo")}
         textLeaveLogo={() => setCursorStyleFunction("default")}
         setShowFullScreenNav={setShowFullScreenNav}
@@ -331,6 +333,7 @@ function App() {
 
       {/* About Section  */}
       <Section
+        aboutSectionInViewRef={aboutSectionInView_Ref}
         offset={offset}
         innerRef={inputRef}
         textEnter={() => setCursorStyleFunction("text")}
