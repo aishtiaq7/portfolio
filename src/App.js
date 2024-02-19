@@ -43,11 +43,12 @@ function App() {
   const [showFullScreenNav, setShowFullScreenNav] = useState(false); // show/Hide Full Scren Nav Bar
 
   // Changing navbar color on different sections
-  const options = { threshold: 0.6 };
+  const options = { threshold: 0.3 };
   const { ref, inView } = useInView(options); // for the 1st white section
   const inputRef = ref;
   const [ref2, inView2] = useInView(options); // for the 2nd white section
   const [aboutSectionInView_Ref, aboutSectionInvView] = useInView(options); // for the 2nd white section
+  // console.log('aboutSectionInView:', aboutSectionInvView)
 
   const [mattersRef, inViewMatters] = useInView(options); // for the 2nd white section
   const [mattersKey, setMattersKey] = useState(Math.random());

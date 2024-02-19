@@ -15,10 +15,12 @@ const Navbar = (props) => {
   //   console.log('used onclick');
   // }
 
+    console.clear();
+    // console.log('aboutSectionInview?', props.aboutSectionInView);
   return (
     <nav
       className={
-        props.invertNavColor || props.invertNavColor2 ? "navOnWhite" : ""
+        props.aboutSectionInView || props.invertNavColor || props.invertNavColor2 ? "navOnWhite" : ""
       }
       onMouseEnter={props.textEnterLogo}
       onMouseLeave={props.textLeaveLogo}
