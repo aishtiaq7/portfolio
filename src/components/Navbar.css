@@ -1,13 +1,17 @@
 /* ---------- navbar ------------ */
 
 nav {
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top:0px; /* cuz 104= 6.5rem (navbar) */
+
   cursor: none;
   height: 104px;
   width: 100vw;
 
-  position: fixed;
-  top: 0;
-  left: 0;
+  /* position: fixed; */
+  /* top: 0;
+  left: 0; */
 
   display: flex;
   align-items: center;

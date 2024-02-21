@@ -96,9 +96,10 @@ export const Section = (props) => {
 
         <div className="container">
           <div
+            id="aboutSectionBorderBox"
             className="largeText"
             style={{
-              marginTop: "8rem",
+              // marginTop: "8rem",
               border: "2px solid black",
               transform: `translateY(${props.offset * parallaxSpeedValue}px)`,
             }}
@@ -222,11 +223,11 @@ export const DarkSection = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <section id="projects" className="dark-section largeText">
+    <section id="projects" className="dark-section ">
       <SectionBanner section={"Projects"} isLightTheme={true} />
 
       <div className="container">
-        <div className="projectsContent">
+        <div className="projectsContent largeText">
           <h1 className="greetingsTitle">
             Here are some of my <u>running</u> projects...
           </h1>

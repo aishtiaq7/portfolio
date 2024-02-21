@@ -15,7 +15,6 @@ const Navbar = (props) => {
   //   console.log('used onclick');
   // }
 
-    console.clear();
     // console.log('aboutSectionInview?', props.aboutSectionInView);
   return (
     <nav
