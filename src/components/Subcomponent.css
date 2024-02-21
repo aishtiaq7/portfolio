@@ -263,8 +263,11 @@
   justify-content: center;
   align-items: center;
 
-  -webkit-filter: drop-shadow(10px 5px 11px #838383);
-  filter: drop-shadow(10px 5px 11px #838383);
+  /* -webkit-filter: drop-shadow(10px 5px 11px #838383);
+  filter: drop-shadow(10px 5px 11px #838383); */
+
+  -webkit-filter: drop-shadow(-2px 3px 14px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(-2px 3px 14px rgba(0, 0, 0, 0.4));
 
   position: sticky;
   position: -webkit-sticky;
@@ -290,8 +293,12 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 
-  -webkit-filter: drop-shadow(10px 5px 11px #838383);
-  filter: drop-shadow(2px 1px 8px #d0d0d0 0);
+  /* -webkit-filter: drop-shadow(10px 5px 11px #838383);
+  filter: drop-shadow(2px 1px 8px #d0d0d0 0); */
+
+  -webkit-filter: drop-shadow(-2px 3px 14px rgba(252, 252, 252, 0.4));
+  filter: drop-shadow(-2px 3px 14px rgba(252, 252, 252, 0.4));
+  
 
   position: sticky;
   position: -webkit-sticky;
@@ -758,8 +765,9 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 
-    -webkit-filter: drop-shadow(10px 5px 11px #838383);
-    filter: drop-shadow(2px 1px 8px rgba(208, 208, 208, 0.5) 0);
+    -webkit-filter: drop-shadow(-2px 3px 14px rgba(250, 250, 250, 0.4));
+    filter: drop-shadow(-2px 3px 14px rgba(250, 250, 250, 0.4));
+    
     padding-bottom: 0rem;
   }
   .ribbon-dark {
