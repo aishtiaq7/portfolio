@@ -411,7 +411,7 @@ export const InterestSection = (props) => {
         <div className="projectsBanner">
           <SectionBanner section={"Hobbies"} isLightTheme={false} />
         </div>
-        <div className="largeText">
+        <div className="largeText" id="interestBox">
           <div className="container">
             <h1 className="greetingsTitle">
               My <u></u>interests ??

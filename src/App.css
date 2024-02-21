@@ -84,7 +84,6 @@ body {
   transform: translateY(20px);
 }
 
-
 article {
   min-height: 110vh;
   background-color: var(--main-white-color);
@@ -343,8 +342,6 @@ article {
   }
 }
 
-
-
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
   .AwshafContent {
@@ -482,6 +479,8 @@ article {
     /* padding: 1rem; */
     margin-top: -9rem;
     /* border: 2px solid red; */
+    margin-bottom: 6rem;
+    padding-bottom: 2rem;
   }
 
   .closeBtn {

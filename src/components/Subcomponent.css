@@ -20,7 +20,6 @@
   align-items: center; */
 
   position: relative;
-
 }
 .bold {
   font-weight: 800 !important;
@@ -77,16 +76,21 @@
 }
 .projectsBanner {
   position: sticky;
-  position: -webkit-sticky; 
-  top:104px; 
+  position: -webkit-sticky;
+  top: 104px;
 }
 .projectsContent {
-  padding-top: 4rem;
+  /* padding-top: 4rem; */
   /* background-color: blue; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 0rem;
+  
+
+  /* border: 2px solid orange; */
+  transform: translateY(-15%);
 }
 
 .coloredBtn {
@@ -178,7 +182,6 @@
   filter: blur(0px);
 }
 
-
 .greetingsTitle {
   padding-top: 2rem;
   font-family: "Oleo Script", cursive;
@@ -217,21 +220,20 @@
 
 .section-banner {
   position: sticky;
-  position: -webkit-sticky; 
-  top:109px; 
+  position: -webkit-sticky;
+  top: 104px;
 
-  border: 2px solid red;  
+  /* border: 2px solid red;   */
 
   z-index: 119;
   pointer-events: none;
-
 }
 
 .about-title {
   writing-mode: vertical-lr;
   text-orientation: upright;
   font-size: var(--large-title);
-  letter-spacing: 0.7rem;
+  letter-spacing: 0.1rem;
   font-family: var(--content-font-family);
   font-size: var(--content-font-size);
   font-weight: 600;
@@ -246,7 +248,7 @@
   /* margin: 0; */
   /* margin-top: -5%; */
   width: 0px;
-  min-height: 25rem;
+  min-height: 18rem;
   background-color: transparent;
 
   border: solid 35px #000000;
@@ -271,27 +273,13 @@
 }
 
 .ribbon-dark {
-  /* width: 0px;
-  min-height: 25rem;
-  background-color: transparent;
-
-  border: solid 20px #000000;
-  border-bottom: solid 15px transparent;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-
-
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-
   color: var(--main-white-color);
 
-  /* -webkit-filter: drop-shadow(10px 5px 11px #838383);
-  filter: drop-shadow(10px 5px 11px #838383); */
   position: sticky;
   position: -webkit-sticky;
+
   top: 104px;
+  padding-bottom: 1.8rem;
 }
 
 .ribbon-light {
@@ -308,6 +296,7 @@
   position: sticky;
   position: -webkit-sticky;
   top: 104px;
+  padding-bottom: 1.8rem;
 }
 
 /* ----------
@@ -400,8 +389,7 @@
   height: 30%;
   width: 100%;
 
-  animation: autoSlide 4.3s cubic-bezier(.35, 0, .65, 1) infinite forwards;
-
+  animation: autoSlide 4.3s cubic-bezier(0.35, 0, 0.65, 1) infinite forwards;
 }
 
 .icon {
@@ -448,13 +436,16 @@
   user-select: none;
   cursor: none;
   width: 100vw;
-  min-height: 120vh;
+  /* min-height: 80vh; */
   background: rgb(239, 239, 239);
 
   position: relative;
   color: black;
 
   /* padding-top: 7%; */
+}
+#interestBox{
+  transform: translateY(-25%);
 }
 .stroke-svg {
   max-height: 15rem;
@@ -636,7 +627,7 @@
     width: 85%;
     text-align: center;
   }
-
+  
   .projectsContent {
     padding-top: 4rem;
     /* background-color: blue; */
@@ -644,6 +635,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    /* border: 2px solid red; */
+    transform: translateY(0%);
   }
   .greetingsTitle {
     padding-top: 0rem;
@@ -706,23 +700,21 @@
   */
   .projectsBanner {
     position: sticky;
-    position: -webkit-sticky; 
-    top:109px; 
-
+    position: -webkit-sticky;
+    top: 104px;
   }
-  
 
   .section-banner {
     position: sticky;
-    position: -webkit-sticky; 
-    top:104px; 
+    position: -webkit-sticky;
+    top: 104px;
     left: 0px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    border:  2px  solid greenyellow;
+    /* border: 2px solid greenyellow; */
 
     transform: translateY(-150%);
     /* margin-bottom: -15rem; */
@@ -740,7 +732,6 @@
     top: 0%;
     left: 0%;
     transform: translateX(-50%) translateY(-170%);
-
   }
 
   .ribbon {
@@ -769,9 +760,13 @@
 
     -webkit-filter: drop-shadow(10px 5px 11px #838383);
     filter: drop-shadow(2px 1px 8px rgba(208, 208, 208, 0.5) 0);
+    padding-bottom: 0rem;
+  }
+  .ribbon-dark {
+    padding-bottom: 0rem;
   }
 
-  .interestSection {
-    padding-top: 10;
+  #interestBox{
+    transform: translateY(0%);
   }
 }
