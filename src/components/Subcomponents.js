@@ -133,8 +133,7 @@ export const Section = (props) => {
                   formatValue={formatValue}
                   duration={1900}
                 />
-                + years of experience in building and deploying full-stack
-                applications. I recently graduated from Simon Fraser University
+                + years of experience in full-stack development & cloud computing. I recently graduated from Simon Fraser University
                 with a bachelor's degree in computer science.
               </h3>
               <br></br>
@@ -150,7 +149,7 @@ export const Section = (props) => {
                     Digitec Innovation
                   </a>
                 </span>
-                , I excel in orchestrating B2B client relationships, guiding the
+                , I've led the development of various projects which have honed my abilities in orchestrating B2B client relationships, guiding the
                 architectural design of sophisticated web solutions, and leading
                 projects from strategic inception through to successful
                 deployment and proactive maintenance.
