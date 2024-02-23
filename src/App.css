@@ -452,10 +452,12 @@ article {
 
   .landingTitle {
     width: 100vw;
-    height: 50%;
+    height: 40%;
     /* border:  red 3px solid; */
 
     text-align: center;
+    margin-bottom: 1rem;
+    /* border: 2px solid yellow; */
   }
   .landingText {
     font-size: 6vw;
