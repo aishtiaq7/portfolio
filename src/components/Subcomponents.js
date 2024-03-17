@@ -91,10 +91,10 @@ export const Section = (props) => {
       className="about-section"
       ref={props.innerRef ? props.innerRef : ""}
     >
+      <div ref={props.myref}></div>
       <div className="second-section" ref={props.aboutSectionInViewRef ? props.aboutSectionInViewRef : ""}>
         <SectionBanner section={"About"} isLightTheme={false} />
-
-        <div className="container">
+        <div className="container" >
           <div
             id="aboutSectionBorderBox"
             className="largeText"
@@ -514,6 +514,7 @@ export const InterestSection = (props) => {
           </div>
         </div>
       </div>
+      <div ref={props.contactRef} className="invisibleRef"></div>
     </section>
   );
 };

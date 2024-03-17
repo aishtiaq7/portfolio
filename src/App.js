@@ -31,6 +31,10 @@ import {
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const contactRef = useRef(null);
+
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   //Cursor Change logic
@@ -164,201 +168,235 @@ function App() {
       );
     });
   };
+
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (isLoaded && targetId) {
+      let selectedRef;
+      switch (targetId) {
+        case "home":
+          selectedRef = homeRef;
+          break;
+        case "about":
+          selectedRef = aboutRef;
+          break;
+        case "contact":
+          selectedRef = contactRef;
+          break;
+        default:
+          console.log(`No ref found for ${targetId}`);
+          return;
+      }
+
+      if (selectedRef && selectedRef.current) {
+        selectedRef.current.scrollIntoView({ behavior: "smooth" });
+      } else {
+        console.log(`Ref for ${targetId} not found or not current.`);
+      }
+    }
+  }, [targetId, isLoaded]);
+
   return (
     <div>
       {isLoading ? (
         <div className="loading">
-        <div className="loading-text">
-          <span className="loading-text-words">L</span>
-          <span className="loading-text-words">O</span>
-          <span className="loading-text-words">A</span>
-          <span className="loading-text-words">D</span>
-          <span className="loading-text-words">I</span>
-          <span className="loading-text-words">N</span>
-          <span className="loading-text-words">G</span>
+          <div className="loading-text">
+            <span className="loading-text-words">L</span>
+            <span className="loading-text-words">O</span>
+            <span className="loading-text-words">A</span>
+            <span className="loading-text-words">D</span>
+            <span className="loading-text-words">I</span>
+            <span className="loading-text-words">N</span>
+            <span className="loading-text-words">G</span>
+          </div>
         </div>
-      </div>
       ) : (
         <div>
-      <ScrollToTop />
-      <FullScreenNav
-        showFullScreenNav={showFullScreenNav}
-        setShowFullScreenNav={setShowFullScreenNav}
-      ></FullScreenNav>
-      <Navbar
-        offset={offset}
-        invertNavColor={inView}
-        invertNavColor2={(inView2)}
-        aboutSectionInView={aboutSectionInvView}
-        textEnterLogo={() => setCursorStyleFunction("logo")}
-        textLeaveLogo={() => setCursorStyleFunction("default")}
-        setShowFullScreenNav={setShowFullScreenNav}
-        showFullScreenNav={showFullScreenNav}
-      ></Navbar>
+          <ScrollToTop />
+          <FullScreenNav
+            showFullScreenNav={showFullScreenNav}
+            setShowFullScreenNav={setShowFullScreenNav}
+          ></FullScreenNav>
+          <Navbar
+            offset={offset}
+            invertNavColor={inView}
+            invertNavColor2={inView2}
+            aboutSectionInView={aboutSectionInvView}
+            textEnterLogo={() => setCursorStyleFunction("logo")}
+            textLeaveLogo={() => setCursorStyleFunction("default")}
+            setShowFullScreenNav={setShowFullScreenNav}
+            showFullScreenNav={showFullScreenNav}
+          ></Navbar>
 
-      <motion.div
-        className="cursor"
-        variants={returnCursorVariant(curPosition)}
-        animate={curVar}
-      />
+          <motion.div
+            className="cursor"
+            variants={returnCursorVariant(curPosition)}
+            animate={curVar}
+          />
 
-      {globalStates.modalIsOpen && (
-        <section className="rodalSection">
-          <Rodal
-            animation="flip"
-            duraiont={550}
-            visible={globalStates.modalIsOpen}
-            onClose={() => {
-              dispatch(setIsModalOpen(false));
-              dispatch(setModalContent({}));
-            }}
-            customStyles={customStyles}
-          >
-            <div
-              ref={rodalRef}
-              className="rodal-parent flex-row"
-              onMouseEnter={() => {
-                dispatch(setCursorStyle("modalEnter"));
-              }}
-              onMouseLeave={() => {
-                dispatch(setCursorStyle("default"));
-              }}
-            >
-              <div className="modal-subSection titleStyles">
-                <h2>{rodalContent.title}</h2>
-                <h1
-                  className="closeModalButton"
+          {globalStates.modalIsOpen && (
+            <section className="rodalSection">
+              <Rodal
+                animation="flip"
+                duraiont={550}
+                visible={globalStates.modalIsOpen}
+                onClose={() => {
+                  dispatch(setIsModalOpen(false));
+                  dispatch(setModalContent({}));
+                }}
+                customStyles={customStyles}
+              >
+                <div
+                  ref={rodalRef}
+                  className="rodal-parent flex-row"
                   onMouseEnter={() => {
-                    dispatch(setCursorStyle("crossEnter"));
-                  }}
-                  onMouseLeave={() => {
                     dispatch(setCursorStyle("modalEnter"));
                   }}
-                  onClick={()=>{
-                    dispatch(setIsModalOpen(false));
+                  onMouseLeave={() => {
                     dispatch(setCursorStyle("default"));
                   }}
                 >
-                  X
-                </h1>
-              </div>
+                  <div className="modal-subSection titleStyles">
+                    <h2>{rodalContent.title}</h2>
+                    <h1
+                      className="closeModalButton"
+                      onMouseEnter={() => {
+                        dispatch(setCursorStyle("crossEnter"));
+                      }}
+                      onMouseLeave={() => {
+                        dispatch(setCursorStyle("modalEnter"));
+                      }}
+                      onClick={() => {
+                        dispatch(setIsModalOpen(false));
+                        dispatch(setCursorStyle("default"));
+                      }}
+                    >
+                      X
+                    </h1>
+                  </div>
 
-              <div className="modal-subSection modalDes">
-                {rodalContent.descriontion}
-              </div>
-              <div className="modal-subSection techStack">
-                {getTechStackRender(rodalContent.tech)}
-              </div>
-              <div className="modal-subSection">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={rodalContent.hyperlink}
-                  className="openProjectLink"
-                  onMouseEnter={()=>{
-                    dispatch(setCursorStyle("hyperLinkEnter"));
-                  }}
-                  onMouseLeave={()=>{
-                    dispatch(setCursorStyle("modalEnter"));
+                  <div className="modal-subSection modalDes">
+                    {rodalContent.descriontion}
+                  </div>
+                  <div className="modal-subSection techStack">
+                    {getTechStackRender(rodalContent.tech)}
+                  </div>
+                  <div className="modal-subSection">
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={rodalContent.hyperlink}
+                      className="openProjectLink"
+                      onMouseEnter={() => {
+                        dispatch(setCursorStyle("hyperLinkEnter"));
+                      }}
+                      onMouseLeave={() => {
+                        dispatch(setCursorStyle("modalEnter"));
+                      }}
+                    >
+                      Open Project
+                    </a>
+                  </div>
+                </div>
+              </Rodal>
+            </section>
+          )}
+
+          {/* Home Section */}
+          <section id="home" ref={homeRef} className="homepage">
+            <div className="landingSection">
+              {/* left component */}
+              <div className="landingTitle">
+                <h3
+                  onMouseEnter={() => setCursorStyleFunction("text")}
+                  onMouseLeave={() => setCursorStyleFunction("default")}
+                  className="landingText"
+                  style={{
+                    transform: `translateY(${offset * parallaxSpeedValue}px)`,
                   }}
                 >
-                  Open Project
-                </a>
+                  On the journey
+                  <br />
+                  to learn & create
+                  <br />
+                  software that{" "}
+                  {/* <span style={{ textDecoration: "underline" }}>matters</span>. */}
+                  <span
+                    ref={mattersRef}
+                    className={`underline-animation ${
+                      inViewMatters ? "in-view" : ""
+                    }`}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 255 32.61"
+                      key={mattersKey}
+                    >
+                      <path
+                        d="M5 14.11s54-8 125-9 120 5 120 5-200.5-5.5-239.5 17.5"
+                        className="strokeWhite"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="10"
+                      />
+                    </svg>
+                    matters
+                  </span>
+                  .
+                </h3>
+              </div>
+
+              {/* right component */}
+              <div
+                className="portraitImg"
+                style={{
+                  transform: `translateY(${offset * 0.3}px)`,
+                }}
+              >
+                <img
+                  onMouseEnter={() => setCursorStyleFunction("portrait")}
+                  onMouseLeave={() => setCursorStyleFunction("text")}
+                  className="selfportrait"
+                  src={require("./resources/landingportrait.png")}
+                  alt="souvenir"
+                />
               </div>
             </div>
-          </Rodal>
-        </section>
-      )}
+          </section>
 
-      {/* Home Section */}
-      <section id="home" className="homepage">
-        <div className="landingSection">
-          {/* left component */}
-          <div className="landingTitle">
-            <h3
-              onMouseEnter={() => setCursorStyleFunction("text")}
-              onMouseLeave={() => setCursorStyleFunction("default")}
-              className="landingText"
-              style={{
-                transform: `translateY(${offset * parallaxSpeedValue}px)`,
-              }}
-            >
-              On the journey
-              <br />
-              to learn & create
-              <br />
-              software that{" "}
-              {/* <span style={{ textDecoration: "underline" }}>matters</span>. */}
-              <span
-                  ref={mattersRef}
-                  className={`underline-animation ${
-                    inViewMatters ? "in-view" : ""
-                  }`}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 255 32.61"
-                    key={mattersKey}
-                  >
-                    <path
-                      d="M5 14.11s54-8 125-9 120 5 120 5-200.5-5.5-239.5 17.5"
-                      className="strokeWhite"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="10"
-                    />
-                  </svg>
-                  matters
-                </span>.
-            </h3>
-          </div>
+          {/* About Section  */}
+          <Section
+            myref={aboutRef}
+            aboutSectionInViewRef={aboutSectionInView_Ref}
+            innerRef={inputRef}
+            offset={offset}
+            textEnter={() => setCursorStyleFunction("text")}
+            textLeave={() => setCursorStyleFunction("default")}
+          ></Section>
 
-          {/* right component */}
-          <div
-            className="portraitImg"
-            style={{
-              transform: `translateY(${offset * 0.3}px)`,
-            }}
-          >
-            <img
-              onMouseEnter={() => setCursorStyleFunction("portrait")}
-              onMouseLeave={() => setCursorStyleFunction("text")}
-              className="selfportrait"
-              src={require("./resources/landingportrait.png")}
-              alt="souvenir"
-            />
-          </div>
+          {/* Projects Section */}
+          <DarkSection
+            textEnter={() => setCursorStyleFunction("cardEnter")}
+            textLeave={() => setCursorStyleFunction("default")}
+            projectsData={cardItem}
+          ></DarkSection>
+
+          {/* Interests Sections */}
+          <InterestSection
+            contactRef={contactRef}
+            innerRef={ref2}
+            onMouseEnter={() => setCursorStyleFunction("tourchEnter")}
+            onMouseLeave={() => setCursorStyleFunction("default")}
+          ></InterestSection>
         </div>
-      </section>
-
-      {/* About Section  */}
-      <Section
-        aboutSectionInViewRef={aboutSectionInView_Ref}
-        offset={offset}
-        innerRef={inputRef}
-        textEnter={() => setCursorStyleFunction("text")}
-        textLeave={() => setCursorStyleFunction("default")}
-      ></Section>
-
-      {/* Projects Section */}
-      <DarkSection
-        textEnter={() => setCursorStyleFunction("cardEnter")}
-        textLeave={() => setCursorStyleFunction("default")}
-        projectsData={cardItem}
-      ></DarkSection>
-
-      {/* Interests Sections */}
-      <InterestSection
-        innerRef={ref2}
-        onMouseEnter={() => setCursorStyleFunction("tourchEnter")}
-        onMouseLeave={() => setCursorStyleFunction("default")}
-      ></InterestSection>
-    </div>
       )}
     </div>
-
-    
   );
 }
 
