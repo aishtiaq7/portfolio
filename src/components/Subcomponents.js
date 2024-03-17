@@ -287,8 +287,6 @@ export const Card = (props) => {
   // eslint-disable-next-line
   const dispatch = useDispatch();
 
-  // console.log('id?:', props.id % 3);
-
   return (
     <div
       key={props.id}

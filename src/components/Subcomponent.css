@@ -90,7 +90,7 @@
   
 
   /* border: 2px solid orange; */
-  transform: translateY(-15%);
+  transform: translateY(-12%);
 }
 
 .coloredBtn {
@@ -687,6 +687,7 @@
   .card {
     width: 18em;
     height: auto;
+    padding-bottom: 0rem;
   }
   .cardTitle {
     margin: 0;
@@ -701,6 +702,7 @@
   }
   .cardDes {
     font-size: 3vw;
+    margin-bottom: 0;
   }
 
   .vertical-line {
