@@ -2,7 +2,7 @@ export const cardItem = [
   {
     id: 1,
     projectName: "E-Commerce Clothing Platform",
-    iconsList: ["react", "nodejs", "gcp", "psql", "docker"],
+    iconsList: ["react", "nodejs", "contentful", "gcp", "psql", "docker"],
     hyperlink: "http://howuniversehowls.ca/",
     des: "Implemented CMS integration for product item inventory and management within a personalized clothing brand's PERN stack e-commerce platform hosted on GCP. Managed PCI standard payments, data handling, and other essential aspects for seamless operation.",
     cursorClass: "lala",
@@ -10,7 +10,7 @@ export const cardItem = [
   {
     id: 9,
     projectName: "Prestigious Power Washing",
-    iconsList: ["next", "redux", "github", "html", "js"],
+    iconsList: ["next","github", "redux",  "html", "js"],
     hyperlink: "https://www.prestigiouspressure.ca/",
     des: "Led the launch of a high-performance Next.js application for Prestigious Pressure Washing Company, boosting online presence through enhanced SEO. Integrated a CRM system for streamlined customer interactions and introduced a unique service estimator tool for instant quotes, setting the business apart in the digital landscape.",
     cursorClass: "lala",
