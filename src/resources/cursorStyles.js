@@ -44,18 +44,19 @@ const returnCursorVariant = (mousePosition) => {
       cursor: "pointer",
     },
     cardEnter: {
-      height: 150,
-      width: 150,
+      height: 175,
+      width: 175,
 
       x: mousePosition.x - 75,
       y: mousePosition.y - 75, // 75 cuz radius is 150
       backgroundColor: "rgba(239, 239, 239, 0.9)",
-      zIndex: "15",
+      zIndex: "29 !important",
+      mixBlendMode: "overlay",
+      border: "2px solid black",
     },
     tourchEnter: {
       height: 150,
       width: 150,
-      
 
       backgroundColor: "rgba(239, 239, 239, 0.9)",
       x: mousePosition.x - 75,
@@ -87,11 +88,9 @@ const returnCursorVariant = (mousePosition) => {
 
       x: mousePosition.x - 35,
       y: mousePosition.y - 35, // 75 cuz radius is 150
-      // background: "transparent",
       backgroundColor: "rgba(239, 239, 239, 0.1)",
 
       border: "5px solid blue",
-      // mixBlendMode: "difference",
     },
     learnMore: {
       height: 150,

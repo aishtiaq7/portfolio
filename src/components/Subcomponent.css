@@ -321,6 +321,7 @@
 
 /* all classes outside media target small screens (below 600px width )*/
 .card {
+  padding-bottom: 2.8rem;
   position: relative;
   width: 9em;
   /* height: 18rem; */
@@ -344,10 +345,10 @@
   align-items: flex-start;
 
   font: var(--content-font-family);
-  /* font-size: var(--content-font-size-phone-view); */
   font-size: 3.8vw;
 
-  z-index: 30;
+/* 
+  z-index: 30 !important; */
 }
 
 .card:hover {
@@ -357,6 +358,7 @@
   -webkit-box-shadow: -15px 13px 34px -15px rgba(255, 255, 255, 0.39);
   transform: scale(1.03) translateY(-8px);
   backdrop-filter: blur(65px);
+  z-index: 30 !important;
 }
 
 @keyframes autoSlide {
@@ -421,11 +423,12 @@
 .cardTitle {
   width: 100%;
   text-align: start;
-
-  font-size: 1.2vw;
+  font-size: 1.6vw;
   font-family: var(--content-font-family);
   font-weight: 600;
   padding: 1rem 1rem;
+  
+  letter-spacing: 1.1px;
 
   background-color: rgb(128, 128, 128, 0.5);
 }
@@ -434,8 +437,9 @@
   width: 100%;
   text-align: start;
   padding: 1.3rem 1.3rem;
-
   font-size: 1.1vw;
+
+  margin-bottom: 1rem;
 }
 
 /* Interests Section */
