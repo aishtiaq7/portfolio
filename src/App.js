@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useLayoutEffect } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
 import Rodal from "rodal";
 import { useLocation } from "react-router-dom";
-
+import gsap from "gsap";
 import FullScreenNav from "./components/FullScreenNav";
 import Navbar from "./components/Navbar";
 import {
@@ -201,6 +201,52 @@ function App() {
     }
   }, [targetId, isLoaded]);
 
+  const comp = useRef(null);
+
+  const [elementsReady, setElementsReady] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setElementsReady(true), 1000); // assuming elements are ready after 1 second
+    return () => clearTimeout(timer);
+  }, []);
+  
+
+  useLayoutEffect(() => {
+    if (!elementsReady) return;
+
+    console.log(document.getElementById("intro-slider"));
+    let ctx = gsap.context(() => {
+      const t1 = gsap.timeline();
+      t1.from("#intro-slider", {
+        xPercent: "-100",
+        duration: 1.3,
+        delay: 1.3,
+      })
+        .from(["#title-1", "#title-2", "#title-3"], {
+          opacity: 0,
+          y: "+=30",
+          stagger: 0.3,
+        })
+        .to(["#title-1", "#title-2", "#title-3"], {
+          opacity: 0,
+          y: "-=30",
+          delay: 0.3,
+          stagger: 0.5,
+        })
+        .to("#intro-slider", {
+          xPercent: "100",
+          duration: 1.3,
+        })
+        // .to("#intro-slider", {
+        //   xPercent: "100",
+        //   duration: 1.3,
+        //   delay: 1.3,
+        // })
+    }, comp);
+
+    return () => ctx.revert();
+  }, [elementsReady]);
+
   return (
     <div>
       {isLoading ? (
@@ -216,7 +262,57 @@ function App() {
           </div>
         </div>
       ) : (
-        <div>
+        <div ref={comp} style={{ position: "relative" }}>
+          {elementsReady && <div
+            id="intro-slider"
+            style={{
+              height: "100vh",
+              padding: "40px",
+              backgroundColor: "#F3F4F6",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              fontFamily: "'Space Grotesk', sans-serif",
+              zIndex: 10,
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              gap: "40px",
+              letterSpacing: "-0.05em",
+            }}
+          >
+            <h1 style={{ fontSize: "9rem" }} id="title-1">
+              Software Engineer
+            </h1>
+            <h1 style={{ fontSize: "9rem" }} id="title-2">
+              Designer
+            </h1>
+            <h1 style={{ fontSize: "9rem" }} id="title-3">
+              Freelancer
+            </h1>
+          </div>}
+
+          <div
+            style={{
+              height: "vh",
+              display: "flex",
+              backgroundColor: "transparent",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <h1
+              id="welcome"
+              style={{
+                fontSize: "9rem",
+                fontWeight: "bold",
+                color: "#F9FAFB",
+                fontFamily: "'Space Grotesk', sans-serif",
+              }}
+            >
+              {/* Welcome. */}
+            </h1>
+          </div>
           <ScrollToTop />
           <FullScreenNav
             showFullScreenNav={showFullScreenNav}
