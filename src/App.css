@@ -364,13 +364,11 @@ article {
 
   cursor: none;
   pointer-events: none;
-
 }
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
   .intro-sliderClass {
-    
     overflow-x: hidden;
     height: 115vh;
     padding: 40px;

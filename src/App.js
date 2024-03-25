@@ -53,7 +53,6 @@ function App() {
   const inputRef = ref;
   const [ref2, inView2] = useInView(options); // for the 2nd white section
   const [aboutSectionInView_Ref, aboutSectionInvView] = useInView(options); // for the 2nd white section
-  // console.log('aboutSectionInView:', aboutSectionInvView)
 
   const [mattersRef, inViewMatters] = useInView(options); // for the 2nd white section
   const [mattersKey, setMattersKey] = useState(Math.random());
@@ -89,10 +88,12 @@ function App() {
     width: `${screenWidth < 600 ? "80%" : "60%"}`,
   };
   const globalStates = useSelector((state) => state.globalStates);
+  const rodalContent = useSelector((state) => state.globalStates.modalContent);
 
   const rodalRef = useRef();
 
   useEffect(() => {
+    //scrolling to target section from fs navbar.
     const el = document.getElementById(targetId);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -106,28 +107,22 @@ function App() {
         })
       );
     };
-    const onScroll = () => {
-      setOffset(window.pageYOffset);
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("mousemove", mouseMove);
     setCurrentUrl(window.location.href);
-
+    const onScroll = () => {setOffset(window.pageYOffset);};
     const handleClickOutside = (event) => {
       if (rodalRef.current && !rodalRef.current.contains(event.target)) {
         dispatch(setIsModalOpen(false));
       }
     };
-    document.addEventListener("mousedown", handleClickOutside);
-
-    // Event listener to update the state when the screen size changes
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
       dispatch(updateScreenWidth(window.innerWidth));
     };
-
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("mousemove", mouseMove);
+    document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("scroll", onScroll);
@@ -141,27 +136,15 @@ function App() {
   //spinner loading timeout
   const [isLoading, setIsLoading] = useState(true);
   const isFirstLoadDone = localStorage.getItem("isFirstLoadingDone");
+  const [isLoaded, setIsLoaded] = useState(false); //to check wheather all content has been loaded or not
 
   const [startGSAPAnimation, setStartGSAPAnimation] = useState(false);
-
-  useEffect(() => {
-    if (isFirstLoadDone) {
-      setIsLoading(false);
-    } else {
-      setTimeout(() => {
-        setIsLoading(false);
-        localStorage.setItem("isFirstLoadingDone", "true");
-      }, 2400);
-    }
-  }, [isFirstLoadDone]);
 
   const setCursorStyleFunction = (style) => {
     dispatch(setCursorStyle(style));
   };
 
   const parallaxSpeedValue = 0.35;
-
-  const rodalContent = useSelector((state) => state.globalStates.modalContent);
 
   const getTechStackRender = (stackArray) => {
     return stackArray.map((item, index) => {
@@ -173,7 +156,6 @@ function App() {
     });
   };
 
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -218,7 +200,9 @@ function App() {
     () => {
       if (!elementsReady) return;
       const t1 = gsap.timeline({
-        onComplete: () => setMattersKey((prevKey) => prevKey + 1), // Increment mattersKey to trigger the next animation
+        onComplete: () => {
+          setMattersKey((prevKey) => prevKey + 1);
+        },
       });
       t1.from("#intro-slider", {
         xPercent: "-100",
@@ -268,13 +252,13 @@ function App() {
       {isLoading ? (
         <div className="loading">
           <div className="loading-text">
-            <span className="loading-text-words">L</span>
-            <span className="loading-text-words">O</span>
             <span className="loading-text-words">A</span>
-            <span className="loading-text-words">D</span>
-            <span className="loading-text-words">I</span>
-            <span className="loading-text-words">N</span>
-            <span className="loading-text-words">G</span>
+            <span className="loading-text-words">W</span>
+            <span className="loading-text-words">S</span>
+            <span className="loading-text-words">H</span>
+            <span className="loading-text-words">A</span>
+            <span className="loading-text-words">F</span>
+            <span className="loading-text-words">. C O M</span>
           </div>
         </div>
       ) : (
@@ -289,7 +273,7 @@ function App() {
 
           <div
             style={{
-              height: "vh",
+              // height: "vh",
               display: "flex",
               backgroundColor: "transparent",
               justifyContent: "center",
@@ -416,7 +400,6 @@ function App() {
                   to learn & create
                   <br />
                   software that{" "}
-                  {/* <span style={{ textDecoration: "underline" }}>matters</span>. */}
                   <span
                     ref={mattersRef}
                     className={`underline-animation ${
