@@ -67,6 +67,7 @@ body {
     GLOBAL styles ends here
 
 ***************************/
+
 .AwshafContent {
   display: inline-block !important;
   line-height: 29px;
@@ -197,7 +198,7 @@ article {
 
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   flex-wrap: wrap;
   position: relative;
 }
@@ -341,8 +342,57 @@ article {
   }
 }
 
+.intro-sliderClass {
+  overflow-x: hidden;
+  height: 110vh;
+  padding: 40px;
+  background-color: #efefef;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Space Grotesk", sans-serif;
+  z-index: 10;
+  width: 100%;
+  gap: 40px;
+  letter-spacing: -0.05em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 4.2rem;
+
+  cursor: none;
+  pointer-events: none;
+
+}
+
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
+  .intro-sliderClass {
+    
+    overflow-x: hidden;
+    height: 115vh;
+    padding: 40px;
+    background-color: #efefef;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Space Grotesk", sans-serif;
+    z-index: 10;
+    width: 100%;
+    gap: 40px;
+    letter-spacing: -0.05em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.2rem;
+    cursor: none;
+    pointer-events: none;
+  }
+
   .AwshafContent {
     display: inline-block !important;
     line-height: 29px;
