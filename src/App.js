@@ -56,6 +56,10 @@ function App() {
 
   const [mattersRef, inViewMatters] = useInView(options); // for the 2nd white section
   const [mattersKey, setMattersKey] = useState(Math.random());
+  const [isLoaded, setIsLoaded] = useState(false); //to check wheather all content has been loaded or not
+
+  const [startGSAPAnimation, setStartGSAPAnimation] = useState(false);
+
   useEffect(() => {
     AOS.init();
     if (!inViewMatters) {
@@ -108,7 +112,9 @@ function App() {
       );
     };
     setCurrentUrl(window.location.href);
-    const onScroll = () => {setOffset(window.pageYOffset);};
+    const onScroll = () => {
+      setOffset(window.pageYOffset);
+    };
     const handleClickOutside = (event) => {
       if (rodalRef.current && !rodalRef.current.contains(event.target)) {
         dispatch(setIsModalOpen(false));
@@ -136,9 +142,21 @@ function App() {
   //spinner loading timeout
   const [isLoading, setIsLoading] = useState(true);
   const isFirstLoadDone = localStorage.getItem("isFirstLoadingDone");
-  const [isLoaded, setIsLoaded] = useState(false); //to check wheather all content has been loaded or not
 
-  const [startGSAPAnimation, setStartGSAPAnimation] = useState(false);
+  //star gsap anim when all content has been loaded. 
+  useEffect(() => {
+    if (isFirstLoadDone) {
+      setIsLoading(false);
+      setStartGSAPAnimation(true);
+    } else {
+      setTimeout(() => {
+        setIsLoading(false);
+        localStorage.setItem("isFirstLoadingDone", "true");
+        setStartGSAPAnimation(true);
+      }, 5250);
+    }
+  }, [isFirstLoadDone]);
+
 
   const setCursorStyleFunction = (style) => {
     dispatch(setCursorStyle(style));
@@ -155,7 +173,6 @@ function App() {
       );
     });
   };
-
 
   useEffect(() => {
     setIsLoaded(true);
@@ -189,19 +206,13 @@ function App() {
 
   const comp = useRef(null);
 
-  const [elementsReady, setElementsReady] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setElementsReady(true), 1000); // assuming elements are ready after 1 second
-    return () => clearTimeout(timer);
-  }, []);
-
   useGSAP(
     () => {
-      if (!elementsReady) return;
+      if (!isLoaded) return;
       const t1 = gsap.timeline({
         onComplete: () => {
           setMattersKey((prevKey) => prevKey + 1);
+          // setStartGSAPAnimation(false);
         },
       });
       t1.from("#intro-slider", {
@@ -231,21 +242,21 @@ function App() {
           duration: 0,
         });
     },
-    { scope: comp.current, dependencies: [elementsReady, startGSAPAnimation] }
+    { scope: comp.current, dependencies: [isLoaded, startGSAPAnimation] }
   );
 
-  useEffect(() => {
-    if (isFirstLoadDone) {
-      setIsLoading(false);
-      setTimeout(() => setStartGSAPAnimation(true), 500);
-    } else {
-      setTimeout(() => {
-        setIsLoading(false);
-        localStorage.setItem("isFirstLoadingDone", "true");
-        setTimeout(() => setStartGSAPAnimation(true), 500);
-      }, 2000);
-    }
-  }, [isFirstLoadDone]);
+  // useEffect(() => {
+  //   if (isLoaded) {
+  //     setTimeout(() => setIsLoading(false), 2000);
+  //     setTimeout(() => setStartGSAPAnimation(true), 2000);
+  //   } else {
+  //     setTimeout(() => {
+  //       setIsLoading(false);
+  //       localStorage.setItem("isFirstLoadingDone", "true");
+  //       setTimeout(() => setStartGSAPAnimation(true), 500);
+  //     }, 4000);
+  //   }
+  // }, [isLoaded]);
 
   return (
     <div>
@@ -263,7 +274,7 @@ function App() {
         </div>
       ) : (
         <div ref={comp} style={{ position: "relative" }}>
-          {elementsReady && startGSAPAnimation && (
+          {isLoaded && startGSAPAnimation && (
             <div id="intro-slider" className="intro-sliderClass">
               <h1 id="title-1">Designer</h1>
               <h1 id="title-2">Developer &</h1>
