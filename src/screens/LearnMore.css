@@ -104,6 +104,9 @@ strong {
   height: 153px;
   z-index: 118;
 
+  /* padding-bottom: 115px; */
+  /* background-color: orange !important; */
+
 }
 .companyRow{
   position: sticky;
@@ -133,8 +136,6 @@ strong {
   position: -webkit-sticky; /* Safari */
   top: 265px;
   z-index: 200;
-
-  /* border: 3px dotted green !important; */
 }
 .positionSticky{
   position: sticky;
