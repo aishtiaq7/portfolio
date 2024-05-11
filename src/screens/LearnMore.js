@@ -35,6 +35,16 @@ const LearnMore = (props) => {
   const bulletData = [
     {
       category: "Work Experience",
+      company: "Cornerstone International College",
+      companyHyperlink: "https://ciccc.ca/",
+      bullets: [
+        "Developed and implemented innovative online learning modules for coding languages, resulting in a 15% increase in student engagement and retention rates.",
+        "Utilized data analytics to assess the effectiveness of curriculum materials, identifying areas for improvement that led to a 20% increase in student performance on coding assessments.",
+        "Collaborated with cross-functional teams to streamline course materials and assignments, reducing academic probation rates by 10% within the first semester.",
+      ],
+    },
+    {
+      category: "Work Experience",
       company: "Digitec Innovation",
       companyHyperlink: "https://www.digitecinnovation.ca/",
       bullets: [
