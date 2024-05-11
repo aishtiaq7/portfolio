@@ -38,9 +38,9 @@ const LearnMore = (props) => {
       company: "Cornerstone International College",
       companyHyperlink: "https://ciccc.ca/",
       bullets: [
-        "Developed and implemented innovative online learning modules for coding languages, resulting in a 15% increase in student engagement and retention rates.",
-        "Utilized data analytics to assess the effectiveness of curriculum materials, identifying areas for improvement that led to a 20% increase in student performance on coding assessments.",
-        "Collaborated with cross-functional teams to streamline course materials and assignments, reducing academic probation rates by 10% within the first semester.",
+        "Developed and instructed a comprehensive programming curriculum for over 40 students, spanning basic syntax to advanced full-stack development, incorporating key concepts like OOP and Big O Notation, which enhanced learning outcomes.",
+        "Regularly updated and validated educational content to include cutting-edge programming practices in JavaScript and TypeScript, ensuring course relevancy and student preparedness for modern tech environments.",
+        "Enhanced student engagement and performance by implementing innovative online learning modules and leveraging data analytics, resulting in a 20% improvement in assessment scores.",
       ],
     },
     {
