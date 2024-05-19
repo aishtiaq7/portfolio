@@ -153,7 +153,7 @@ function App() {
         setIsLoading(false);
         localStorage.setItem("isFirstLoadingDone", "true");
         setStartGSAPAnimation(true);
-      }, 5250);
+      }, 4810);
     }
   }, [isFirstLoadDone]);
 
