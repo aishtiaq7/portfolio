@@ -36,7 +36,7 @@ const LearnMore = (props) => {
     {
       category: "Work Experience",
       company: "Cornerstone International College",
-      companyHyperlink: "https://ciccc.ca/",
+      companyHyperlink: "https://ciccc.ca/wps-members/awshaf-ishtiaque/",
       bullets: [
         "Developed and instructed a comprehensive programming curriculum for over 40 students, spanning basic syntax to advanced full-stack development, incorporating key concepts like OOP and Big O Notation, which enhanced learning outcomes.",
         "Regularly updated and validated educational content to include cutting-edge programming practices in JavaScript and TypeScript, ensuring course relevancy and student preparedness for modern tech environments.",

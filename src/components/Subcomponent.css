@@ -176,6 +176,8 @@
 }
 
 .finalBtn {
+  background-color: rgb(188, 17, 17);
+  margin-top: 12rem;
   filter: blur(4px);
 }
 .finalBtn:hover {

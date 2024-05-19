@@ -129,12 +129,21 @@ export const Section = (props) => {
                 <br></br>I would like to describe myself as a collaborative &
                 solution-driven software developer with{" "}
                 <AnimatedNumber
-                  value={inView ? 3 : 0}
+                  value={inView ? 4 : 0}
                   formatValue={formatValue}
                   duration={1900}
                 />
-                + years of experience in full-stack development & cloud computing. I recently graduated from Simon Fraser University
-                with a bachelor's degree in computer science.
+                + years of experience in full-stack development & cloud computing. I graduated from Simon Fraser University
+                with a bachelor's degree in computer science and currently working as an <span className="bold">
+                  <a
+                    className="bold"
+                    href="https://ciccc.ca/wps-members/awshaf-ishtiaque/"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Instructor
+                  </a>
+                </span> for Cornerstone International College. 
               </h3>
               <br></br>
               <h3>
@@ -395,9 +404,9 @@ export const InterestSection = (props) => {
   }, []);
 
   const torchContent = [
-    "I love to play football,",
+    "I love to play<br>FOOTBALL & VOLLEYBALL,",
     "develop software,",
-    "build trust & relationships.",
+    "build trust <br>&<br> meaningful connections.",
   ];
 
   const navigate = useNavigate();
@@ -482,8 +491,9 @@ export const InterestSection = (props) => {
                     className="hover-objects"
                     onMouseEnter={props.onMouseEnter}
                     onMouseLeave={props.onMouseLeave}
+                    dangerouslySetInnerHTML={{__html: sen}}
                   >
-                    {sen}
+                    {/* {sen} */}
                   </p>
                 );
               })}

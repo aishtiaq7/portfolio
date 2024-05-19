@@ -276,7 +276,7 @@ function App() {
         <div ref={comp} style={{ position: "relative" }}>
           {isLoaded && startGSAPAnimation && (
             <div id="intro-slider" className="intro-sliderClass">
-              <h1 id="title-1">Designer</h1>
+              <h1 id="title-1">Instructor</h1>
               <h1 id="title-2">Developer &</h1>
               <h1 id="title-3">Co-founder</h1>
             </div>
