@@ -43,7 +43,7 @@ const FooterComponent = () => {
   );
 };
 const googleDriveResumeLink =
-  "https://drive.google.com/file/d/1GhCt6K-rvhmt3UlfBkfexSgQPVzNNylv/view?usp=sharing";
+  "https://drive.google.com/file/d/1kdT6ksc8Snk4nSEbHnbEg42-OF9ij2jd/view?usp=sharing";
 const ExternalRedirect = ({ to }) => {
   useEffect(() => {
     window.location.href = to;
