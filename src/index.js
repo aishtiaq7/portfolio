@@ -63,7 +63,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/learnmore" element={<LearnMore />} />
         <Route path="/resume" element={<ExternalRedirect to={googleDriveResumeLink} />} />
-        <Route path="/appoinments" element={<ExternalRedirect to={appoinmentsLink} />} />
+        <Route path="/appointments" element={<ExternalRedirect to={appoinmentsLink} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
