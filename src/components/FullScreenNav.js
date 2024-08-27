@@ -65,7 +65,7 @@ const FullScreenNav = (props) => {
     tl.current
       .fromTo(
         closeBtnRef.current,
-        { rotation: -360, scale: 0, opacity: 0 },
+        { rotation: -360, scale: 0, opacity: 0, },
         { rotation: 0, scale: 1, opacity: 1, duration: 1, ease: "power2.inOut" }
       )
       .fromTo(
