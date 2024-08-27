@@ -6,6 +6,7 @@ import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 
 import App from "./App";
 import LearnMore from "./screens/LearnMore";
+import AnimationsRoute from "./screens/AnimationsRoute";
 import "./index.css";
 
 //redux
@@ -62,6 +63,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/learnmore" element={<LearnMore />} />
+        <Route path="/animations" element={<AnimationsRoute />} />
         <Route path="/resume" element={<ExternalRedirect to={googleDriveResumeLink} />} />
         <Route path="/appointments" element={<ExternalRedirect to={appoinmentsLink} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
