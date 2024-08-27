@@ -54,42 +54,33 @@ const FullScreenNav = (props) => {
   };
 
   const handleCloseButtonClick = () => {
-    tl.current.timeScale(1.65).reverse(8).then(() => {
-      gsap.to(closeBtnRef.current, {
-        rotation: 360,
-        scale: 0,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.inOut",
-        onComplete: () => {
-          props.setShowFullScreenNav(false);
-          // Reset the button for future use
-          setTimeout(()=>{
-            gsap.set(closeBtnRef.current, { rotation: 0, scale: 1, opacity: 1 });
-          }, 150)
-        },
-      });
+    tl.current.timeScale(1.65).reverse().then(() => {
+      props.setShowFullScreenNav(false);
     });
   };
 
   useEffect(() => {
-    // Create a GSAP timeline
     tl.current = gsap.timeline({ paused: true });
 
-    // Staggered animation for the list items
-    tl.current.fromTo(
-      ulRef.current.children,
-      { y: -20, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.4,
-        stagger: 0.2,
-        ease: "power2.out",
-      }
-    );
+    tl.current
+      .fromTo(
+        closeBtnRef.current,
+        { rotation: -360, scale: 0, opacity: 0 },
+        { rotation: 0, scale: 1, opacity: 1, duration: 1, ease: "power2.inOut" }
+      )
+      .fromTo(
+        ulRef.current.children,
+        { y: -20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.4,
+          stagger: 0.2,
+          ease: "power2.out",
+        },
+        "-=0.6"
+      );
 
-    // Play the timeline when the FullScreenNav is shown
     if (props.showFullScreenNav) {
       tl.current.play();
     } else {
