@@ -85,7 +85,7 @@ const Navbar = (props) => {
       <div
         className="name-logo"
         onClick={navigateToHome}
-        onMouseEnter={restartAnimation()}
+        onMouseEnter={()=>restartAnimation()}
       >
         <h4 ref={firstNameRef} className="firstName">
           x
