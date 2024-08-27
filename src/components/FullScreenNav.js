@@ -12,6 +12,8 @@ const FullScreenNav = (props) => {
   const navigate = useNavigate();
   const location = useLocation();
   const closeBtnRef = useRef(null);
+  const ulRef = useRef(null); // Ref for the list items
+  const tl = useRef(null); // Ref for the timeline
 
   const handleNavLinkClick = (e) => {
     e.preventDefault();
@@ -52,21 +54,48 @@ const FullScreenNav = (props) => {
   };
 
   const handleCloseButtonClick = () => {
-    gsap.to(closeBtnRef.current, {
-      rotation: 360,
-      scale: 0,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.inOut",
-      onComplete: () => {
-        props.setShowFullScreenNav(false);
-        // Reset the button for future use
-        setTimeout(() => {
-          gsap.set(closeBtnRef.current, { rotation: 0, scale: 1, opacity: 1 });
-        }, 150);
-      },
+    tl.current.timeScale(1.65).reverse(8).then(() => {
+      gsap.to(closeBtnRef.current, {
+        rotation: 360,
+        scale: 0,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.inOut",
+        onComplete: () => {
+          props.setShowFullScreenNav(false);
+          // Reset the button for future use
+          setTimeout(()=>{
+            gsap.set(closeBtnRef.current, { rotation: 0, scale: 1, opacity: 1 });
+          }, 150)
+        },
+      });
     });
   };
+
+  useEffect(() => {
+    // Create a GSAP timeline
+    tl.current = gsap.timeline({ paused: true });
+
+    // Staggered animation for the list items
+    tl.current.fromTo(
+      ulRef.current.children,
+      { y: -20, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.4,
+        stagger: 0.2,
+        ease: "power2.out",
+      }
+    );
+
+    // Play the timeline when the FullScreenNav is shown
+    if (props.showFullScreenNav) {
+      tl.current.play();
+    } else {
+      tl.current.reverse();
+    }
+  }, [props.showFullScreenNav]);
 
   return (
     <div className={props.showFullScreenNav ? "fs-menu" : "displayNone"}>
@@ -80,7 +109,7 @@ const FullScreenNav = (props) => {
         </IconContext.Provider>
       </div>
 
-      <ul>
+      <ul ref={ulRef}>
         <li>
           <a className="fs-nav-links" href="/" onClick={handleNavLinkClick}>
             Home
