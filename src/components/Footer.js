@@ -33,7 +33,16 @@ const Footer = (props) => {
       return `translateY(${mappedValue * value}px)`;
     }
   };
-  return (
+
+  // eslint-disable-next-line
+  const [location, _] = useState(window.location.href);
+  const splitLocation = location.split("/");
+  const currentUrl = splitLocation[splitLocation.length - 1];
+  // console.log("lcurrentUrl __footer: =>", currentUrl);
+
+  return currentUrl === "animations" ? (
+    <></>
+  ) : (
     <footer
       id="contact"
       onMouseEnter={props.footerEnter}
