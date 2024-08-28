@@ -28,13 +28,24 @@ import {
   setModalContent,
   updateScreenWidth,
 } from "./features/cursor/globalStatesSlice";
+import ScrollToTop from "./screens/FullScreenReveal";
 
-import ScrollToTop from "./components/ScrollToTop";
+import FullScreenReveal from "./screens/FullScreenReveal";
 
 function App() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
+  const [showReveal, setShowReveal] = useState(false);
+  const location = useLocation(); // Use useLocation to detect route changes
+
+  useEffect(() => {
+    setShowReveal(true);
+  }, [location.pathname]); // Trigger when the pathname changes
+
+  const handleRevealComplete = () => {
+    setShowReveal(false);
+  };
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -143,7 +154,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const isFirstLoadDone = localStorage.getItem("isFirstLoadingDone");
 
-  //star gsap anim when all content has been loaded. 
+  //star gsap anim when all content has been loaded.
   useEffect(() => {
     if (isFirstLoadDone) {
       setIsLoading(false);
@@ -156,7 +167,6 @@ function App() {
       }, 4810);
     }
   }, [isFirstLoadDone]);
-
 
   const setCursorStyleFunction = (style) => {
     dispatch(setCursorStyle(style));
@@ -303,6 +313,11 @@ function App() {
               {/* Welcome. */}
             </h1>
           </div>
+          <FullScreenReveal
+            text="Welcome to My Website"
+            show={showReveal}
+            onComplete={handleRevealComplete}
+          />
           <ScrollToTop />
           <FullScreenNav
             showFullScreenNav={showFullScreenNav}
