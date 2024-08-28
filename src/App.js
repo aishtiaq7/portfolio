@@ -36,15 +36,16 @@ function App() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
-  const [showReveal, setShowReveal] = useState(false);
-  const location = useLocation(); // Use useLocation to detect route changes
+  const [showReveal, setShowReveal] = useState(true);
 
+  const location = useLocation(); 
   useEffect(() => {
     setShowReveal(true);
   }, [location.pathname]); // Trigger when the pathname changes
 
   const handleRevealComplete = () => {
     setShowReveal(false);
+    setStartGSAPAnimation(true);
   };
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -255,19 +256,6 @@ function App() {
     { scope: comp.current, dependencies: [isLoaded, startGSAPAnimation] }
   );
 
-  // useEffect(() => {
-  //   if (isLoaded) {
-  //     setTimeout(() => setIsLoading(false), 2000);
-  //     setTimeout(() => setStartGSAPAnimation(true), 2000);
-  //   } else {
-  //     setTimeout(() => {
-  //       setIsLoading(false);
-  //       localStorage.setItem("isFirstLoadingDone", "true");
-  //       setTimeout(() => setStartGSAPAnimation(true), 500);
-  //     }, 4000);
-  //   }
-  // }, [isLoaded]);
-
   return (
     <div>
       {isLoading ? (
@@ -284,6 +272,12 @@ function App() {
         </div>
       ) : (
         <div ref={comp} style={{ position: "relative" }}>
+        
+          <FullScreenReveal
+            text="Welcome to My Website"
+            show={showReveal}
+            onComplete={handleRevealComplete}
+          />
           {isLoaded && startGSAPAnimation && (
             <div id="intro-slider" className="intro-sliderClass">
               <h1 id="title-1">Instructor</h1>
@@ -292,32 +286,6 @@ function App() {
             </div>
           )}
 
-          <div
-            style={{
-              // height: "vh",
-              display: "flex",
-              backgroundColor: "transparent",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <h1
-              id="welcome"
-              style={{
-                fontSize: "9rem",
-                fontWeight: "bold",
-                color: "#F9FAFB",
-                fontFamily: "'Space Grotesk', sans-serif",
-              }}
-            >
-              {/* Welcome. */}
-            </h1>
-          </div>
-          <FullScreenReveal
-            text="Welcome to My Website"
-            show={showReveal}
-            onComplete={handleRevealComplete}
-          />
           <ScrollToTop />
           <FullScreenNav
             showFullScreenNav={showFullScreenNav}
