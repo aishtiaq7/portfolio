@@ -1,16 +1,20 @@
 import { CgCopyright } from "react-icons/cg";
 import { IconContext } from "react-icons";
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./Footer.css";
 
 const Footer = (props) => {
+  const footerRef = useRef(null);
   const [footerElement, setFooterElement] = useState({});
+
   useEffect(() => {
     function handleWindowScroll() {
-      setFooterElement(
-        document.getElementById("contact").getBoundingClientRect()
-      );
+      const footerEl = footerRef.current;
+      if (footerEl) {
+        setFooterElement(footerEl.getBoundingClientRect());
+      }
     }
+
     window.addEventListener("scroll", handleWindowScroll);
     return () => {
       window.removeEventListener("scroll", handleWindowScroll);
@@ -21,10 +25,10 @@ const Footer = (props) => {
 
   const getParallaxProperty = () => {
     const docHeight = document.documentElement.offsetHeight;
+
     function mapRange(value, fromMin, fromMax, toMin, toMax) {
       const normalizedValue = (value - fromMin) / (fromMax - fromMin);
-      const result = toMin + normalizedValue * (toMax - toMin);
-      return result;
+      return toMin + normalizedValue * (toMax - toMin);
     }
 
     if (footerElement.top - 400 < footerElement.height) {
@@ -34,17 +38,18 @@ const Footer = (props) => {
     }
   };
 
-  // eslint-disable-next-line
-  const [location, _] = useState(window.location.href);
+  //get current route to not show footer
+  // specifically on the 'animations' route'
+  const [location] = useState(window.location.href);
   const splitLocation = location.split("/");
   const currentUrl = splitLocation[splitLocation.length - 1];
-  // console.log("lcurrentUrl __footer: =>", currentUrl);
 
   return currentUrl === "animations" ? (
     <></>
   ) : (
     <footer
       id="contact"
+      ref={footerRef}
       onMouseEnter={props.footerEnter}
       onMouseLeave={props.footerLeave}
     >
@@ -56,10 +61,8 @@ const Footer = (props) => {
       >
         <div className="contactMe">
           <h2>Email me at:</h2>
-          <br></br>
-          <a href="mailto:awshafishtiaque@gmail.com">
-            awshafishtiaque@gmail.com
-          </a>
+          <br />
+          <a href="mailto:awshafishtiaque@gmail.com">awshafishtiaque@gmail.com</a>
         </div>
 
         <div className="horizontalLine"></div>
@@ -78,10 +81,9 @@ const Footer = (props) => {
 
       <div className="permissionstext">
         <IconContext.Provider value={{}}>
-          <CgCopyright></CgCopyright>
+          <CgCopyright />
           <h5>
-            AWSHAF ISHTIAQUE.<span style={{ paddingLeft: "0.8rem" }}></span>ALL
-            RIGHTS RESERVED.
+            AWSHAF ISHTIAQUE.<span style={{ paddingLeft: "0.8rem" }}></span>ALL RIGHTS RESERVED.
           </h5>
         </IconContext.Provider>
       </div>
