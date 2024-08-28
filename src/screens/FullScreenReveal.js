@@ -1,55 +1,55 @@
 import { useRef, useEffect } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import "./FullScreenReveal.css";
 
 const FullScreenReveal = ({ text, show, onComplete }) => {
   const containerRef = useRef(null);
-  const tlRef = useRef(null);
+  const textRef = useRef(null);
+  const tl = useRef(null); // Ref for the timeline
 
-  useGSAP(() => {
-    tlRef.current = gsap.timeline({
-      paused: true,
-      onComplete: () => {
-        if (onComplete) onComplete();
-      },
-    });
+  useEffect(() => {
+    tl.current = gsap.timeline({ paused: true });
 
-    tlRef.current
-      .set(containerRef.current, { y: 0, display: "block" }) // Ensure it's visible and in position
+    tl.current
+      .set(containerRef.current, { zIndex: 9999 }) // Ensure container is in front initially
       .fromTo(
         containerRef.current,
-        { y: "100%" }, // Start from off-screen at the bottom
-        { y: "0%", duration: 1.5, ease: "power2.inOut" } // Slide into view
+        { opacity: 0 },
+        { opacity: 1, duration: 0.1, ease: "none" } // Instant reveal
       )
       .fromTo(
-        ".reveal-text",
-        { opacity: 0, y: 50 },
+        textRef.current,
+        { opacity: 0, y: -20 },
         { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
-        "-=1"
+        "-=0.5"
       )
       .to(
-        containerRef.current,
-        {
-          y: "-100%", // Move off-screen upwards
-          duration: 1.5,
-          ease: "power2.inOut",
-          delay: 1.5,
-        }
+        textRef.current,
+        { opacity: 0, y: 20, duration: 1, ease: "power2.inOut", delay: 1 }
       )
-      .set(containerRef.current, { display: "none" }); // Finally hide the container
+      .to(containerRef.current, {
+        opacity: 0,
+        duration: 1,
+        ease: "power2.inOut",
+        onComplete: () => {
+          gsap.set(containerRef.current, { zIndex: -1 }); // Send container to back after animation
+          if (onComplete) onComplete();
+        },
+      });
 
     if (show) {
-      gsap.set(containerRef.current, { display: "block" }); // Make it visible before playing
-      tlRef.current.play(0); // Play from the start
+      gsap.set(containerRef.current, { display: "block", zIndex: 9999 }); // Make it visible and in front before playing
+      tl.current.play();
     } else {
-      tlRef.current.reverse();
+      tl.current.reverse();
     }
   }, [show]);
 
   return (
     <div ref={containerRef} className="fullscreen-reveal">
-      <div className="reveal-text">{text}</div>
+      <div ref={textRef} className="reveal-text">
+        {text}
+      </div>
     </div>
   );
 };

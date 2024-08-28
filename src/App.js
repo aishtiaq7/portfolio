@@ -219,7 +219,7 @@ function App() {
 
   useGSAP(
     () => {
-      if (!isLoaded) return;
+      if (!isLoaded || !startGSAPAnimation) return;
       const t1 = gsap.timeline({
         onComplete: () => {
           setMattersKey((prevKey) => prevKey + 1);
