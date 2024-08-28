@@ -24,14 +24,12 @@
 
   padding: 1.3rem;
   border-radius: 50%;
-  /* background-color: black; */
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .closeBtn:hover{
-  /* background-color: rgba(255, 0, 0, 0.502); */
   border: 2px solid red;
 }
 

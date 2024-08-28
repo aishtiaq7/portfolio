@@ -32,6 +32,14 @@ export const cardItem = [
     cursorClass: "lala",
   },
   {
+    id: 10,
+    projectName: "Rudolph Christmas Lights",
+    iconsList: ["next", "react", "redux", "tailwind", "js", "html"],
+    hyperlink: "https://www.rudolphchristmaslights.ca/",
+    des: "Designed and developed a visually stunning Next.js website for Rudolph Christmas Lights, incorporating immersive parallax scrolling animations to enhance user engagement. The site features dynamic content sections that react to user scrolling, creating a memorable browsing experience tailored for the festive season.",
+    cursorClass: "lala",
+  },
+  {
     id: 6,
     projectName: "Portfolio",
     iconsList: ["react", "nodejs", "github", "firebase", "redux"],
@@ -72,4 +80,5 @@ export const cardItem = [
     des: "Aesthetically pleasing Japanese website clone that showcases a prominent Japanese artist and his artworks",
     cursorClass: "lala",
   },
+
 ];
