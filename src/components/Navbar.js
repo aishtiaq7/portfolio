@@ -67,7 +67,7 @@ const Navbar = (props) => {
 
   const location = useLocation();
   const currentUrl = location.pathname;
-  console.log('currentUrl:', currentUrl);
+  // console.log('currentUrl:', currentUrl);
   gsap.registerPlugin(ScrollToPlugin);
 
   const navigateToHome = () => {

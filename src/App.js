@@ -111,22 +111,11 @@ function App() {
 
   const rodalRef = useRef();
 
+  /*
+    - Cursor Logic
+    - Other state updates
+  */
   useEffect(() => {
-    //scrolling to target section from fs navbar.
-    const el = document.getElementById(targetId);
-    if (el) {
-      // el.scrollIntoView({ behavior: "smooth" });
-      gsap.to(window, {
-        duration: 1, // Adjust duration as needed
-        scrollTo: {
-          y: el, // Scroll to the target section
-          offsetY: 50, // Adjust offset if needed
-          autoKill: true // Automatically kill the tween if user scrolls manually
-        },
-        ease: "power2.inOut"
-      });
-    }
-
     const mouseMove = (e) => {
       dispatch(
         updateCursorPosition({
@@ -201,7 +190,9 @@ function App() {
     setIsLoaded(true);
   }, []);
 
-  // Redirect to specific section of this page.
+  /*
+      Redirect to specific section within this page.
+  */
   useEffect(() => {
     gsap.registerPlugin(ScrollToPlugin);
     if (isLoaded && targetId) {
@@ -220,28 +211,22 @@ function App() {
           console.log(`No ref found for ${targetId}`);
           return;
       }
-
-      if (
-        selectedRef &&
-        selectedRef.current &&
-        !isLoading &&
-        startGSAPAnimation
-      ) {
-        // selectedRef.current.scrollIntoView({ behavior: "smooth" });
+      if (selectedRef && selectedRef.current && !isLoading) {
+        // console.log("selectedRef.current ==> ", selectedRef.current);
         gsap.to(window, {
           duration: 1.3, // Adjust duration as needed
           scrollTo: {
             y: selectedRef.current, // Scroll to the target section
-            offsetY: 50, // Adjust offset if needed
+            offsetY: 0, // Adjust offset if needed
             autoKill: true, // Automatically kill the tween if user scrolls manually
           },
-          ease: "power2.inOut",
+          ease: "power1.inOut",
         });
       } else {
         console.log(`Ref for ${targetId} not found or not current.`);
       }
     }
-  }, [targetId, isLoaded, isLoading, startGSAPAnimation]);
+  }, [targetId, isLoaded, isLoading]);
 
   const comp = useRef(null);
 
@@ -311,7 +296,6 @@ function App() {
               <h1 id="title-3">Co-founder</h1>
             </div>
           )}
-
           <ScrollToTop />
           <FullScreenNav
             showFullScreenNav={showFullScreenNav}
@@ -328,12 +312,14 @@ function App() {
             showFullScreenNav={showFullScreenNav}
           ></Navbar>
 
+          {/* CURSOR */}
           <motion.div
             className="cursor"
             variants={returnCursorVariant(curPosition)}
             animate={curVar}
           />
 
+          {/* MODAL */}
           {globalStates.modalIsOpen && (
             <section className="rodalSection">
               <Rodal

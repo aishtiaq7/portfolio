@@ -18,55 +18,63 @@ const FullScreenNav = (props) => {
 
   const handleNavLinkClick = (e) => {
     e.preventDefault();
+    gsap.registerPlugin(ScrollToPlugin);
 
     const currentUrl = location.pathname;
     const targetElement = e.target.innerText.toString().toLowerCase();
+    const element = document.getElementById(targetElement);
 
-    const getSectionId = targetElement;
-    const element = document.getElementById(getSectionId);
+    console.log("currentUrl => :", currentUrl);
+    console.log("targetElement => :", targetElement);
+    console.log("element => :", element);
 
-    // console.log('currentUrl:',currentUrl)
-    // console.log('targetElement:',targetElement)
-
-    gsap.registerPlugin(ScrollToPlugin);
-    if (currentUrl === "/" || element !== null) {
-      if (targetElement === "learn more") {
-        handleCloseButtonClick();
-        navigate("/learnmore");
-        return;
-      }
+    const handleNavigation = (path, state = null) => {
       handleCloseButtonClick();
-      gsap.to(window, {
-        duration: element.id !== 'contact' ? 1.25 : 2.1, // Adjust duration as needed
-        scrollTo: {
-          y: element, // Scroll to the target section
-          offsetY: 50, // Adjust offset if needed
-          autoKill: true // Automatically kill the tween if user scrolls manually
-        },
-        ease: "expoScale"
-      });
-    }
+      setTimeout(() => {
+        navigate(path, { state });
+      }, 750);
+    };
 
-    if (currentUrl === "/learnmore" || element !== null) {
+    const scrollToElement = () => {
+      handleCloseButtonClick();
+      console.log('@scrollToElement, element => ', element);
+      gsap.to(window, {
+        duration: targetElement === "contact" ? 2.1 : 1.25,
+        scrollTo: {
+          y: element,
+          offsetY: targetElement === "home" ? 0 : -30,
+          autoKill: true,
+        },
+        ease: "expoScale",
+      });
+    };
+
+    if (currentUrl === "/" || element !== null) {
+      console.log('SHOULD BE HERE & element = ', element);
+      if (targetElement === "learn more") {
+        handleNavigation("/learnmore");
+      } else if (targetElement === "contact") {
+        handleNavigation("/", { targetId: "contact" });
+      } else {
+        scrollToElement();
+      }
+    } else if (currentUrl === "/learnmore") {
+      console.log("@from learnmore, targetElement:", targetElement);
       switch (targetElement) {
         case "home":
-          handleCloseButtonClick();
-          navigate("/", { state: { targetId: "home" } });
+          handleNavigation("/", { targetId: "home" });
           break;
         case "about":
-          handleCloseButtonClick();
-          navigate("/", { state: { targetId: "about" } });
+          handleNavigation("/", { targetId: "about" });
           break;
         case "learn more":
           handleCloseButtonClick();
           break;
         case "contact":
-          handleCloseButtonClick();
-          navigate("/", { state: { targetId: "contact" } });
+          handleNavigation("/", { targetId: "contact" });
           break;
         default:
-          handleCloseButtonClick();
-          navigate("/");
+          handleNavigation("/");
           break;
       }
     }

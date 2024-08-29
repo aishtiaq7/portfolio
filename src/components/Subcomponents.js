@@ -550,7 +550,7 @@ export const InterestSection = (props) => {
           </div>
         </div>
       </div>
-      <div ref={props.contactRef} className="invisibleRef"></div>
+      <div ref={props.contactRef} className="invisibleRef" id='scrollToContact'></div>
     </section>
   );
 };
