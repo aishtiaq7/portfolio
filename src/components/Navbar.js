@@ -64,8 +64,9 @@ const Navbar = (props) => {
   }, []);
 
   const navigateToHome = () => {
-    // navigate("/");
-    navigate("/", { state: { targetId: "home" } });
+    navigate("/", {
+      state: { targetId: "home" },
+    });
   };
 
   return (

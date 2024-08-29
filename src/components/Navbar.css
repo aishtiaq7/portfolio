@@ -58,6 +58,9 @@ menu {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  /* pointer-events: none; */
+  user-select: none;
+
 }
 
 /* P H O N E */
