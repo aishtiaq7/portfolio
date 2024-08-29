@@ -1,4 +1,7 @@
 .fs-menu {
+  overflow-y: scroll; /* or auto */
+  scrollbar-width: none; /* For Firefox */
+  
   cursor: none;
 
   position: fixed;
@@ -10,9 +13,9 @@
   color: var(--main-white-color);
 }
 
-.fs-menu ul li a {
+.fs-menu ul li button {
   text-decoration: none;
-  color: var(--main-white-color);
+  color: black;
 }
 
 .closeBtn {
@@ -50,29 +53,35 @@
   list-style-type: none;
 }
 .fs-menu ul li {
-  padding: 2.6rem 14.5rem;
+  /* background-color: orange; */
+  /* padding: 2rem 14.5rem;
+  padding: 0; */
+  margin: 1rem;
+  padding: 1rem;
 }
-.fs-menu ul li:hover {
-  background: rgb(38, 38, 38);
+.linkButtons:hover {
+  /* background: rgb(38, 38, 38); */
   background: radial-gradient(
     circle,
     rgba(38, 38, 38, 1) 0%,
     rgba(0, 0, 0, 1) 100%
   );
+  background:yellow;
+
 }
 
 .displayNone {
   display: none;
 }
-.fs-nav-links {
+.linkButtons {
   background-color: rgb(236, 236, 236);
-  padding: 2rem 5.8rem;
+  padding: 1.8rem 5.8rem;
   cursor: none;
 }
 
 @media only screen and (max-width: 600px) {
   .fs-menu ul li {
-    padding: 2.6rem 4rem;
+    padding: 1rem 2rem;
   }
   .fs-nav-links {
     padding: 2rem 3rem;

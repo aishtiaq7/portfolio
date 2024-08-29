@@ -1,7 +1,7 @@
 import { RxCross1 } from "react-icons/rx";
 import { IconContext } from "react-icons";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect , useState} from "react";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import "./FullScreenNav.css";
@@ -39,7 +39,7 @@ const FullScreenNav = (props) => {
   //     handleCloseButtonClick();
 
   //     /*
-  //       Higher offset value means go more down the page. 
+  //       Higher offset value means go more down the page.
   //       Lower (or negative) offset value means scroll up the page.
   //   */
   //     const isPhone = window.innerWidth <= 768;
@@ -111,33 +111,41 @@ const FullScreenNav = (props) => {
   //   }
   // };
 
+
+  const [fsAnimationStates,setFsAnimationStates ] = useState({
+    forwardDone: false, 
+    reverseDone: true, 
+  })
+  console.log('initial', fsAnimationStates)
+
+
   const handleNavLinkClick = (e) => {
     e.preventDefault();
     gsap.registerPlugin(ScrollToPlugin);
-  
+
     const currentUrl = location.pathname;
     const targetElement = e.target.innerText.toString().toLowerCase();
     const element = document.getElementById(targetElement);
-  
+
     const handleNavigation = (path, state = null) => {
       handleCloseButtonClick();
       setTimeout(() => {
         navigate(path, { state });
-      }, 750);
+      }, 1000);
     };
-  
+
     const scrollToElement = () => {
       handleCloseButtonClick();
-  
+
       const isPhone = window.innerWidth <= 768;
       const offsets = {
         home: 0,
         about: isPhone ? 100 : -54,
         default: isPhone ? 80 : 80,
       };
-  
+
       const offsetYValue = offsets[targetElement] || offsets.default;
-  
+
       gsap.to(window, {
         duration: targetElement === "contact" ? 2.1 : 1.25,
         scrollTo: {
@@ -148,7 +156,7 @@ const FullScreenNav = (props) => {
         ease: "expoScale",
       });
     };
-  
+
     const navigationActions = {
       "/": {
         contact: () => {
@@ -169,22 +177,21 @@ const FullScreenNav = (props) => {
         default: () => handleNavigation("/"),
       },
     };
-  
+
     const executeNavigation = () => {
       const action =
         navigationActions[currentUrl]?.[targetElement] ||
         navigationActions[currentUrl]?.default;
-  
+
       if (action) {
         action();
       } else {
         console.error("No navigation action defined for this route.");
       }
     };
-  
+
     executeNavigation();
   };
-  
 
   const handleCloseButtonClick = () => {
     tl.current
@@ -197,8 +204,27 @@ const FullScreenNav = (props) => {
 
   // GSAP main time line
   useEffect(() => {
-    tl.current = gsap.timeline({ paused: true });
+    tl.current = gsap.timeline({
+      paused: true,
+      onComplete: () => {
+        console.log("forward complete");
+        setFsAnimationStates({
+          forwardDone: true, 
+          reverseDone: false,
+        });
+        console.log('f.done', fsAnimationStates)
 
+      },
+      onReverseComplete: () => {
+        console.log("reverse complete");
+        setFsAnimationStates({
+          forwardDone: false, 
+          reverseDone: true,
+        });
+        console.log('r.done', fsAnimationStates)
+      }
+    });
+  
     tl.current
       .fromTo(
         closeBtnRef.current,
@@ -217,13 +243,14 @@ const FullScreenNav = (props) => {
         },
         "-=0.6"
       );
-
+  
     if (props.showFullScreenNav) {
       tl.current.play();
     } else {
       tl.current.reverse();
     }
   }, [props.showFullScreenNav]);
+  
 
   return (
     <div className={props.showFullScreenNav ? "fs-menu" : "displayNone"}>
@@ -239,23 +266,23 @@ const FullScreenNav = (props) => {
 
       <ul ref={ulRef}>
         <li>
-          <button className="fs-nav-links" onClick={handleNavLinkClick}>
+          <button className="linkButtons" onClick={handleNavLinkClick}>
             Home
           </button>
         </li>
         <li>
-          <button className="fs-nav-links" onClick={handleNavLinkClick}>
+          <button className="linkButtons" onClick={handleNavLinkClick}>
             About
           </button>
         </li>
-        <li className="fs-nav-li">
-          <button className="fs-nav-links" onClick={handleNavLinkClick}>
+        <li>
+          <button className="linkButtons" onClick={handleNavLinkClick}>
             Learn More
           </button>
         </li>
         <li>
           <button
-            className="fs-nav-links"
+            className="linkButtons"
             onClick={() => {
               handleCloseButtonClick();
               setTimeout(() => {
@@ -267,7 +294,7 @@ const FullScreenNav = (props) => {
           </button>
         </li>
         <li>
-          <button className="fs-nav-links" onClick={handleNavLinkClick}>
+          <button className="linkButtons" onClick={handleNavLinkClick}>
             Contact
           </button>
         </li>
