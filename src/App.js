@@ -305,8 +305,8 @@ function App() {
             invertNavColor={inView}
             invertNavColor2={inView2}
             aboutSectionInView={aboutSectionInvView}
-            textEnterLogo={() => setCursorStyleFunction("logo")}
-            textLeaveLogo={() => setCursorStyleFunction("default")}
+            textEnterLogo={() => setCursorStyleFunction("onNavbarLinks")}
+            textLeaveLogo={() => setCursorStyleFunction("onNavbar")}
             setShowFullScreenNav={setShowFullScreenNav}
             showFullScreenNav={showFullScreenNav}
           ></Navbar>

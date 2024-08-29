@@ -8,8 +8,8 @@ import { useGSAP } from "@gsap/react";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import "../App.css";
 import "./Navbar.css";
-
-
+import { setCursorStyle } from "../features/cursor/cursorSlice";
+import { useDispatch } from "react-redux";
 
 const Navbar = (props) => {
   const navigate = useNavigate();
@@ -18,6 +18,7 @@ const Navbar = (props) => {
   const containerRef = useRef(null);
   const tlRef = useRef(null);
   gsap.registerPlugin(TextPlugin);
+  const dispatch = useDispatch();
 
   useGSAP(
     (context) => {
@@ -57,7 +58,7 @@ const Navbar = (props) => {
     }
   };
 
-  // name logo restart animiation 
+  // name logo restart animiation
   useEffect(() => {
     const intervalId = setInterval(restartAnimation, 8500);
     return () => {
@@ -71,15 +72,15 @@ const Navbar = (props) => {
   gsap.registerPlugin(ScrollToPlugin);
 
   const navigateToHome = () => {
-    if (currentUrl === '/'){
+    if (currentUrl === "/") {
       gsap.to(window, {
-        duration: 1.35, 
+        duration: 1.35,
         scrollTo: {
-          y: '#home', // Scroll to the target section
+          y: "#home", // Scroll to the target section
           offsetY: 50, // Adjust offset if needed
-          autoKill: false // Automatically kill the tween if user scrolls manually
+          autoKill: false, // Automatically kill the tween if user scrolls manually
         },
-        ease: "power2.inOut"
+        ease: "power2.inOut",
       });
     }
 
@@ -97,14 +98,26 @@ const Navbar = (props) => {
           : ""
       }
       onMouseEnter={() => {
-        props.textEnterLogo();
+        // props.textEnterLogo();
+        dispatch(setCursorStyle("onNavbar"));
       }}
-      onMouseLeave={props.textLeaveLogo}
+      onMouseLeave={() => {
+        console.log('fired this')
+        // props.textLeaveLogo();
+        dispatch(setCursorStyle("default"));
+
+      }}
     >
       <div
         className="name-logo"
         onClick={navigateToHome}
-        onMouseEnter={()=>restartAnimation()}
+        onMouseEnter={() => {
+          dispatch(setCursorStyle("logo"));
+          restartAnimation();
+        }}
+        onMouseLeave={() => {
+          dispatch(setCursorStyle("onNavbar"));
+        }}
       >
         <h4 ref={firstNameRef} className="firstName">
           Awshaf
@@ -118,6 +131,15 @@ const Navbar = (props) => {
         <h4
           onClick={() => {
             props.setShowFullScreenNav(true);
+            dispatch(setCursorStyle("default"));
+          }}
+          onMouseEnter={(e) => {
+            dispatch(setCursorStyle("logo"));
+            e.stopPropagation();
+          }}
+          onMouseLeave={(e) => {
+            dispatch(setCursorStyle("onNavbar"));
+            e.stopPropagation();
           }}
         >
           <IconContext.Provider value={{ className: "hambergerMenu" }}>

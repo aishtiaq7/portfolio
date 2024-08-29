@@ -4,17 +4,21 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { useDispatch } from "react-redux";
 import "./FullScreenNav.css";
+import { setCursorStyle } from "../features/cursor/cursorSlice";
 
 const googleDriveResumeLink =
   "https://drive.google.com/file/d/1kdT6ksc8Snk4nSEbHnbEg42-OF9ij2jd/view";
 
 const FullScreenNav = (props) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const location = useLocation();
   const closeBtnRef = useRef(null);
   const ulRef = useRef(null); // Ref for the list items
   const tl = useRef(null); // Ref for the timeline
+
 
   const [fsAnimationStates, setFsAnimationStates] = useState({
     forwardDone: null,
@@ -161,7 +165,15 @@ const FullScreenNav = (props) => {
   }, [props.showFullScreenNav]);
 
   return (
-    <div className={props.showFullScreenNav ? "fs-menu" : "displayNone"}>
+    <div
+      className={props.showFullScreenNav ? "fs-menu" : "displayNone"}
+      onMouseEnter={(e) => {
+        dispatch(setCursorStyle('default'))
+      }}
+      onMouseLeave={(e) => {
+        dispatch(setCursorStyle('default'))
+      }}
+    >
       <div
         className="closeBtn"
         onClick={() => handleCloseButtonClick()}
