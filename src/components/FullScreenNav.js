@@ -179,9 +179,10 @@ const FullScreenNav = (props) => {
           </a>
         </li>
         <li>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a
             className="fs-nav-links"
-            // href={googleDriveResumeLink}
+            // href={googleDriveResumeLink} 
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {
