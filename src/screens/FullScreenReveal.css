@@ -1,5 +1,6 @@
 /* FullScreenReveal.css */
 .fullscreen-reveal {
+  overflow-y: hidden;
   cursor: none;
   pointer-events: none;
 

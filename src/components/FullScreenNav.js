@@ -63,7 +63,6 @@ const FullScreenNav = (props) => {
           break;
       }
 
-      // console.log(`isPhone:${isPhone} , offsetValue:${offsetYValue}`);
       gsap.to(window, {
         duration: targetElement === "contact" ? 2.1 : 1.25,
         scrollTo: {
@@ -76,14 +75,20 @@ const FullScreenNav = (props) => {
     };
 
     if (currentUrl === "/" && targetElement === "contact") {
+      console.log('from @home && contact 1st')
       scrollToElement();
     } else if (currentUrl === "/" || element !== null) {
-      if (targetElement === "learn more") {
+      console.log('from @home2 ,targetElement:=>', targetElement)
+
+      if (targetElement === 'contact'){
+        handleNavigation("/", { targetId: "contact" });
+      } else if (targetElement === "learn more") {
         handleNavigation("/learnmore");
       } else {
         scrollToElement();
       }
     } else if (currentUrl === "/learnmore") {
+      console.log('from @learnmore', `target:',${targetElement}`)
       switch (targetElement) {
         case "home":
           handleNavigation("/", { targetId: "home" });
@@ -92,7 +97,9 @@ const FullScreenNav = (props) => {
           handleNavigation("/", { targetId: "about" });
           break;
         case "learn more":
+          console.log('inside here')
           handleCloseButtonClick();
+          handleNavigation("/", { targetId: "contact" });
           break;
         case "contact":
           handleNavigation("/", { targetId: "contact" });
@@ -129,9 +136,9 @@ const FullScreenNav = (props) => {
         {
           y: 0,
           opacity: 1,
-          duration: 0.4,
-          stagger: 0.2,
-          ease: "power2.out",
+          duration: 0.35,
+          stagger: 0.15,
+          ease: "power4.out",
         },
         "-=0.6"
       );

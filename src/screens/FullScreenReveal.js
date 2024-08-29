@@ -10,17 +10,17 @@ const FullScreenReveal = ({ text, show, onComplete }) => {
 
   const containerRef = useRef(null);
   const textRef = useRef(null);
-  const tl = useRef(null); // Ref for the timeline
+  const tl = useRef(null);
 
   useEffect(() => {
     tl.current = gsap.timeline({ paused: true });
 
     tl.current
-      .set(containerRef.current, { zIndex: 9999 }) // Ensure container is in front initially
+      .set(containerRef.current, { zIndex: 9999 })
       .fromTo(
         containerRef.current,
         { opacity: 0 },
-        { opacity: 1, duration: 0.1, ease: "none" } // Instant reveal
+        { opacity: 1, duration: 0.01, ease: "none" }
       )
       .fromTo(
         textRef.current,
