@@ -212,7 +212,6 @@ function App() {
           return;
       }
       if (selectedRef && selectedRef.current && !isLoading) {
-        // console.log("selectedRef.current ==> ", selectedRef.current);
         gsap.to(window, {
           duration: 1.3, // Adjust duration as needed
           scrollTo: {

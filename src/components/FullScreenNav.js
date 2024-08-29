@@ -37,11 +37,38 @@ const FullScreenNav = (props) => {
 
     const scrollToElement = () => {
       handleCloseButtonClick();
+
+    /*
+        Higher offset value means go more down the page. 
+        Lower (or negative) offset value means scroll up the page.
+    */
+      const isPhone = window.innerWidth <= 768;
+      const offsets = {
+        home: 0,
+        about: isPhone ? 100 : -54, 
+        default: isPhone ? 80 : 80, // Default offset for other sections
+      };
+
+      let offsetYValue;
+
+      switch (targetElement) {
+        case "home":
+          offsetYValue = offsets.home;
+          break;
+        case "about":
+          offsetYValue = offsets.about;
+          break;
+        default:
+          offsetYValue = offsets.default;
+          break;
+      }
+
+      // console.log(`isPhone:${isPhone} , offsetValue:${offsetYValue}`);
       gsap.to(window, {
         duration: targetElement === "contact" ? 2.1 : 1.25,
         scrollTo: {
           y: element,
-          offsetY: targetElement === "home" ? 0 : -30,
+          offsetY: offsetYValue,
           autoKill: true,
         },
         ease: "expoScale",
