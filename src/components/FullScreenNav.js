@@ -17,23 +17,23 @@ const FullScreenNav = (props) => {
 
   const handleNavLinkClick = (e) => {
     e.preventDefault();
-  
+
     const currentUrl = location.pathname;
     const targetElement = e.target.innerText.toString().toLowerCase();
-  
+
     const getSectionId = targetElement;
     const element = document.getElementById(getSectionId);
-  
+
     if (currentUrl === "/" || element !== null) {
       if (targetElement === "learn more") {
-        handleCloseButtonClick(); // Close after navigating to "Learn More"
+        handleCloseButtonClick();
         navigate("/learnmore");
         return;
       }
-      handleCloseButtonClick(); // Close after scrolling to section
+      handleCloseButtonClick(); 
       element?.scrollIntoView({ behavior: "smooth" });
     }
-  
+
     if (currentUrl === "/learnmore") {
       switch (targetElement) {
         case "home":
@@ -44,35 +44,38 @@ const FullScreenNav = (props) => {
           handleCloseButtonClick();
           navigate("/", { state: { targetId: "about" } });
           break;
-        case "learnmore":
-          handleCloseButtonClick(); 
+        case "learn more":
+          handleCloseButtonClick();
           break;
         case "contact":
-          handleCloseButtonClick(); 
+          handleCloseButtonClick();
           navigate("/", { state: { targetId: "contact" } });
           break;
         default:
-          handleCloseButtonClick(); 
+          handleCloseButtonClick();
           navigate("/");
           break;
       }
     }
   };
-  
 
   const handleCloseButtonClick = () => {
-    tl.current.timeScale(1.65).reverse().then(() => {
-      props.setShowFullScreenNav(false);
-    });
+    tl.current
+      .timeScale(1.65)
+      .reverse()
+      .then(() => {
+        props.setShowFullScreenNav(false);
+      });
   };
 
+  // GSAP main time line
   useEffect(() => {
     tl.current = gsap.timeline({ paused: true });
 
     tl.current
       .fromTo(
         closeBtnRef.current,
-        { rotation: -360, scale: 0, opacity: 0, },
+        { rotation: -360, scale: 0, opacity: 0 },
         { rotation: 0, scale: 1, opacity: 1, duration: 1, ease: "power2.inOut" }
       )
       .fromTo(

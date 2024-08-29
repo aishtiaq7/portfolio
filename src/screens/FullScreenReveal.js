@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+// eslint-disable-next-line 
 import { useSelector, useDispatch } from "react-redux";
 
 import "./FullScreenReveal.css";
@@ -47,7 +48,7 @@ const FullScreenReveal = ({ text, show, onComplete }) => {
     } else {
       tl.current.reverse();
     }
-  }, [isRevealTransitionOn]);
+  }, [isRevealTransitionOn, onComplete]);
 
   return (
     <div ref={containerRef} className="fullscreen-reveal">
