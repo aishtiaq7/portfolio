@@ -8,7 +8,6 @@ import { useGSAP } from "@gsap/react";
 import "../App.css";
 import "./Navbar.css";
 
-gsap.registerPlugin(TextPlugin);
 
 const Navbar = (props) => {
   const navigate = useNavigate();
@@ -16,6 +15,7 @@ const Navbar = (props) => {
   const lastNameRef = useRef(null);
   const containerRef = useRef(null);
   const tlRef = useRef(null);
+  gsap.registerPlugin(TextPlugin);
 
   useGSAP(
     (context) => {
@@ -64,7 +64,8 @@ const Navbar = (props) => {
   }, []);
 
   const navigateToHome = () => {
-    navigate("/");
+    // navigate("/");
+    navigate("/", { state: { targetId: "home" } });
   };
 
   return (
@@ -88,10 +89,10 @@ const Navbar = (props) => {
         onMouseEnter={()=>restartAnimation()}
       >
         <h4 ref={firstNameRef} className="firstName">
-          x
+          Awshaf
         </h4>
         <h4 ref={lastNameRef} className="lastName">
-          x
+          Ishtiaque
         </h4>
       </div>
 
