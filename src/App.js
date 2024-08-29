@@ -207,16 +207,17 @@ function App() {
           return;
       }
 
-      if (selectedRef && selectedRef.current) {
+      if (selectedRef && selectedRef.current && !isLoading && startGSAPAnimation) {
         selectedRef.current.scrollIntoView({ behavior: "smooth" });
       } else {
         console.log(`Ref for ${targetId} not found or not current.`);
       }
     }
-  }, [targetId, isLoaded]);
+  }, [targetId, isLoaded, isLoading, startGSAPAnimation]);
 
   const comp = useRef(null);
 
+  //intro slider. GSAP
   useGSAP(
     () => {
       if (!isLoaded || !startGSAPAnimation) return;

@@ -10,6 +10,9 @@ export const globalStatesSlice = createSlice({
       tech: '',
       hyperlink: "", 
     },
+    animationStates: {
+      isRevealTransitionOn: true,
+    },
     screenWidth: 500,
     screenOffsetY: 0,
   },
@@ -21,7 +24,7 @@ export const globalStatesSlice = createSlice({
       state.modalIsOpen = action.payload;
     },
     setModalContent: (state, action) => {
-      const { title, descriontion, tech, hyperlink} = action.payload;
+      const { title, descriontion, tech, hyperlink } = action.payload;
       state.modalContent = {
         title: title,
         descriontion: descriontion,
@@ -29,9 +32,12 @@ export const globalStatesSlice = createSlice({
         hyperlink: hyperlink,
       };
     },
-    setWindowOffsetY: (state, action) =>{
+    setWindowOffsetY: (state, action) => {
       state.screenOffsetY = action.payload;
-    }
+    },
+    toggleRevealTransition: (state, action) => {
+      state.animationStates.isRevealTransitionOn = action.payload;
+    },
   },
 });
 
@@ -39,7 +45,8 @@ export const {
   setWindowOffsetY,
   setIsModalOpen,
   setModalContent,
-  updateScreenWidth
+  updateScreenWidth,
+  toggleRevealTransition
 } = globalStatesSlice.actions;
 
 export default globalStatesSlice.reducer;

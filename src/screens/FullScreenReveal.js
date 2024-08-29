@@ -1,8 +1,12 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import { useSelector, useDispatch } from "react-redux";
+
 import "./FullScreenReveal.css";
 
 const FullScreenReveal = ({ text, show, onComplete }) => {
+  const isRevealTransitionOn = useSelector((state) => state.globalStates.isRevealTransitionOn);
+
   const containerRef = useRef(null);
   const textRef = useRef(null);
   const tl = useRef(null); // Ref for the timeline
@@ -37,18 +41,18 @@ const FullScreenReveal = ({ text, show, onComplete }) => {
         },
       });
 
-    if (show) {
+    if (isRevealTransitionOn) {
       gsap.set(containerRef.current, { display: "block", zIndex: 9999 }); // Make it visible and in front before playing
       tl.current.play();
     } else {
       tl.current.reverse();
     }
-  }, [show]);
+  }, [isRevealTransitionOn]);
 
   return (
     <div ref={containerRef} className="fullscreen-reveal">
       <div ref={textRef} className="reveal-text">
-        {text}
+        {/* {text} */}
       </div>
     </div>
   );

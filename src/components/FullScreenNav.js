@@ -17,41 +17,48 @@ const FullScreenNav = (props) => {
 
   const handleNavLinkClick = (e) => {
     e.preventDefault();
-
+  
     const currentUrl = location.pathname;
     const targetElement = e.target.innerText.toString().toLowerCase();
-
+  
     const getSectionId = targetElement;
     const element = document.getElementById(getSectionId);
-
+  
     if (currentUrl === "/" || element !== null) {
       if (targetElement === "learn more") {
+        handleCloseButtonClick(); // Close after navigating to "Learn More"
         navigate("/learnmore");
         return;
       }
-      props.setShowFullScreenNav(false);
+      handleCloseButtonClick(); // Close after scrolling to section
       element?.scrollIntoView({ behavior: "smooth" });
     }
-
+  
     if (currentUrl === "/learnmore") {
       switch (targetElement) {
         case "home":
+          handleCloseButtonClick();
           navigate("/", { state: { targetId: "home" } });
           break;
         case "about":
+          handleCloseButtonClick();
           navigate("/", { state: { targetId: "about" } });
           break;
         case "learnmore":
+          handleCloseButtonClick(); 
           break;
         case "contact":
+          handleCloseButtonClick(); 
           navigate("/", { state: { targetId: "contact" } });
           break;
         default:
+          handleCloseButtonClick(); 
           navigate("/");
           break;
       }
     }
   };
+  
 
   const handleCloseButtonClick = () => {
     tl.current.timeScale(1.65).reverse().then(() => {
