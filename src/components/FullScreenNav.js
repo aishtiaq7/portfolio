@@ -3,6 +3,7 @@ import { IconContext } from "react-icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import "./FullScreenNav.css";
 
 const googleDriveResumeLink =
@@ -24,17 +25,29 @@ const FullScreenNav = (props) => {
     const getSectionId = targetElement;
     const element = document.getElementById(getSectionId);
 
+    // console.log('currentUrl:',currentUrl)
+    // console.log('targetElement:',targetElement)
+
+    gsap.registerPlugin(ScrollToPlugin);
     if (currentUrl === "/" || element !== null) {
       if (targetElement === "learn more") {
         handleCloseButtonClick();
         navigate("/learnmore");
         return;
       }
-      handleCloseButtonClick(); 
-      element?.scrollIntoView({ behavior: "smooth" });
+      handleCloseButtonClick();
+      gsap.to(window, {
+        duration: element.id !== 'contact' ? 1.25 : 2.1, // Adjust duration as needed
+        scrollTo: {
+          y: element, // Scroll to the target section
+          offsetY: 50, // Adjust offset if needed
+          autoKill: true // Automatically kill the tween if user scrolls manually
+        },
+        ease: "expoScale"
+      });
     }
 
-    if (currentUrl === "/learnmore") {
+    if (currentUrl === "/learnmore" || element !== null) {
       switch (targetElement) {
         case "home":
           handleCloseButtonClick();
@@ -129,9 +142,15 @@ const FullScreenNav = (props) => {
         <li>
           <a
             className="fs-nav-links"
-            href={googleDriveResumeLink}
+            // href={googleDriveResumeLink}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              handleCloseButtonClick();
+              setTimeout(() => {
+                window.open(googleDriveResumeLink, "_blank");
+              }, 850); // Adjust the delay as needed
+            }}
           >
             Resume
           </a>

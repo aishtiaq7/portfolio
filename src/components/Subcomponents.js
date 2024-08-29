@@ -15,10 +15,13 @@ import { setCursorStyle } from "../features/cursor/cursorSlice";
 import AnimatedNumber from "animated-number-react";
 import { useInView } from "react-intersection-observer";
 import Vara from "vara";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 export const Section = (props) => {
   const dispatch = useDispatch();
   const [btn1Clicked, setBtn1Clicked] = useState(false);
+  gsap.registerPlugin(ScrollToPlugin);
 
   const options = { threshold: 0.6, triggerOnce: false };
   const [inViewRef, inView] = useInView(options);
@@ -92,9 +95,12 @@ export const Section = (props) => {
       ref={props.innerRef ? props.innerRef : ""}
     >
       <div ref={props.myref}></div>
-      <div className="second-section" ref={props.aboutSectionInViewRef ? props.aboutSectionInViewRef : ""}>
+      <div
+        className="second-section"
+        ref={props.aboutSectionInViewRef ? props.aboutSectionInViewRef : ""}
+      >
         <SectionBanner section={"About"} isLightTheme={false} />
-        <div className="container" >
+        <div className="container">
           <div
             id="aboutSectionBorderBox"
             className="largeText"
@@ -106,7 +112,7 @@ export const Section = (props) => {
             onMouseEnter={props.textEnter}
             onMouseLeave={props.textLeave}
           >
-            <div className="greetingsTitle" >
+            <div className="greetingsTitle">
               <h3
                 data-aos="zoom-in-left"
                 data-aos-once="false"
@@ -133,8 +139,11 @@ export const Section = (props) => {
                   formatValue={formatValue}
                   duration={1900}
                 />
-                + years of experience in full-stack development & cloud computing. I graduated from Simon Fraser University
-                with a bachelor's degree in computer science and currently working as an <span className="bold">
+                + years of experience in full-stack development & cloud
+                computing. I graduated from Simon Fraser University with a
+                bachelor's degree in computer science and currently working as
+                an{" "}
+                <span className="bold">
                   <a
                     className="bold"
                     href="https://ciccc.ca/wps-members/awshaf-ishtiaque/"
@@ -143,7 +152,8 @@ export const Section = (props) => {
                   >
                     Instructor
                   </a>
-                </span> for Cornerstone International College. 
+                </span>{" "}
+                for Cornerstone International College.
               </h3>
               <br></br>
               <h3>
@@ -158,9 +168,10 @@ export const Section = (props) => {
                     Digitec Innovation
                   </a>
                 </span>
-                , I've led the development of various projects which have honed my abilities in orchestrating B2B client relationships, guiding the
-                architectural design of sophisticated web solutions, and leading
-                projects from strategic inception through to successful
+                , I've led the development of various projects which have honed
+                my abilities in orchestrating B2B client relationships, guiding
+                the architectural design of sophisticated web solutions, and
+                leading projects from strategic inception through to successful
                 deployment and proactive maintenance.
                 <br></br>
                 <br></br>
@@ -188,9 +199,17 @@ export const Section = (props) => {
                 }`}
                 onClick={() => {
                   setBtn1Clicked(true);
-                  document
-                    .getElementById("projects")
-                    .scrollIntoView({ behavior: "smooth" });
+                  const element = document.getElementById("projects");
+                  gsap.to(window, {
+                    duration: element.id !== "contact" ? 1.5 : 2.1, // Adjust duration as needed
+                    scrollTo: {
+                      y: element, // Scroll to the target section
+                      offsetY: -35, // Adjust offset if needed
+                      autoKill: true, // Automatically kill the tween if user scrolls manually
+                    },
+                    // ease: "power2.inOut"
+                    ease: "expoScale",
+                  });
                 }}
                 onMouseEnter={() => {
                   dispatch(setCursorStyle("learnMore"));
@@ -252,9 +271,18 @@ export const DarkSection = (props) => {
             }`}
             onClick={() => {
               setBtn2Clicked(true);
-              document
-                .getElementById("interests")
-                .scrollIntoView({ behavior: "smooth" });
+              const element = document.getElementById("interests");
+              // .scrollIntoView({ behavior: "smooth" });
+              gsap.to(window, {
+                duration: element.id !== "contact" ? 1.5 : 2.1, // Adjust duration as needed
+                scrollTo: {
+                  y: element, // Scroll to the target section
+                  offsetY: 50, // Adjust offset if needed
+                  autoKill: true, // Automatically kill the tween if user scrolls manually
+                },
+                // ease: "power2.inOut"
+                ease: "expoScale",
+              });
             }}
             onMouseEnter={() => {
               dispatch(setCursorStyle("learnMoreContrast"));
@@ -491,7 +519,7 @@ export const InterestSection = (props) => {
                     className="hover-objects"
                     onMouseEnter={props.onMouseEnter}
                     onMouseLeave={props.onMouseLeave}
-                    dangerouslySetInnerHTML={{__html: sen}}
+                    dangerouslySetInnerHTML={{ __html: sen }}
                   >
                     {/* {sen} */}
                   </p>

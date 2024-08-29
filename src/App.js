@@ -5,6 +5,7 @@ import Rodal from "rodal";
 import { useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import FullScreenNav from "./components/FullScreenNav";
 import Navbar from "./components/Navbar";
 import {
@@ -38,7 +39,9 @@ function App() {
   const contactRef = useRef(null);
   const [showReveal, setShowReveal] = useState(true);
 
-  const location = useLocation(); 
+  gsap.registerPlugin(ScrollToPlugin);
+
+  const location = useLocation();
   useEffect(() => {
     setShowReveal(true);
   }, [location.pathname]); // Trigger when the pathname changes
@@ -112,7 +115,16 @@ function App() {
     //scrolling to target section from fs navbar.
     const el = document.getElementById(targetId);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      // el.scrollIntoView({ behavior: "smooth" });
+      gsap.to(window, {
+        duration: 1, // Adjust duration as needed
+        scrollTo: {
+          y: el, // Scroll to the target section
+          offsetY: 50, // Adjust offset if needed
+          autoKill: true // Automatically kill the tween if user scrolls manually
+        },
+        ease: "power2.inOut"
+      });
     }
 
     const mouseMove = (e) => {
@@ -189,7 +201,9 @@ function App() {
     setIsLoaded(true);
   }, []);
 
+  // Redirect to specific section of this page.
   useEffect(() => {
+    gsap.registerPlugin(ScrollToPlugin);
     if (isLoaded && targetId) {
       let selectedRef;
       switch (targetId) {
@@ -207,8 +221,22 @@ function App() {
           return;
       }
 
-      if (selectedRef && selectedRef.current && !isLoading && startGSAPAnimation) {
-        selectedRef.current.scrollIntoView({ behavior: "smooth" });
+      if (
+        selectedRef &&
+        selectedRef.current &&
+        !isLoading &&
+        startGSAPAnimation
+      ) {
+        // selectedRef.current.scrollIntoView({ behavior: "smooth" });
+        gsap.to(window, {
+          duration: 1.3, // Adjust duration as needed
+          scrollTo: {
+            y: selectedRef.current, // Scroll to the target section
+            offsetY: 50, // Adjust offset if needed
+            autoKill: true, // Automatically kill the tween if user scrolls manually
+          },
+          ease: "power2.inOut",
+        });
       } else {
         console.log(`Ref for ${targetId} not found or not current.`);
       }
@@ -271,7 +299,6 @@ function App() {
         </div>
       ) : (
         <div ref={comp} style={{ position: "relative" }}>
-        
           <FullScreenReveal
             text="Welcome to My Website"
             show={showReveal}
