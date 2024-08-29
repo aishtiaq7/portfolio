@@ -1,12 +1,14 @@
 import { HiMenu } from "react-icons/hi";
 import { IconContext } from "react-icons";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import { useGSAP } from "@gsap/react";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import "../App.css";
 import "./Navbar.css";
+
 
 
 const Navbar = (props) => {
@@ -55,18 +57,33 @@ const Navbar = (props) => {
     }
   };
 
+  // name logo restart animiation 
   useEffect(() => {
     const intervalId = setInterval(restartAnimation, 8500);
-
     return () => {
       clearInterval(intervalId);
     };
   }, []);
 
+  const location = useLocation();
+  const currentUrl = location.pathname;
+  console.log('currentUrl:', currentUrl);
+  gsap.registerPlugin(ScrollToPlugin);
+
   const navigateToHome = () => {
-    navigate("/", {
-      state: { targetId: "home" },
-    });
+    if (currentUrl === '/'){
+      gsap.to(window, {
+        duration: 1.35, 
+        scrollTo: {
+          y: '#home', // Scroll to the target section
+          offsetY: 50, // Adjust offset if needed
+          autoKill: true // Automatically kill the tween if user scrolls manually
+        },
+        ease: "power2.inOut"
+      });
+    }
+
+    navigate("/", { state: { targetId: "home" }, replace: true });
   };
 
   return (
