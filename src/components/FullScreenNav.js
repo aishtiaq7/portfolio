@@ -24,9 +24,9 @@ const FullScreenNav = (props) => {
     const targetElement = e.target.innerText.toString().toLowerCase();
     const element = document.getElementById(targetElement);
 
-    console.log("currentUrl => :", currentUrl);
-    console.log("targetElement => :", targetElement);
-    console.log("element => :", element);
+    // console.log("currentUrl => :", currentUrl);
+    // console.log("targetElement => :", targetElement);
+    // console.log("element => :", element);
 
     const handleNavigation = (path, state = null) => {
       handleCloseButtonClick();
@@ -37,7 +37,6 @@ const FullScreenNav = (props) => {
 
     const scrollToElement = () => {
       handleCloseButtonClick();
-      console.log('@scrollToElement, element => ', element);
       gsap.to(window, {
         duration: targetElement === "contact" ? 2.1 : 1.25,
         scrollTo: {
@@ -49,17 +48,15 @@ const FullScreenNav = (props) => {
       });
     };
 
-    if (currentUrl === "/" || element !== null) {
-      console.log('SHOULD BE HERE & element = ', element);
+    if (currentUrl === "/" && targetElement === "contact") {
+      scrollToElement();
+    } else if (currentUrl === "/" || element !== null) {
       if (targetElement === "learn more") {
         handleNavigation("/learnmore");
-      } else if (targetElement === "contact") {
-        handleNavigation("/", { targetId: "contact" });
       } else {
         scrollToElement();
       }
     } else if (currentUrl === "/learnmore") {
-      console.log("@from learnmore, targetElement:", targetElement);
       switch (targetElement) {
         case "home":
           handleNavigation("/", { targetId: "home" });
