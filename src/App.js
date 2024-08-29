@@ -39,7 +39,7 @@ function App() {
   const contactRef = useRef(null);
   const [showReveal, setShowReveal] = useState(true);
 
-  gsap.registerPlugin(ScrollToPlugin);
+  // gsap.registerPlugin(ScrollToPlugin);
 
   const location = useLocation();
   useEffect(() => {
@@ -217,7 +217,7 @@ function App() {
           scrollTo: {
             y: selectedRef.current, // Scroll to the target section
             offsetY: 0, // Adjust offset if needed
-            autoKill: true, // Automatically kill the tween if user scrolls manually
+            autoKill: false, // Automatically kill the tween if user scrolls manually
           },
           ease: "power1.inOut",
         });

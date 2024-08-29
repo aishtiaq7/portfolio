@@ -205,7 +205,7 @@ export const Section = (props) => {
                     scrollTo: {
                       y: element, // Scroll to the target section
                       offsetY: -35, // Adjust offset if needed
-                      autoKill: true, // Automatically kill the tween if user scrolls manually
+                      autoKill: false, // Automatically kill the tween if user scrolls manually
                     },
                     // ease: "power2.inOut"
                     ease: "expoScale",
@@ -278,7 +278,7 @@ export const DarkSection = (props) => {
                 scrollTo: {
                   y: element, // Scroll to the target section
                   offsetY: 50, // Adjust offset if needed
-                  autoKill: true, // Automatically kill the tween if user scrolls manually
+                  autoKill: false, // Automatically kill the tween if user scrolls manually
                 },
                 // ease: "power2.inOut"
                 ease: "expoScale",

@@ -52,7 +52,7 @@ const FullScreenNav = (props) => {
           scrollTo: {
             y: element,
             offsetY: offsetYValue,
-            autoKill: true,
+            autoKill: false,
           },
           ease: "expoScale",
         });
@@ -157,6 +157,7 @@ const FullScreenNav = (props) => {
     } else {
       tl.current.reverse();
     }
+    // eslint-disable-next-line
   }, [props.showFullScreenNav]);
 
   return (
@@ -171,7 +172,7 @@ const FullScreenNav = (props) => {
         </IconContext.Provider>
       </div>
 
-      <ul ref={ulRef}>
+      <ul ref={ulRef} className="fs-ul">
         <li>
           <button className="linkButtons" onClick={handleNavLinkClick}>
             Home

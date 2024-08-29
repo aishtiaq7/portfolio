@@ -77,7 +77,7 @@ const Navbar = (props) => {
         scrollTo: {
           y: '#home', // Scroll to the target section
           offsetY: 50, // Adjust offset if needed
-          autoKill: true // Automatically kill the tween if user scrolls manually
+          autoKill: false // Automatically kill the tween if user scrolls manually
         },
         ease: "power2.inOut"
       });
