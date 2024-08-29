@@ -361,7 +361,7 @@ function App() {
                   </div>
 
                   <div className="modal-subSection modalDes">
-                    {rodalContent.descriontion}
+                    <p>{rodalContent.descriontion}</p>
                   </div>
                   <div className="modal-subSection techStack">
                     {getTechStackRender(rodalContent.tech)}

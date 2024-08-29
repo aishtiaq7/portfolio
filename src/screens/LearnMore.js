@@ -110,16 +110,9 @@ const LearnMore = (props) => {
   // eslint-disable-next-line
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  //                                     lg  sm    - screens
+  //                             lg  sm    - screens
   const spacing = screenWidth > 600 ? 45 : 22;
   const fontsizing = screenWidth > 600 ? 40 : 29;
-
-  // console.log('scn width:', screenWidth);
-  // console.log('fontsizing:', fontsizing);
-
-  // console.clear();
-  // console.log('screen width:', screenWidth);
-  // console.log('spacing:\t', spacing)
 
   const initializeVara = useCallback(() => {
     if (inView) {

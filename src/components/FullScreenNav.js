@@ -1,7 +1,7 @@
 import { RxCross1 } from "react-icons/rx";
 import { IconContext } from "react-icons";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useRef, useEffect , useState} from "react";
+import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import "./FullScreenNav.css";
@@ -16,108 +16,10 @@ const FullScreenNav = (props) => {
   const ulRef = useRef(null); // Ref for the list items
   const tl = useRef(null); // Ref for the timeline
 
-  // const handleNavLinkClick = (e) => {
-  //   e.preventDefault();
-  //   gsap.registerPlugin(ScrollToPlugin);
-
-  //   const currentUrl = location.pathname;
-  //   const targetElement = e.target.innerText.toString().toLowerCase();
-  //   const element = document.getElementById(targetElement);
-
-  //   // console.log("currentUrl => :", currentUrl);
-  //   // console.log("targetElement => :", targetElement);
-  //   // console.log("element => :", element);
-
-  //   const handleNavigation = (path, state = null) => {
-  //     handleCloseButtonClick();
-  //     setTimeout(() => {
-  //       navigate(path, { state });
-  //     }, 750);
-  //   };
-
-  //   const scrollToElement = () => {
-  //     handleCloseButtonClick();
-
-  //     /*
-  //       Higher offset value means go more down the page.
-  //       Lower (or negative) offset value means scroll up the page.
-  //   */
-  //     const isPhone = window.innerWidth <= 768;
-  //     const offsets = {
-  //       home: 0,
-  //       about: isPhone ? 100 : -54,
-  //       default: isPhone ? 80 : 80, // Default offset for other sections
-  //     };
-
-  //     let offsetYValue;
-
-  //     switch (targetElement) {
-  //       case "home":
-  //         offsetYValue = offsets.home;
-  //         break;
-  //       case "about":
-  //         offsetYValue = offsets.about;
-  //         break;
-  //       default:
-  //         offsetYValue = offsets.default;
-  //         break;
-  //     }
-
-  //     gsap.to(window, {
-  //       duration: targetElement === "contact" ? 2.1 : 1.25,
-  //       scrollTo: {
-  //         y: element,
-  //         offsetY: offsetYValue,
-  //         autoKill: true,
-  //       },
-  //       ease: "expoScale",
-  //     });
-  //   };
-
-  //   if (currentUrl === "/" && targetElement === "contact") {
-  //     console.log("from @home && contact 1st");
-  //     scrollToElement();
-  //   } else if (currentUrl === "/" || element !== null) {
-  //     console.log("from @home2 ,targetElement:=>", targetElement);
-
-  //     if (targetElement === "contact") {
-  //       handleNavigation("/", { targetId: "contact" });
-  //     } else if (targetElement === "learn more") {
-  //       handleNavigation("/learnmore");
-  //     } else {
-  //       scrollToElement();
-  //     }
-  //   } else if (currentUrl === "/learnmore") {
-  //     console.log("from @learnmore", `target:',${targetElement}`);
-  //     switch (targetElement) {
-  //       case "home":
-  //         handleNavigation("/", { targetId: "home" });
-  //         break;
-  //       case "about":
-  //         handleNavigation("/", { targetId: "about" });
-  //         break;
-  //       case "learn more":
-  //         console.log("inside here");
-  //         handleCloseButtonClick();
-  //         handleNavigation("/", { targetId: "contact" });
-  //         break;
-  //       case "contact":
-  //         handleNavigation("/", { targetId: "contact" });
-  //         break;
-  //       default:
-  //         handleNavigation("/");
-  //         break;
-  //     }
-  //   }
-  // };
-
-
-  const [fsAnimationStates,setFsAnimationStates ] = useState({
-    forwardDone: false, 
-    reverseDone: true, 
-  })
-  console.log('initial', fsAnimationStates)
-
+  const [fsAnimationStates, setFsAnimationStates] = useState({
+    forwardDone: null,
+    reverseDone: true,
+  });
 
   const handleNavLinkClick = (e) => {
     e.preventDefault();
@@ -126,34 +28,34 @@ const FullScreenNav = (props) => {
     const currentUrl = location.pathname;
     const targetElement = e.target.innerText.toString().toLowerCase();
     const element = document.getElementById(targetElement);
+    console.log(`@from: ${currentUrl} -> ${targetElement}`);
 
     const handleNavigation = (path, state = null) => {
-      handleCloseButtonClick();
-      setTimeout(() => {
+      handleCloseButtonClick(() => {
         navigate(path, { state });
-      }, 1000);
+      });
     };
 
     const scrollToElement = () => {
-      handleCloseButtonClick();
+      handleCloseButtonClick(() => {
+        const isPhone = window.innerWidth <= 768;
+        const offsets = {
+          home: 0,
+          about: isPhone ? 100 : -54,
+          default: isPhone ? 80 : 80,
+        };
 
-      const isPhone = window.innerWidth <= 768;
-      const offsets = {
-        home: 0,
-        about: isPhone ? 100 : -54,
-        default: isPhone ? 80 : 80,
-      };
+        const offsetYValue = offsets[targetElement] || offsets.default;
 
-      const offsetYValue = offsets[targetElement] || offsets.default;
-
-      gsap.to(window, {
-        duration: targetElement === "contact" ? 2.1 : 1.25,
-        scrollTo: {
-          y: element,
-          offsetY: offsetYValue,
-          autoKill: true,
-        },
-        ease: "expoScale",
+        gsap.to(window, {
+          duration: targetElement === "contact" ? 2.1 : 1.25,
+          scrollTo: {
+            y: element,
+            offsetY: offsetYValue,
+            autoKill: true,
+          },
+          ease: "expoScale",
+        });
       });
     };
 
@@ -174,7 +76,7 @@ const FullScreenNav = (props) => {
         home: () => handleNavigation("/", { targetId: "home" }),
         about: () => handleNavigation("/", { targetId: "about" }),
         contact: () => handleNavigation("/", { targetId: "contact" }),
-        default: () => handleNavigation("/"),
+        default: () => handleNavigation("/learnmore"),
       },
     };
 
@@ -184,6 +86,7 @@ const FullScreenNav = (props) => {
         navigationActions[currentUrl]?.default;
 
       if (action) {
+        console.log("action:", action);
         action();
       } else {
         console.error("No navigation action defined for this route.");
@@ -193,38 +96,43 @@ const FullScreenNav = (props) => {
     executeNavigation();
   };
 
-  const handleCloseButtonClick = () => {
+  const handleCloseButtonClick = (callback) => {
     tl.current
       .timeScale(1.65)
       .reverse()
       .then(() => {
+        setFsAnimationStates((prevState) => ({
+          ...prevState,
+          forwardDone: false,
+          reverseDone: true,
+        }));
         props.setShowFullScreenNav(false);
+        if (callback) callback();
       });
   };
 
-  // GSAP main time line
+  // GSAP main timeline
   useEffect(() => {
     tl.current = gsap.timeline({
       paused: true,
       onComplete: () => {
-        console.log("forward complete");
-        setFsAnimationStates({
-          forwardDone: true, 
+        setFsAnimationStates((prevState) => ({
+          ...prevState,
+          forwardDone: true,
           reverseDone: false,
-        });
-        console.log('f.done', fsAnimationStates)
-
+        }));
+        console.log("f.done ", fsAnimationStates);
       },
       onReverseComplete: () => {
-        console.log("reverse complete");
-        setFsAnimationStates({
-          forwardDone: false, 
+        setFsAnimationStates((prevState) => ({
+          ...prevState,
+          forwardDone: false,
           reverseDone: true,
-        });
-        console.log('r.done', fsAnimationStates)
-      }
+        }));
+        console.log("r.done ", fsAnimationStates);
+      },
     });
-  
+
     tl.current
       .fromTo(
         closeBtnRef.current,
@@ -243,20 +151,19 @@ const FullScreenNav = (props) => {
         },
         "-=0.6"
       );
-  
+
     if (props.showFullScreenNav) {
       tl.current.play();
     } else {
       tl.current.reverse();
     }
   }, [props.showFullScreenNav]);
-  
 
   return (
     <div className={props.showFullScreenNav ? "fs-menu" : "displayNone"}>
       <div
         className="closeBtn"
-        onClick={handleCloseButtonClick}
+        onClick={() => handleCloseButtonClick()}
         ref={closeBtnRef}
       >
         <IconContext.Provider value={{ className: "crossStyles" }}>
@@ -284,10 +191,9 @@ const FullScreenNav = (props) => {
           <button
             className="linkButtons"
             onClick={() => {
-              handleCloseButtonClick();
-              setTimeout(() => {
+              handleCloseButtonClick(() => {
                 window.open(googleDriveResumeLink, "_blank");
-              }, 850); // Adjust the delay as needed
+              });
             }}
           >
             Resume
