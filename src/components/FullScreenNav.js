@@ -33,7 +33,7 @@ const FullScreenNav = (props) => {
     const currentUrl = location.pathname;
     const targetElement = e.target.innerText.toString().toLowerCase();
     const element = document.getElementById(targetElement);
-    console.log(`@from: ${currentUrl} -> ${targetElement}`);
+    // console.log(`@from: ${currentUrl} -> ${targetElement}`);
 
     const handleNavigation = (path, state = null) => {
       handleCloseButtonClick(() => {
@@ -126,7 +126,6 @@ const FullScreenNav = (props) => {
           forwardDone: true,
           reverseDone: false,
         }));
-        console.log("f.done ", fsAnimationStates);
       },
       onReverseComplete: () => {
         setFsAnimationStates((prevState) => ({
@@ -134,7 +133,6 @@ const FullScreenNav = (props) => {
           forwardDone: false,
           reverseDone: true,
         }));
-        console.log("r.done ", fsAnimationStates);
       },
     });
 

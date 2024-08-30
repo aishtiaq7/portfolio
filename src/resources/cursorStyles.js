@@ -9,7 +9,7 @@ const returnCursorVariant = (mousePosition) => {
     onNavbar: {
       x: mousePosition.x - 25,
       y: mousePosition.y - 25, // minus 25 cuz radius of cursor is 50
-      backgroundColor: "grey",
+      backgroundColor: "rgba(128, 128, 128, 1)",
       mixBlendMode: "difference",
 
       opacity: 0.35,
@@ -17,7 +17,7 @@ const returnCursorVariant = (mousePosition) => {
     onNavbarLinks: {
       x: mousePosition.x - 25,
       y: mousePosition.y - 25, // minus 25 cuz radius of cursor is 50
-      backgroundColor: "blue",
+      backgroundColor: "rgba(0, 0, 255, 1)",
       mixBlendMode: "difference",
 
       opacity: 0.85,

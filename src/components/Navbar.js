@@ -98,12 +98,9 @@ const Navbar = (props) => {
           : ""
       }
       onMouseEnter={() => {
-        // props.textEnterLogo();
         dispatch(setCursorStyle("onNavbar"));
       }}
       onMouseLeave={() => {
-        console.log('fired this')
-        // props.textLeaveLogo();
         dispatch(setCursorStyle("default"));
 
       }}
