@@ -1,5 +1,5 @@
 .fs-menu {
-  overflow-y: auto;
+  overflow-y: hidden;
   scrollbar-width: none; /* For Firefox */
 
   cursor: none;
@@ -12,11 +12,13 @@
   color: var(--main-white-color);
 }
 
-.fs-menu ul {
+.fs-menu ul,
+.fs-ul {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   background-color: black;
   height: 100vh;
   list-style-type: none;
@@ -24,17 +26,35 @@
   max-width: 100vw;
 }
 
-.fs-menu ul li {
+.fs-menu ul li,
+.fs-ul li {
+  width: 350px;
   margin: 1rem;
-  padding: 1rem;
+  /* padding: 1rem; */
+  border: 2px solid black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .linkButtons {
-  background-color: rgb(236, 236, 236);
-  padding: 1.8rem 5.8rem;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  padding: 1rem 1.8rem;
   text-decoration: none;
   color: black;
   cursor: none;
+  border: 1px solid white;
+
+  border-radius: 12px;
+  color: white;
+  transition: scale 350ms ease;
+
+  font-family: var(--content-font-family);
+  font-size: var(--content-font-size);
 }
 
 .linkButtons:hover {
@@ -43,7 +63,12 @@
     rgba(38, 38, 38, 1) 0%,
     rgba(0, 0, 0, 1) 100%
   );
-  background: yellow;
+  background: rgb(178, 178, 178);
+  scale: 1.2;
+
+  -webkit-filter: drop-shadow(-2px 3px 14px rgba(252, 252, 252, 0.4));
+  filter: drop-shadow(-2px 3px 14px rgba(252, 252, 252, 0.4));
+  color: black;
 }
 
 .closeBtn {
@@ -54,6 +79,7 @@
   height: 12rem;
   padding: 1.3rem;
   border-radius: 50%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,6 +87,7 @@
 
 .closeBtn:hover {
   border: 2px solid red;
+  transform: scale(0.55);
 }
 
 .crossStyles {
@@ -73,13 +100,41 @@
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
-  .fs-menu ul {
-    padding: 14rem 1rem;
-  }
+/* .fs-ul {
 
-  .fs-menu ul li {
-    padding: 1rem 2rem;
+} */
+
+@media only screen and (max-width: 600px) {
+  .linkButtons {
+    height: 100%;
+    width: 100%;
+
+    background-color: black;
+    color: black;
+    padding: 1rem 1.4rem;
+    text-decoration: none;
+    cursor: none;
+    border: 2px solid white;
+
+    border-radius: 12px;
+    color: white;
+    transition: scale 350ms ease;
+
+    font-family: var(--content-font-family);
+    font-size: 2.2vh;
+  }
+  .linkButtons:hover {
+    background: radial-gradient(
+      circle,
+      rgba(38, 38, 38, 1) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    background: rgb(178, 178, 178);
+    scale: 1.1;
+
+    -webkit-filter: drop-shadow(-2px 3px 14px rgba(252, 252, 252, 0.4));
+    filter: drop-shadow(-2px 3px 14px rgba(252, 252, 252, 0.4));
+    color: black;
   }
 
   .closeBtn {

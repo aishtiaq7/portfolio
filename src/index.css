@@ -1,13 +1,39 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  --main-white-color: rgb(239, 239, 239);
+  /* --content-font-family: HelveticaNowText-Light; */
+  --content-font-family: "Poppins";
+
+  --content-font-size: 1.8vw;
+  --content-font-size-phone-view: 3.4vw;
+}
+@font-face {
+  font-family: "Elastic";
+  src: local("Elastic"), url(./fonts/Elastic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Helvitica";
+  src: local("Helvitica"), url(./fonts/Helvitica.ttf) format("truetype");
+}
+@font-face {
+  /*
+    font downloaded from: https://fontshub.pro/font/helvetica-now-text-download
+  */
+  font-family: "HelveticaNowText-Light";
+  src: local("HelveticaNowText-Light"),
+    url(./fonts/HelveticaNowText-Light.ttf) format("truetype");
 }

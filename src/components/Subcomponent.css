@@ -87,7 +87,6 @@
   align-items: center;
   flex-direction: column;
   padding-bottom: 0rem;
-  
 
   /* border: 2px solid orange; */
   transform: translateY(-12%);
@@ -265,9 +264,6 @@
   justify-content: center;
   align-items: center;
 
-  /* -webkit-filter: drop-shadow(10px 5px 11px #838383);
-  filter: drop-shadow(10px 5px 11px #838383); */
-
   -webkit-filter: drop-shadow(-2px 3px 14px rgba(0, 0, 0, 0.4));
   filter: drop-shadow(-2px 3px 14px rgba(0, 0, 0, 0.4));
 
@@ -295,12 +291,8 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 
-  /* -webkit-filter: drop-shadow(10px 5px 11px #838383);
-  filter: drop-shadow(2px 1px 8px #d0d0d0 0); */
-
   -webkit-filter: drop-shadow(-2px 3px 14px rgba(252, 252, 252, 0.4));
   filter: drop-shadow(-2px 3px 14px rgba(252, 252, 252, 0.4));
-  
 
   position: sticky;
   position: -webkit-sticky;
@@ -349,7 +341,7 @@
   font: var(--content-font-family);
   font-size: 3.8vw;
 
-/* 
+  /* 
   z-index: 30 !important; */
 }
 
@@ -429,7 +421,7 @@
   font-family: var(--content-font-family);
   font-weight: 600;
   padding: 1rem 1rem;
-  
+
   letter-spacing: 1.1px;
 
   background-color: rgb(128, 128, 128, 0.5);
@@ -457,7 +449,7 @@
 
   /* padding-top: 7%; */
 }
-#interestBox{
+#interestBox {
   transform: translateY(-25%);
 }
 .stroke-svg {
@@ -522,8 +514,8 @@
   color: black;
 }
 
-.invisibleRef{
-  height: 0px ;
+.invisibleRef {
+  height: 0px;
   width: 100%;
 }
 
@@ -645,7 +637,7 @@
     width: 85%;
     text-align: center;
   }
-  
+
   .projectsContent {
     padding-top: 4rem;
     /* background-color: blue; */
@@ -780,14 +772,14 @@
 
     -webkit-filter: drop-shadow(-2px 3px 14px rgba(250, 250, 250, 0.4));
     filter: drop-shadow(-2px 3px 14px rgba(250, 250, 250, 0.4));
-    
+
     padding-bottom: 0rem;
   }
   .ribbon-dark {
     padding-bottom: 0rem;
   }
 
-  #interestBox{
+  #interestBox {
     transform: translateY(0%);
   }
 }

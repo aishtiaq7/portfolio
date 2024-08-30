@@ -5,6 +5,7 @@ import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useDispatch } from "react-redux";
+import "../../src/index.css"
 import "./FullScreenNav.css";
 import { setCursorStyle } from "../features/cursor/cursorSlice";
 
