@@ -110,6 +110,7 @@ const FullScreenNav = (props) => {
           ...prevState,
           forwardDone: false,
           reverseDone: true,
+          fsAnimationStates
         }));
         props.setShowFullScreenNav(false);
         if (callback) callback();

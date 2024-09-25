@@ -1,8 +1,8 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import "../App.css";
 import "../components/Subcomponent.css";
 import { useNavigate } from "react-router-dom";
-import AOS from "aos";
+// import AOS from "aos";
 
 import "aos/dist/aos.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -36,7 +36,7 @@ export const Section = (props) => {
 
   // eslint-disable-next-line
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const spacing = screenWidth > 600 ? 55 : 0;
+  // const spacing = screenWidth > 600 ? 55 : 0;
   const fontsizing = screenWidth > 600 ? 40 : 17;
   useEffect(() => {
     if (AwshafinView) {
