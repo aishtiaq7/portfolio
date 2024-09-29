@@ -1,8 +1,6 @@
 // import "./Resume.css";
 import Navbar from "../components/Navbar";
 import { useEffect, useRef, useState, useCallback } from "react";
-import "./LearnMore.css";
-import "../App.css";
 import { motion } from "framer-motion";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -20,6 +18,9 @@ import FullScreenNav from "../components/FullScreenNav";
 
 import Vara from "vara";
 import { useInView } from "react-intersection-observer";
+import { Helmet } from "react-helmet-async";
+import "./LearnMore.css";
+import "../App.css";
 
 const LearnMore = (props) => {
   const curVar = useSelector((state) => state.cursor.cursorVariant);
@@ -305,6 +306,17 @@ const LearnMore = (props) => {
 
   return (
     <div>
+       <Helmet>
+        <title>Learn More | Awshaf Ishtiaque</title>
+        <meta name="description" content="Learn more about Awshaf's journey as a Web Developer, Instructor at CICCC, and Co-Founder of Digitec Innovation." />
+        <meta name="keywords" content="Learn More, Awshaf, Web Developer, Instructor, CICCC, Digitec Innovation" />
+        <link rel="canonical" href="https://awshaf.com/learnmore" />
+        <meta property="og:title" content="Learn More | Awshaf Space" />
+        <meta property="og:description" content="Discover more about Awshaf's journey and expertise." />
+        <meta property="og:url" content="https://awshaf.com/learnmore" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
       {/* DOODLE SECTION */}
       <div className="doodleContainer">
         <section

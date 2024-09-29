@@ -14,7 +14,7 @@ import {
   InterestSection,
 } from "./components/Subcomponents";
 import AOS from "aos";
-
+import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
 import { cardItem } from "./resources/Data";
 import returnCursorVariant from "./resources/cursorStyles";
@@ -30,7 +30,6 @@ import {
   updateScreenWidth,
 } from "./features/cursor/globalStatesSlice";
 import ScrollToTop from "./screens/FullScreenReveal";
-
 import FullScreenReveal from "./screens/FullScreenReveal";
 
 function App() {
@@ -269,6 +268,19 @@ function App() {
 
   return (
     <div>
+      <Helmet prioritizeSeoTags>
+        <title>Awshaf Space</title>
+        <meta name="description" content="Web Application Developer | Instructor @CICCC | Co-Founder @Digitec Innovation | SFU CS Grad" />
+        <meta name="keywords" content="Awshaf, Ishtiaque, Web Application Developer, Full Stack Developer, Instructor, Co-Founder, Digitec Innovation, SFU, Computer Science Graduate" />
+        <meta name="author" content="Awshaf Ishtiaque" />
+        <link rel="canonical" href="https://awshaf.com" />
+        <meta property="og:title" content="Web Application Developer | Instructor @CICCC | Co-Founder @Digitec Innovation | SFU CS Grad" />
+        <meta property="og:description" content="Professional profile of a web application developer, instructor at CICCC, co-founder of Digitec Innovation, and SFU Computer Science graduate." />
+        <meta property="og:image" content="%PUBLIC_URL%/path-to-your-image.jpg" />
+        <meta property="og:url" content="https://awshaf.com" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
       {isLoading ? (
         <div className="loading">
           <div className="loading-text">

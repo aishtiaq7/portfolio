@@ -1,12 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
-
 import App from "./App";
 import LearnMore from "./screens/LearnMore";
 import AnimationsRoute from "./screens/AnimationsRoute";
+import { HelmetProvider } from "react-helmet-async";
 import "./index.css";
 
 //redux
@@ -45,6 +44,8 @@ const FooterComponent = () => {
 };
 const googleDriveResumeLink =
   "https://drive.google.com/file/d/1kdT6ksc8Snk4nSEbHnbEg42-OF9ij2jd/view?usp=sharing";
+const appoinmentsLink = "https://calendly.com/awshaf/appointments";
+
 const ExternalRedirect = ({ to }) => {
   useEffect(() => {
     window.location.href = to;
@@ -53,22 +54,27 @@ const ExternalRedirect = ({ to }) => {
   return null;
 };
 
-const appoinmentsLink = 'https://calendly.com/awshaf/appointments';
-
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/learnmore" element={<LearnMore />} />
-        <Route path="/animations" element={<AnimationsRoute />} />
-        <Route path="/resume" element={<ExternalRedirect to={googleDriveResumeLink} />} />
-        <Route path="/appointments" element={<ExternalRedirect to={appoinmentsLink} />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </BrowserRouter>
-    <FooterComponent />
+    <HelmetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/learnmore" element={<LearnMore />} />
+          <Route path="/animations" element={<AnimationsRoute />} />
+          <Route
+            path="/resume"
+            element={<ExternalRedirect to={googleDriveResumeLink} />}
+          />
+          <Route
+            path="/appointments"
+            element={<ExternalRedirect to={appoinmentsLink} />}
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </BrowserRouter>
+      <FooterComponent />
+    </HelmetProvider>
   </Provider>
 );
