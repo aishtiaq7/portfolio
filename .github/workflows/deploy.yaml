@@ -21,6 +21,7 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run build
+      
       - name: GitHub Action for Firebase
         uses: w9jds/firebase-action@v1.5.0
         with:
