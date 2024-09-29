@@ -18,7 +18,6 @@ export const cursorSlice = createSlice({
     },
     setCursorStyle: (state, action) => {
       state.cursorVariant = action.payload;
-      // console.log('action.payload:' ,action.payload);
     },
     updateCursorPosition: (state, action) => {
       const { x, y } = action.payload;

@@ -33,7 +33,6 @@ const FullScreenNav = (props) => {
     const currentUrl = location.pathname;
     const targetElement = e.target.innerText.toString().toLowerCase();
     const element = document.getElementById(targetElement);
-    // console.log(`@from: ${currentUrl} -> ${targetElement}`);
 
     const handleNavigation = (path, state = null) => {
       handleCloseButtonClick(() => {
@@ -91,7 +90,6 @@ const FullScreenNav = (props) => {
         navigationActions[currentUrl]?.default;
 
       if (action) {
-        console.log("action:", action);
         action();
       } else {
         console.error("No navigation action defined for this route.");

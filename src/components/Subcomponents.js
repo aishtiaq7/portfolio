@@ -32,8 +32,6 @@ export const Section = (props) => {
     threshold: 0.5,
   });
 
-  console.log('here',AwshafinView)
-
   // eslint-disable-next-line
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   // const spacing = screenWidth > 600 ? 55 : 0;
