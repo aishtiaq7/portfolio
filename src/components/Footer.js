@@ -76,6 +76,12 @@ const Footer = (props) => {
           <li>
             <a href="https://github.com/aishtiaq7">github</a>
           </li>
+          <li>
+            <a href="https://www.digitecinnovation.ca/">digitec</a>
+          </li>
+          <li>
+            <a href="https://ciccc.ca/wps-members/awshaf-ishtiaque/">ciccc</a>
+          </li>
         </ul>
       </div>
 

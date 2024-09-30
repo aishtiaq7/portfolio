@@ -269,8 +269,8 @@ function App() {
   return (
     <div>
       <Helmet prioritizeSeoTags>
-        <title>Awshaf Space</title>
-        <meta name="description" content="Web Application Developer | Instructor @CICCC | Co-Founder @Digitec Innovation | SFU CS Grad" />
+        <title>Awshaf Ishtiaque</title>
+        <meta name="description" content="A collaborative & solution-driven software developer with 4+ years of experience in full-stack development & cloud computing. Web Application Developer, Instructor at CICCC, Co-Founder of Digitec Innovation, and SFU Computer Science Graduate." />
         <meta name="keywords" content="Awshaf, Ishtiaque, Web Application Developer, Full Stack Developer, Instructor, Co-Founder, Digitec Innovation, SFU, Computer Science Graduate" />
         <meta name="author" content="Awshaf Ishtiaque" />
         <link rel="canonical" href="https://awshaf.com" />

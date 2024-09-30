@@ -60,7 +60,7 @@ export const Section = (props) => {
           },
         ]
       );
-      vara.ready(); // ensure vara is ready and draws text
+      vara.ready(); 
     }
   }, [AwshafinView, fontsizing]); // Reactivate effect when AwshafinView changes
 
@@ -85,7 +85,6 @@ export const Section = (props) => {
             id="aboutSectionBorderBox"
             className="largeText"
             style={{
-              // marginTop: "8rem",
               border: "2px solid black",
               transform: `translateY(${props.offset * parallaxSpeedValue}px)`,
             }}
@@ -123,7 +122,7 @@ export const Section = (props) => {
                 <AnimatedNumber
                   value={inView ? 4 : 0}
                   formatValue={formatValue}
-                  duration={1900}
+                  duration={3450}
                 />
                 + years of experience in full-stack development & cloud
                 computing. I graduated from Simon Fraser University with a
@@ -158,7 +157,7 @@ export const Section = (props) => {
                 my abilities in orchestrating B2B client relationships, guiding
                 the architectural design of sophisticated web solutions, and
                 leading projects from strategic inception through to successful
-                deployment and proactive maintenance.
+                deployment and iterative improments.
                 <br></br>
                 <br></br>
                 My passion lies in devising software solutions that streamline

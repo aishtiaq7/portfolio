@@ -29,7 +29,7 @@ const AnimationsRoute = () => {
   return (
     <div ref={containerRef}>
         <Helmet>
-        <title>Animations | Awshaf Space</title>
+        <title>Animations | Awshaf Ishtiaque</title>
         <meta name="description" content="Explore the animations and effects used in Awshaf's projects, along with insights into their implementation." />
         <link rel="canonical" href="https://awshaf.com/animations" />
         <meta property="og:title" content="Animations | Awshaf Space" />

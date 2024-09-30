@@ -78,16 +78,7 @@ const LearnMore = (props) => {
     },
     {
       category: "Digitec Projects",
-      company: "Clipping Path Service ASIA",
-      companyHyperlink: "https://www.clippingpathserviceasia.com/",
-      bullets: [
-        "Built responsive, reusable components in NextJS using props and modularized CSS facilitating their utilization across multiple pages enhancing code reusability & time to deploy new webpages by 30%.",
-        "Implemented a secure NodeMailer API endpoint within server-side Next.js components for secured email transmission with large attachments, facilitating seamless communication and better user experience.",
-      ],
-    },
-    {
-      category: "Digitec Projects",
-      company: "E-commerce Clothing platform",
+      company: "Fashion E-Boutique",
       companyHyperlink: "https://howuniversehowls.ca/",
       bullets: [
         "Lead the development of a robust e-commerce platform utilizing the PERN stack, facilitating seamless online purchases of t-shirts",
@@ -95,6 +86,34 @@ const LearnMore = (props) => {
         "Maintained transparent communication with clients to accommodate their feature requests and ensure client satisfaction",
       ],
     },
+    {
+      category: "Digitec Projects",
+      company: "Prestigious Power Washing",
+      companyHyperlink: "https://www.prestigiouspressure.ca/",
+      bullets: [
+        "Orchestrate the development of the company portfolio website from its legacy existing Wix website",
+        "Apply SEO techniques to increase customer retention rate by 35%.",
+      ],
+    },
+    {
+      category: "Digitec Projects",
+      company: "Rudolph Christmas Lights",
+      companyHyperlink: "https://www.rudolphchristmaslights.ca/",
+      bullets: [
+        "Designed and developed a visually stunning Next.js website for Rudolph Christmas Lights, incorporating immersive parallax scrolling animations to enhance user engagement. The site features dynamic content sections that react to user scrolling, creating a memorable browsing experience tailored for the festive season.",
+        "SERP managed, Google Analytics, semantic html and many more techniques to bring the website in the first 10 Google search resutls.",
+      ],
+    },
+    {
+      category: "Digitec Projects",
+      company: "Clipping Path Service ASIA",
+      companyHyperlink: "https://www.clippingpathserviceasia.com/",
+      bullets: [
+        "Built responsive, reusable components in NextJS using props and modularized CSS facilitating their utilization across multiple pages enhancing code reusability & time to deploy new webpages by 30%.",
+        "Implemented a secure NodeMailer API endpoint within server-side Next.js components for secured email transmission with large attachments, facilitating seamless communication and better user experience.",
+      ],
+    },
+   
   ];
 
   // eslint-disable-next-line
@@ -308,10 +327,10 @@ const LearnMore = (props) => {
     <div>
        <Helmet>
         <title>Learn More | Awshaf Ishtiaque</title>
-        <meta name="description" content="Learn more about Awshaf's journey as a Web Developer, Instructor at CICCC, and Co-Founder of Digitec Innovation." />
+        <meta name="description" content="Learn more about my journey as a Web Developer, Instructor at CICCC, and Co-Founder of Digitec Innovation and his educational background." />
         <meta name="keywords" content="Learn More, Awshaf, Web Developer, Instructor, CICCC, Digitec Innovation" />
         <link rel="canonical" href="https://awshaf.com/learnmore" />
-        <meta property="og:title" content="Learn More | Awshaf Space" />
+        <meta property="og:title" content="Learn More | Awshaf Ishtiaque" />
         <meta property="og:description" content="Discover more about Awshaf's journey and expertise." />
         <meta property="og:url" content="https://awshaf.com/learnmore" />
         <meta property="og:type" content="website" />
