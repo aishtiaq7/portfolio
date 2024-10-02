@@ -21,7 +21,7 @@ const Footer = (props) => {
     };
   }, []);
 
-  const value = 1.88;
+  const value = 1.58;
 
   const getParallaxProperty = () => {
     const docHeight = document.documentElement.offsetHeight;
