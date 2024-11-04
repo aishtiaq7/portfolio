@@ -60,13 +60,34 @@ export const Section = (props) => {
           },
         ]
       );
-      vara.ready(); 
+      vara.ready();
     }
   }, [AwshafinView, fontsizing]); // Reactivate effect when AwshafinView changes
 
   const formatValue = (value) => Math.round(value);
 
   const parallaxSpeedValue = -0.205;
+
+
+  ///
+  //  FOR SERP BUG: years going from 4 -> 0 -> 4
+  //
+  const [displayValue, setDisplayValue] = useState(4); // Start with 4
+  useEffect(() => {
+    setTimeout(() => {
+      setDisplayValue(0);
+      // console.log("Initikal render: Display set to ", displayValue);
+    }, 100);
+  }, []);
+  useEffect(() => {
+    if (inView) {
+      setDisplayValue(5);
+      // console.log("In viewport: Display set to ", displayValue);
+    } else {
+      setDisplayValue(0);
+      // console.log("Out of viewport: Display reset to " , displayValue);
+    }
+  }, [inView]);
 
   return (
     <article
@@ -106,11 +127,6 @@ export const Section = (props) => {
               <h3 ref={inViewRef}>
                 <br></br>
                 My name is{" "}
-                {/* <span
-                  className="AwshafContent"
-                  id="myVaraText"
-                  ref={AwshafRef}
-                ></span> */}
                 <span
                   className="AwshafContent"
                   id="myVaraText"
@@ -120,7 +136,7 @@ export const Section = (props) => {
                 <br></br>I would like to describe myself as a collaborative &
                 solution-driven software developer with{" "}
                 <AnimatedNumber
-                  value={inView ? 4 : 0}
+                  value={displayValue}
                   formatValue={formatValue}
                   duration={3450}
                 />
