@@ -100,9 +100,73 @@
   display: none;
 }
 
-/* .fs-ul {
+/* 
+  COLORS - btn
+*/
+.glow-on-hover {
+  width: 100%; /* Match linkButtons' width */
+  height: 100%; /* Match linkButtons' height */
+  padding: 1rem 1.8rem;
+  color: #fff !important;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+  border: 1px solid white;
+  font-family: var(--content-font-family);
+  font-size: var(--content-font-size);
+  transition: scale 350ms ease;
+}
 
-} */
+.glow-on-hover:hover {
+  background: radial-gradient(
+      circle,
+      rgba(38, 38, 38, 1) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    background: rgb(178, 178, 178);
+    scale: 1.1;
+
+    -webkit-filter: drop-shadow(-2px 3px 14px rgba(252, 252, 252, 0.4));
+    filter: drop-shadow(-2px 3px 14px rgba(252, 252, 252, 0.4));
+    color: black;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 1 !important; /* Continuous effect */
+  border-radius: 12px;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
 
 @media only screen and (max-width: 600px) {
   .linkButtons {
@@ -143,3 +207,4 @@
     border-radius: 50%;
   }
 }
+

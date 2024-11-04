@@ -199,6 +199,11 @@ const FullScreenNav = (props) => {
           </button>
         </li>
         <li>
+          <button className="glow-on-hover" onClick={handleNavLinkClick}>
+            COLORS
+          </button>
+        </li>
+        <li>
           <button
             className="linkButtons"
             onClick={() => {
