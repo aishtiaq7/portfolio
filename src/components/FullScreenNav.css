@@ -170,33 +170,28 @@
 
 
 @media only screen and (max-width: 600px) {
-  .linkButtons {
+  .linkButtons,
+  .glow-on-hover { /* Add glow-on-hover here */
     height: 100%;
     width: 100%;
-
     background-color: black;
     color: black;
     padding: 1rem 1.4rem;
     text-decoration: none;
     cursor: none;
     border: 2px solid white;
-
     border-radius: 12px;
     color: white;
     transition: scale 350ms ease;
-
     font-family: var(--content-font-family);
     font-size: 2.2vh;
   }
-  .linkButtons:hover {
-    background: radial-gradient(
-      circle,
-      rgba(38, 38, 38, 1) 0%,
-      rgba(0, 0, 0, 1) 100%
-    );
+
+  .linkButtons:hover,
+  .glow-on-hover:hover { /* Ensure hover effect consistency */
+    background: radial-gradient(circle, rgba(38, 38, 38, 1) 0%, rgba(0, 0, 0, 1) 100%);
     background: rgb(178, 178, 178);
     scale: 1.1;
-
     -webkit-filter: drop-shadow(-2px 3px 14px rgba(252, 252, 252, 0.4));
     filter: drop-shadow(-2px 3px 14px rgba(252, 252, 252, 0.4));
     color: black;
@@ -208,4 +203,3 @@
     border-radius: 50%;
   }
 }
-
