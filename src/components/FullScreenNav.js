@@ -36,7 +36,7 @@ const FullScreenNav = (props) => {
 
     if (targetElement === "colors") {
       handleCloseButtonClick(() => {
-        window.open("https://www.digitecinnovation.ca/", "_blank"); // replace with the desired URL
+        window.open("https://nextjs14-playground-new.vercel.app/", "_blank"); // replace with the desired URL
       });
       return;
     }
