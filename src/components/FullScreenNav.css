@@ -104,6 +104,7 @@
   COLORS - btn
 */
 .glow-on-hover {
+  cursor: none !important;
   width: 100%; /* Match linkButtons' width */
   height: 100%; /* Match linkButtons' height */
   padding: 1rem 1.8rem;

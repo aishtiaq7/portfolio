@@ -34,6 +34,13 @@ const FullScreenNav = (props) => {
     const targetElement = e.target.innerText.toString().toLowerCase();
     const element = document.getElementById(targetElement);
 
+    if (targetElement === "colors") {
+      handleCloseButtonClick(() => {
+        window.open("https://www.digitecinnovation.ca/", "_blank"); // replace with the desired URL
+      });
+      return;
+    }
+  
     const handleNavigation = (path, state = null) => {
       handleCloseButtonClick(() => {
         navigate(path, { state });
@@ -200,7 +207,7 @@ const FullScreenNav = (props) => {
         </li>
         <li>
           <button className="glow-on-hover" onClick={handleNavLinkClick}>
-            COLORS
+            Colors
           </button>
         </li>
         <li>
