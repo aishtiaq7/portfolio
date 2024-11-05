@@ -106,12 +106,11 @@
 */
 .glow-on-hover {
   cursor: none !important;
-  width: 100%; /* Match linkButtons' width */
-  height: 100%; /* Match linkButtons' height */
+  width: 100%;
+  height: 100%;
   padding: 1rem 1.8rem;
   color: #fff !important;
   background: #111;
-  cursor: pointer;
   position: relative;
   z-index: 0;
   border-radius: 12px;

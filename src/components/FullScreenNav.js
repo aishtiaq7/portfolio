@@ -5,7 +5,7 @@ import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useDispatch } from "react-redux";
-import "../../src/index.css"
+import "../../src/index.css";
 import "./FullScreenNav.css";
 import { setCursorStyle } from "../features/cursor/cursorSlice";
 
@@ -19,7 +19,6 @@ const FullScreenNav = (props) => {
   const closeBtnRef = useRef(null);
   const ulRef = useRef(null); // Ref for the list items
   const tl = useRef(null); // Ref for the timeline
-
 
   const [fsAnimationStates, setFsAnimationStates] = useState({
     forwardDone: null,
@@ -40,7 +39,7 @@ const FullScreenNav = (props) => {
       });
       return;
     }
-  
+
     const handleNavigation = (path, state = null) => {
       handleCloseButtonClick(() => {
         navigate(path, { state });
@@ -115,7 +114,7 @@ const FullScreenNav = (props) => {
           ...prevState,
           forwardDone: false,
           reverseDone: true,
-          fsAnimationStates
+          fsAnimationStates,
         }));
         props.setShowFullScreenNav(false);
         if (callback) callback();
@@ -173,10 +172,10 @@ const FullScreenNav = (props) => {
     <div
       className={props.showFullScreenNav ? "fs-menu" : "displayNone"}
       onMouseEnter={(e) => {
-        dispatch(setCursorStyle('default'))
+        dispatch(setCursorStyle("default"));
       }}
       onMouseLeave={(e) => {
-        dispatch(setCursorStyle('default'))
+        dispatch(setCursorStyle("default"));
       }}
     >
       <div
