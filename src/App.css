@@ -537,6 +537,7 @@ article {
     right: 3%;
     width: 6rem;
     height: 6rem;
+    z-index: 30;
   }
 
   .permissionstext {
