@@ -34,6 +34,7 @@ const FullScreenNav = (props) => {
     const element = document.getElementById(targetElement);
 
     if (targetElement === "colors") {
+      window.open("https://nextjs14-playground-new.vercel.app/", "_blank");
       handleCloseButtonClick(() => {
         window.open("https://nextjs14-playground-new.vercel.app/", "_blank"); // replace with the desired URL
       });
