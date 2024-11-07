@@ -233,7 +233,21 @@ const FullScreenNav = (props) => {
           </button>
         </li>
         <li>
-          <button className="glow-on-hover" onClick={handleNavLinkClick}>
+          <button 
+            className="glow-on-hover" 
+            onClick={handleNavLinkClick}
+            /*
+            onMouseLeave={(e) => {
+              e.target.style.cssText = `
+                box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                outline: none !important;
+                border-color: transparent !important;
+              `;
+            }}
+            */
+          >
             Colors
           </button>
         </li>
@@ -242,11 +256,6 @@ const FullScreenNav = (props) => {
             className="linkButtons"
             onClick={() => {
               window.open(googleDriveResumeLink, "_blank");
-              /*
-              handleCloseButtonClick(() => {
-                window.open(googleDriveResumeLink, "_blank");
-              });
-              */
             }}
           >
             Resume
