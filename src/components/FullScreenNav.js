@@ -20,6 +20,7 @@ const FullScreenNav = (props) => {
   const ulRef = useRef(null); // Ref for the list items
   const tl = useRef(null); // Ref for the timeline
 
+  // eslint-disable-next-line no-unused-vars
   const [fsAnimationStates, setFsAnimationStates] = useState({
     forwardDone: null,
     reverseDone: true,
@@ -107,6 +108,25 @@ const FullScreenNav = (props) => {
   };
 
   const handleCloseButtonClick = (callback) => {
+    gsap.killTweensOf(".glow-on-hover");
+    const glowButton = document.querySelector(".glow-on-hover");
+    if (glowButton) {
+      // Remove the hover class if it exists
+      glowButton.classList.remove("hover");
+
+      // Reset all possible hover-related styles
+      glowButton.style.cssText = `
+        background: #111;
+        filter: none;
+        transform: scale(1);
+        color: #fff;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        border-color: transparent;
+      `;
+    }
+
     tl.current
       .timeScale(1.65)
       .reverse()
@@ -115,7 +135,6 @@ const FullScreenNav = (props) => {
           ...prevState,
           forwardDone: false,
           reverseDone: true,
-          fsAnimationStates,
         }));
         props.setShowFullScreenNav(false);
         if (callback) callback();
@@ -166,7 +185,13 @@ const FullScreenNav = (props) => {
     } else {
       tl.current.reverse();
     }
-    // eslint-disable-next-line
+
+    return () => {
+      gsap.killTweensOf(".glow-on-hover");
+      if (tl.current) {
+        tl.current.kill();
+      }
+    };
   }, [props.showFullScreenNav]);
 
   return (
@@ -214,6 +239,7 @@ const FullScreenNav = (props) => {
           <button
             className="linkButtons"
             onClick={() => {
+              window.open(googleDriveResumeLink, "_blank");
               handleCloseButtonClick(() => {
                 window.open(googleDriveResumeLink, "_blank");
               });
