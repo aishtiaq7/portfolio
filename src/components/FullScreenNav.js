@@ -36,9 +36,11 @@ const FullScreenNav = (props) => {
 
     if (targetElement === "colors") {
       window.open("https://nextjs14-playground-new.vercel.app/", "_blank");
+      /*
       handleCloseButtonClick(() => {
         window.open("https://nextjs14-playground-new.vercel.app/", "_blank"); // replace with the desired URL
       });
+      */
       return;
     }
 
@@ -240,9 +242,11 @@ const FullScreenNav = (props) => {
             className="linkButtons"
             onClick={() => {
               window.open(googleDriveResumeLink, "_blank");
+              /*
               handleCloseButtonClick(() => {
                 window.open(googleDriveResumeLink, "_blank");
               });
+              */
             }}
           >
             Resume
