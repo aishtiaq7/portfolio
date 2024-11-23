@@ -12,11 +12,12 @@ import {
   setModalContent,
 } from "../features/cursor/globalStatesSlice";
 import { setCursorStyle } from "../features/cursor/cursorSlice";
-import AnimatedNumber from "animated-number-react";
+// import AnimatedNumber from "animated-number-react";
 import { useInView } from "react-intersection-observer";
 import Vara from "vara";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import CountUp from "react-countup";
 
 export const Section = (props) => {
   const dispatch = useDispatch();
@@ -64,30 +65,29 @@ export const Section = (props) => {
     }
   }, [AwshafinView, fontsizing]); // Reactivate effect when AwshafinView changes
 
-  const formatValue = (value) => Math.round(value);
+  // const formatValue = (value) => Math.round(value);
 
   const parallaxSpeedValue = -0.205;
-
 
   ///
   //  FOR SERP BUG: years going from 4 -> 0 -> 4
   //
-  const [displayValue, setDisplayValue] = useState(4); // Start with 4
-  useEffect(() => {
-    setTimeout(() => {
-      setDisplayValue(0);
-      // console.log("Initikal render: Display set to ", displayValue);
-    }, 100);
-  }, []);
-  useEffect(() => {
-    if (inView) {
-      setDisplayValue(5);
-      // console.log("In viewport: Display set to ", displayValue);
-    } else {
-      setDisplayValue(0);
-      // console.log("Out of viewport: Display reset to " , displayValue);
-    }
-  }, [inView]);
+  // const [displayValue, setDisplayValue] = useState(0); // Start with 4
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setDisplayValue(0);
+  //     // console.log("Initikal render: Display set to ", displayValue);
+  //   }, 100);
+  // }, []);
+  // useEffect(() => {
+  //   if (inView) {
+  //     setDisplayValue(5);
+  //     // console.log("In viewport: Display set to ", displayValue);
+  //   } else {
+  //     setDisplayValue(0);
+  //     // console.log("Out of viewport: Display reset to " , displayValue);
+  //   }
+  // }, [inView]);
 
   return (
     <article
@@ -135,11 +135,22 @@ export const Section = (props) => {
                 ></span>
                 <br></br>I would like to describe myself as a collaborative &
                 solution-driven software developer with{" "}
-                <AnimatedNumber
+                {/* <AnimatedNumber
                   value={displayValue}
                   formatValue={formatValue}
                   duration={3450}
-                />
+                /> */}
+                {inView ? (
+                  <CountUp
+                    end={4}
+                    duration={3.5}
+                    useEasing={false}
+                    onStart={() => console.log("Started! 💨")}
+                    onEnd={() => console.log("Ended! 👏")}
+                  />
+                ) : (
+                  <span>4</span> // Display 4 for SERP when not in view
+                )}
                 + years of experience in full-stack development & cloud
                 computing. I graduated from Simon Fraser University with a
                 bachelor's degree in computer science and currently working as
