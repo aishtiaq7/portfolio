@@ -10,7 +10,7 @@ export const cardItem = [
   {
     id: 9,
     projectName: "Prestigious Power Washing",
-    iconsList: ["next","github", "redux",  "html", "js"],
+    iconsList: ["next", "github", "redux", "html", "js"],
     hyperlink: "https://www.prestigiouspressure.ca/",
     des: "Led the launch of a high-performance Next.js application for Prestigious Pressure Washing Company, boosting online presence through enhanced SEO. Integrated a CRM system for streamlined customer interactions and introduced a unique service estimator tool for instant quotes, setting the business apart in the digital landscape.",
     cursorClass: "lala",
@@ -23,12 +23,20 @@ export const cardItem = [
     des: "Developed responsive NextJS components with modularized CSS for improved reusability. Implemented a secure NodeMailer API in Next.js for enhanced email transmission with large attachments, boosting user experience.",
     cursorClass: "lala",
   },
+  // {
+  //   id: 8,
+  //   projectName: "Clinical Remedy Store",
+  //   iconsList: ["html", "css", "python", "django", "psql", "digital-ocean"],
+  //   hyperlink: "http://tripsnrips.ca/",
+  //   des: "Developed an e-commerce platform for remedy sales, featuring an editable content dashboard for the website owner. The site offers multiple shipping options at checkout and includes a cryptocurrency payment gateway.",
+  //   cursorClass: "lala",
+  // },
   {
     id: 8,
-    projectName: "Clinical Remedy Store",
-    iconsList: ["html", "css", "python", "django", "psql", "digital-ocean"],
-    hyperlink: "http://tripsnrips.ca/",
-    des: "Developed an e-commerce platform for remedy sales, featuring an editable content dashboard for the website owner. The site offers multiple shipping options at checkout and includes a cryptocurrency payment gateway.",
+    projectName: "S.L.A Music Platform",
+    iconsList: ["next", "contentful", "redux", "tailwind", "js", "html"],
+    hyperlink: "https://www.slamusic.xyz/",
+    des: "Developed a dynamic music platform for artist Shams Laden Ahmad (S.L.A) using Next.js and a headless CMS. The site features seamless integration of music streaming services, an online merchandise store, and responsive design, providing fans with an engaging and immersive experience.",
     cursorClass: "lala",
   },
   {
@@ -80,5 +88,4 @@ export const cardItem = [
     des: "Aesthetically pleasing Japanese website clone that showcases a prominent Japanese artist and his artworks",
     cursorClass: "lala",
   },
-
 ];

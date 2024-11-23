@@ -145,8 +145,6 @@ export const Section = (props) => {
                     end={4}
                     duration={3.5}
                     useEasing={false}
-                    onStart={() => console.log("Started! 💨")}
-                    onEnd={() => console.log("Ended! 👏")}
                   />
                 ) : (
                   <span>4</span> // Display 4 for SERP when not in view
@@ -165,7 +163,7 @@ export const Section = (props) => {
                     Instructor
                   </a>
                 </span>{" "}
-                for Cornerstone International College.
+                for Cornerstone International College teaching Web Application Development.
               </h3>
               <br></br>
               <h3>
@@ -181,7 +179,7 @@ export const Section = (props) => {
                   </a>
                 </span>
                 , I've led the development of various projects which have honed
-                my abilities in orchestrating B2B client relationships, guiding
+                my abilities in orchestrating B2B & B2C relationships, guiding
                 the architectural design of sophisticated web solutions, and
                 leading projects from strategic inception through to successful
                 deployment and iterative improments.
