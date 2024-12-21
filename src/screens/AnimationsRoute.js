@@ -1,7 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import ReactQuill from "react-quill";
+
 import { Helmet } from "react-helmet-async";
 import "./AnimationsRoute.css";
 
@@ -86,8 +88,9 @@ const AnimationsRoute = () => {
         }}
       >
         <h3>Animations</h3>
-        <h4>Card Title</h4>
-        <p>This is a card that takes up 40% of the space.</p>
+        {/* <h4>Card Title</h4> */}
+        <QuillEditor/>
+        {/* <p>This is a card that takes up 40% of the space.</p> */}
       </div>
 
       <p style={{ textAlign: "center", marginBottom: "10px" }}>
@@ -96,5 +99,41 @@ const AnimationsRoute = () => {
     </div>
   );
 };
+
+
+const QuillEditor = () => {
+  const [content, setContent] = useState("");
+
+  const handleChange = (value) => {
+    setContent(value);
+  };
+
+  return (
+    <div style={{ margin: "20px", maxWidth: "800px" }}>
+      <h2>Quill.js Editor</h2>
+      <ReactQuill
+        theme="snow"
+        value={content}
+        onChange={handleChange}
+        placeholder="Start typing here..."
+        style={{ height: "200px", marginBottom: "20px" }}
+      />
+      <div>
+        <h3>Editor Content:</h3>
+        <div
+          style={{
+            border: "1px solid #ddd",
+            padding: "10px",
+            borderRadius: "5px",
+            background: "#f9f9f9",
+          }}
+        >
+          {content}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 
 export default AnimationsRoute;
