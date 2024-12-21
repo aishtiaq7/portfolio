@@ -276,7 +276,7 @@ function App() {
         <link rel="canonical" href="https://awshaf.com" />
         <meta property="og:title" content="Web Application Developer | Instructor @CICCC | Co-Founder @Digitec Innovation | SFU CS Grad" />
         <meta property="og:description" content="Professional profile of a web application developer, instructor at CICCC, co-founder of Digitec Innovation, and SFU Computer Science graduate." />
-        <meta property="og:image" content="%PUBLIC_URL%/path-to-your-image.jpg" />
+        <meta property="og:image" content="%PUBLIC_URL%/landingportrait.png" />
         <meta property="og:url" content="https://awshaf.com" />
         <meta property="og:type" content="website" />
       </Helmet>
