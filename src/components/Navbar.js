@@ -17,7 +17,7 @@ const Navbar = (props) => {
   const lastNameRef = useRef(null);
   const containerRef = useRef(null);
   const tlRef = useRef(null);
-  gsap.registerPlugin(TextPlugin);
+  gsap.registerPlugin(TextPlugin, ScrollToPlugin);
   const dispatch = useDispatch();
 
   useGSAP(
@@ -58,7 +58,6 @@ const Navbar = (props) => {
     }
   };
 
-  // name logo restart animiation
   useEffect(() => {
     const intervalId = setInterval(restartAnimation, 8500);
     return () => {
@@ -68,7 +67,7 @@ const Navbar = (props) => {
 
   const location = useLocation();
   const currentUrl = location.pathname;
-  gsap.registerPlugin(ScrollToPlugin);
+  console.log('currentUrl', currentUrl) ;
 
   const navigateToHome = () => {
     if (currentUrl === "/") {
@@ -89,19 +88,20 @@ const Navbar = (props) => {
   return (
     <nav
       ref={containerRef}
-      className={
+      className={`navbar ${
+        currentUrl === "/learnmore" ? "learnMoreSpecificStyles" : ""
+      } ${
         props.aboutSectionInView ||
         props.invertNavColor ||
         props.invertNavColor2
           ? "navOnWhite"
           : ""
-      }
+      }`}
       onMouseEnter={() => {
         dispatch(setCursorStyle("onNavbar"));
       }}
       onMouseLeave={() => {
         dispatch(setCursorStyle("default"));
-
       }}
     >
       <div

@@ -29,8 +29,6 @@ strong {
   color: black;
   padding-bottom: 5rem;
 
-  /* overflow-x: hidden; */
-
   background-color: var(--main-white-color);
   transition: all 1.3s ease;
 
@@ -38,14 +36,11 @@ strong {
 }
 
 .paraContainers {
-  /* padding-top: 6.5rem; */
-
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
 
-  /* padding: 3rem 2.2rem; */
   background-color: white;
 
   min-height: 300vh;
@@ -69,7 +64,6 @@ strong {
 }
 #schoolName{
   min-height: 12.5vh;
-  /* background-color: white !important; */
 }
 .sfulogo {
   width: 10rem;
@@ -103,10 +97,6 @@ strong {
 
   height: 153px;
   z-index: 118;
-
-  /* padding-bottom: 115px; */
-  /* background-color: orange !important; */
-
 }
 .companyRow{
   position: sticky;
@@ -116,7 +106,6 @@ strong {
   background-color: white;
 
   z-index: 119;
-
 }
 
 .company {
@@ -171,7 +160,6 @@ strong {
   padding: 2.8rem 2rem;
   user-select: none;
 
-  /* min-height: 50vh; */
   height: auto;
   z-index: 115;
 }
@@ -205,6 +193,7 @@ strong {
   margin-top: 8rem;
 
   margin-bottom: 40rem;
+  background-color: transparent;
 }
 .boldPara {
   font-weight: 700;
@@ -231,12 +220,7 @@ strong {
   width: 100vw;
   height: 100vh;
   /* z-index: 120; */
-
   position: fixed;
-
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 
   opacity: 0;
   visibility: hidden;
@@ -378,25 +362,23 @@ strong {
   
     height: 83px;
     z-index: 119;
-    /* background-color: rgb(255, 161, 161); */
     background-color: transparent;
     opacity: 1;
     
+    border: 3px solid red !important;
+    padding-left: 0.4rem;
+
+    
   }
   .companyRow{
-    /* background-color: green; */
     position: sticky;
     position: -webkit-sticky; 
     top: 116px;
     width: 100%;
   
-    /* background-color: white !important; */
-    /* border: 3px solid dotted red !important; */
-
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 100%; */
 
     padding: 0;
     margin: 0;
@@ -415,11 +397,7 @@ strong {
     text-decoration: none;
   
     margin: 1.5rem;
-    /* margin-top: 12rem; */
     user-select: none;
-
-    /* background-color: white !important; */
-    /* background-color: red; */
 
     z-index: 119;
   }
@@ -441,7 +419,6 @@ strong {
     justify-content: center;
     align-items: center;
     background-color: rgb(206, 206, 206);
-    /* min-height: 60vh; */
     z-index: 115;
 
     position: sticky;
@@ -450,7 +427,6 @@ strong {
   }
   .bulletContainer.eduBullet{
     min-height: 0;
-    /* background-color: blue; */
     height: 25vh !important;
   }
 
@@ -484,7 +460,6 @@ strong {
   
     height: 83px;
     z-index: 119;
-    /* background-color: rgb(255, 161, 161); */
     background-color: white ;
     opacity: 1;
     
@@ -495,13 +470,11 @@ strong {
     top: 185px;
     width: 100%;
   
-    /* border: 3px solid black; */
     background-color: white !important;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 100%; */
 
     padding: 0;
     margin: 0;
@@ -509,7 +482,6 @@ strong {
     padding-top: 1rem;
     z-index: 119;
 
-    /* background-color: yellow; */
   }
 
   .company {
@@ -522,13 +494,9 @@ strong {
     text-decoration: none;
   
     margin: 1.5rem;
-    /* margin-top: 12rem; */
     user-select: none;
 
-    /* background-color: white !important; */
     z-index: 119;
-
-    /* background-color: yellow !important; */
 
   }
   .educationContainer > .company {
@@ -538,7 +506,6 @@ strong {
     justify-content: center;
     align-items: center;
     background-color: rgb(206, 206, 206);
-    /* min-height: 60vh; */
     z-index: 115;
 
     position: sticky;
