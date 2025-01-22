@@ -80,8 +80,6 @@
   top: 104px;
 }
 .projectsContent {
-  /* padding-top: 4rem; */
-  /* background-color: blue; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,7 +213,6 @@
     transform: rotate(0deg);
   }
 }
-
 
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oleo+Script&family=Poppins:wght@300&family=Roboto:wght@100;400&display=swap");
 .largeText {
@@ -548,6 +545,30 @@
   width: 100%;
 }
 
+.AwshafContent {
+  display: inline-block !important;
+  line-height: 29px;
+  font-family: "Architects Daughter", cursive;
+  font-size: 5.5vw;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+  /* border: 2px solid green; */
+  /* margin-top: 40px; */
+  max-width: 40%;
+}
+.AwshafContent > svg {
+  display: inline-block !important;
+  /* background-color: orange; */
+  transform: translateY(8px);
+}
+/***************************
+
+   Interest Section ends here
+
+***************************/
+
+
+
 /* LARGE screens */
 @media only screen and (min-width: 1400px) and (max-width: 1700px) {
   .card {
@@ -810,5 +831,10 @@
 
   #interestBox {
     transform: translateY(0%);
+  }
+
+  .AwshafContent > svg {
+    display: inline-block !important;
+    transform: translateY(0px);
   }
 }

@@ -3,7 +3,7 @@
 nav {
   position: sticky;
   position: -webkit-sticky; /* Safari */
-  top:0px; /* cuz 104= 6.5rem (navbar) */
+  top: 0px; /* cuz 104= 6.5rem (navbar) */
 
   cursor: none;
   height: 104px;
@@ -58,13 +58,33 @@ menu {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  /* pointer-events: none; */
   user-select: none;
-
 }
 
 /* P H O N E */
 @media only screen and (max-width: 600px) {
+  nav {
+    position: sticky;
+    position: -webkit-sticky; /* Safari */
+    top: 0px; /* cuz 104= 6.5rem (navbar) */
+
+    cursor: none;
+    height: 104px;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 0.2rem;
+    padding-right: 2rem;
+
+    color: var(--main-white-color);
+    background-color: black;
+    z-index: 120;
+
+    transition: all ease 1s;
+  }
   .name-logo {
     font-size: 2.5vw;
     margin-left: 0.8rem;

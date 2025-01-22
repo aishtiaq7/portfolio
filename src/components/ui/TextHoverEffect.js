@@ -90,6 +90,7 @@ export const TextHoverEffect = ({ text, duration }) => {
         strokeWidth={SVG_STROKE_WIDTH}
         className={`font-[helvetica] font-bold stroke-neutral-200 dark:stroke-neutral-800 fill-transparent ${TAILWIND_FONT_SIZE_CLASS}`}
         style={{ opacity: hovered ? 0.7 : 0.0 }}
+
       >
         {text}
       </text>

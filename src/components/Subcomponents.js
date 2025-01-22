@@ -135,17 +135,8 @@ export const Section = (props) => {
                 ></span>
                 <br></br>I would like to describe myself as a collaborative &
                 solution-driven software developer with{" "}
-                {/* <AnimatedNumber
-                  value={displayValue}
-                  formatValue={formatValue}
-                  duration={3450}
-                /> */}
                 {inView ? (
-                  <CountUp
-                    end={4}
-                    duration={3.5}
-                    useEasing={false}
-                  />
+                  <CountUp end={4} duration={3.5} useEasing={false} />
                 ) : (
                   <span>4</span> // Display 4 for SERP when not in view
                 )}
@@ -163,7 +154,8 @@ export const Section = (props) => {
                     Instructor
                   </a>
                 </span>{" "}
-                for Cornerstone International College teaching Web Application Development.
+                for Cornerstone International College teaching Web Application
+                Development.
               </h3>
               <br></br>
               <h3>
@@ -402,13 +394,14 @@ export const InterestSection = (props) => {
 
         <div className="largeText" id="interestBox">
           <div className="container">
-            <h1 className="greetingsTitle">
-             Interests & Hobbies
-            </h1>
+            <h1 className="greetingsTitle">Interests & Hobbies</h1>
 
             <br></br>
             <br></br>
-            <p>Well, I do many things, but how much do you want to know me <span className="shaky-question">?</span></p>
+            <p>
+              Well, I do many things, but how much do you want to know me{" "}
+              <span className="shaky-question">?</span>
+            </p>
 
             {/* <h5>
               you first need to know{" "}
