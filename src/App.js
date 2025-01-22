@@ -31,6 +31,7 @@ import {
 } from "./features/cursor/globalStatesSlice";
 import ScrollToTop from "./screens/FullScreenReveal";
 import FullScreenReveal from "./screens/FullScreenReveal";
+import { TextHoverEffect } from "./components/ui/TextHoverEffect";
 
 function App() {
   const homeRef = useRef(null);
@@ -178,7 +179,7 @@ function App() {
   const getTechStackRender = (stackArray) => {
     return stackArray.map((item, index) => {
       return (
-        <h3 key={item} className="tech">
+        <h3 key={item} className="rodal__tech-item">
           {item}
         </h3>
       );
@@ -270,12 +271,24 @@ function App() {
     <div>
       <Helmet prioritizeSeoTags>
         <title>Awshaf Ishtiaque</title>
-        <meta name="description" content="A collaborative & solution-driven software developer with 4+ years of experience in full-stack development & cloud computing. Web Application Developer, Instructor at CICCC, Co-Founder of Digitec Innovation, and SFU Computer Science Graduate." />
-        <meta name="keywords" content="Awshaf, Ishtiaque, Web Application Developer, Full Stack Developer, Instructor, Co-Founder, Digitec Innovation, SFU, Computer Science Graduate" />
+        <meta
+          name="description"
+          content="A collaborative & solution-driven software developer with 4+ years of experience in full-stack development & cloud computing. Web Application Developer, Instructor at CICCC, Co-Founder of Digitec Innovation, and SFU Computer Science Graduate."
+        />
+        <meta
+          name="keywords"
+          content="Awshaf, Ishtiaque, Web Application Developer, Full Stack Developer, Instructor, Co-Founder, Digitec Innovation, SFU, Computer Science Graduate"
+        />
         <meta name="author" content="Awshaf Ishtiaque" />
         <link rel="canonical" href="https://awshaf.com" />
-        <meta property="og:title" content="Web Application Developer | Instructor @CICCC | Co-Founder @Digitec Innovation | SFU CS Grad" />
-        <meta property="og:description" content="Professional profile of a web application developer, instructor at CICCC, co-founder of Digitec Innovation, and SFU Computer Science graduate." />
+        <meta
+          property="og:title"
+          content="Web Application Developer | Instructor @CICCC | Co-Founder @Digitec Innovation | SFU CS Grad"
+        />
+        <meta
+          property="og:description"
+          content="Professional profile of a web application developer, instructor at CICCC, co-founder of Digitec Innovation, and SFU Computer Science graduate."
+        />
         <meta property="og:image" content="%PUBLIC_URL%/landingportrait.png" />
         <meta property="og:url" content="https://awshaf.com" />
         <meta property="og:type" content="website" />
@@ -332,7 +345,7 @@ function App() {
 
           {/* MODAL */}
           {globalStates.modalIsOpen && (
-            <section className="rodalSection">
+            <section className="rodal__section">
               <Rodal
                 animation="flip"
                 duraiont={550}
@@ -345,7 +358,7 @@ function App() {
               >
                 <div
                   ref={rodalRef}
-                  className="rodal-parent flex-row"
+                  className="rodal__parent rodal__flex-row"
                   onMouseEnter={() => {
                     dispatch(setCursorStyle("modalEnter"));
                   }}
@@ -353,10 +366,10 @@ function App() {
                     dispatch(setCursorStyle("default"));
                   }}
                 >
-                  <div className="modal-subSection titleStyles">
-                    <h2>{rodalContent.title}</h2>
+                  <div className="rodal__subsection rodal__subsection-title">
+                    <h2 className="rodal__title">{rodalContent.title}</h2>
                     <h1
-                      className="closeModalButton"
+                      className="rodal__close-button"
                       onMouseEnter={() => {
                         dispatch(setCursorStyle("crossEnter"));
                       }}
@@ -372,18 +385,18 @@ function App() {
                     </h1>
                   </div>
 
-                  <div className="modal-subSection modalDes">
+                  <div className="rodal__subsection rodal__description">
                     <p>{rodalContent.descriontion}</p>
                   </div>
-                  <div className="modal-subSection techStack">
+                  <div className="rodal__subsection rodal__tech-stack">
                     {getTechStackRender(rodalContent.tech)}
                   </div>
-                  <div className="modal-subSection">
+                  <div className="rodal__subsection">
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
                       href={rodalContent.hyperlink}
-                      className="openProjectLink"
+                      className="rodal__project-link"
                       onMouseEnter={() => {
                         dispatch(setCursorStyle("hyperLinkEnter"));
                       }}
@@ -478,13 +491,23 @@ function App() {
             projectsData={cardItem}
           ></DarkSection>
 
-          {/* Interests Sections */}
+          {/* Interests Sections  */}
           <InterestSection
             contactRef={contactRef}
             innerRef={ref2}
             onMouseEnter={() => setCursorStyleFunction("tourchEnter")}
             onMouseLeave={() => setCursorStyleFunction("default")}
           ></InterestSection>
+
+          <div
+            className="h-[70rem] w-full bg-black bg-dot-white/[0.2] relative flex items-center justify-center"
+            onMouseEnter={() => setCursorStyleFunction("superSmall")}
+            onMouseLeave={() => setCursorStyleFunction("default")}
+            style={{ cursor: "none" }}
+          >
+            <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+            <TextHoverEffect text="AWSHAF" />
+          </div>
         </div>
       )}
     </div>
