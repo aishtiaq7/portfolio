@@ -31,6 +31,17 @@ const returnCursorVariant = (mousePosition) => {
       mixBlendMode: "difference",
       backgroundColor: "rgba(239, 239, 239, 0.9)",
     },
+    superSmall: {
+      height: 30,
+      width: 30,
+
+      x: mousePosition.x - 15,
+      y: mousePosition.y - 15,
+      mixBlendMode: "difference",
+      backgroundColor: "rgba(239, 239, 239, 0.9)",
+
+      opacity: 0.15,
+    },
     logo: {
       height: 70,
       width: 70,

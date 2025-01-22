@@ -11,8 +11,12 @@
     "animated-number-react": "^0.1.2",
     "animejs": "^3.2.1",
     "aos": "^2.3.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "framer-motion": "^8.4.3",
     "gsap": "^3.12.5",
+    "lucide-react": "^0.471.1",
+    "mini-svg-data-uri": "^1.4.4",
     "react": "^18.2.0",
     "react-countup": "^6.5.3",
     "react-dom": "^18.2.0",
@@ -24,6 +28,8 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.2",
     "rodal": "^2.0.1",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
     "vara": "^1.4.1",
     "web-vitals": "^2.1.4"
   },
@@ -53,8 +59,11 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
     "eslint-plugin-react": "^7.36.1",
-    "globals": "^15.9.0"
+    "globals": "^15.9.0",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17"
   }
 }

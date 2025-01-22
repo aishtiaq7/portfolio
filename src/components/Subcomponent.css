@@ -80,8 +80,6 @@
   top: 104px;
 }
 .projectsContent {
-  /* padding-top: 4rem; */
-  /* background-color: blue; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,6 +186,32 @@
   font-family: "Oleo Script", cursive;
   font-weight: 100;
   text-align: center;
+}
+
+.shaky-question {
+  display: inline-block;
+  font-size: 2rem; /* Adjust size as needed */
+  font-weight: bold;
+  animation: shake 1s infinite;
+  transform-origin: bottom center; /* Anchor at the bottom */
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oleo+Script&family=Poppins:wght@300&family=Roboto:wght@100;400&display=swap");
@@ -458,6 +482,8 @@
 .stroke-svg > svg {
   height: 100%;
   max-height: 10rem;
+  border: 2px solid rgb(255, 255, 255);
+  margin: 0 auto;
 }
 .svg-1 {
   border: 4px solid red;
@@ -502,7 +528,7 @@
   filter: blur(4px);
   width: fit-content;
   min-height: 5rem;
-  margin: 2rem 0rem;
+  margin: 3rem 0rem;
 
   transition: 0.4s all ease-in;
   transform: translateY(0px);
@@ -518,6 +544,30 @@
   height: 0px;
   width: 100%;
 }
+
+.AwshafContent {
+  display: inline-block !important;
+  line-height: 29px;
+  font-family: "Architects Daughter", cursive;
+  font-size: 5.5vw;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+  /* border: 2px solid green; */
+  /* margin-top: 40px; */
+  max-width: 40%;
+}
+.AwshafContent > svg {
+  display: inline-block !important;
+  /* background-color: orange; */
+  transform: translateY(8px);
+}
+/***************************
+
+   Interest Section ends here
+
+***************************/
+
+
 
 /* LARGE screens */
 @media only screen and (min-width: 1400px) and (max-width: 1700px) {
@@ -781,5 +831,10 @@
 
   #interestBox {
     transform: translateY(0%);
+  }
+
+  .AwshafContent > svg {
+    display: inline-block !important;
+    transform: translateY(0px);
   }
 }
