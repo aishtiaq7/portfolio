@@ -8,6 +8,7 @@
   --content-font-size-phone-view: 3.4vw;
 }
 
+
 .second-section {
   background-color: var(--main-white-color);
 
@@ -25,6 +26,16 @@
   font-weight: 800 !important;
   text-decoration: underline;
 }
+/* .scrollToHere{ 
+  position: relative;
+  top: 50px;
+  left: 0;
+  border: 3px solid red !important;
+  background-color: red;
+
+  width: 80px;
+  height: 80px;
+} */
 
 .underline-animation {
   text-decoration: none;

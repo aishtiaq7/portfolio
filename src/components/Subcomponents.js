@@ -35,7 +35,6 @@ export const Section = (props) => {
 
   // eslint-disable-next-line
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  // const spacing = screenWidth > 600 ? 55 : 0;
   const fontsizing = screenWidth > 600 ? 40 : 17;
   useEffect(() => {
     if (AwshafinView) {
@@ -65,29 +64,7 @@ export const Section = (props) => {
     }
   }, [AwshafinView, fontsizing]); // Reactivate effect when AwshafinView changes
 
-  // const formatValue = (value) => Math.round(value);
-
   const parallaxSpeedValue = -0.205;
-
-  ///
-  //  FOR SERP BUG: years going from 4 -> 0 -> 4
-  //
-  // const [displayValue, setDisplayValue] = useState(0); // Start with 4
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setDisplayValue(0);
-  //     // console.log("Initikal render: Display set to ", displayValue);
-  //   }, 100);
-  // }, []);
-  // useEffect(() => {
-  //   if (inView) {
-  //     setDisplayValue(5);
-  //     // console.log("In viewport: Display set to ", displayValue);
-  //   } else {
-  //     setDisplayValue(0);
-  //     // console.log("Out of viewport: Display reset to " , displayValue);
-  //   }
-  // }, [inView]);
 
   return (
     <article
@@ -95,7 +72,7 @@ export const Section = (props) => {
       className="about-section"
       ref={props.innerRef ? props.innerRef : ""}
     >
-      <div ref={props.myref}></div>
+      <div className="scrollToHere" ref={props.myref}></div>
       <div
         className="second-section"
         ref={props.aboutSectionInViewRef ? props.aboutSectionInViewRef : ""}

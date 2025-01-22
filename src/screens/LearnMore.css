@@ -365,7 +365,7 @@ strong {
     background-color: transparent;
     opacity: 1;
     
-    border: 3px solid red !important;
+    /* border: 3px solid red !important; */
     padding-left: 0.4rem;
 
     
