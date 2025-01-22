@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const SVG_VIEWBOX_WIDTH = 320;
 const SVG_VIEWBOX_HEIGHT = 100;
 const SVG_STROKE_WIDTH = 0.3;
-const TAILWIND_FONT_SIZE_CLASS = "text-7xl";
+const TAILWIND_FONT_SIZE_CLASS = "text-6xl";
 
 export const TextHoverEffect = ({ text, duration }) => {
   const svgRef = useRef(null);
@@ -53,7 +53,7 @@ export const TextHoverEffect = ({ text, duration }) => {
               <stop offset="25%" stopColor={"#FF4500"} /> {/* Vibrant Red-Orange */}
               <stop offset="50%" stopColor={"#1E90FF"} /> {/* Dodger Blue */}
               <stop offset="75%" stopColor={"#00FA9A"} /> {/* Medium Spring Green */}
-              <stop offset="100%" stopColor={"#8A2BE2"} /> {/* Blue Violet */}
+              <stop offset="100%" stopColor={"#FF7F11"} /> {/* Blue Violet */}
             </>
           )}
         </linearGradient>
@@ -61,7 +61,7 @@ export const TextHoverEffect = ({ text, duration }) => {
         <motion.radialGradient
           id="revealMask"
           gradientUnits="userSpaceOnUse"
-          r="40%" // Larger cursor effect
+          r="30%" // Larger cursor effect
           animate={maskPosition}
           transition={{ duration: duration ?? 0.2, ease: "easeOut" }}
         >
@@ -89,7 +89,7 @@ export const TextHoverEffect = ({ text, duration }) => {
         dominantBaseline="middle"
         strokeWidth={SVG_STROKE_WIDTH}
         className={`font-[helvetica] font-bold stroke-neutral-200 dark:stroke-neutral-800 fill-transparent ${TAILWIND_FONT_SIZE_CLASS}`}
-        style={{ opacity: hovered ? 0.7 : 0 }}
+        style={{ opacity: hovered ? 0.7 : 0.0 }}
       >
         {text}
       </text>

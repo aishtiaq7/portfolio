@@ -17,8 +17,8 @@ nav {
   align-items: center;
   justify-content: space-between;
 
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 
   color: var(--main-white-color);
   background-color: black;
