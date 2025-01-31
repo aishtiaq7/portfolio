@@ -22,6 +22,8 @@ import { Helmet } from "react-helmet-async";
 import "./LearnMore.css";
 import "../App.css";
 
+import ShinyText from "../components/reactBits/TextAnimations/ShinyText/ShinyText";
+
 const LearnMore = (props) => {
   const curVar = useSelector((state) => state.cursor.cursorVariant);
   const curPosition = useSelector((state) => state.cursor.cursorPosition);
@@ -113,7 +115,6 @@ const LearnMore = (props) => {
         "Implemented a secure NodeMailer API endpoint within server-side Next.js components for secured email transmission with large attachments, facilitating seamless communication and better user experience.",
       ],
     },
-   
   ];
 
   // eslint-disable-next-line
@@ -324,14 +325,23 @@ const LearnMore = (props) => {
   }, [initializeVara]);
 
   return (
-    <div>
-       <Helmet>
+    <div >
+      <Helmet>
         <title>Learn More | Awshaf Ishtiaque</title>
-        <meta name="description" content="Learn more about my journey as a Web Developer, Instructor at CICCC, and Co-Founder of Digitec Innovation and his educational background." />
-        <meta name="keywords" content="Learn More, Awshaf, Web Developer, Instructor, CICCC, Digitec Innovation" />
+        <meta
+          name="description"
+          content="Learn more about my journey as a Web Developer, Instructor at CICCC, and Co-Founder of Digitec Innovation and his educational background."
+        />
+        <meta
+          name="keywords"
+          content="Learn More, Awshaf, Web Developer, Instructor, CICCC, Digitec Innovation"
+        />
         <link rel="canonical" href="https://awshaf.com/learnmore" />
         <meta property="og:title" content="Learn More | Awshaf Ishtiaque" />
-        <meta property="og:description" content="Discover more about Awshaf's journey and expertise." />
+        <meta
+          property="og:description"
+          content="Discover more about Awshaf's journey and expertise."
+        />
         <meta property="og:url" content="https://awshaf.com/learnmore" />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -352,7 +362,7 @@ const LearnMore = (props) => {
         setShowFullScreenNav={setShowFullScreenNav}
       ></FullScreenNav>
 
-      <div className="bg container learnMoreParent">
+      <div className="bg learnMoreParent" >
         <ScrollToTop />
 
         {!doodleSectionInView && (
@@ -457,6 +467,24 @@ const LearnMore = (props) => {
                   </h3>
                 </div>
               </div>
+            </div>
+
+            <div
+              className="text-animation-container"
+              style={{
+                width: "100vw",
+                height: "30vh",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "black"
+              }}
+            >
+              <ShinyText
+                text="Looking for my RESUME ?"
+                className="custom-button"
+                onClick={() => (window.location.href = "/resume")} // Change this to your desired action
+              />
             </div>
 
             <div ref={doodleSectionRef} className="doodleSection">

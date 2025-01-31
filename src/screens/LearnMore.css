@@ -21,6 +21,8 @@ strong {
   align-items: center;
 
   font-size: 4rem;
+  padding: 1rem;
+
 }
 
 .secondSection {
@@ -97,6 +99,8 @@ strong {
 
   height: 153px;
   z-index: 118;
+
+  padding: 0.6rem 0rem;
 }
 .companyRow{
   position: sticky;
@@ -104,6 +108,7 @@ strong {
   top:257px;
   width: 100%;
   background-color: white;
+  border: 2px solid red;
 
   z-index: 119;
 }
