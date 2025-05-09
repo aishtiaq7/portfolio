@@ -43,7 +43,7 @@ export const cardItem = [
     id: 8,
     projectName: "S.L.A Music Platform",
     iconsList: ["next", "redux", "tailwind", "js", "html"],
-    hyperlink: "https://mia-mia-restaurant.vercel.app/",
+    hyperlink: "https://www.slamusic.xyz/",
     des: "Developed a dynamic music platform for artist Shams Laden Ahmad (S.L.A) using Next.js and a headless CMS. The site features seamless integration of music streaming services, an online merchandise store, and responsive design, providing fans with an engaging and immersive experience.",
     cursorClass: "lala",
   },
