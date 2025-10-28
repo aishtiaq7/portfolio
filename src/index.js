@@ -44,7 +44,8 @@ const FooterComponent = () => {
 };
 const googleDriveResumeLink =
   "https://drive.google.com/file/d/1kdT6ksc8Snk4nSEbHnbEg42-OF9ij2jd/view?usp=sharing";
-const appoinmentsLink = "https://calendly.com/awshaf/appointments";
+const appointmentsLink = "https://calendly.com/awshaf/appointments";
+const paymentLink = "https://pay-me-here.vercel.app/";
 
 const ExternalRedirect = ({ to }) => {
   useEffect(() => {
@@ -69,7 +70,11 @@ root.render(
           />
           <Route
             path="/appointments"
-            element={<ExternalRedirect to={appoinmentsLink} />}
+            element={<ExternalRedirect to={appointmentsLink} />}
+          />
+          <Route
+            path="/pay"
+            element={<ExternalRedirect to={paymentLink} />}
           />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
