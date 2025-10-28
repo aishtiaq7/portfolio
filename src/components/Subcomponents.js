@@ -120,19 +120,27 @@ export const Section = (props) => {
                 + years of experience in full-stack development & cloud
                 computing. I graduated from Simon Fraser University with a
                 bachelor's degree in computer science and currently working as
-                an{" "}
+                an Instructor for {" "}
                 <span className="bold">
                   <a
                     className="bold"
-                    href="https://ciccc.ca/wps-members/awshaf-ishtiaque/"
+                    href="https://ciccc.ca/"
                     rel="noreferrer"
                     target="_blank"
                   >
-                    Instructor
+                    Cornerstone
                   </a>
-                </span>{" "}
-                for Cornerstone International College teaching Web Application
-                Development.
+                </span>{" "}International College teaching Web Application Development and also as a Software Developer for {" "}
+                <span className="bold">
+                  <a
+                    className="bold"
+                    href="https://buildsmartr.com/"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    BuildSmartr
+                  </a>
+                </span>.
               </h3>
               <br></br>
               <h3>
