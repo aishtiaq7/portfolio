@@ -43,7 +43,7 @@ const FooterComponent = () => {
   );
 };
 const googleDriveResumeLink =
-  "https://drive.google.com/file/d/1kdT6ksc8Snk4nSEbHnbEg42-OF9ij2jd/view?usp=sharing";
+  "https://drive.google.com/file/d/1zMN43V9XwboIREKu3Q00ILZaFdIrJVM2/view?usp=sharing";
 const appointmentsLink = "https://calendly.com/awshaf/appointments";
 const paymentLink = "https://pay-me-here.vercel.app/";
 
