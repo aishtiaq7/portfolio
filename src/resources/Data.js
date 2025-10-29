@@ -48,6 +48,14 @@ export const cardItem = [
     cursorClass: "lala",
   },
   {
+    id: 16,
+    projectName: "Full On Painting Ltd.",
+    iconsList: ["next", "tailwind", "redux", "github", "html"],
+    hyperlink: "https://www.fullonpainting.ca/",
+    des: "Modern painting-services site built with Next.js + Tailwind. Implemented a secure NodeMailer pipeline supporting large-attachment quotes, optimized image galleries, and SEO polish for faster leads.",
+    cursorClass: "lala",
+  },
+  {
     id: 7,
     projectName: "Clipping Path Service ASIA",
     iconsList: ["next", "redux", "github", "html", "js"],
@@ -55,6 +63,7 @@ export const cardItem = [
     des: "Developed responsive NextJS components with modularized CSS for improved reusability. Implemented a secure NodeMailer API in Next.js for enhanced email transmission with large attachments, boosting user experience.",
     cursorClass: "lala",
   },
+
   // {
   //   id: 8,
   //   projectName: "Clinical Remedy Store",
@@ -88,6 +97,14 @@ export const cardItem = [
     cursorClass: "lala",
   },
   {
+    id: 17,
+    projectName: "Pay Me Here — Donation & Payment Portal",
+    iconsList: ["next", "tailwind", "js"],
+    hyperlink: "https://pay-me-here.vercel.app/",
+    des: "Developed a sleek donation portal using Next.js + Tailwind with Stripe integration for secure VISA and credit card transactions. Leveraged Turso DB for lightweight data storage and transaction tracking.",
+    cursorClass: "lala",
+  },
+  {
     id: 6,
     projectName: "Portfolio",
     iconsList: ["react", "nodejs", "github", "firebase", "redux"],
@@ -103,15 +120,7 @@ export const cardItem = [
     des: "Multipurpose discord bot that includes features such as Vibechecking everyone in the server and presenting soccer scores and upcoming matches in local time zone.",
     cursorClass: "lala",
   },
-  {
-    id: 2,
-    projectName: "Coursley",
-    iconsList: ["nodejs", "psql", "angular", "docker", "gcp"],
-    hyperlink:
-      "https://drive.google.com/file/d/1TBPjCo3mxfpkJn_gcuQS0EMA-mnfwEGM/view?usp=sharing",
-    des: "A Course Management PEAN stack application that interfaces separate views for both students & instructors to manage courses, access events in google calendar, chat with peers etc.​",
-    cursorClass: "lala",
-  },
+
   {
     id: 4,
     projectName: "DxBall-Lite",
@@ -126,6 +135,15 @@ export const cardItem = [
     iconsList: ["js", "html", "css"],
     hyperlink: "https://github.com/aishtiaq7/Japanese-Website-Clone",
     des: "Aesthetically pleasing Japanese website clone that showcases a prominent Japanese artist and his artworks",
+    cursorClass: "lala",
+  },
+  {
+    id: 2,
+    projectName: "Coursley",
+    iconsList: ["nodejs", "psql", "angular", "docker", "gcp"],
+    hyperlink:
+      "https://drive.google.com/file/d/1TBPjCo3mxfpkJn_gcuQS0EMA-mnfwEGM/view?usp=sharing",
+    des: "A Course Management PEAN stack application that interfaces separate views for both students & instructors to manage courses, access events in google calendar, chat with peers etc.​",
     cursorClass: "lala",
   },
 ];
