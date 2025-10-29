@@ -36,6 +36,16 @@ const LearnMore = (props) => {
   const bulletData = [
     {
       category: "Work Experience",
+      company: "BuildSmartr Inc.",
+      companyHyperlink: "https://buildsmartr.com/",
+      bullets: [
+        "Built and published a cross-platform React Native RAG app on Apple & Google stores, enabling crews to query AI trained on construction site documents, improving on-site query resolution operational responsiveness.",
+        "Developed a B2B wall-ordering platform using Next.js that transformed fragmented email communication into a unified order management system, streamlining coordination and cutting response delays by over 65%.",
+        "Revamped and deployed the company's portfolio platform with enhanced technical SEO, accessibility, and animation polish, optimizing CTAs and user flow to increase click-through rates and engagement by 43%.",
+      ],
+    },
+    {
+      category: "Work Experience",
       company: "Cornerstone International College",
       companyHyperlink: "https://ciccc.ca/wps-members/awshaf-ishtiaque/",
       bullets: [
@@ -113,7 +123,6 @@ const LearnMore = (props) => {
         "Implemented a secure NodeMailer API endpoint within server-side Next.js components for secured email transmission with large attachments, facilitating seamless communication and better user experience.",
       ],
     },
-   
   ];
 
   // eslint-disable-next-line
@@ -325,13 +334,22 @@ const LearnMore = (props) => {
 
   return (
     <div>
-       <Helmet>
+      <Helmet>
         <title>Learn More | Awshaf Ishtiaque</title>
-        <meta name="description" content="Learn more about my journey as a Web Developer, Instructor at CICCC, and Co-Founder of Digitec Innovation and his educational background." />
-        <meta name="keywords" content="Learn More, Awshaf, Web Developer, Instructor, CICCC, Digitec Innovation" />
+        <meta
+          name="description"
+          content="Learn more about my journey as a Web Developer, Instructor at CICCC, and Co-Founder of Digitec Innovation and his educational background."
+        />
+        <meta
+          name="keywords"
+          content="Learn More, Awshaf, Web Developer, Instructor, CICCC, Digitec Innovation"
+        />
         <link rel="canonical" href="https://awshaf.com/learnmore" />
         <meta property="og:title" content="Learn More | Awshaf Ishtiaque" />
-        <meta property="og:description" content="Discover more about Awshaf's journey and expertise." />
+        <meta
+          property="og:description"
+          content="Discover more about Awshaf's journey and expertise."
+        />
         <meta property="og:url" content="https://awshaf.com/learnmore" />
         <meta property="og:type" content="website" />
       </Helmet>
