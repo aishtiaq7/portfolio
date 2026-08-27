@@ -33,6 +33,28 @@ import ScrollToTop from "./screens/FullScreenReveal";
 import FullScreenReveal from "./screens/FullScreenReveal";
 import { TextHoverEffect } from "./components/ui/TextHoverEffect";
 
+const techDisplayNames = {
+  next: "Next.js",
+  react: "React",
+  tailwind: "Tailwind CSS",
+  redux: "Redux",
+  github: "GitHub",
+  html: "HTML",
+  css: "CSS",
+  js: "JavaScript",
+  psql: "PostgreSQL",
+  nodejs: "Node.js",
+  contentful: "Contentful",
+  socketio: "Socket.IO",
+  firebase: "Firebase",
+  docker: "Docker",
+  gcp: "Google Cloud",
+  angular: "Angular",
+  python: "Python",
+  django: "Django",
+  "digital-ocean": "DigitalOcean",
+};
+
 function App() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
@@ -180,7 +202,7 @@ function App() {
     return stackArray.map((item, index) => {
       return (
         <h3 key={item} className="rodal__tech-item">
-          {item}
+          {techDisplayNames[item] || item}
         </h3>
       );
     });
@@ -381,7 +403,7 @@ function App() {
                         dispatch(setCursorStyle("default"));
                       }}
                     >
-                      X
+                      ✕
                     </h1>
                   </div>
 
@@ -404,7 +426,7 @@ function App() {
                         dispatch(setCursorStyle("modalEnter"));
                       }}
                     >
-                      Open Project
+                      Open Project ↗
                     </a>
                   </div>
                 </div>

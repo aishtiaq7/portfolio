@@ -1,11 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
-
 :root {
   --main-white-color: rgb(239, 239, 239);
-  --content-font-family: HelveticaNowText-Light;
+  --content-font-family: "Poppins", "Helvetica Neue", sans-serif;
   --large-title: 2.3vw;
-  --content-font-size: 1.8vw;
-  --content-font-size-phone-view: 3.4vw;
+  --content-font-size: var(--text-body-lg);
+  --content-font-size-phone-view: var(--text-body);
 }
 
 
@@ -23,8 +21,15 @@
   position: relative;
 }
 .bold {
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.des {
+  max-width: 62ch;
+  margin-inline: auto;
+  line-height: 1.7;
 }
 /* .scrollToHere{ 
   position: relative;
@@ -202,7 +207,7 @@
 .shaky-question {
   display: inline-block;
   font-size: 2rem; /* Adjust size as needed */
-  font-weight: bold;
+  font-weight: 600;
   animation: shake 1s infinite;
   transform-origin: bottom center; /* Anchor at the bottom */
 }
@@ -225,7 +230,6 @@
   }
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oleo+Script&family=Poppins:wght@300&family=Roboto:wght@100;400&display=swap");
 .largeText {
   font-family: "Poppins", sans-serif;
 }
@@ -466,7 +470,7 @@
   width: 100%;
   text-align: start;
   padding: 1.3rem 1.3rem;
-  font-size: 1.1vw;
+  font-size: var(--text-body);
 
   margin-bottom: 1rem;
 }
@@ -526,7 +530,7 @@
   overflow: hidden;
   width: auto;
   margin: auto;
-  font-weight: bold;
+  font-weight: 600;
 
   display: flex;
   flex-direction: column;
@@ -615,7 +619,7 @@
     width: 100%;
     text-align: start;
     padding: 2rem;
-    font-size: 1.1vw;
+    font-size: var(--text-body);
   }
 }
 /* LARGE screens */
@@ -652,7 +656,7 @@
     width: 100%;
     text-align: start;
     padding: 2rem;
-    font-size: 1.1vw;
+    font-size: var(--text-body);
   }
 }
 
@@ -687,7 +691,7 @@
     z-index: 30;
   }
   .cardDes {
-    font-size: 1.3vw;
+    font-size: var(--text-body);
   }
 }
 
@@ -756,7 +760,7 @@
     padding: 1rem 1rem;
   }
   .cardDes {
-    font-size: 3vw;
+    font-size: var(--text-body);
     margin-bottom: 0;
   }
 

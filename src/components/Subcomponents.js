@@ -159,7 +159,7 @@ export const Section = (props) => {
                 my abilities in orchestrating B2B & B2C relationships, guiding
                 the architectural design of sophisticated web solutions, and
                 leading projects from strategic inception through to successful
-                deployment and iterative improments.
+                deployment and iterative improvements.
                 <br></br>
                 <br></br>
                 My passion lies in devising software solutions that streamline

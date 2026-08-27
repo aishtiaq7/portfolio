@@ -77,7 +77,6 @@ strong {
   object-fit: cover;
   object-position: center;
 }
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oleo+Script&family=Poppins:wght@300&family=Roboto:wght@100;400&display=swap");
 .globalTextStyles {
   font-family: 'Poppins', sans-serif;
   font-weight: 100;
@@ -86,7 +85,7 @@ strong {
 .jobTitle {
   user-select: none;
   text-align: left;
-  font-size: 5vw;
+  font-size: var(--text-h2);
 
   position: sticky;
   position: -webkit-sticky; /* Safari */
@@ -109,7 +108,7 @@ strong {
 }
 
 .company {
-  font-size: 4vw;
+  font-size: var(--text-h3);
   font-weight: 300;
   width: 100%;
   text-align: center;
@@ -166,8 +165,8 @@ strong {
 .bullet {
   width: 60%;
   text-align: left;
-  font-size: 1.2vw;
-  font-weight: 200;
+  font-size: var(--text-body);
+  font-weight: 300;
 
   padding: 1.1rem;
 
@@ -231,9 +230,6 @@ strong {
   position: relative;
   bottom: -500px;
 }
-
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oleo+Script&family=Poppins:wght@300&family=Roboto:wght@100;400&display=swap");
 
 /* .content {
   text-align: justify;
@@ -342,8 +338,8 @@ strong {
   .bullet {
     width: 60%;
     text-align: left;
-    font-size: 3.2vw;
-    font-weight: 200;
+    font-size: var(--text-body);
+    font-weight: 300;
     padding: 0.8rem;
 
     align-self: flex-end;
@@ -352,7 +348,7 @@ strong {
   .jobTitle {
     user-select: none;
     text-align: left;
-    font-size: 5.6vw;
+    font-size: var(--text-h2);
   
     position: sticky;
     position: -webkit-sticky; /* Safari */
@@ -388,7 +384,7 @@ strong {
   }
 
   .company {
-    font-size: 4.4vw;
+    font-size: var(--text-h3);
     font-weight: 300;
     width: 100%;
     text-align: center;
@@ -450,7 +446,7 @@ strong {
   .jobTitle {
     user-select: none;
     text-align: left;
-    font-size: 5.6vw;
+    font-size: var(--text-h2);
   
     position: sticky;
     position: -webkit-sticky; /* Safari */
@@ -485,7 +481,7 @@ strong {
   }
 
   .company {
-    font-size: 4.4vw;
+    font-size: var(--text-h3);
     font-weight: 300;
     width: 100%;
     text-align: center;

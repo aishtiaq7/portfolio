@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oleo+Script&family=Poppins:wght@300&family=Roboto:wght@100;400&display=swap");
-
 /* Hides scrollbar: */
 ::-webkit-scrollbar {
   display: none;
@@ -23,11 +21,10 @@ body {
 
 :root {
   --main-white-color: rgb(239, 239, 239);
-  /* --content-font-family: HelveticaNowText-Light; */
-  --content-font-family: "Poppins";
+  --content-font-family: "Poppins", "Helvetica Neue", sans-serif;
 
-  --content-font-size: 1.8vw;
-  --content-font-size-phone-view: 3.4vw;
+  --content-font-size: var(--text-body-lg);
+  --content-font-size-phone-view: var(--text-body);
 }
 @font-face {
   font-family: "Elastic";
@@ -163,6 +160,7 @@ article {
   border-radius: 20px;
   overflow: hidden;
   user-select: none;
+  font-family: var(--content-font-family);
 }
 
 .rodal__subsection {
@@ -196,23 +194,36 @@ article {
   right: 0%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2.1vw;
-  padding: 1.5rem;
-  color: rgba(252, 11, 11, 0.571);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75rem;
+  border-radius: 50%;
+  color: #131313;
 }
 
 .rodal__close-button:hover {
-  color: red;
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 .rodal__project-link {
   cursor: none;
   text-decoration: none;
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 12px;
+  background-color: #131313;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .rodal__project-link:hover {
-  color: blue;
-  text-decoration: underline;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
 .rodal__flex-row {
@@ -223,19 +234,20 @@ article {
 }
 
 .rodal__title {
-  font-weight: 750;
-  font-size: 2vw;
+  font-weight: 600;
+  font-size: var(--text-h3);
 }
 
 .rodal__tech-item {
-  margin: 0.4rem 1.5rem;
+  margin: 0.3rem 0.4rem;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 6px 15px;
   border: none;
-  border-radius: 20px;
-  background-color: blue;
+  border-radius: 999px;
+  background-color: #131313;
   color: white;
-  font-size: 16px;
+  font-size: 0.8125rem;
+  font-weight: 400;
   cursor: none;
   text-align: center;
   text-decoration: none;
@@ -244,7 +256,6 @@ article {
 /*
   Spinner Styles
 */
-@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
 .loading {
   position: fixed;
   top: 0;
@@ -271,7 +282,7 @@ article {
   display: inline-block;
   margin: 0 5px;
   color: rgb(239, 239, 239);
-  font-family: "Quattrocento Sans", sans-serif;
+  font-family: var(--content-font-family);
 }
 .loading-text span:nth-child(1) {
   filter: blur(0px);
@@ -335,7 +346,7 @@ article {
   position: absolute;
   top: 0;
   left: 0;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--content-font-family);
   z-index: 10;
   width: 100%;
   gap: 40px;
@@ -361,7 +372,7 @@ article {
     position: absolute;
     top: 0;
     left: 0;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: var(--content-font-family);
     z-index: 10;
     width: 100%;
     gap: 40px;
@@ -415,7 +426,6 @@ article {
       #dbdbdb
     );
     color: black;
-    background-color: orange;
 
     padding: 1.8rem 5.7rem;
     flex-grow: 1;
@@ -423,16 +433,14 @@ article {
     display: flex;
     flex-wrap: wrap;
     position: relative;
-
-    background-color: orange;
   }
   .rodal__tech-stack {
     /* border: 2px solid red; */
     padding: 0.8rem;
   }
   .rodal__title {
-    font-weight: 750;
-    font-size: 4.8vw;
+    font-weight: 600;
+    font-size: var(--text-h3);
   }
   .rodal__subsection-title {
     /* border: 3px solid green; */
@@ -441,11 +449,11 @@ article {
   }
   .rodal__tech-item {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 6px 15px;
     border: none;
-    border-radius: 20px;
+    border-radius: 999px;
     color: white;
-    font-size: 16px;
+    font-size: 0.8125rem;
     cursor: none;
     text-align: center;
     text-decoration: none;
@@ -461,8 +469,8 @@ article {
     top: 50%;
     transform: translate(-50%, -50%);
 
-    font-size: 5.5vw;
-    padding: 1.5rem;
+    font-size: 1.375rem;
+    padding: 0.75rem;
   }
   .rodal__description {
     padding: 2rem 2.5rem;

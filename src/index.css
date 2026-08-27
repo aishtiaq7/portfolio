@@ -75,11 +75,15 @@ code {
 
 :root {
   --main-white-color: rgb(239, 239, 239);
-  /* --content-font-family: HelveticaNowText-Light; */
-  --content-font-family: "Poppins";
+  --content-font-family: "Poppins", "Helvetica Neue", sans-serif;
 
-  --content-font-size: 1.8vw;
-  --content-font-size-phone-view: 3.4vw;
+  --text-h2: clamp(1.75rem, 1.15rem + 1.5vw, 2.5rem);
+  --text-h3: clamp(1.25rem, 1.05rem + 0.6vw, 1.5rem);
+  --text-body-lg: clamp(1.0625rem, 1rem + 0.45vw, 1.375rem);
+  --text-body: clamp(1rem, 0.92rem + 0.3vw, 1.125rem);
+
+  --content-font-size: var(--text-body-lg);
+  --content-font-size-phone-view: var(--text-body);
 }
 @font-face {
   font-family: "Elastic";
