@@ -139,9 +139,8 @@ const LearnMore = (props) => {
   // eslint-disable-next-line
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  //                             lg  sm    - screens
-  const spacing = screenWidth > 600 ? 45 : 22;
-  const fontsizing = screenWidth > 600 ? 40 : 29;
+  const spacing = screenWidth > 600 ? 42 : 24;
+  const fontsizing = Math.round(Math.min(38, Math.max(14, screenWidth / 28)));
 
   const initializeVara = useCallback(() => {
     if (inView) {
@@ -155,56 +154,53 @@ const LearnMore = (props) => {
       const vara = new Vara(
         "#myVaraText",
         "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",
-        // "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Parisienne/Parisienne.json",
-        // "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Pacifico/PacificoSLO.json",
-        // "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Shadows-Into-Light/shadows-into-light.json",
         [
           {
-            id: "line1", // String or integer, for if animations are called manually or when using the get() method. Default is the index of the object.
-            text: `Today is ${currentDate},`, // String, text to be shown
-            fontSize: fontsizing, // Number, size of the text
-            strokeWidth: 1, // Width / Thickness of the stroke
-            color: "black", // Color of the text
-            duration: 1750, // Number, Duration of the animation in milliseconds
-            textAlign: "left", // String, text align, accepted values are left,center,right
-            x: 10, // Number, x coordinate of the text
-            y: spacing, // Number, y coordinate of the text
-            fromCurrentPosition: {
-              // Whether the x or y coordinate should be from its calculated position, ie the position if x or y coordinates were not applied
-              x: true, // Boolean
-              y: true, // Boolean
-            },
-            autoAnimation: true, // Boolean, Whether to animate the text automatically
-            queued: true, // Boolean, Whether the animation should be in a queue
-            delay: 850, // Delay before the animation starts in milliseconds
-            /* Letter spacing can be a number or an object, if number, the spacing will be applied to every character.
-              If object, each letter can be assigned a different spacing as follows,
-              letterSpacing: {
-                  a: 4,
-                  j: -6,
-                  global: -1
-              }
-              The global property is used to set spacing of all other characters
-              */
+            id: "line1",
+            text: `Today is ${currentDate},`,
+            fontSize: fontsizing,
+            strokeWidth: 1,
+            color: "black",
+            duration: 1750,
+            textAlign: "left",
+            x: 10,
+            y: spacing,
+            fromCurrentPosition: { x: true, y: true },
+            autoAnimation: true,
+            queued: true,
+            delay: 850,
+            letterSpacing: 0,
+          },
+          {
+            id: "line2",
+            text: `On this date, you explored my page`,
+            fontSize: fontsizing,
+            strokeWidth: 1,
+            color: "black",
+            duration: 2100,
+            textAlign: "left",
+            x: 10,
+            y: spacing,
+            fromCurrentPosition: { x: true, y: true },
+            autoAnimation: true,
+            queued: true,
+            delay: 750,
             letterSpacing: 0,
           },
           {
             id: "line3",
-            text: `On this date, you explored my page and delved into the narrative I've crafted.`,
+            text: `and delved into the narrative I've crafted.`,
             fontSize: fontsizing,
             strokeWidth: 1,
             color: "black",
-            duration: 3300,
+            duration: 2100,
             textAlign: "left",
             x: 10,
-            y: spacing,
-            fromCurrentPosition: {
-              x: true,
-              y: true,
-            },
+            y: spacing / 1.8,
+            fromCurrentPosition: { x: true, y: true },
             autoAnimation: true,
             queued: true,
-            delay: 750,
+            delay: 300,
             letterSpacing: 0,
           },
           {
@@ -213,40 +209,50 @@ const LearnMore = (props) => {
             fontSize: fontsizing,
             strokeWidth: 1,
             color: "black",
-            duration: 2500,
+            duration: 2300,
             textAlign: "left",
             x: 10,
             y: spacing / 1.8,
-            fromCurrentPosition: {
-              x: true,
-              y: true,
-            },
+            fromCurrentPosition: { x: true, y: true },
             autoAnimation: true,
             queued: true,
-            delay: 1250,
+            delay: 900,
             letterSpacing: 0,
           },
           {
-            id: "line4",
-            text: `Feel free to shoot me a message on Linkedin or email to let me know your thoughts!`,
+            id: "line5",
+            text: `Feel free to shoot me a message on LinkedIn`,
             fontSize: fontsizing,
             strokeWidth: 1,
             color: "black",
-            duration: 2500,
+            duration: 2200,
             textAlign: "left",
             x: 10,
             y: spacing / 1.8,
-            fromCurrentPosition: {
-              x: true,
-              y: true,
-            },
+            fromCurrentPosition: { x: true, y: true },
             autoAnimation: true,
             queued: true,
-            delay: 1250,
+            delay: 900,
             letterSpacing: 0,
           },
           {
-            id: "line4",
+            id: "line6",
+            text: `or email to let me know your thoughts!`,
+            fontSize: fontsizing,
+            strokeWidth: 1,
+            color: "black",
+            duration: 2000,
+            textAlign: "left",
+            x: 10,
+            y: spacing / 1.8,
+            fromCurrentPosition: { x: true, y: true },
+            autoAnimation: true,
+            queued: true,
+            delay: 300,
+            letterSpacing: 0,
+          },
+          {
+            id: "line7",
             text: `Yours truly,`,
             fontSize: fontsizing,
             strokeWidth: 1,
@@ -255,16 +261,13 @@ const LearnMore = (props) => {
             textAlign: "left",
             x: 10,
             y: spacing,
-            fromCurrentPosition: {
-              x: true,
-              y: true,
-            },
+            fromCurrentPosition: { x: true, y: true },
             autoAnimation: true,
             queued: true,
-            delay: 1000,
+            delay: 800,
           },
           {
-            id: "line4",
+            id: "line8",
             text: `Awshaf Ishtiaque`,
             fontSize: fontsizing,
             strokeWidth: 1.8,
@@ -273,13 +276,10 @@ const LearnMore = (props) => {
             textAlign: "left",
             x: 10,
             y: spacing + 10,
-            fromCurrentPosition: {
-              x: true,
-              y: true,
-            },
+            fromCurrentPosition: { x: true, y: true },
             autoAnimation: true,
             queued: true,
-            delay: 1000,
+            delay: 700,
           },
         ]
       );

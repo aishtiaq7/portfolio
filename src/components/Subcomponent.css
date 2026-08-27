@@ -386,9 +386,11 @@
 
 .card:hover {
   background: rgb(12, 12, 12, 0.6);
-  border: 2px solid rgb(122, 122, 122);
-  box-shadow: -15px 13px 34px -15px rgba(255, 255, 255, 0.39);
-  -webkit-box-shadow: -15px 13px 34px -15px rgba(255, 255, 255, 0.39);
+  border-color: rgb(122, 122, 122);
+  box-shadow: 0 0 0 1.6px rgb(122, 122, 122),
+    -15px 13px 34px -15px rgba(255, 255, 255, 0.39);
+  -webkit-box-shadow: 0 0 0 1.6px rgb(122, 122, 122),
+    -15px 13px 34px -15px rgba(255, 255, 255, 0.39);
   transform: scale(1.03) translateY(-8px);
   backdrop-filter: blur(65px);
   z-index: 30 !important;
