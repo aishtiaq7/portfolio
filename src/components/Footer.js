@@ -24,6 +24,7 @@ const Footer = (props) => {
   const value = 1.58;
 
   const getParallaxProperty = () => {
+    if (window.innerWidth <= 600) return undefined;
     const docHeight = document.documentElement.offsetHeight;
 
     function mapRange(value, fromMin, fromMax, toMin, toMax) {

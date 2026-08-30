@@ -126,7 +126,7 @@ function App() {
     // width: "10rem",
     // height: "8rem"
     // width: `${screenWidth < 600 ? "40%" : "60%"}`,
-    width: `${screenWidth < 600 ? "80%" : "60%"}`,
+    width: `${screenWidth < 600 ? "92%" : "60%"}`,
   };
   const globalStates = useSelector((state) => state.globalStates);
   const rodalContent = useSelector((state) => state.globalStates.modalContent);
@@ -155,6 +155,11 @@ function App() {
         dispatch(setIsModalOpen(false));
       }
     };
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        dispatch(setIsModalOpen(false));
+      }
+    };
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
       dispatch(updateScreenWidth(window.innerWidth));
@@ -162,6 +167,7 @@ function App() {
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("mousemove", mouseMove);
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -169,6 +175,7 @@ function App() {
       window.removeEventListener("scroll", onScroll);
 
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
       window.removeEventListener("resize", handleResize);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -371,6 +378,7 @@ function App() {
               <Rodal
                 animation="flip"
                 duraiont={550}
+                closeOnEsc
                 visible={globalStates.modalIsOpen}
                 onClose={() => {
                   dispatch(setIsModalOpen(false));
@@ -522,7 +530,7 @@ function App() {
           ></InterestSection>
 
           <div
-            className="h-[70rem] w-full bg-black bg-dot-white/[0.2] relative flex items-center justify-center"
+            className="h-[42rem] md:h-[70rem] w-full bg-black bg-dot-white/[0.2] relative flex items-center justify-center"
             onMouseEnter={() => setCursorStyleFunction("superSmall")}
             onMouseLeave={() => setCursorStyleFunction("default")}
             style={{ cursor: "none" }}

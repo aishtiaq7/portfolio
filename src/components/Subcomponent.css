@@ -100,10 +100,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 0rem;
-
-  /* border: 2px solid orange; */
-  transform: translateY(-10%);
+  padding-top: 4.5rem;
+  padding-bottom: 3rem;
 }
 
 .coloredBtn {
@@ -263,7 +261,7 @@
   position: -webkit-sticky;
   top: 104px;
 
-  /* border: 2px solid red;   */
+  height: 0;
 
   z-index: 119;
   pointer-events: none;
@@ -491,7 +489,7 @@
   /* padding-top: 7%; */
 }
 #interestBox {
-  transform: translateY(-25%);
+  padding-top: 2rem;
 }
 .stroke-svg {
   max-height: 15rem;
@@ -738,10 +736,6 @@
     margin: 1rem 0;
   }
 
-  .about-section {
-    margin-bottom: -6rem;
-  }
-
   .dark-section {
     padding-bottom: 10%;
   }
@@ -789,14 +783,13 @@
     top: 104px;
     left: 0px;
 
+    height: auto;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    /* border: 2px solid greenyellow; */
-
     transform: translateY(-150%);
-    /* margin-bottom: -15rem; */
   }
 
   .about-title {

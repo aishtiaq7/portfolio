@@ -88,6 +88,11 @@ footer {
     font-size: var(--content-font-size-phone-view);
   }
 
+  .links ul {
+    flex-wrap: wrap;
+    row-gap: 0.4rem;
+  }
+
   .permissionstext {
     user-select: none;
 
@@ -100,10 +105,10 @@ footer {
 
     color: rgb(118, 118, 118);
 
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.08rem;
     font-weight: 500;
     font-family: var(--content-font-family);
-    font-size: 2.2vw;
+    font-size: 0.75rem;
   }
 
   /* For the vertical lines between footer links */

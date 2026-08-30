@@ -17,7 +17,6 @@ import ScrollToTop from "../components/ScrollToTop";
 import FullScreenNav from "../components/FullScreenNav";
 
 import Vara from "vara";
-import { useInView } from "react-intersection-observer";
 import { Helmet } from "react-helmet-async";
 import "./LearnMore.css";
 import "../App.css";
@@ -131,161 +130,72 @@ const LearnMore = (props) => {
   const doodleSectionRef = useRef(null);
   const [doodleSectionInView, setDoodleSectionInView] = useState(false);
 
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
-
   // eslint-disable-next-line
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  const spacing = screenWidth > 600 ? 42 : 24;
-  const fontsizing = Math.round(Math.min(38, Math.max(14, screenWidth / 28)));
+  const isPhoneWidth = screenWidth <= 600;
+  const fontsizing = Math.round(
+    Math.min(38, Math.max(14, screenWidth / (isPhoneWidth ? 20 : 28)))
+  );
+  const pitch = Math.round(fontsizing * 2.2);
+  const varaStartedRef = useRef(false);
 
   const initializeVara = useCallback(() => {
-    if (inView) {
-      let currentDate = new Date().toLocaleDateString("en-US", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      });
-      currentDate = currentDate.replace(",", "");
+    let currentDate = new Date().toLocaleDateString("en-US", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+    currentDate = currentDate.replace(",", "");
 
-      const vara = new Vara(
-        "#myVaraText",
-        "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",
-        [
-          {
-            id: "line1",
-            text: `Today is ${currentDate},`,
-            fontSize: fontsizing,
-            strokeWidth: 1,
-            color: "black",
-            duration: 1750,
-            textAlign: "left",
-            x: 10,
-            y: spacing,
-            fromCurrentPosition: { x: true, y: true },
-            autoAnimation: true,
-            queued: true,
-            delay: 850,
-            letterSpacing: 0,
-          },
-          {
-            id: "line2",
-            text: `On this date, you explored my page`,
-            fontSize: fontsizing,
-            strokeWidth: 1,
-            color: "black",
-            duration: 2100,
-            textAlign: "left",
-            x: 10,
-            y: spacing,
-            fromCurrentPosition: { x: true, y: true },
-            autoAnimation: true,
-            queued: true,
-            delay: 750,
-            letterSpacing: 0,
-          },
-          {
-            id: "line3",
-            text: `and delved into the narrative I've crafted.`,
-            fontSize: fontsizing,
-            strokeWidth: 1,
-            color: "black",
-            duration: 2100,
-            textAlign: "left",
-            x: 10,
-            y: spacing / 1.8,
-            fromCurrentPosition: { x: true, y: true },
-            autoAnimation: true,
-            queued: true,
-            delay: 300,
-            letterSpacing: 0,
-          },
-          {
-            id: "line4",
-            text: `I hope you found this digital journey engaging.`,
-            fontSize: fontsizing,
-            strokeWidth: 1,
-            color: "black",
-            duration: 2300,
-            textAlign: "left",
-            x: 10,
-            y: spacing / 1.8,
-            fromCurrentPosition: { x: true, y: true },
-            autoAnimation: true,
-            queued: true,
-            delay: 900,
-            letterSpacing: 0,
-          },
-          {
-            id: "line5",
-            text: `Feel free to shoot me a message on LinkedIn`,
-            fontSize: fontsizing,
-            strokeWidth: 1,
-            color: "black",
-            duration: 2200,
-            textAlign: "left",
-            x: 10,
-            y: spacing / 1.8,
-            fromCurrentPosition: { x: true, y: true },
-            autoAnimation: true,
-            queued: true,
-            delay: 900,
-            letterSpacing: 0,
-          },
-          {
-            id: "line6",
-            text: `or email to let me know your thoughts!`,
-            fontSize: fontsizing,
-            strokeWidth: 1,
-            color: "black",
-            duration: 2000,
-            textAlign: "left",
-            x: 10,
-            y: spacing / 1.8,
-            fromCurrentPosition: { x: true, y: true },
-            autoAnimation: true,
-            queued: true,
-            delay: 300,
-            letterSpacing: 0,
-          },
-          {
-            id: "line7",
-            text: `Yours truly,`,
-            fontSize: fontsizing,
-            strokeWidth: 1,
-            color: "black",
-            duration: 1350,
-            textAlign: "left",
-            x: 10,
-            y: spacing,
-            fromCurrentPosition: { x: true, y: true },
-            autoAnimation: true,
-            queued: true,
-            delay: 800,
-          },
-          {
-            id: "line8",
-            text: `Awshaf Ishtiaque`,
-            fontSize: fontsizing,
-            strokeWidth: 1.8,
-            color: "black",
-            duration: 2900,
-            textAlign: "left",
-            x: 10,
-            y: spacing + 10,
-            fromCurrentPosition: { x: true, y: true },
-            autoAnimation: true,
-            queued: true,
-            delay: 700,
-          },
+    const lines = isPhoneWidth
+      ? [
+          { text: `Today is ${currentDate},`, duration: 950, delay: 550 },
+          { text: `On this date, you explored`, duration: 900, delay: 350 },
+          { text: `my page and delved into`, duration: 850, delay: 150 },
+          { text: `the narrative I've crafted.`, duration: 900, delay: 150 },
+          { text: `I hope you found this`, duration: 800, delay: 350 },
+          { text: `digital journey engaging.`, duration: 850, delay: 150 },
+          { text: `Feel free to shoot me a`, duration: 850, delay: 350 },
+          { text: `message on LinkedIn or email`, duration: 950, delay: 150 },
+          { text: `to let me know your thoughts!`, duration: 950, delay: 150 },
+          { text: `Yours truly,`, duration: 600, delay: 450 },
+          { text: `Awshaf Ishtiaque`, duration: 1500, delay: 400, strokeWidth: 1.8 },
         ]
-      );
-      vara.ready();
-    }
-  }, [inView, fontsizing, spacing]);
+      : [
+          { text: `Today is ${currentDate},`, duration: 1140, delay: 550 },
+          { text: `On this date, you explored my page`, duration: 1370, delay: 490 },
+          { text: `and delved into the narrative I've crafted.`, duration: 1370, delay: 200 },
+          { text: `I hope you found this digital journey engaging.`, duration: 1500, delay: 590 },
+          { text: `Feel free to shoot me a message on LinkedIn`, duration: 1430, delay: 590 },
+          { text: `or email to let me know your thoughts!`, duration: 1300, delay: 200 },
+          { text: `Yours truly,`, duration: 880, delay: 520 },
+          { text: `Awshaf Ishtiaque`, duration: 1890, delay: 460, strokeWidth: 1.8 },
+        ];
+
+    const vara = new Vara(
+      "#myVaraText",
+      "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",
+      lines.map((line, index) => ({
+        id: `line${index + 1}`,
+        text: line.text,
+        fontSize: fontsizing,
+        strokeWidth: line.strokeWidth || 1,
+        color: "black",
+        duration: line.duration,
+        textAlign: "left",
+        x: 10,
+        y: Math.round((index + 1) * pitch - 0.8 * fontsizing),
+        fromCurrentPosition: { x: true, y: false },
+        lineHeight: pitch,
+        autoAnimation: true,
+        queued: true,
+        delay: line.delay,
+        letterSpacing: 0,
+      }))
+    );
+    vara.ready();
+  }, [fontsizing, pitch, isPhoneWidth]);
 
   useEffect(() => {
     const mouseMove = (e) => {
@@ -311,7 +221,7 @@ const LearnMore = (props) => {
     // for DoodleSection:
     const handleScroll = () => {
       const { top } = doodleSectionRef.current.getBoundingClientRect();
-      if (top >= -403 && top <= 150) {
+      if (top >= -403 && top <= window.innerHeight * 0.8) {
         setDoodleSectionInView(true);
         dispatch(setCursorStyle("modalEnter"));
       } else if (top <= -441) {
@@ -323,14 +233,19 @@ const LearnMore = (props) => {
 
     window.addEventListener("scroll", handleScroll);
 
-    initializeVara();
-
     return () => {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("scroll", handleScroll);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initializeVara]);
+  }, []);
+
+  useEffect(() => {
+    if (doodleSectionInView && !varaStartedRef.current) {
+      varaStartedRef.current = true;
+      initializeVara();
+    }
+  }, [doodleSectionInView, initializeVara]);
 
   return (
     <div>
@@ -360,8 +275,14 @@ const LearnMore = (props) => {
           className={`LMrodalSection ${
             doodleSectionInView ? "doodleFSactive" : ""
           }`}
+          style={{
+            backgroundImage: `repeating-linear-gradient(#FEF4D4 0px, #FEF4D4 ${
+              pitch - 1
+            }px, teal ${pitch}px)`,
+            paddingTop: `${pitch}px`,
+          }}
         >
-          <div className="content" id="myVaraText" ref={ref}></div>
+          <div className="content" id="myVaraText"></div>
         </section>
       </div>
 
@@ -478,9 +399,7 @@ const LearnMore = (props) => {
             </div>
 
             <div ref={doodleSectionRef} className="doodleSection">
-              <p className="boldPara" ref={ref}>
-                My Doodle Section:
-              </p>
+              <p className="boldPara">My Doodle Section:</p>
             </div>
           </section>
         )}

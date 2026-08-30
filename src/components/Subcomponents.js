@@ -64,7 +64,7 @@ export const Section = (props) => {
     }
   }, [AwshafinView, fontsizing]); // Reactivate effect when AwshafinView changes
 
-  const parallaxSpeedValue = -0.205;
+  const parallaxSpeedValue = -0.09;
 
   return (
     <article

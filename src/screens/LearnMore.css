@@ -170,16 +170,25 @@ strong {
   font-size: var(--text-body);
   font-weight: 300;
 
-  padding: 1.1rem;
+  padding: 1.1rem 1.1rem 1.1rem 1.5em;
 
   align-self: flex-end;
 
-  list-style-position: outside;
-  list-style-type: disc;
-  list-style-position: inside;
-  text-indent: -1.4em;
+  list-style: none;
+  text-indent: 0;
+  position: relative;
 
   background-color: transparent;
+}
+.bullet::before {
+  content: "";
+  position: absolute;
+  left: 0.35em;
+  top: calc(1.1rem + 0.5em);
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 50%;
+  background-color: currentColor;
 }
 
 /* 
@@ -215,6 +224,7 @@ strong {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1400;
   cursor: none !important;
 }
 .LMrodalSection {
@@ -308,7 +318,7 @@ strong {
   .doodleFSactive {
     opacity: 1;
     visibility: visible;
-    z-index: inherit;
+    z-index: 1400;
   
     /* padding: 1rem 1.8rem; */
     padding-top: 1.5rem;
@@ -342,7 +352,10 @@ strong {
   }
   .bullet {
     width: 100%;
-    padding: 0.8rem;
+    padding: 0.8rem 0.8rem 0.8rem 1.5em;
+  }
+  .bullet::before {
+    top: calc(0.8rem + 0.5em);
   }
 
   .jobTitle {
