@@ -10,7 +10,7 @@ import "./FullScreenNav.css";
 import { setCursorStyle } from "../features/cursor/cursorSlice";
 
 const googleDriveResumeLink =
-  "https://drive.google.com/file/d/1zMN43V9XwboIREKu3Q00ILZaFdIrJVM2/view?usp=sharing";
+  "https://drive.google.com/file/d/1zp9epGNRZrg3jGM1Jc4eljP1oJbWjqc0/view?usp=sharing";
 
 const FullScreenNav = (props) => {
   const navigate = useNavigate();
